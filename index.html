@@ -2340,7 +2340,7 @@ var qrcode = function() {
 }(qrcode);
 
 /* ===== VERSION & AUTO-MISE À JOUR ===== */
-window.APP_VERSION='v53-2026-07-21';
+window.APP_VERSION='v54-2026-07-21';
 // ===== CAPTEUR D'ERREURS VISIBLE (diagnostic) =====
 window.__errors=[];
 window.addEventListener('error',function(e){window.__errors.push('ERREUR: '+(e.message||'')+' @ '+(e.filename||'').split('/').pop()+':'+(e.lineno||''));});
@@ -2409,7 +2409,7 @@ function lsSet(k,v){
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
 <style>
-:root{--or:#1E3A5F;--or2:#152C48;--bk:#1A202C;--gr:#6B7280;--lt:#F7F8FA;--bd:#E5E7EB;--gn:#16A34A;--rd:#DC2626;--gd:#D97706;--sc:#0F766E;--scH:#115E59;--ac:#1E3A5F;--acH:#152C48;}
+:root{--or:#F68B1E;--or2:#E67A0E;--bk:#282828;--gr:#7A7A7A;--lt:#F5F5F5;--bd:#E5E5E5;--gn:#16A34A;--rd:#C8102E;--gd:#F68B1E;--sc:#0F766E;--scH:#115E59;--ac:#F68B1E;--acH:#E67A0E;}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:'Inter','Segoe UI',system-ui,Arial,sans-serif;}
 body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimizeSpeed;color:var(--bk);max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:80px;}
 
@@ -2435,7 +2435,7 @@ body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimize
 .pg{display:none}.pg.on{display:block}
 
 /* HOME */
-.bnr{margin:10px;background:#1E3A5F;border-radius:8px;padding:18px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;overflow:hidden;position:relative;}
+.bnr{margin:10px;background:var(--or);border-radius:8px;padding:18px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;overflow:hidden;position:relative;}
 .bnr::after{content:'';position:absolute;right:-15px;top:-15px;width:80px;height:80px;background:rgba(255,255,255,.08);border-radius:50%;}
 .bt h2{color:#fff;font-size:1.1rem;font-weight:900;}
 .bt p{color:rgba(255,255,255,.85);font-size:.73rem;margin:4px 0 10px;}
@@ -2620,11 +2620,11 @@ select.fi{cursor:pointer;}
 .kai-hero .kh-slogan{font-size:.72rem;color:#6B7280;margin-top:2px;}
 body.dark .kai-hero{background:#1F2937;border-color:#374151;}
 body.dark .kai-hero .kh-name{color:#93C5FD;}
-.chatbot-float{position:fixed;bottom:158px;right:16px;width:56px;height:56px;background:#1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15);z-index:150;cursor:pointer;font-size:1.6rem;border:none;}
+.chatbot-float{position:fixed;bottom:158px;right:16px;width:56px;height:56px;background:var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15);z-index:150;cursor:pointer;font-size:1.6rem;border:none;}
 .chatbot-float .cb-badge{position:absolute;top:-2px;right:-2px;background:var(--gn);width:14px;height:14px;border-radius:50%;border:2px solid #fff;}
 .chat-window{display:none;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;height:80vh;background:#fff;border-radius:20px 20px 0 0;z-index:300;flex-direction:column;animation:su .3s ease;box-shadow:0 -4px 20px rgba(0,0,0,.15);}
 .chat-window.on{display:flex;}
-.chat-head{background:#1E3A5F;color:#fff;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 14px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:11px;}
+.chat-head{background:var(--or);color:#fff;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 14px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:11px;}
 .chat-avatar{width:42px;height:42px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
 .chat-head-info{flex:1;}
 .chat-head-name{font-weight:900;font-size:.95rem;}
@@ -2637,7 +2637,7 @@ body.dark .kai-hero .kh-name{color:#93C5FD;}
 .chat-bubble{padding:11px 14px;border-radius:16px;font-size:.85rem;line-height:1.5;}
 .chat-msg.bot .chat-bubble{background:#fff;border-bottom-left-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
 .chat-msg.user .chat-bubble{background:var(--or);color:#fff;border-bottom-right-radius:4px;}
-.chat-bot-ava{width:30px;height:30px;background:#1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.chat-bot-ava{width:30px;height:30px;background:var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
 .chat-quick{display:flex;flex-wrap:wrap;gap:7px;padding:10px 16px;background:#fff;border-top:1px solid var(--bd);}
 .chat-qbtn{background:#fff;border:1px solid var(--or);color:var(--or);padding:7px 12px;border-radius:16px;font-size:.75rem;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit;}
 .chat-input-bar{display:flex;gap:8px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--bd);align-items:center;}
@@ -2657,7 +2657,7 @@ body.dark .kai-hero .kh-name{color:#93C5FD;}
 .leaflet-container{border-radius:12px;}
 .delivery-status-bar{background:#fff;border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
 .dsb-current{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-.dsb-icon{width:48px;height:48px;background:#1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;animation:pulse 2s infinite;}
+.dsb-icon{width:48px;height:48px;background:var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;animation:pulse 2s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(249,115,22,.4)}70%{box-shadow:0 0 0 12px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
 .dsb-info{flex:1;}
 .dsb-status{font-size:.95rem;font-weight:900;}
@@ -2728,8 +2728,9 @@ body.dark .leaflet-container{filter:brightness(.85);}
   #srchSug{left:auto;right:auto;width:100%;max-width:780px;top:64px;margin:0 auto;}
   #langBtn{order:3;}
   .ib{order:4;}
-  .ib.dsk{display:flex;align-items:center;gap:6px;color:#374151;}
-  .dskl{font-size:.78rem;font-weight:700;}
+  .ib.dsk{display:flex;align-items:center;gap:7px;color:#282828;padding:6px 14px;border-radius:6px;transition:.15s;}
+  .ib.dsk:hover{background:#F5F5F5;color:var(--or);}
+  .dskl{font-size:.82rem;font-weight:600;}
   /* Menu bas masqué : tout est dans le header */
   .bnav{display:none;}
   /* Contenu pleine largeur, centré grand format */
@@ -2881,13 +2882,13 @@ img{contain:paint;}
         </div>
       </div>
       <div style="min-width:100%">
-        <div class="bnr" onclick="showPg('boutique')" style="background:#334155">
+        <div class="bnr" onclick="showPg('boutique')" style="background:#1BA0E2">
           <div class="bt"><h2 data-i18n-emoji="🔥" data-i18n="promosRow2">🔥 Promotions</h2><p data-i18n="promo2Sub">Les meilleures offres du moment</p><button class="bshop" data-i18n="promo2Btn">J'en profite →</button></div>
           <div class="bi">🔥</div>
         </div>
       </div>
       <div style="min-width:100%">
-        <div class="bnr" onclick="showPg('boutique')" style="background:#475569">
+        <div class="bnr" onclick="showPg('boutique')" style="background:#282828">
           <div class="bt"><h2 data-i18n-emoji="🆕" data-i18n="new2Title">🆕 Nouveautés</h2><p data-i18n="new2Sub">Découvrez les derniers arrivages</p><button class="bshop" data-i18n="new2Btn">Découvrir →</button></div>
           <div class="bi">✨</div>
         </div>
@@ -3292,7 +3293,7 @@ img{contain:paint;}
       </div>
       <!-- Carte du livreur avec sécurité -->
       <div class="driver-card" id="driverCard">
-        <div id="driverPhotoCard" style="width:48px;height:48px;border-radius:50%;background:#1E3A5F;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;overflow:hidden">🧑‍✈️</div>
+        <div id="driverPhotoCard" style="width:48px;height:48px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;overflow:hidden">🧑‍✈️</div>
         <div style="flex:1">
           <div style="font-size:.85rem;font-weight:800" id="driverName">Votre livreur Kimora</div>
           <div style="font-size:.72rem;color:var(--gr)" id="driverInfo">🏍️ En chemin vers vous</div>
@@ -3395,7 +3396,7 @@ img{contain:paint;}
       <!-- STATS -->
       <div id="adm-dash">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px">
-          <div style="background:#1E3A5F;border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asDay">0</div><div style="font-size:.64rem;opacity:.9">Ventes aujourd'hui (FCFA)</div></div>
+          <div style="background:var(--or);border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asDay">0</div><div style="font-size:.64rem;opacity:.9">Ventes aujourd'hui (FCFA)</div></div>
           <div style="background:#16A34A;border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asMonth">0</div><div style="font-size:.64rem;opacity:.9">Ce mois (FCFA)</div></div>
           <div style="background:var(--lt);border-radius:10px;padding:13px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)" id="asOrd">0</div><div style="font-size:.64rem;color:var(--gr)">Commandes total</div></div>
           <div style="background:var(--lt);border-radius:10px;padding:13px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)" id="asProd">0</div><div style="font-size:.64rem;color:var(--gr)">Mes produits</div></div>
@@ -3795,7 +3796,7 @@ img{contain:paint;}
   <div class="md"><div class="mh"></div>
     <div class="mhd"><h2>🎟️ Cartes cadeaux</h2><button class="xb" onclick="closeOv('giftOv')">✕</button></div>
     <div class="mb">
-      <div style="background:#1E3A5F;border-radius:14px;padding:20px;color:#fff;margin-bottom:16px;text-align:center">
+      <div style="background:var(--or);border-radius:14px;padding:20px;color:#fff;margin-bottom:16px;text-align:center">
         <div style="font-size:2rem;margin-bottom:6px">🎁</div>
         <div style="font-weight:900;font-size:1rem">Carte Cadeau Kimora</div>
         <div style="font-size:.75rem;opacity:.9;margin-top:4px">Faites plaisir à vos proches !</div>
@@ -3830,7 +3831,7 @@ img{contain:paint;}
   <div class="md"><div class="mh"></div>
     <div class="mhd"><h2>🎁 Programme Fidélité</h2><button class="xb" onclick="closeOv('loyaltyOv')">✕</button></div>
     <div class="mb">
-      <div style="background:#1E3A5F;border-radius:14px;padding:20px;text-align:center;color:#fff;margin-bottom:16px">
+      <div style="background:var(--or);border-radius:14px;padding:20px;text-align:center;color:#fff;margin-bottom:16px">
         <div style="font-size:.75rem;opacity:.9">Vos points</div>
         <div style="font-size:2.5rem;font-weight:900" id="loyaltyPts">0</div>
         <div style="font-size:.72rem;opacity:.85">= <span id="loyaltyValue">0</span> FCFA de réduction</div>
@@ -5571,7 +5572,7 @@ function renderDriverJournal(){
   const inProgress=myDeliv.filter(o=>{const ds=getDelivState(o.id);return ds&&ds.step<3&&!ds.signed;});
   const totalValue=completed.reduce((s,o)=>s+(o.total||0),0);
   // En-tête récap
-  let html='<div style="background:#1E3A5F;border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.9rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9">Code : '+currentDriver.code+' · CNI : '+(currentDriver.cni||'N/A')+'</div></div>';
+  let html='<div style="background:var(--or);border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.9rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9">Code : '+currentDriver.code+' · CNI : '+(currentDriver.cni||'N/A')+'</div></div>';
   html+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">'+
     '<div style="background:#DCFCE7;border-radius:10px;padding:11px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--gn)">'+completed.length+'</div><div style="font-size:.6rem;color:var(--gr)">Livrées</div></div>'+
     '<div style="background:#fff;border-radius:10px;padding:11px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)">'+inProgress.length+'</div><div style="font-size:.6rem;color:var(--gr)">En cours</div></div>'+
@@ -5618,7 +5619,7 @@ function renderDriverDashboard(){
   const today=new Date().toLocaleDateString('fr-FR');
   const todayDeliv=completed.filter(o=>{const ds=getDelivState(o.id);return ds&&ds.deliveredAt&&ds.deliveredAt.includes(today);});
   const totalValue=completed.reduce((s,o)=>s+(o.total||0),0);
-  let html='<div style="background:#1E3A5F;border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.75rem;opacity:.9">Bonjour</div><div style="font-size:1.1rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9;margin-top:4px">Code : '+currentDriver.code+'</div></div>';
+  let html='<div style="background:var(--or);border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.75rem;opacity:.9">Bonjour</div><div style="font-size:1.1rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9;margin-top:4px">Code : '+currentDriver.code+'</div></div>';
   // Cartes statistiques
   html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">'+
     '<div style="background:#DCFCE7;border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--gn)">'+completed.length+'</div><div style="font-size:.64rem;color:var(--gr)">✅ Total livrées</div></div>'+
@@ -8735,7 +8736,7 @@ function renderSalesChart(ords){
     const h=Math.max(4,(d.total/max)*90);
     return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">
       <div style="font-size:.52rem;color:var(--gr);font-weight:700">${d.total>0?(d.total>=1000?Math.round(d.total/1000)+'k':d.total):''}</div>
-      <div style="width:100%;height:${h}px;background:#1E3A5F;border-radius:4px 4px 0 0;min-height:4px"></div>
+      <div style="width:100%;height:${h}px;background:var(--or);border-radius:4px 4px 0 0;min-height:4px"></div>
       <div style="font-size:.58rem;color:var(--gr)">${d.label}</div>
     </div>`;
   }).join('');
