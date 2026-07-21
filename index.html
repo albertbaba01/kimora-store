@@ -2340,7 +2340,7 @@ var qrcode = function() {
 }(qrcode);
 
 /* ===== VERSION & AUTO-MISE À JOUR ===== */
-window.APP_VERSION='v48-2026-07-13';
+window.APP_VERSION='v53-2026-07-21';
 // ===== CAPTEUR D'ERREURS VISIBLE (diagnostic) =====
 window.__errors=[];
 window.addEventListener('error',function(e){window.__errors.push('ERREUR: '+(e.message||'')+' @ '+(e.filename||'').split('/').pop()+':'+(e.lineno||''));});
@@ -2409,14 +2409,14 @@ function lsSet(k,v){
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
 <style>
-:root{--or:#2563EB;--or2:#1D4ED8;--bk:#0F172A;--gr:#64748B;--lt:#F8FAFC;--bd:#E2E8F0;--gn:#16A34A;--rd:#DC2626;--gd:#F59E0B;--sc:#14B8A6;--scH:#0D9488;--ac:#F97316;--acH:#EA580C;}
+:root{--or:#1E3A5F;--or2:#152C48;--bk:#1A202C;--gr:#6B7280;--lt:#F7F8FA;--bd:#E5E7EB;--gn:#16A34A;--rd:#DC2626;--gd:#D97706;--sc:#0F766E;--scH:#115E59;--ac:#1E3A5F;--acH:#152C48;}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:'Inter','Segoe UI',system-ui,Arial,sans-serif;}
 body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimizeSpeed;color:var(--bk);max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:80px;}
 
 /* NAV */
 .nav{background:#fff;padding:calc(6px + env(safe-area-inset-top,0px)) 10px 8px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.06);border-bottom:2px solid var(--or);}
 .nav1{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
-.logo{font-weight:900;font-size:1.1rem;background:linear-gradient(135deg,var(--or),var(--or2));-webkit-background-clip:text;background-clip:text;color:transparent;flex:1;letter-spacing:-.3px;}
+.logo{font-weight:800;font-size:1.15rem;color:var(--or);flex:1;letter-spacing:-.3px;}
 .logo span{font-weight:300;font-size:.8rem;opacity:.85;color:var(--gr);}
 .ib{background:#fff;border:none;color:var(--or);width:36px;height:36px;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;position:relative;flex-shrink:0;}
 .ib.dsk{display:none;}
@@ -2435,13 +2435,13 @@ body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimize
 .pg{display:none}.pg.on{display:block}
 
 /* HOME */
-.bnr{margin:10px;background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:12px;padding:18px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;overflow:hidden;position:relative;}
+.bnr{margin:10px;background:#1E3A5F;border-radius:8px;padding:18px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;overflow:hidden;position:relative;}
 .bnr::after{content:'';position:absolute;right:-15px;top:-15px;width:80px;height:80px;background:rgba(255,255,255,.08);border-radius:50%;}
 .bt h2{color:#fff;font-size:1.1rem;font-weight:900;}
 .bt p{color:rgba(255,255,255,.85);font-size:.73rem;margin:4px 0 10px;}
-.bshop{background:#fff;color:var(--ac);border:none;padding:7px 16px;border-radius:20px;font-size:.75rem;font-weight:800;cursor:pointer;}
+.bshop{background:#fff;color:#1E3A5F;border:none;padding:8px 18px;border-radius:5px;font-size:.75rem;font-weight:800;cursor:pointer;}
 .bi{font-size:2.8rem;z-index:1;}
-.flash{background:var(--rd);color:#fff;margin:0 10px 10px;border-radius:10px;padding:9px 14px;display:flex;align-items:center;gap:8px;}
+.flash{background:#B91C1C;color:#fff;margin:0 10px 10px;border-radius:6px;padding:9px 14px;display:flex;align-items:center;gap:8px;}
 .fl{font-weight:800;font-size:.82rem;flex:1;}
 .cd{display:flex;gap:3px;align-items:center;}
 .cdu{background:rgba(0,0,0,.3);border-radius:4px;padding:3px 6px;font-size:.7rem;font-weight:900;min-width:24px;text-align:center;}
@@ -2458,12 +2458,12 @@ body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimize
 .csc{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
 .csc::-webkit-scrollbar{display:none;}
 .ci{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;flex-shrink:0;}
-.cic{width:54px;height:54px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.08);border:2px solid transparent;transition:.15s;}
+.cic{width:54px;height:54px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,.08);border:2px solid transparent;transition:.15s;}
 .ci.on .cic{background:var(--or);border-color:var(--or);}
 .cn{font-size:.6rem;font-weight:600;text-align:center;width:58px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .fbar{display:flex;gap:7px;padding:0 10px 10px;overflow-x:auto;scrollbar-width:none;}
 .fbar::-webkit-scrollbar{display:none;}
-.fc{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:6px 13px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;color:var(--bk);border:none;font-family:inherit;}
+.fc{background:#fff;border:1px solid var(--bd);border-radius:6px;padding:6px 13px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;color:var(--bk);border:none;font-family:inherit;}
 .fc.on{background:var(--or);color:#fff;}
 
 /* PRODUCT GRID */
@@ -2500,7 +2500,7 @@ body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimize
 /* OVERLAYS */
 .ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:flex-end;justify-content:center;}
 .ov.on{display:flex;}
-.md{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:su .3s ease;}
+.md{background:#fff;border-radius:12px 12px 0 0;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch;animation:su .3s ease;}
 @keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .mh{width:36px;height:4px;background:var(--bd);border-radius:2px;margin:14px auto 0;}
 .mhd{padding:14px 16px 0;display:flex;align-items:center;justify-content:space-between;}
@@ -2526,11 +2526,11 @@ body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimize
 .dlv{background:var(--lt);border-radius:9px;padding:12px;margin-bottom:14px;display:flex;align-items:flex-start;gap:10px;}
 .dlv h4{font-size:.8rem;font-weight:800;margin-bottom:2px;}
 .dlv p{font-size:.72rem;color:var(--gr);}
-.bor{width:100%;background:linear-gradient(135deg,var(--or),var(--or2));color:#fff;border:none;cursor:pointer;padding:14px;border-radius:11px;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:7px;font-family:inherit;box-shadow:0 6px 16px rgba(37,99,235,.28);transition:transform .15s ease,box-shadow .15s ease;}
+.bor{width:100%;background:var(--or);color:#fff;border:none;cursor:pointer;padding:14px;border-radius:11px;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:7px;font-family:inherit;box-shadow:0 2px 6px rgba(0,0,0,.1);transition:transform .15s ease,box-shadow .15s ease;}
 .bor:active{transform:scale(.98);box-shadow:0 3px 10px rgba(37,99,235,.25);}
 .bou{width:100%;background:#fff;color:var(--sc);border:2px solid var(--sc);cursor:pointer;padding:12px;border-radius:11px;font-weight:800;font-size:.88rem;margin-top:9px;font-family:inherit;}
 .bou:active{background:var(--scH);color:#fff;transform:scale(.98);}
-.bor.actn{background:linear-gradient(135deg,var(--ac),var(--acH));box-shadow:0 6px 16px rgba(249,115,22,.32);}
+.bor.actn{background:var(--ac);box-shadow:0 2px 6px rgba(0,0,0,.1);}
 .bor.actn:active{box-shadow:0 3px 10px rgba(249,115,22,.28);}
 
 /* CART */
@@ -2567,7 +2567,7 @@ select.fi{cursor:pointer;}
 .att.on{color:var(--or);border-bottom-color:var(--or);}
 
 /* ACCOUNT */
-.ach{background:linear-gradient(135deg,var(--or),var(--or2));padding:24px 16px;text-align:center;color:#fff;}
+.ach{background:var(--or);padding:24px 16px;text-align:center;color:#fff;}
 .av{width:64px;height:64px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin:0 auto 10px;border:3px solid rgba(255,255,255,.3);}
 .acn{font-weight:900;font-size:1rem;margin-bottom:3px;}
 .ace{font-size:.75rem;opacity:.85;}
@@ -2614,17 +2614,17 @@ select.fi{cursor:pointer;}
 /* CHATBOT */
 .kai-img{width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;display:block;}
 .chatbot-float .kai-img{width:56px;height:56px;border:2px solid #fff;box-sizing:border-box;}
-.kai-hero{text-align:center;padding:18px 14px 14px;margin-bottom:12px;background:linear-gradient(160deg,#EFF6FF,#fff);border-radius:16px;border:1.5px solid #DBEAFE;}
+.kai-hero{text-align:center;padding:18px 14px 14px;margin-bottom:12px;background:#F8FAFC;border-radius:8px;border:1px solid #E5E7EB;}
 .kai-hero img{width:92px;height:92px;object-fit:cover;object-position:top center;border-radius:50%;border:3px solid #2563EB;box-shadow:0 4px 14px rgba(37,99,235,.3);display:block;margin:0 auto 8px;}
 .kai-hero .kh-name{font-weight:900;font-size:1.05rem;color:#1E3A8A;}
 .kai-hero .kh-slogan{font-size:.72rem;color:#6B7280;margin-top:2px;}
-body.dark .kai-hero{background:linear-gradient(160deg,#1F2937,#111827);border-color:#374151;}
+body.dark .kai-hero{background:#1F2937;border-color:#374151;}
 body.dark .kai-hero .kh-name{color:#93C5FD;}
-.chatbot-float{position:fixed;bottom:158px;right:16px;width:56px;height:56px;background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(249,115,22,.5);z-index:150;cursor:pointer;font-size:1.6rem;border:none;}
+.chatbot-float{position:fixed;bottom:158px;right:16px;width:56px;height:56px;background:#1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.15);z-index:150;cursor:pointer;font-size:1.6rem;border:none;}
 .chatbot-float .cb-badge{position:absolute;top:-2px;right:-2px;background:var(--gn);width:14px;height:14px;border-radius:50%;border:2px solid #fff;}
 .chat-window{display:none;position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;height:80vh;background:#fff;border-radius:20px 20px 0 0;z-index:300;flex-direction:column;animation:su .3s ease;box-shadow:0 -4px 20px rgba(0,0,0,.15);}
 .chat-window.on{display:flex;}
-.chat-head{background:linear-gradient(135deg,#2563EB,#1D4ED8);color:#fff;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 14px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:11px;}
+.chat-head{background:#1E3A5F;color:#fff;padding:calc(14px + env(safe-area-inset-top,0px)) 16px 14px;border-radius:20px 20px 0 0;display:flex;align-items:center;gap:11px;}
 .chat-avatar{width:42px;height:42px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
 .chat-head-info{flex:1;}
 .chat-head-name{font-weight:900;font-size:.95rem;}
@@ -2637,7 +2637,7 @@ body.dark .kai-hero .kh-name{color:#93C5FD;}
 .chat-bubble{padding:11px 14px;border-radius:16px;font-size:.85rem;line-height:1.5;}
 .chat-msg.bot .chat-bubble{background:#fff;border-bottom-left-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
 .chat-msg.user .chat-bubble{background:var(--or);color:#fff;border-bottom-right-radius:4px;}
-.chat-bot-ava{width:30px;height:30px;background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.chat-bot-ava{width:30px;height:30px;background:#1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
 .chat-quick{display:flex;flex-wrap:wrap;gap:7px;padding:10px 16px;background:#fff;border-top:1px solid var(--bd);}
 .chat-qbtn{background:#fff;border:1px solid var(--or);color:var(--or);padding:7px 12px;border-radius:16px;font-size:.75rem;font-weight:600;cursor:pointer;white-space:nowrap;font-family:inherit;}
 .chat-input-bar{display:flex;gap:8px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid var(--bd);align-items:center;}
@@ -2657,7 +2657,7 @@ body.dark .kai-hero .kh-name{color:#93C5FD;}
 .leaflet-container{border-radius:12px;}
 .delivery-status-bar{background:#fff;border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.08);}
 .dsb-current{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
-.dsb-icon{width:48px;height:48px;background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;animation:pulse 2s infinite;}
+.dsb-icon{width:48px;height:48px;background:#1E3A5F;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;animation:pulse 2s infinite;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(249,115,22,.4)}70%{box-shadow:0 0 0 12px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
 .dsb-info{flex:1;}
 .dsb-status{font-size:.95rem;font-weight:900;}
@@ -2694,7 +2694,7 @@ body.dark .fc.on,body.dark .pop.on{background:var(--or);color:#fff;}
 body.dark .mi{border-color:#374151;}
 body.dark .mi:active{background:#374151;}
 body.dark .tot,body.dark .dft,body.dark .dlv{background:#374151;}
-body.dark .ach{background:linear-gradient(135deg,var(--or),var(--or2));}
+body.dark .ach{background:var(--or);}
 body.dark .strip{background:#000;}
 body.dark .chat-body{background:#111827;}
 body.dark .chat-msg.bot .chat-bubble{background:#374151;color:#F9FAFB;}
@@ -2765,6 +2765,21 @@ body.dark .leaflet-container{filter:brightness(.85);}
   .psc{min-width:220px;}
 }
 /* ===================== GRAND DESKTOP (1280px+) ===================== */
+/* Barre de services façon Jumia — masquée en mobile */
+.jumia-services{display:none;}
+@media (min-width:1024px){
+  .jumia-services{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;background:#fff;border:1px solid #E5E7EB;border-radius:8px;padding:18px;margin:6px 0 18px;box-shadow:0 2px 12px rgba(0,0,0,.04);}
+  .jserv{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;cursor:pointer;padding:8px 4px;border-radius:12px;transition:.2s ease;}
+  .jserv:hover{background:#F8FAFC;transform:translateY(-3px);}
+  .jsi{width:52px;height:52px;border-radius:8px;background:#F1F5F9;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:2px;}
+  .jst{font-size:.82rem;font-weight:800;color:#1E293B;}
+  .jss{font-size:.68rem;color:#94A3B8;line-height:1.2;}
+  /* Rangée catégories façon Jumia : cartes plus visibles */
+  .pstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;overflow:visible;padding:0 0 18px;}
+  .psc{min-width:auto;background:#fff;border:1px solid #EEE;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.04);transition:.2s ease;}
+  .psc:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.1);border-color:var(--or);}
+}
+/* ===================== GRAND DESKTOP existant (1280px+) ===================== */
 @media (min-width:1280px){
   .pgrid{grid-template-columns:repeat(5,1fr);}
 }
@@ -2780,7 +2795,7 @@ body.dark .leaflet-container{filter:brightness(.85);}
   .pd:hover .qact{opacity:1;transform:none;}
   .qab{flex:1;border:none;border-radius:9px;padding:9px 0;font-size:.74rem;font-weight:800;cursor:pointer;background:rgba(255,255,255,.96);color:#111;box-shadow:0 3px 10px rgba(0,0,0,.18);font-family:inherit;}
   .qab:hover{background:#fff;}
-  .qab.qbuy{background:linear-gradient(135deg,var(--ac),var(--acH));color:#fff;}
+  .qab.qbuy{background:var(--ac);color:#fff;}
   .qab.qbuy:hover{background:var(--or2);}
 }
 /* Performance : rendu paresseux hors écran */
@@ -2791,7 +2806,7 @@ img{contain:paint;}
 </style>
 </head>
 <body>
-<div id="welcomeOv" style="display:none;position:fixed;inset:0;z-index:9000;background:linear-gradient(160deg,#FFFFFF 0%,#F8FAFC 55%,#EFF6FF 100%);flex-direction:column;align-items:center;justify-content:center;padding:28px 24px calc(28px + env(safe-area-inset-bottom,0px));text-align:center;overflow-y:auto">
+<div id="welcomeOv" style="display:none;position:fixed;inset:0;z-index:9000;background:#F7F8FA;flex-direction:column;align-items:center;justify-content:center;padding:28px 24px calc(28px + env(safe-area-inset-bottom,0px));text-align:center;overflow-y:auto">
   <div style="flex:1"></div>
   <img src="/icon-512.png" alt="Kimora Store" style="width:96px;height:96px;border-radius:22px;box-shadow:0 10px 28px rgba(249,115,22,.28);margin-bottom:18px">
   <div style="font-size:1.5rem;font-weight:900;color:var(--bk);line-height:1.25;margin-bottom:8px" data-i18n="welcomeTitle">Bienvenue chez Kimora Store 👋</div>
@@ -2866,13 +2881,13 @@ img{contain:paint;}
         </div>
       </div>
       <div style="min-width:100%">
-        <div class="bnr" onclick="showPg('boutique')" style="background:linear-gradient(135deg,#DC2626,#2563EB)">
+        <div class="bnr" onclick="showPg('boutique')" style="background:#334155">
           <div class="bt"><h2 data-i18n-emoji="🔥" data-i18n="promosRow2">🔥 Promotions</h2><p data-i18n="promo2Sub">Les meilleures offres du moment</p><button class="bshop" data-i18n="promo2Btn">J'en profite →</button></div>
           <div class="bi">🔥</div>
         </div>
       </div>
       <div style="min-width:100%">
-        <div class="bnr" onclick="showPg('boutique')" style="background:linear-gradient(135deg,#7C3AED,#2563EB)">
+        <div class="bnr" onclick="showPg('boutique')" style="background:#475569">
           <div class="bt"><h2 data-i18n-emoji="🆕" data-i18n="new2Title">🆕 Nouveautés</h2><p data-i18n="new2Sub">Découvrez les derniers arrivages</p><button class="bshop" data-i18n="new2Btn">Découvrir →</button></div>
           <div class="bi">✨</div>
         </div>
@@ -2888,6 +2903,14 @@ img{contain:paint;}
     <span style="font-size:1.1rem">⚡</span>
     <div class="fl" data-i18n="flashSale">Ventes Flash</div>
     <div class="cd"><div class="cdu" id="cdH">08</div><span style="font-size:.7rem;font-weight:900">:</span><div class="cdu" id="cdM">00</div><span style="font-size:.7rem;font-weight:900">:</span><div class="cdu" id="cdS">00</div></div>
+  </div>
+  <div class="jumia-services" aria-hidden="false">
+    <div class="jserv" onclick="setF('promo',null);document.getElementById('hgrid').scrollIntoView({behavior:'smooth'})"><div class="jsi">⚡</div><div class="jst" data-i18n="flashSale">Ventes Flash</div><div class="jss" data-i18n="jsFlash">Chaque jour à 8h & 16h</div></div>
+    <div class="jserv" onclick="showPg('boutique')"><div class="jsi">🚚</div><div class="jst" data-i18n="jsDelivT">Livraison</div><div class="jss" data-i18n="jsDelivS">Partout au Cameroun</div></div>
+    <div class="jserv" onclick="setF('new',null);document.getElementById('hgrid').scrollIntoView({behavior:'smooth'})"><div class="jsi">🆕</div><div class="jst" data-i18n="new">Nouveautés</div><div class="jss" data-i18n="jsNewS">Chaque semaine</div></div>
+    <div class="jserv" onclick="setF('promo',null);document.getElementById('hgrid').scrollIntoView({behavior:'smooth'})"><div class="jsi">🏷️</div><div class="jst" data-i18n="jsPromoT">Promotions</div><div class="jss" data-i18n="jsPromoS">Jusqu'à -67%</div></div>
+    <div class="jserv" onclick="openChat()"><div class="jsi">💬</div><div class="jst" data-i18n="jsHelpT">Aide & Support</div><div class="jss" data-i18n="jsHelpS">WhatsApp 7j/7</div></div>
+    <div class="jserv" onclick="alert((TRANSLATIONS[getLang()]||TRANSLATIONS.fr).jsPayInfo||'MTN MoMo · Orange Money · Paiement à la livraison')"><div class="jsi">💳</div><div class="jst" data-i18n="jsPayT">Paiement</div><div class="jss" data-i18n="jsPayS">MoMo · OM · à la livraison</div></div>
   </div>
   <div class="pstrip">
     <div class="psc" onclick="filterCat('electronique')"><h4 data-i18n-emoji="📱" data-i18n="catElec">📱 Électronique</h4><p data-i18n="catElecSub">Smartphones & Gadgets</p><div class="dc">-40%</div></div>
@@ -2931,7 +2954,6 @@ img{contain:paint;}
       <div style="background:var(--lt);border-radius:12px;padding:12px;text-align:center"><div style="font-size:1.6rem;margin-bottom:4px">💬</div><div style="font-size:.76rem;font-weight:800" data-i18n="trust4t">Support 7j/7</div><div style="font-size:.66rem;color:var(--gr)" data-i18n="trust4s">WhatsApp à votre écoute</div></div>
     </div>
   </div>
-  <div id="homeReels"></div>
   <div id="homeReels"></div>
   <div id="homeRevs"></div>
 
@@ -3260,7 +3282,7 @@ img{contain:paint;}
 
       <!-- 🎥 RÉEL COLIS (après livraison) -->
       <!-- Confirmation prise en charge (confiance) -->
-      <div id="pickupConfirmBanner" style="display:none;background:linear-gradient(135deg,#DCFCE7,#BBF7D0);border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid #86EFAC">
+      <div id="pickupConfirmBanner" style="display:none;background:#DCFCE7;border-radius:12px;padding:14px;margin-bottom:12px;border:1px solid #86EFAC">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
           <span style="font-size:1.5rem">✅</span>
           <div><div style="font-size:.85rem;font-weight:800;color:#15803D">Colis pris en charge !</div><div style="font-size:.7rem;color:#166534" id="pickupTime"></div></div>
@@ -3270,7 +3292,7 @@ img{contain:paint;}
       </div>
       <!-- Carte du livreur avec sécurité -->
       <div class="driver-card" id="driverCard">
-        <div id="driverPhotoCard" style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#1D4ED8);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;overflow:hidden">🧑‍✈️</div>
+        <div id="driverPhotoCard" style="width:48px;height:48px;border-radius:50%;background:#1E3A5F;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;overflow:hidden">🧑‍✈️</div>
         <div style="flex:1">
           <div style="font-size:.85rem;font-weight:800" id="driverName">Votre livreur Kimora</div>
           <div style="font-size:.72rem;color:var(--gr)" id="driverInfo">🏍️ En chemin vers vous</div>
@@ -3373,8 +3395,8 @@ img{contain:paint;}
       <!-- STATS -->
       <div id="adm-dash">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px">
-          <div style="background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asDay">0</div><div style="font-size:.64rem;opacity:.9">Ventes aujourd'hui (FCFA)</div></div>
-          <div style="background:linear-gradient(135deg,#16A34A,#15803D);border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asMonth">0</div><div style="font-size:.64rem;opacity:.9">Ce mois (FCFA)</div></div>
+          <div style="background:#1E3A5F;border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asDay">0</div><div style="font-size:.64rem;opacity:.9">Ventes aujourd'hui (FCFA)</div></div>
+          <div style="background:#16A34A;border-radius:10px;padding:13px;text-align:center;color:#fff"><div style="font-size:1.3rem;font-weight:900" id="asMonth">0</div><div style="font-size:.64rem;opacity:.9">Ce mois (FCFA)</div></div>
           <div style="background:var(--lt);border-radius:10px;padding:13px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)" id="asOrd">0</div><div style="font-size:.64rem;color:var(--gr)">Commandes total</div></div>
           <div style="background:var(--lt);border-radius:10px;padding:13px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)" id="asProd">0</div><div style="font-size:.64rem;color:var(--gr)">Mes produits</div></div>
           <div style="background:var(--lt);border-radius:10px;padding:13px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)" id="asAvg">0</div><div style="font-size:.64rem;color:var(--gr)">Panier moyen</div></div>
@@ -3773,7 +3795,7 @@ img{contain:paint;}
   <div class="md"><div class="mh"></div>
     <div class="mhd"><h2>🎟️ Cartes cadeaux</h2><button class="xb" onclick="closeOv('giftOv')">✕</button></div>
     <div class="mb">
-      <div style="background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:14px;padding:20px;color:#fff;margin-bottom:16px;text-align:center">
+      <div style="background:#1E3A5F;border-radius:14px;padding:20px;color:#fff;margin-bottom:16px;text-align:center">
         <div style="font-size:2rem;margin-bottom:6px">🎁</div>
         <div style="font-weight:900;font-size:1rem">Carte Cadeau Kimora</div>
         <div style="font-size:.75rem;opacity:.9;margin-top:4px">Faites plaisir à vos proches !</div>
@@ -3808,7 +3830,7 @@ img{contain:paint;}
   <div class="md"><div class="mh"></div>
     <div class="mhd"><h2>🎁 Programme Fidélité</h2><button class="xb" onclick="closeOv('loyaltyOv')">✕</button></div>
     <div class="mb">
-      <div style="background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:14px;padding:20px;text-align:center;color:#fff;margin-bottom:16px">
+      <div style="background:#1E3A5F;border-radius:14px;padding:20px;text-align:center;color:#fff;margin-bottom:16px">
         <div style="font-size:.75rem;opacity:.9">Vos points</div>
         <div style="font-size:2.5rem;font-weight:900" id="loyaltyPts">0</div>
         <div style="font-size:.72rem;opacity:.85">= <span id="loyaltyValue">0</span> FCFA de réduction</div>
@@ -4450,7 +4472,7 @@ function pcard(p){
   return `<div class="pd" onclick="openP('${p.id}')">
     <div class="pim">
       ${dc?`<div class="pdis">-${dc}%</div>`:''}
-      ${p.featured?`<div style="position:absolute;top:7px;left:7px;background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;font-size:.55rem;font-weight:900;padding:2px 7px;border-radius:4px;z-index:2;${dc?'top:28px;':''}">⭐ VEDETTE</div>`:''}
+      ${p.featured?`<div style="position:absolute;top:7px;left:7px;background:#D97706;color:#fff;font-size:.55rem;font-weight:900;padding:2px 7px;border-radius:4px;z-index:2;${dc?'top:28px;':''}">⭐ VEDETTE</div>`:''}
       <div class="qact"><button class="qab" onclick="event.stopPropagation();qAdd('${p.id}')">🛒 Panier</button><button class="qab qbuy" onclick="event.stopPropagation();quickBuy('${p.id}')">⚡ Acheter</button></div>
       ${p.stock===0?`<div style="position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:3"><span style="background:var(--rd);color:#fff;padding:5px 12px;border-radius:6px;font-size:.72rem;font-weight:800">Rupture</span></div>`:''}
       <button class="pfv${fv?' on':''}" id="fv-${p.id}" onclick="event.stopPropagation();togFv('${p.id}')">${fv?'❤️':'🤍'}</button>
@@ -4920,7 +4942,7 @@ function finalizeOrder(trackNum){
     phone:(function(){var ind=document.getElementById('ckIndicatif');var indicatif=ind?ind.value:'237';var num=(document.getElementById('cktel').value||'').replace(/\D/g,'');var pay=document.getElementById('ckpay').value;if(pay)return pay;return num?(indicatif+num):num;})(),
     name:document.getElementById('cknm').value||'Client',
     address:document.getElementById('ckqt').value,city:document.getElementById('ckvl').value,
-    date:new Date().toLocaleDateString('fr-FR'),status:pm==='livraison'?'pending':'paid',payMethod:pm,registered:!!getUser(),email:getUser()?getUser().email:'',lang:getLang()};
+    date:new Date().toLocaleDateString('fr-FR'),time:new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}),createdAt:Date.now(),status:pm==='livraison'?'pending':'paid',payMethod:pm,registered:!!getUser(),email:getUser()?getUser().email:'',lang:getLang()};
   const ords=getOrds();ords.push(ord);lsSet('kOrders',JSON.stringify(ords));
   cloudSaveOrder(ord);
   const u=getUser();if(u){u.points=(u.points||0)+100;lsSet('kUser',JSON.stringify(u));const us=JSON.parse(localStorage.getItem('kUsers')||'[]');const ui=us.findIndex(x=>x.email===u.email);if(ui>=0){us[ui].points=u.points;lsSet('kUsers',JSON.stringify(us));}}
@@ -4929,7 +4951,7 @@ function finalizeOrder(trackNum){
   document.getElementById('ckmsg').innerHTML=(hd&&!hp2?'Vos produits digitaux sont prêts !':hp2&&!hd?'Livraison sous '+cfg.delai+' à '+cfg.city+'.':'Commande confirmée !')+(hp2?'<br><br><div style="background:#fff;border-radius:8px;padding:10px;margin-top:8px"><div style="font-size:.7rem;color:var(--gr)">🔖 Numéro de suivi</div><div style="font-size:1rem;font-weight:900;color:var(--or);letter-spacing:.5px">'+ord.tracking+'</div></div>':'');
   document.getElementById('dlbtn').classList.toggle('hide',!hd);
   document.getElementById('trbtn').classList.toggle('hide',!hp2);
-  if(cfg.wa){const appUrl=appUrl();const waMsg='🛒 Nouvelle commande\n🔖 Suivi : '+ord.tracking+'\n📦 '+ord.items.join(', ')+'\n💰 '+ord.total.toLocaleString('fr-FR')+' FCFA\n👤 '+ord.name+'\n📞 '+ord.phone+'\n📍 '+ord.city+' - '+(ord.address||'N/A')+'\n💳 '+(pm==='livraison'?'À la livraison':pm.toUpperCase())+'\n📅 '+ord.date+'\n\n🗺️ Suivi : '+appUrl+'?track='+ord.tracking;setTimeout(()=>openWhatsAppExternal(cfg.wa,waMsg),500);}
+  if(cfg.wa){const base=appUrl();const waMsg='🛒 Nouvelle commande\n🔖 Suivi : '+ord.tracking+'\n📦 '+ord.items.join(', ')+'\n💰 '+ord.total.toLocaleString('fr-FR')+' FCFA\n👤 '+ord.name+'\n📞 '+ord.phone+'\n📍 '+ord.city+' - '+(ord.address||'N/A')+'\n💳 '+(pm==='livraison'?'À la livraison':pm.toUpperCase())+'\n📅 '+ord.date+'\n\n🗺️ Suivi : '+base+'?track='+ord.tracking;setTimeout(()=>openWhatsAppExternal(cfg.wa,waMsg),500);}
 }
 function doDownload(){const dls=getDL();if(dls.length){const l=dls[dls.length-1];if(l.link&&l.link!=='#')window.open(l.link,'_blank');toast('⬇️ '+l.name);}closeOv('ckOv');}
 
@@ -5168,8 +5190,8 @@ function admAddDriver(){
   document.getElementById('drvPhone').value='';
   admRenderDrivers();
   // Partager le code au livreur par WhatsApp
-  const appUrl=appUrl();
-  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+name+' !\n\nVotre compte livreur est créé.\n\n🔑 Votre code : *'+code+'*\n\n📲 Cliquez pour accéder à votre tableau de bord :\n'+appUrl+'?driver='+code+'\n\n(Vous devrez compléter votre profil : photo + CNI pour la sécurité)';
+  const base=appUrl();
+  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+name+' !\n\nVotre compte livreur est créé.\n\n🔑 Votre code : *'+code+'*\n\n📲 Cliquez pour accéder à votre tableau de bord :\n'+base+'?driver='+code+'\n\n(Vous devrez compléter votre profil : photo + CNI pour la sécurité)';
   setTimeout(()=>{if(confirm('✅ Livreur créé ! Code : '+code+'\n\nEnvoyer le code au livreur par WhatsApp ?'))openWhatsAppExternal(phone,msg);},300);
   toast('✅ Livreur créé : '+code);
 }
@@ -5316,8 +5338,8 @@ function admRenderDrivers(){
 
 function admShareDriverCode(id){
   const d=getDrivers().find(x=>x.id===id);if(!d)return;
-  const appUrl=appUrl();
-  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+d.name+' !\n\n🔑 Votre code : *'+d.code+'*\n\n📲 Cliquez pour accéder :\n'+appUrl+'?driver='+d.code+'\n\n(Complétez votre profil : photo + CNI)';
+  const base=appUrl();
+  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+d.name+' !\n\n🔑 Votre code : *'+d.code+'*\n\n📲 Cliquez pour accéder :\n'+base+'?driver='+d.code+'\n\n(Complétez votre profil : photo + CNI)';
   openWhatsAppExternal(d.phone,msg);
 }
 
@@ -5549,7 +5571,7 @@ function renderDriverJournal(){
   const inProgress=myDeliv.filter(o=>{const ds=getDelivState(o.id);return ds&&ds.step<3&&!ds.signed;});
   const totalValue=completed.reduce((s,o)=>s+(o.total||0),0);
   // En-tête récap
-  let html='<div style="background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.9rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9">Code : '+currentDriver.code+' · CNI : '+(currentDriver.cni||'N/A')+'</div></div>';
+  let html='<div style="background:#1E3A5F;border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.9rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9">Code : '+currentDriver.code+' · CNI : '+(currentDriver.cni||'N/A')+'</div></div>';
   html+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">'+
     '<div style="background:#DCFCE7;border-radius:10px;padding:11px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--gn)">'+completed.length+'</div><div style="font-size:.6rem;color:var(--gr)">Livrées</div></div>'+
     '<div style="background:#fff;border-radius:10px;padding:11px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)">'+inProgress.length+'</div><div style="font-size:.6rem;color:var(--gr)">En cours</div></div>'+
@@ -5596,7 +5618,7 @@ function renderDriverDashboard(){
   const today=new Date().toLocaleDateString('fr-FR');
   const todayDeliv=completed.filter(o=>{const ds=getDelivState(o.id);return ds&&ds.deliveredAt&&ds.deliveredAt.includes(today);});
   const totalValue=completed.reduce((s,o)=>s+(o.total||0),0);
-  let html='<div style="background:linear-gradient(135deg,#2563EB,#1D4ED8);border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.75rem;opacity:.9">Bonjour</div><div style="font-size:1.1rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9;margin-top:4px">Code : '+currentDriver.code+'</div></div>';
+  let html='<div style="background:#1E3A5F;border-radius:12px;padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.75rem;opacity:.9">Bonjour</div><div style="font-size:1.1rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9;margin-top:4px">Code : '+currentDriver.code+'</div></div>';
   // Cartes statistiques
   html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">'+
     '<div style="background:#DCFCE7;border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--gn)">'+completed.length+'</div><div style="font-size:.64rem;color:var(--gr)">✅ Total livrées</div></div>'+
@@ -5823,8 +5845,8 @@ function confirmPickup(){
   // Notifier le client sur WhatsApp
   const ord=getOrds().find(o=>o.id===pickupOrderId);
   if(ord&&ord.phone){
-    const appUrl=appUrl();
-    const trackUrl=appUrl+'?track='+encodeURIComponent(ord.tracking||pickupOrderId);
+    const base=appUrl();
+    const trackUrl=base+'?track='+encodeURIComponent(ord.tracking||pickupOrderId);
     const msg=clientMsgs(ord.lang||'fr').pickup(ord.name,(currentDriver?currentDriver.name:''),ord.tracking||'',trackUrl);
     setTimeout(()=>{if(confirm('Notifier le client que le colis est pris en charge ?'))openWhatsAppExternal(ord.phone,msg);},400);
   }
@@ -5903,7 +5925,7 @@ function showDriverID(){
     </div>
     <div style="background:#DCFCE7;border-radius:9px;padding:12px;margin-top:12px;font-size:.75rem;color:var(--gn);text-align:center">🔒 Ce livreur est enregistré et vérifié par Kimora Store. Gardez ces informations pour votre sécurité.</div>
     <button class="bor" style="margin-top:12px;background:#25D166" onclick="openWhatsAppExternal('${d.phone}',waT().driver)">💬 Contacter le livreur</button>
-    <button class="bor" style="margin-top:9px;background:linear-gradient(135deg,#7C3AED,#2563EB)" onclick="sendReelWA()">🎥 Filmer mon colis reçu (anonyme)</button>
+    <button class="bor" style="margin-top:9px;background:#475569" onclick="sendReelWA()">🎥 Filmer mon colis reçu (anonyme)</button>
   `;
   openOv('driverIDOv');
 }
@@ -6360,7 +6382,7 @@ function notifyNewProductWA(p){
 function buildProductMsg(p,lang){
   const cfg=CFG();
   const wa=cfg.wa||'237678689053';
-  const appUrl=appUrl();
+  const base=appUrl();
   const dc=p.oldPrice?Math.round((1-p.price/p.oldPrice)*100):0;
   const storeName=cfg.name||'Kimora Store';
   let msg='';
@@ -6378,7 +6400,7 @@ function buildProductMsg(p,lang){
     if(p.sizes&&p.sizes.length){msg+='📏 Sizes: '+p.sizes.join(', ')+'\n';}
     if(p.colors&&p.colors.length){msg+='🎨 Colors: '+p.colors.join(', ')+'\n';}
     msg+='\n━━━━━━━━━━━━━━━\n🛍️ *Order now in 2 clicks!*\n\n';
-    msg+='📲 Download our app:\n'+appUrl+'\n\n';
+    msg+='📲 Download our app:\n'+base+'\n\n';
     msg+='🚚 Fast delivery 2-3 days\n';
     msg+='💳 Payment MTN MoMo / Orange Money\n';
     msg+='🎁 FREE delivery from 20,000 FCFA\n\n';
@@ -6403,7 +6425,7 @@ function buildProductMsg(p,lang){
     if(p.sizes&&p.sizes.length){msg+='📏 Tailles : '+p.sizes.join(', ')+'\n';}
     if(p.colors&&p.colors.length){msg+='🎨 Couleurs : '+p.colors.join(', ')+'\n';}
     msg+='\n━━━━━━━━━━━━━━━\n🛍️ *Commandez maintenant en 2 clics !*\n\n';
-    msg+='📲 Téléchargez notre application :\n'+appUrl+'\n\n';
+    msg+='📲 Téléchargez notre application :\n'+base+'\n\n';
     msg+='🚚 Livraison rapide 2-3 jours\n';
     msg+='💳 Paiement MTN MoMo / Orange Money\n';
     msg+='🎁 Livraison GRATUITE dès 20 000 FCFA\n\n';
@@ -6527,13 +6549,13 @@ function buyGiftCard(){
   cards.push({code,amount:selectedGiftAmount,balance:selectedGiftAmount,recipient,used:false});
   lsSet('kGiftCards',JSON.stringify(cards));
   // Partager sur WhatsApp
-  const cfg=CFG();const appUrl=appUrl();
+  const cfg=CFG();const base=appUrl();
   let waMsg='🎁 *CARTE CADEAU KIMORA STORE*\n\n';
   waMsg+='Bonjour '+recipient+' ! 💝\n\n';
   if(msg)waMsg+='"'+msg+'"\n\n';
   waMsg+='Vous avez reçu une carte cadeau de *'+selectedGiftAmount.toLocaleString('fr-FR')+' FCFA* !\n\n';
   waMsg+='🎟️ Code : *'+code+'*\n\n';
-  waMsg+='📲 Utilisez-le sur : '+appUrl+'\n\n';
+  waMsg+='📲 Utilisez-le sur : '+base+'\n\n';
   waMsg+='Bon shopping ! 🛍️🧡';
   openWhatsAppExternal('',waMsg);
   toast('🎁 Carte cadeau créée : '+code);
@@ -7143,7 +7165,7 @@ function reelEmbed(url){
   if(m)return '<iframe src="https://www.youtube.com/embed/'+m[1]+'" style="width:100%;height:200px;border:none;border-radius:10px" allowfullscreen loading="lazy"></iframe>';
   // TikTok et autres : carte cliquable
   const isTk=u.includes('tiktok');
-  return '<a href="'+u+'" target="_blank" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:200px;border-radius:10px;background:linear-gradient(135deg,#111,#333);color:#fff;text-decoration:none"><span style="font-size:2.4rem">▶️</span><span style="font-size:.75rem;font-weight:800;margin-top:6px">'+(isTk?'Voir sur TikTok':'Voir la vidéo')+'</span></a>';
+  return '<a href="'+u+'" target="_blank" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:200px;border-radius:10px;background:#1F2937;color:#fff;text-decoration:none"><span style="font-size:2.4rem">▶️</span><span style="font-size:.75rem;font-weight:800;margin-top:6px">'+(isTk?'Voir sur TikTok':'Voir la vidéo')+'</span></a>';
 }
 async function loadHomeReels(){
   const el=document.getElementById('homeReels');
@@ -7743,7 +7765,7 @@ function openPolicy(anchor){
   const H=(t,id)=>`<h4${id?` id="pol-${id}"`:''} style="font-size:.85rem;font-weight:800;margin:16px 0 8px;color:var(--or);scroll-margin-top:70px">${t}</h4>`;
   const P=(t)=>`<p style="font-size:.79rem;color:#374151;line-height:1.7;margin-bottom:10px">${t}</p>`;
   document.getElementById('policyContent').innerHTML=`
-    <div style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:10px;padding:14px;margin-bottom:14px;text-align:center">
+    <div style="background:#EFF6FF;border-radius:10px;padding:14px;margin-bottom:14px;text-align:center">
       <div style="font-size:1.8rem;margin-bottom:4px">🛍️</div>
       <div style="font-weight:900;font-size:.95rem">${c.name}</div>
       <div style="font-size:.72rem;color:var(--gr);margin-top:2px">${c.address||'Yaoundé, Cameroun'}</div>
@@ -8122,7 +8144,7 @@ function applyLangPage(nm){
 
 // ====== SYSTÈME DE LANGUES ======
 const TRANSLATIONS={
-  fr:{ftTagline:"Boutique en ligne 100% camerounaise — mode, beauté, électronique & digital, livrés partout au Cameroun.",ftAbout:"À propos",ftContact:"Contact",ftCgv:"Conditions de vente",ftPrivacy:"Confidentialité",ftShipping:"Livraison",ftReturns:"Retours",ftPayment:"Paiement",ftCookies:"Cookies",ftLegal:"Mentions légales",ftFaq:"Aide & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Paiement à la livraison",ftSecure:"Achat 100% sécurisé",ftVerified:"Vendeur vérifié",ftRights:"Tous droits réservés",ftMade:"Fait avec 🧡 au Cameroun",welcomeTitle:'Bienvenue chez Kimora Store 👋',welcomeSub:'Votre boutique 100% camerounaise : mode, beauté, électronique & digital — livrés chez vous, où que vous soyez.',welcomeCta:'🛍️ Découvrir la boutique →',welcomeTrust:'🛡️ Vendeur vérifié · Des milliers de clients satisfaits',catElec:"Électronique",catElecSub:"Smartphones & Gadgets",catBeau:"Beauté",catBeauSub:"Soins & Cosmétiques",catDig:"Digital",catDigSub:"Logiciels & Ebooks",catMode:"Mode",catModeSub:"Vêtements & Chaussures",promosRow2:"Promotions",promo2Sub:"Les meilleures offres du moment",promo2Btn:"J'en profite →",new2Title:"Nouveautés",new2Sub:"Découvrez les derniers arrivages",new2Btn:"Découvrir →",stripBanner:"🔥 Vente Flash -40% électronique · 🆕 Nouveautés chaque semaine · 🚚 Livraison à moindre coût partout au Cameroun · ⚠️ Évitez les arnaques : commandez uniquement via l'app · 💬 Discutez avec nous sur WhatsApp avant tout achat · 💳 Paiement sécurisé MTN MoMo & Orange Money · 🛡️ 100% fiable & vérifié",promosRow:'🔥 Promotions',newRow:'🆕 Nouveautés',featRow:'⭐ Sélection Kimora',whyUs:'💎 Pourquoi nous choisir ?',trust1t:'Livraison rapide',trust1s:'Partout au Cameroun',trust2t:'Paiement sécurisé',trust2s:'MTN MoMo & Orange Money',trust3t:'Retours 48h',trust3s:'Échange ou remboursement',trust4t:'Support 7j/7',trust4s:'WhatsApp à votre écoute',homeRevs:'💬 Ils nous font confiance',reelsTitle:'🎥 Ils ont reçu leurs colis',reelsSub:'Vidéos réelles de clients — publiées en anonyme 🔒',reelsBtn:'🎥 Vous avez reçu un colis ? Envoyez votre vidéo (anonyme)',verifClient:'👤 Client vérifié',rvTitle:'⭐ Avis clients',rvBtn:'✍️ Donner mon avis',rvNone:'Aucun avis pour l\'instant. Soyez le premier ! ⭐',stockIn:'✅ En stock — disponible',stockLow:'⚠️ Plus que {n} en stock !',stockOut:'❌ Rupture de stock',stockDig:'✅ Disponible immédiatement après paiement',simTitle:'🛍️ Produits similaires',reelAsk:'🎥 Aidez d\'autres clients : voulez-vous envoyer une courte vidéo de votre colis reçu ?\n\n🔒 Votre nom et votre numéro ne seront JAMAIS publiés (anonyme).',search:'Rechercher un produit...',home:'Accueil',shop:'Boutique',cart:'Panier',fav:'Favoris',account:'Compte',
+  fr:{ftTagline:"Boutique en ligne 100% camerounaise — mode, beauté, électronique & digital, livrés partout au Cameroun.",ftAbout:"À propos",ftContact:"Contact",ftCgv:"Conditions de vente",ftPrivacy:"Confidentialité",ftShipping:"Livraison",ftReturns:"Retours",ftPayment:"Paiement",ftCookies:"Cookies",ftLegal:"Mentions légales",ftFaq:"Aide & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Paiement à la livraison",ftSecure:"Achat 100% sécurisé",ftVerified:"Vendeur vérifié",ftRights:"Tous droits réservés",ftMade:"Fait avec 🧡 au Cameroun",welcomeTitle:'Bienvenue chez Kimora Store 👋',welcomeSub:'Votre boutique 100% camerounaise : mode, beauté, électronique & digital — livrés chez vous, où que vous soyez.',welcomeCta:'🛍️ Découvrir la boutique →',welcomeTrust:'🛡️ Vendeur vérifié · Des milliers de clients satisfaits',catElec:"Électronique",catElecSub:"Smartphones & Gadgets",catBeau:"Beauté",catBeauSub:"Soins & Cosmétiques",catDig:"Digital",catDigSub:"Logiciels & Ebooks",catMode:"Mode",catModeSub:"Vêtements & Chaussures",promosRow2:"Promotions",promo2Sub:"Les meilleures offres du moment",promo2Btn:"J'en profite →",new2Title:"Nouveautés",new2Sub:"Découvrez les derniers arrivages",new2Btn:"Découvrir →",stripBanner:"🔥 Vente Flash -40% électronique · 🆕 Nouveautés chaque semaine · 🚚 Livraison à moindre coût partout au Cameroun · ⚠️ Évitez les arnaques : commandez uniquement via l'app · 💬 Discutez avec nous sur WhatsApp avant tout achat · 💳 Paiement sécurisé MTN MoMo & Orange Money · 🛡️ 100% fiable & vérifié",promosRow:'Promotions',newRow:'Nouveautés',featRow:'Sélection Kimora',whyUs:'Pourquoi nous choisir ?',trust1t:'Livraison rapide',trust1s:'Partout au Cameroun',trust2t:'Paiement sécurisé',trust2s:'MTN MoMo & Orange Money',trust3t:'Retours 48h',trust3s:'Échange ou remboursement',trust4t:'Support 7j/7',trust4s:'WhatsApp à votre écoute',homeRevs:'Ils nous font confiance',reelsTitle:'Ils ont reçu leurs colis',reelsSub:'Vidéos réelles de clients — publiées en anonyme 🔒',reelsBtn:'🎥 Vous avez reçu un colis ? Envoyez votre vidéo (anonyme)',jsFlash:'Chaque jour à 8h & 16h',jsDelivT:'Livraison',jsDelivS:'Partout au Cameroun',jsNewS:'Chaque semaine',jsPromoT:'Promotions',jsPromoS:'Jusqu\'à -67%',jsHelpT:'Aide & Support',jsHelpS:'WhatsApp 7j/7',jsPayT:'Paiement',jsPayS:'MoMo · OM · à la livraison',jsPayInfo:'MTN MoMo · Orange Money · Paiement à la livraison',verifClient:'👤 Client vérifié',rvTitle:'Avis clients',rvBtn:'✍️ Donner mon avis',rvNone:'Aucun avis pour l\'instant. Soyez le premier ! ⭐',stockIn:'✅ En stock — disponible',stockLow:'⚠️ Plus que {n} en stock !',stockOut:'❌ Rupture de stock',stockDig:'✅ Disponible immédiatement après paiement',simTitle:'Produits similaires',reelAsk:'🎥 Aidez d\'autres clients : voulez-vous envoyer une courte vidéo de votre colis reçu ?\n\n🔒 Votre nom et votre numéro ne seront JAMAIS publiés (anonyme).',search:'Rechercher un produit...',home:'Accueil',shop:'Boutique',cart:'Panier',fav:'Favoris',account:'Compte',
     categories:'Catégories',seeAll:'Voir tout',popular:'Produits populaires',addCart:'+ Panier',
     flashSale:'VENTES FLASH',promos:'Promos',new:'Nouveautés',digital:'Digital',popular2:'Populaires',
     myCart:'Mon Panier',myFav:'Mes Favoris',emptyCart:'Panier vide',emptyCartSub:'Ajoutez des produits depuis la boutique',explore:'Explorer',
@@ -8133,7 +8155,7 @@ const TRANSLATIONS={
     catAll:'Tout',catPhone:'Téléphones',catBeauty:'Beauté',catCloth:'Vêtements',catShoes:'Chaussures',catDigital:'Digital',catHome:'Maison',catSport:'Sports',catHealth:'Santé',
     myOrders:'Mes commandes',ordersSub:'Suivre vos livraisons',favSub:'Produits sauvegardés',downloads:'Mes téléchargements',dlSub:'Produits digitaux achetés',logout:'Déconnexion',addCartBtn:'🛒 Ajouter au panier',favBtn:'Favoris',shareBtn:'📤 Partager',compareBtn:'⚖️ Comparer',trackMyOrder:'📦 Suivre ma commande',whatIncluded:'✅ Ce qui est inclus',customerReviews:'⭐ Avis clients',leaveReview:'✍️ Laisser un avis',youMayLike:'💡 Vous aimerez aussi',
     notifs:'Notifications',free:'Gratuite',summer:'Soldes d\'été !',summerSub:'Jusqu\'à -50% sur tout',deliveryAddress:'📍 Adresse de livraison',fullName:'Nom complet *',phone:'Téléphone *',paymentMode:'💳 Mode de paiement',promoCode:'🎟️ Code promo',confirmPay:'🔒 Confirmer le paiement',cancel:'Annuler',loginTab:'Se connecter',email:'📧 Email',password:'🔒 Mot de passe',fullNameReg:'👤 Nom complet *',onDelivery:'À la livraison',typeMsg:'Écrivez un message...',checkout:'Passer commande',orderPlaced:'Commande confirmée !',trackOrder:'Suivre ma commande',close:'Fermer',trackTitle:'Suivi en temps réel',reference:'Référence',estArrival:'Arrivée estimée',statusConfirmed:'✅ Commande confirmée',statusPrep:'📦 Préparation en cours',statusRoute:'🚚 Votre colis est en route',statusArrived:'🎉 Colis arrivé !',subConfirmed:'Paiement reçu, merci !',subPrep:'Nous préparons votre colis',subRoute:'Le livreur se dirige vers vous',subArrived:'Signez pour confirmer la réception',stepConfirmed:'Confirmée',stepPrep:'Préparation',stepRoute:'En route',stepDelivered:'Livré',yourDriver:'Votre livreur Kimora',driverOnWay:'🏍️ En chemin vers vous',confirmReception:'Confirmer la réception',signBelow:'Signez ci-dessous pour valider la livraison',clearSign:'🔄 Effacer',validateReception:'✅ Valider la réception',contactWA:'💬 Contacter par WhatsApp',deliveredSigned:'✅ Colis livré et signé !',thankYou:'Merci d\'avoir choisi Kimora Store 🧡',pleaseSign:'⚠️ Veuillez signer d\'abord',deliveryConfirmed:'🎉 Livraison confirmée ! Merci pour votre confiance',admPanel:'⚙️ Panneau Admin',admLogoutBtn:'🔒 Déconnexion',admStats:'📊 Stats',admProds:'📦 Produits',admSales:'🛒 Ventes',admClients:'👥 Clients',admProspects:'🎯 Prospects',admDeliv:'🚚 Livraisons',admDrivers:'🏍️ Livreurs',admShop:'🏪 Boutique',admContact:'📱 Contact',admSecu:'🔒 Sécurité',admPrepare:'📦 Préparer',admSend:'🚚 Envoyer',admDelivered:'✅ Livré',admAssign:'Assigner un livreur',admDriverLbl:'Livreur',admNotify:'💬 Notifier le client',admTrace:'🔍 Voir la traçabilité (départ + réception)',admContactCl:'💬 Contacter',admLastOrder:'Dernière commande',admOrderD:'Commande',admPickupD:'Prise en charge',admDeliveredD:'Livrée',admRegisteredD:'Inscrit le',admSendCode:'💬 Envoyer code',admDone:'Livrées',admInProg:'En cours',admTotal:'Total',minutes:'min'},
-  en:{ftTagline:"100% Cameroonian online shop — fashion, beauty, electronics & digital, delivered all over Cameroon.",ftAbout:"About us",ftContact:"Contact",ftCgv:"Terms of sale",ftPrivacy:"Privacy",ftShipping:"Shipping",ftReturns:"Returns",ftPayment:"Payment",ftCookies:"Cookies",ftLegal:"Legal notice",ftFaq:"Help & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Cash on delivery",ftSecure:"100% secure checkout",ftVerified:"Verified seller",ftRights:"All rights reserved",ftMade:"Made with 🧡 in Cameroon",welcomeTitle:'Welcome to Kimora Store 👋',welcomeSub:'Your 100% Cameroonian shop: fashion, beauty, electronics & digital — delivered right to you, wherever you are.',welcomeCta:'🛍️ Discover the shop →',welcomeTrust:'🛡️ Verified seller · Thousands of happy customers',catElec:"Electronics",catElecSub:"Smartphones & Gadgets",catBeau:"Beauty",catBeauSub:"Skincare & Cosmetics",catDig:"Digital",catDigSub:"Software & Ebooks",catMode:"Fashion",catModeSub:"Clothing & Shoes",promosRow2:"Deals",promo2Sub:"The best offers of the moment",promo2Btn:"Grab it →",new2Title:"New arrivals",new2Sub:"Discover the latest items",new2Btn:"Discover →",stripBanner:"🔥 Flash Sale -40% electronics · 🆕 New arrivals every week · 🚚 Low-cost delivery all over Cameroon · ⚠️ Avoid scams: order only via the app · 💬 Chat with us on WhatsApp before buying · 💳 Secure payment MTN MoMo & Orange Money · 🛡️ 100% reliable & verified",promosRow:'🔥 Deals',newRow:'🆕 New arrivals',featRow:'⭐ Kimora Selection',whyUs:'💎 Why choose us?',trust1t:'Fast delivery',trust1s:'All over Cameroon',trust2t:'Secure payment',trust2s:'MTN MoMo & Orange Money',trust3t:'48h returns',trust3s:'Exchange or refund',trust4t:'Support 7/7',trust4s:'WhatsApp at your service',homeRevs:'💬 They trust us',reelsTitle:'🎥 They received their packages',reelsSub:'Real customer videos — published anonymously 🔒',reelsBtn:'🎥 Received a package? Send your video (anonymous)',verifClient:'👤 Verified customer',rvTitle:'⭐ Customer reviews',rvBtn:'✍️ Write a review',rvNone:'No reviews yet. Be the first! ⭐',stockIn:'✅ In stock — available',stockLow:'⚠️ Only {n} left in stock!',stockOut:'❌ Out of stock',stockDig:'✅ Available immediately after payment',simTitle:'🛍️ Similar products',reelAsk:'🎥 Help other customers: would you like to send a short video of your received package?\n\n🔒 Your name and number will NEVER be published (anonymous).',search:'Search a product...',home:'Home',shop:'Shop',cart:'Cart',fav:'Favorites',account:'Account',
+  en:{ftTagline:"100% Cameroonian online shop — fashion, beauty, electronics & digital, delivered all over Cameroon.",ftAbout:"About us",ftContact:"Contact",ftCgv:"Terms of sale",ftPrivacy:"Privacy",ftShipping:"Shipping",ftReturns:"Returns",ftPayment:"Payment",ftCookies:"Cookies",ftLegal:"Legal notice",ftFaq:"Help & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Cash on delivery",ftSecure:"100% secure checkout",ftVerified:"Verified seller",ftRights:"All rights reserved",ftMade:"Made with 🧡 in Cameroon",welcomeTitle:'Welcome to Kimora Store 👋',welcomeSub:'Your 100% Cameroonian shop: fashion, beauty, electronics & digital — delivered right to you, wherever you are.',welcomeCta:'🛍️ Discover the shop →',welcomeTrust:'🛡️ Verified seller · Thousands of happy customers',catElec:"Electronics",catElecSub:"Smartphones & Gadgets",catBeau:"Beauty",catBeauSub:"Skincare & Cosmetics",catDig:"Digital",catDigSub:"Software & Ebooks",catMode:"Fashion",catModeSub:"Clothing & Shoes",promosRow2:"Deals",promo2Sub:"The best offers of the moment",promo2Btn:"Grab it →",new2Title:"New arrivals",new2Sub:"Discover the latest items",new2Btn:"Discover →",stripBanner:"🔥 Flash Sale -40% electronics · 🆕 New arrivals every week · 🚚 Low-cost delivery all over Cameroon · ⚠️ Avoid scams: order only via the app · 💬 Chat with us on WhatsApp before buying · 💳 Secure payment MTN MoMo & Orange Money · 🛡️ 100% reliable & verified",promosRow:'🔥 Deals',newRow:'🆕 New arrivals',featRow:'⭐ Kimora Selection',whyUs:'Why choose us?',trust1t:'Fast delivery',trust1s:'All over Cameroon',trust2t:'Secure payment',trust2s:'MTN MoMo & Orange Money',trust3t:'48h returns',trust3s:'Exchange or refund',trust4t:'Support 7/7',trust4s:'WhatsApp at your service',homeRevs:'💬 They trust us',reelsTitle:'🎥 They received their packages',reelsSub:'Real customer videos — published anonymously 🔒',reelsBtn:'🎥 Received a package? Send your video (anonymous)',jsFlash:'Every day at 8am & 4pm',jsDelivT:'Delivery',jsDelivS:'All over Cameroon',jsNewS:'Every week',jsPromoT:'Promotions',jsPromoS:'Up to -67%',jsHelpT:'Help & Support',jsHelpS:'WhatsApp 7/7',jsPayT:'Payment',jsPayS:'MoMo · OM · on delivery',jsPayInfo:'MTN MoMo · Orange Money · Pay on delivery',verifClient:'👤 Verified customer',rvTitle:'⭐ Customer reviews',rvBtn:'✍️ Write a review',rvNone:'No reviews yet. Be the first! ⭐',stockIn:'✅ In stock — available',stockLow:'⚠️ Only {n} left in stock!',stockOut:'❌ Out of stock',stockDig:'✅ Available immediately after payment',simTitle:'🛍️ Similar products',reelAsk:'🎥 Help other customers: would you like to send a short video of your received package?\n\n🔒 Your name and number will NEVER be published (anonymous).',search:'Search a product...',home:'Home',shop:'Shop',cart:'Cart',fav:'Favorites',account:'Account',
     categories:'Categories',seeAll:'See all',popular:'Popular products',addCart:'+ Cart',
     flashSale:'FLASH SALES',promos:'Deals',new:'New',digital:'Digital',popular2:'Popular',
     myCart:'My Cart',myFav:'My Favorites',emptyCart:'Empty cart',emptyCartSub:'Add products from the shop',explore:'Explore',
@@ -8460,9 +8482,9 @@ function admConfirmCreateOrder(){
   admRenderOrders();admRenderStats();admRenderDeliv();admRenderClients();
   // Proposer d'envoyer le lien de suivi
   setTimeout(()=>{
-    const appUrl=appUrl();
+    const base=appUrl();
     let num=phone.replace(/\D/g,'');if(num.length===9)num='237'+num;
-    const msg='🛒 *Kimora Store - Commande confirmée*\n\nBonjour '+name+' ! 👋\n\n✅ Votre commande est enregistrée :\n📦 '+product+'\n💰 '+amount.toLocaleString('fr-FR')+' FCFA\n🔖 Suivi : '+tracking+'\n\n🗺️ Suivez votre livraison en temps réel :\n'+appUrl+'?track='+tracking+'\n\n💵 '+(payment==='livraison'?'Paiement à la réception après vérification.':'Merci pour votre paiement.')+'\n\nMerci de votre confiance ! 🧡';
+    const msg='🛒 *Kimora Store - Commande confirmée*\n\nBonjour '+name+' ! 👋\n\n✅ Votre commande est enregistrée :\n📦 '+product+'\n💰 '+amount.toLocaleString('fr-FR')+' FCFA\n🔖 Suivi : '+tracking+'\n\n🗺️ Suivez votre livraison en temps réel :\n'+base+'?track='+tracking+'\n\n💵 '+(payment==='livraison'?'Paiement à la réception après vérification.':'Merci pour votre paiement.')+'\n\nMerci de votre confiance ! 🧡';
     if(confirm('✅ Commande '+tracking+' créée !\n\nEnvoyer le lien de suivi au client par WhatsApp ?'))openWhatsAppExternal(num,msg);
   },400);
 }
@@ -8627,7 +8649,7 @@ function admRenderDeliv(){
         <span style="background:${ds.step===3?'#DCFCE7':'#EFF6FF'};color:${ds.step===3?'var(--gn)':'var(--or)'};font-size:.68rem;font-weight:800;padding:3px 9px;border-radius:5px">${stepNames[ds.step||0]}</span>
       </div>
       <div style="font-size:.72rem;color:var(--gr);margin-bottom:8px">👤 ${o.name||'Client'} · 📍 ${o.city||'N/A'} · 📞 ${o.phone||'N/A'}</div>
-      <div style="font-size:.68rem;color:var(--gr);margin-bottom:8px">📅 ${AT('admOrderD')} : ${o.date||(o.createdAt?new Date(o.createdAt).toLocaleDateString('fr-FR'):'N/A')}${ds.pickupAt?' · 🏍️ '+AT('admPickupD')+' : '+ds.pickupAt:''}${(ds.signedAt||ds.deliveredAt)?' · ✅ '+AT('admDeliveredD')+' : '+(ds.signedAt||ds.deliveredAt):''}</div>
+      <div style="font-size:.68rem;color:var(--gr);margin-bottom:8px">📅 ${AT('admOrderD')} : ${o.date||(o.createdAt?new Date(o.createdAt).toLocaleDateString('fr-FR'):'N/A')}${(o.time||o.createdAt)?' '+(o.time||new Date(o.createdAt).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})):''}${ds.pickupAt?' · 🏍️ '+AT('admPickupD')+' : '+ds.pickupAt:''}${(ds.signedAt||ds.deliveredAt)?' · ✅ '+AT('admDeliveredD')+' : '+(ds.signedAt||ds.deliveredAt):''}</div>
       <div style="display:flex;gap:5px;flex-wrap:wrap">
         <button onclick="admSetDelivStep('${o.id}',1)" style="flex:1;min-width:70px;background:${(ds.step||0)>=1?'var(--or)':'#fff'};color:${(ds.step||0)>=1?'#fff':'var(--gr)'};border:1px solid var(--or);padding:7px 4px;border-radius:7px;font-size:.68rem;font-weight:700;cursor:pointer">${AT('admPrepare')}</button>
         <button onclick="admSetDelivStep('${o.id}',2)" style="flex:1;min-width:70px;background:${(ds.step||0)>=2?'var(--or)':'#fff'};color:${(ds.step||0)>=2?'#fff':'var(--gr)'};border:1px solid var(--or);padding:7px 4px;border-radius:7px;font-size:.68rem;font-weight:700;cursor:pointer">${AT('admSend')}</button>
@@ -8660,10 +8682,10 @@ function admSetDelivStep(orderId,step){
 function admNotifyDeliv(orderId){
   const ord=getOrds().find(o=>o.id===orderId);if(!ord)return;
   const ds=getDelivState(orderId)||{step:0};
-  const appUrl=appUrl();
+  const base=appUrl();
   const statusMsg=['✅ Votre commande est confirmée','📦 Votre colis est en préparation','🚚 Votre colis est en route ! Suivez-le en temps réel','🎉 Votre colis est arrivé !'][ds.step||0];
   let num=(ord.phone||'').replace(/\D/g,'');if(num.length===9)num='237'+num;
-  const msg='📦 *Kimora Store - Suivi de livraison*\n\nBonjour '+(ord.name||'')+' 👋\n\n'+statusMsg+'\n\n🔖 N° de suivi : '+(ord.tracking||orderId)+'\n\n🗺️ Suivez votre livraison en temps réel (carte + infos livreur) :\n'+appUrl+'?track='+(ord.tracking||orderId)+'\n\nMerci de votre confiance ! 🧡';
+  const msg='📦 *Kimora Store - Suivi de livraison*\n\nBonjour '+(ord.name||'')+' 👋\n\n'+statusMsg+'\n\n🔖 N° de suivi : '+(ord.tracking||orderId)+'\n\n🗺️ Suivez votre livraison en temps réel (carte + infos livreur) :\n'+base+'?track='+(ord.tracking||orderId)+'\n\nMerci de votre confiance ! 🧡';
   openWhatsAppExternal(num,msg);
 }
 
@@ -8713,7 +8735,7 @@ function renderSalesChart(ords){
     const h=Math.max(4,(d.total/max)*90);
     return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px">
       <div style="font-size:.52rem;color:var(--gr);font-weight:700">${d.total>0?(d.total>=1000?Math.round(d.total/1000)+'k':d.total):''}</div>
-      <div style="width:100%;height:${h}px;background:linear-gradient(to top,#2563EB,#60A5FA);border-radius:4px 4px 0 0;min-height:4px"></div>
+      <div style="width:100%;height:${h}px;background:#1E3A5F;border-radius:4px 4px 0 0;min-height:4px"></div>
       <div style="font-size:.58rem;color:var(--gr)">${d.label}</div>
     </div>`;
   }).join('');
@@ -8768,7 +8790,7 @@ function admRenderOrders(){
     '<div class="empty"><div class="ei">🛒</div><h3>Aucune commande</h3></div>':
     ords.slice().reverse().map(o=>`<div style="background:var(--lt);border-radius:10px;padding:12px;margin-bottom:9px">
       <div style="display:flex;justify-content:space-between"><div style="font-size:.82rem;font-weight:800">${(o.items||[]).slice(0,2).join(', ')}</div><div style="font-size:.88rem;font-weight:900;color:var(--or)">${o.total.toLocaleString('fr-FR')}</div></div>${o.tracking?`<div style="font-size:.68rem;color:var(--or);font-weight:700;margin-top:2px">🔖 ${o.tracking}</div>`:''}${o.status==='cancelled'?`<div style="display:inline-block;background:#FEE2E2;color:var(--rd);font-size:.62rem;font-weight:800;padding:2px 7px;border-radius:4px;margin-top:3px">❌ ANNULÉE</div>`:''}
-      <div style="font-size:.7rem;color:var(--gr);line-height:1.6;margin-top:5px">👤 ${o.name||'N/A'}<br>📞 ${o.phone||'N/A'}<br>📍 ${[o.city,o.address].filter(Boolean).join(' - ')||'N/A'}<br>📅 ${o.date}</div>
+      <div style="font-size:.7rem;color:var(--gr);line-height:1.6;margin-top:5px">👤 ${o.name||'N/A'}<br>📞 ${o.phone||'N/A'}<br>📍 ${[o.city,o.address].filter(Boolean).join(' - ')||'N/A'}<br>📅 ${o.date}${(o.time||o.createdAt)?' · 🕐 '+(o.time||new Date(o.createdAt).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})):''}</div>
       <button onclick="admContactClient('${(o.phone||'').replace(/\D/g,'')}','${o.name||''}','${o.tracking||o.id}')" style="margin-top:8px;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#25D166;padding:6px 12px;border-radius:7px;font-size:.72rem;font-weight:700;cursor:pointer">💬 Contacter client</button>
     </div>`).join('');
 }

@@ -1,4 +1,4 @@
-const V='kimora-v48';
+const V='kimora-v53';
 self.addEventListener('install', e=>{ self.skipWaiting(); });
 self.addEventListener('activate', e=>{
   e.waitUntil((async()=>{
