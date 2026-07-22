@@ -11,3 +11,29 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+# ─── En-têtes de sécurité (protection standard) ───
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(self), microphone=(self), camera=(self), payment=()"
+    X-XSS-Protection = "1; mode=block"
+
+# ─── Cache : le HTML doit toujours être frais, les images peuvent durer ───
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

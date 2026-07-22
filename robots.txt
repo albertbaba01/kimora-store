@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Zones sans intérêt pour l'indexation
+Disallow: /.netlify/
+Disallow: /api/
+
+Sitemap: https://kimorastore4.netlify.app/sitemap.xml
