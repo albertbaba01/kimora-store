@@ -2382,7 +2382,7 @@ var qrcode = function() {
 }(qrcode);
 
 /* ===== VERSION & AUTO-MISE À JOUR ===== */
-window.APP_VERSION='v68-2026-07-22';
+window.APP_VERSION='v70-2026-07-22';
 /* Thème personnalisé appliqué immédiatement (évite tout flash de couleur) */
 (function(){try{
   var t=JSON.parse(localStorage.getItem('kTheme')||'null');
@@ -2536,7 +2536,7 @@ function lsSet(k,v){
   --sh-sm:0 1px 3px rgba(16,24,40,.07);
   --sh-md:0 4px 12px rgba(16,24,40,.08);
   --sh-lg:0 10px 28px rgba(16,24,40,.12);
-  --sh-brand:0 10px 28px rgba(30,58,138,.14);
+  --sh-brand:0 10px 28px rgba(249,115,22,.18);
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px;
   --tr-fast:.15s cubic-bezier(.4,0,.2,1);
   --tr:.22s cubic-bezier(.4,0,.2,1);
@@ -2545,7 +2545,7 @@ function lsSet(k,v){
   --tap:44px; /* cible tactile minimale recommandée */
 }
 
-:root{--or:#1E3A8A;--or2:#2563EB;--bk:#111827;--gr:#6B7280;--lt:#F8FAFC;--bd:#E5E7EB;--gn:#10B981;--rd:#DC2626;--gd:#F59E0B;--sc:#2563EB;--scH:#1D4ED8;--ac:#F59E0B;--acH:#D97706;}
+:root{--or:#F97316;--or2:#EA580C;--bk:#111827;--gr:#6B7280;--lt:#F9FAFB;--bd:#E5E7EB;--gn:#16A34A;--rd:#DC2626;--gd:#F59E0B;--sc:#F97316;--scH:#EA580C;--ac:#F97316;--acH:#EA580C;}
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;font-family:'Inter','Segoe UI',system-ui,Arial,sans-serif;}
 body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimizeSpeed;color:var(--bk);max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:80px;}
 
@@ -2663,11 +2663,11 @@ body{background:#FFFFFF;-webkit-overflow-scrolling:touch;text-rendering:optimize
 .dlv h4{font-size:.8rem;font-weight:800;margin-bottom:2px;}
 .dlv p{font-size:.72rem;color:var(--gr);}
 .bor{width:100%;background:var(--or);color:#fff;border:none;cursor:pointer;padding:14px;border-radius:var(--r-md);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;gap:7px;font-family:inherit;box-shadow:var(--sh-sm);transition:transform .15s ease,box-shadow .15s ease;}
-.bor:active{transform:scale(.98);box-shadow:0 3px 10px rgba(30,58,138,.25);}
+.bor:active{transform:scale(.98);box-shadow:0 3px 10px rgba(249,115,22,.25);}
 .bou{width:100%;background:#fff;color:var(--sc);border:2px solid var(--sc);cursor:pointer;padding:12px;border-radius:var(--r-md);font-weight:800;font-size:.88rem;margin-top:9px;font-family:inherit;}
 .bou:active{background:var(--scH);color:#fff;transform:scale(.98);}
 .bor.actn{background:var(--ac);box-shadow:var(--sh-sm);}
-.bor.actn:active{box-shadow:0 3px 10px rgba(30,58,138,.28);}
+.bor.actn:active{box-shadow:0 3px 10px rgba(249,115,22,.28);}
 
 /* CART */
 .cit{display:flex;gap:10px;padding:12px 0;border-bottom:1px solid var(--bd);}
@@ -2794,7 +2794,7 @@ body.dark .kai-hero .kh-name{color:#93C5FD;}
 .delivery-status-bar{background:#fff;border-radius:var(--r-lg);padding:14px;margin-bottom:14px;box-shadow:var(--sh-sm);}
 .dsb-current{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
 .dsb-icon{width:48px;height:48px;background:var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;animation:pulse 2s infinite;}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(30,58,138,.4)}70%{box-shadow:0 0 0 12px rgba(30,58,138,0)}100%{box-shadow:0 0 0 0 rgba(30,58,138,0)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(249,115,22,.4)}70%{box-shadow:0 0 0 12px rgba(249,115,22,0)}100%{box-shadow:0 0 0 0 rgba(249,115,22,0)}}
 .dsb-info{flex:1;}
 .dsb-status{font-size:.95rem;font-weight:900;}
 .dsb-eta{font-size:.75rem;color:var(--gr);margin-top:2px;}
@@ -2963,7 +2963,7 @@ input:focus,select:focus,textarea:focus{outline:none;}
 .cs-fld input:focus,.cs-fld select:focus,.cs-fld textarea:focus,
 .cat-ed input:focus,.kai-set input:focus,.kai-set textarea:focus,.kai-set select:focus{
   border-color:var(--or2);
-  box-shadow:0 0 0 3px rgba(37,99,235,.12);
+  box-shadow:0 0 0 3px rgba(249,115,22,.14);
 }
 ::placeholder{color:#9CA3AF;opacity:1;}
 
@@ -2984,7 +2984,7 @@ p,li{line-height:1.6;}
 
 /* --- Indicateur de chargement moderne --- */
 .kload{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:kspin .7s linear infinite;}
-.kload-dark{border-color:rgba(30,58,138,.2);border-top-color:var(--or);}
+.kload-dark{border-color:rgba(249,115,22,.2);border-top-color:var(--or);}
 @keyframes kspin{to{transform:rotate(360deg)}}
 
 /* --- Barre de progression de chargement (haut de page) --- */
@@ -3019,6 +3019,167 @@ body.dark .pm-meta,body.dark .cli-m,body.dark .mk-cond{color:#9CA3AF;}
   .kpi-v{font-size:1.05rem;}
   .dash-title{font-size:.92rem;}
 }
+/* ═══════════════ v70 : RECHERCHE, MENUS, FOOTER, STUDIO ═══════════════ */
+/* Placeholders premium */
+.pph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+.pph-i{opacity:.85;}
+.pph-n{font-size:.72rem;font-weight:900;letter-spacing:.08em;opacity:.5;}
+/* Recherche instantanée */
+#srchSug{padding:6px 0;}
+.sg-h{display:flex;align-items:center;justify-content:space-between;padding:8px 14px 5px;font-size:.62rem;font-weight:800;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;}
+.sg-clr{background:none;border:none;color:var(--or);font-size:.62rem;font-weight:700;cursor:pointer;font-family:inherit;}
+.sg-r{display:flex;align-items:center;gap:10px;padding:9px 14px;cursor:pointer;transition:background var(--tr-fast);}
+.sg-r:hover{background:var(--lt);}
+.sg-i{color:var(--gr);display:flex;flex-shrink:0;}
+.sg-l{font-size:.78rem;color:var(--bk);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.sg-s{font-size:.64rem;color:var(--gr);margin-left:6px;}
+.sg-chips{display:flex;flex-wrap:wrap;gap:6px;padding:2px 14px 8px;}
+.sg-chip{background:var(--lt);border:1px solid var(--bd);border-radius:var(--r-full);padding:5px 11px;font-size:.68rem;font-weight:600;color:var(--bk);cursor:pointer;font-family:inherit;transition:.15s;}
+.sg-chip:hover{background:var(--or);border-color:var(--or);color:#fff;}
+.sg-p{display:flex;align-items:center;gap:10px;padding:8px 14px;cursor:pointer;transition:background var(--tr-fast);}
+.sg-p:hover{background:var(--lt);}
+.sg-pi{width:38px;height:38px;border-radius:var(--r-sm);overflow:hidden;background:var(--lt);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.sg-pi img{width:100%;height:100%;object-fit:cover;}
+.sg-ph{color:var(--gr);}
+.sg-pn{flex:1;min-width:0;font-size:.76rem;font-weight:600;color:var(--bk);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;flex-direction:column;}
+.sg-pc{font-size:.6rem;color:var(--gr);font-weight:400;text-transform:uppercase;}
+.sg-pp{font-size:.78rem;font-weight:900;color:var(--or);flex-shrink:0;}
+.sg-empty{padding:16px 14px;font-size:.74rem;color:var(--gr);text-align:center;}
+/* Menus déroulants du header */
+.hdrop{position:relative;display:inline-flex;}
+.hpop{position:absolute;top:calc(100% + 10px);left:0;min-width:280px;background:#fff;border:1px solid var(--bd);border-radius:var(--r-lg);box-shadow:var(--sh-lg);padding:12px;z-index:200;display:none;animation:kFadeUp .2s ease both;}
+.hpop-r{left:auto;right:0;}
+.hpop.on{display:block;}
+.mc-h{font-size:.78rem;font-weight:800;color:var(--bk);margin-bottom:9px;}
+.mc-h span{color:var(--gr);font-weight:600;}
+.mc-l{max-height:260px;overflow-y:auto;margin-bottom:9px;}
+.mc-i{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--bd);}
+.mc-i:last-child{border-bottom:none;}
+.mc-im{width:38px;height:38px;border-radius:var(--r-sm);overflow:hidden;background:var(--lt);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.mc-im img{width:100%;height:100%;object-fit:cover;}
+.mc-ph{color:var(--gr);}
+.mc-n{flex:1;min-width:0;font-size:.73rem;font-weight:600;color:var(--bk);display:flex;flex-direction:column;overflow:hidden;}
+.mc-q{font-size:.64rem;color:var(--gr);font-weight:400;}
+.mc-x{background:none;border:none;color:var(--gr);cursor:pointer;padding:4px;display:flex;flex-shrink:0;}
+.mc-x:hover{color:var(--rd);}
+.mc-more{font-size:.66rem;color:var(--gr);padding:6px 0;text-align:center;}
+.mc-t{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-top:1px solid var(--bd);font-size:.76rem;color:var(--gr);margin-bottom:9px;}
+.mc-t b{font-size:.95rem;color:var(--or);}
+.mc-empty{display:flex;flex-direction:column;align-items:center;gap:9px;padding:24px 10px;color:var(--gr);font-size:.76rem;}
+/* Menu utilisateur */
+.um-head{display:flex;align-items:center;gap:11px;padding-bottom:11px;border-bottom:1px solid var(--bd);margin-bottom:9px;}
+.um-av{width:42px;height:42px;border-radius:50%;background:var(--or);color:#fff;font-size:.85rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.um-n{font-size:.82rem;font-weight:800;color:var(--bk);}
+.um-e{font-size:.66rem;color:var(--gr);margin-top:1px;}
+.um-pts{background:#FFF7ED;color:#C2410C;border-radius:var(--r-sm);padding:7px 10px;font-size:.7rem;margin-bottom:9px;display:flex;align-items:center;gap:5px;}
+.um-r{display:flex;align-items:center;gap:10px;padding:9px 6px;cursor:pointer;border-radius:var(--r-sm);transition:background var(--tr-fast);}
+.um-r:hover{background:var(--lt);}
+.um-i{color:var(--gr);display:flex;flex-shrink:0;}
+.um-l{flex:1;font-size:.76rem;font-weight:600;color:var(--bk);}
+.um-c{font-size:.66rem;font-weight:800;color:var(--or);background:#FFF7ED;border-radius:var(--r-full);padding:1px 8px;}
+.um-a{color:var(--bd);display:flex;}
+.um-sep{height:1px;background:var(--bd);margin:8px 0;}
+.um-out .um-l,.um-out .um-i{color:var(--rd);}
+.um-guest{text-align:center;padding:8px 4px 14px;}
+.um-gi{width:52px;height:52px;border-radius:50%;background:var(--lt);color:var(--gr);display:flex;align-items:center;justify-content:center;margin:0 auto 9px;}
+.um-gt{font-size:.85rem;font-weight:800;color:var(--bk);}
+.um-gs{font-size:.68rem;color:var(--gr);margin-top:3px;}
+/* Footer enrichi */
+.ft-serv{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px;}
+.ft-sv{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--bd);border-radius:var(--r-md);padding:11px;}
+.ft-svi{width:34px;height:34px;border-radius:50%;background:#FFF7ED;color:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ft-sv b{display:block;font-size:.72rem;font-weight:800;color:var(--bk);}
+.ft-sv span{display:block;font-size:.62rem;color:var(--gr);margin-top:1px;}
+.ft-social{text-align:center;margin-bottom:16px;}
+.ft-sh{font-size:.66rem;font-weight:800;color:var(--gr);text-transform:uppercase;letter-spacing:.05em;margin-bottom:9px;}
+.ft-sl{display:flex;justify-content:center;gap:9px;margin-bottom:12px;}
+.ft-si{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid var(--bd);color:var(--bk);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:.16s;}
+.ft-si:hover{background:var(--or);border-color:var(--or);color:#fff;transform:translateY(-2px);}
+.ft-app{display:inline-flex;align-items:center;gap:7px;background:var(--bk);color:#fff;border:none;border-radius:var(--r-md);padding:10px 18px;font-size:.74rem;font-weight:700;cursor:pointer;font-family:inherit;transition:.16s;}
+.ft-app:hover{transform:translateY(-2px);box-shadow:var(--sh-md);}
+/* Studio de design (admin) */
+.ds-g{background:#fff;border:1px solid var(--bd);border-radius:var(--r-md);padding:11px;margin-bottom:9px;}
+.ds-gt{font-size:.72rem;font-weight:800;color:var(--gr);text-transform:uppercase;letter-spacing:.04em;margin-bottom:9px;}
+.ds-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;}
+.ds-l{font-size:.74rem;color:var(--bk);flex:1;min-width:0;}
+.ds-c{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.ds-c input[type=range]{width:120px;accent-color:var(--or);cursor:pointer;}
+.ds-c input[type=color]{width:40px;height:30px;border:1px solid var(--bd);border-radius:var(--r-sm);padding:2px;background:#fff;cursor:pointer;}
+.ds-v{font-size:.7rem;font-weight:800;color:var(--or);min-width:38px;text-align:right;}
+.ds-rst{background:none;border:none;color:var(--gr);cursor:pointer;padding:3px;display:flex;}
+.ds-rst:hover{color:var(--or);}
+body.dark .hpop,body.dark .ft-sv,body.dark .ft-si,body.dark .ds-g{background:#1F2937;border-color:#374151;}
+@media (min-width:768px){.ft-serv{grid-template-columns:repeat(4,1fr);}}
+@media (max-width:767px){.hpop{display:none!important;}}
+/* ═══════════════ REFONTE ORANGE : DENSITÉ, FLASH, CARTES, MARQUES ═══════════════ */
+/* Exploiter toute la largeur : fini les demi-écrans vides */
+@media (min-width:768px){
+  .hrow{display:grid!important;grid-template-columns:repeat(4,1fr);gap:14px;overflow:visible!important;}
+  .hrow>*{min-width:0!important;max-width:none!important;}
+  .dealrow{display:grid!important;grid-template-columns:repeat(4,1fr);gap:14px;overflow:visible!important;}
+  .dealitem{min-width:0!important;max-width:none!important;}
+}
+@media (min-width:1024px){.hrow,.dealrow{grid-template-columns:repeat(5,1fr);gap:16px;}}
+@media (min-width:1280px){
+  .hrow,.dealrow{grid-template-columns:repeat(6,1fr);}
+  .pg{max-width:1500px;padding:0 32px 60px;}
+}
+@media (min-width:1600px){.hrow,.dealrow{grid-template-columns:repeat(7,1fr);}.pg{max-width:1720px;}}
+
+/* Bannière Ventes Flash */
+.flash-hero{display:flex;align-items:center;gap:14px;margin:0 10px 12px;padding:14px 16px;border-radius:var(--r-lg);
+  background:linear-gradient(100deg,#F97316 0%,#EA580C 100%);color:#fff;cursor:pointer;
+  box-shadow:0 6px 20px rgba(249,115,22,.28);transition:transform var(--tr),box-shadow var(--tr);flex-wrap:wrap;}
+.flash-hero:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(249,115,22,.36);}
+.fh-left{display:flex;align-items:center;gap:11px;flex:1;min-width:0;}
+.fh-ic{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fh-t{font-size:1rem;font-weight:900;letter-spacing:-.01em;line-height:1.2;}
+.fh-s{font-size:.68rem;opacity:.92;margin-top:2px;}
+.fh-mid{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;}
+.fh-lbl{font-size:.6rem;opacity:.9;font-weight:600;}
+.flash-hero .cd{display:flex;align-items:center;gap:3px;}
+.flash-hero .cdu{background:rgba(0,0,0,.28);border-radius:var(--r-sm);padding:4px 7px;font-size:.85rem;font-weight:900;font-variant-numeric:tabular-nums;min-width:30px;text-align:center;}
+.cds{font-size:.8rem;font-weight:900;opacity:.8;}
+.fh-btn{background:#fff;color:#EA580C;border:none;border-radius:var(--r-md);padding:10px 16px;font-size:.75rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0;transition:transform var(--tr-fast);}
+.fh-btn:hover{transform:scale(1.04);}
+@media (max-width:600px){.flash-hero{gap:10px;padding:12px 13px;}.fh-btn{width:100%;order:3;}.fh-t{font-size:.9rem;}}
+@media (min-width:1024px){.flash-hero{margin:0 0 16px;padding:18px 22px;}.fh-t{font-size:1.15rem;}.flash-hero .cdu{font-size:1rem;padding:5px 9px;}}
+
+/* Cartes produits premium */
+.prv{color:var(--gr);font-size:.62rem;}
+.psold{color:var(--gr);font-size:.6rem;margin-left:4px;}
+.peco{display:inline-block;font-size:.58rem;font-weight:800;color:#B45309;background:#FFFBEB;border-radius:var(--r-xs);padding:2px 6px;margin-top:4px;}
+.phov{position:absolute;top:50%;right:8px;transform:translateY(-50%) translateX(12px);display:none;flex-direction:column;gap:6px;z-index:4;opacity:0;transition:opacity var(--tr),transform var(--tr);}
+.phb{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.96);border:none;color:var(--bk);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh-md);transition:background var(--tr-fast),color var(--tr-fast),transform var(--tr-fast);}
+.phb:hover{background:var(--or);color:#fff;transform:scale(1.1);}
+@media (min-width:1024px) and (hover:hover){
+  .phov{display:flex;}
+  .pd:hover .phov{opacity:1;transform:translateY(-50%) translateX(0);}
+  .pim img{transition:transform var(--tr-slow);}
+  .pd:hover .pim img{transform:scale(1.07);}
+}
+@media (min-width:768px){.pnm{font-size:.8rem;line-height:1.35;}.ppr{font-size:.95rem;}}
+@media (min-width:1280px){.pnm{font-size:.84rem;}.ppr{font-size:1.02rem;}}
+
+/* Marques populaires */
+.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:0 10px 4px;}
+.brand{background:#fff;border:1px solid var(--bd);border-radius:var(--r-md);height:62px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:8px;transition:border-color var(--tr),box-shadow var(--tr),transform var(--tr);overflow:hidden;}
+.brand:hover{border-color:var(--or);box-shadow:var(--sh-md);transform:translateY(-2px);}
+.brand img{max-width:100%;max-height:38px;object-fit:contain;}
+.brand-t{font-size:.8rem;font-weight:900;letter-spacing:-.02em;text-align:center;}
+@media (min-width:768px){.brands{grid-template-columns:repeat(5,1fr);gap:12px;padding:0 0 4px;}}
+@media (min-width:1024px){.brands{grid-template-columns:repeat(7,1fr);}.brand{height:72px;}}
+
+/* Admin : sections et marques */
+.sec-row{display:flex;align-items:center;justify-content:space-between;gap:9px;background:#fff;border:1px solid var(--bd);border-radius:var(--r-md);padding:9px 11px;margin-bottom:6px;}
+.sec-chk{display:flex;align-items:center;gap:8px;font-size:.76rem;font-weight:600;color:var(--bk);cursor:pointer;flex:1;}
+.sec-chk input{width:17px;height:17px;accent-color:var(--or);cursor:pointer;flex-shrink:0;}
+.sec-mv{display:flex;gap:5px;flex-shrink:0;}
+.sec-mv .mk-b:nth-child(2) svg{transform:rotate(90deg);}
+.sec-mv .mk-b:first-child svg{transform:rotate(-90deg);}
+.brand-ed{display:flex;gap:6px;align-items:center;margin-bottom:6px;}
+.brand-ed input{flex:1;min-width:0;border:1px solid var(--bd);border-radius:var(--r-sm);padding:8px 10px;font-size:.73rem;font-family:inherit;background:#fff;color:var(--bk);}
+body.dark .brand,body.dark .sec-row,body.dark .brand-ed input{background:#111827;border-color:#374151;color:#E5E7EB;}
 /* ═══════════════ KIMORA AI (chat modernisé) ═══════════════ */
 .chat-wrap2{display:flex;flex-direction:column;min-width:0;max-width:78%;}
 .chat-msg.user .chat-wrap2{align-items:flex-end;margin-left:auto;}
@@ -3405,7 +3566,7 @@ body.dark #mtOverlay{background:#111827;}
 @keyframes kPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.5)}50%{box-shadow:0 0 0 8px rgba(220,38,38,0)}}
 .chat-prods{display:flex;flex-direction:column;gap:7px;margin:2px 0 8px 38px;}
 .chat-prod{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--bd);border-radius:var(--r-md);padding:7px;cursor:pointer;transition:.18s;}
-.chat-prod:hover{border-color:var(--or2);box-shadow:0 3px 12px rgba(30,58,138,.12);transform:translateX(2px);}
+.chat-prod:hover{border-color:var(--or2);box-shadow:0 3px 12px rgba(249,115,22,.12);transform:translateX(2px);}
 .cp-img{position:relative;width:52px;height:52px;border-radius:var(--r-sm);overflow:hidden;background:var(--lt);flex-shrink:0;}
 .cp-img img{width:100%;height:100%;object-fit:cover;display:block;}
 .cp-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:var(--gr);}
@@ -3467,7 +3628,7 @@ body.dark .thp,body.dark .thctl input[type=color],body.dark .thhex,body.dark .th
 .nls{font-size:.74rem;color:var(--gr);margin:5px 0 14px;line-height:1.5;}
 .nlform{display:flex;gap:8px;max-width:400px;margin:0 auto;}
 .nlform input{flex:1;min-width:0;border:1px solid var(--bd);border-radius:var(--r-md);padding:11px 13px;font-size:.85rem;font-family:inherit;background:#fff;color:var(--bk);}
-.nlform input:focus{outline:none;border-color:var(--or2);box-shadow:0 0 0 3px rgba(37,99,235,.12);}
+.nlform input:focus{outline:none;border-color:var(--or2);box-shadow:0 0 0 3px rgba(249,115,22,.14);}
 .nlform button{background:var(--or);color:#fff;border:none;border-radius:var(--r-md);padding:11px 18px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;}
 .nlform button:hover{background:var(--or2);}
 .nlnote{font-size:.64rem;color:var(--gr);margin-top:9px;}
@@ -3563,7 +3724,7 @@ img{contain:paint;}
 <body>
 <div id="welcomeOv" style="display:none;position:fixed;inset:0;z-index:9000;background:#F7F8FA;flex-direction:column;align-items:center;justify-content:center;padding:28px 24px calc(28px + env(safe-area-inset-bottom,0px));text-align:center;overflow-y:auto">
   <div style="flex:1"></div>
-  <img src="/icon-512.png" alt="Kimora Store" style="width:96px;height:96px;border-radius:var(--r-full);box-shadow:0 10px 28px rgba(30,58,138,.28);margin-bottom:18px">
+  <img src="/icon-512.png" alt="Kimora Store" style="width:96px;height:96px;border-radius:var(--r-full);box-shadow:0 10px 28px rgba(249,115,22,.28);margin-bottom:18px">
   <div style="font-size:1.5rem;font-weight:900;color:var(--bk);line-height:1.25;margin-bottom:8px" data-i18n="welcomeTitle">Bienvenue chez Kimora Store</div>
   <div style="font-size:.85rem;color:var(--gr);max-width:320px;line-height:1.6;margin-bottom:26px" data-i18n="welcomeSub">Votre boutique 100% camerounaise : mode, beauté, électronique &amp; digital — livrés chez vous, où que vous soyez.</div>
 
@@ -3608,14 +3769,16 @@ img{contain:paint;}
     <div class="logo" id="logoName" ontouchstart="startAdminHold()" ontouchend="cancelAdminHold()" onmousedown="startAdminHold()" onmouseup="cancelAdminHold()" onmouseleave="cancelAdminHold()" ondblclick="openAdminEntry()" style="user-select:none;-webkit-user-select:none;cursor:pointer">KIMORA <span>Store</span></div>
     <button class="ib" onclick="openLangMenu()" id="langBtn"><i data-ico="globe" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button>
     <button class="ib" onclick="renderCloudNotifs();openOv('notifOv')"><i data-ico="bell" data-ico-size="20" style="display:inline-flex;vertical-align:-.18em"></i><span class="bdg" id="nb">3</span></button>
-    <button class="ib" onclick="showPg('cart')"><i data-ico="cart" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i><span class="bdg" id="cbt">0</span></button>
+    <div class="hdrop"><button class="ib" onclick="toggleMiniCart(event)"><i data-ico="cart" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i><span class="bdg" id="cbt">0</span></button>
+      <div class="hpop" id="miniCart"></div></div>
     <button class="ib dsk" onclick="showPg('boutique')" title="Catégories"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><path d="M4 9 5.5 4h13L20 9"/><path d="M4 9h16v12H4z"/><path d="M9 13h6"/></svg><span class="dskl">Catégories</span></button>
     <button class="ib dsk" onclick="showPg('wishlist')" title="Favoris"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-9.2-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.2 11c-2.2 4.4-9.2 9-9.2 9z"/></svg><span class="dskl">Favoris</span></button>
-    <button class="ib dsk" onclick="showPg('account')" title="Compte"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span class="dskl">Compte</span></button>
+    <div class="hdrop"><button class="ib dsk" onclick="toggleUserMenu(event)" title="Compte"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span class="dskl">Compte</span></button>
+      <div class="hpop hpop-r" id="userMenu"></div></div>
   </div>
   <div class="sbar">
     <span class="sicon"><i data-ico="search" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></span>
-    <input type="text" id="srch" placeholder="Rechercher un produit..." oninput="doSearch()">
+    <input type="text" id="srch" placeholder="Rechercher un produit..." oninput="doSearch()" onfocus="renderSearchSuggestions()" autocomplete="off">
     <button class="sbtn" style="background:transparent;color:var(--or);width:40px" onclick="document.getElementById('imgSearchInput').click()"><i data-ico="camera" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button>
     <input type="file" accept="image/*" capture="environment" id="imgSearchInput" onchange="imageSearch(event)" style="display:none">
     <button class="sbtn" onclick="doSearch()"><i data-ico="search" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button>
@@ -3654,10 +3817,19 @@ img{contain:paint;}
       <span onclick="heroGo(2)" style="width:8px;height:8px;border-radius:50%;background:#fff;cursor:pointer;opacity:.45"></span>
     </div>
   </div>
-  <div class="flash">
-    <span style="font-size:1.1rem"><i data-ico="bolt" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></span>
-    <div class="fl" data-i18n="flashSale">Ventes Flash</div>
-    <div class="cd"><div class="cdu" id="cdH">08</div><span style="font-size:.7rem;font-weight:900">:</span><div class="cdu" id="cdM">00</div><span style="font-size:.7rem;font-weight:900">:</span><div class="cdu" id="cdS">00</div></div>
+  <div class="flash-hero" onclick="setF('promo',null);document.getElementById('hgrid').scrollIntoView({behavior:'smooth'})">
+    <div class="fh-left">
+      <div class="fh-ic"><i data-ico="bolt" data-ico-size="22" style="display:inline-flex"></i></div>
+      <div>
+        <div class="fh-t" data-i18n="flashSale">Ventes Flash</div>
+        <div class="fh-s" data-i18n="flashSub">Offres limitées — profitez-en vite</div>
+      </div>
+    </div>
+    <div class="fh-mid">
+      <span class="fh-lbl" data-i18n="flashEnds">Se termine dans</span>
+      <div class="cd"><div class="cdu" id="cdH">08</div><span class="cds">:</span><div class="cdu" id="cdM">00</div><span class="cds">:</span><div class="cdu" id="cdS">00</div></div>
+    </div>
+    <button class="fh-btn" onclick="event.stopPropagation();setF('promo',null);document.getElementById('hgrid').scrollIntoView({behavior:'smooth'})" data-i18n="flashAll">Voir toutes les offres</button>
   </div>
   <div class="jumia-services" aria-hidden="false">
     <div class="jserv" onclick="setF('promo',null);document.getElementById('hgrid').scrollIntoView({behavior:'smooth'})"><div class="jsi"><svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="26" height="26" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></div><div class="jst" data-i18n="flashSale">Ventes Flash</div><div class="jss" data-i18n="jsFlash">Chaque jour à 8h & 16h</div></div>
@@ -3679,6 +3851,7 @@ img{contain:paint;}
   <div id="homeNewSec"></div>
   <div id="homeFeatSec"></div>
   <div id="homeRecentSec"></div>
+  <div id="homeBrands"></div>
   <div class="sec">
     <div class="st"><h3 data-i18n="categories">Catégories</h3><button class="sal" onclick="showPg('boutique')" data-i18n="seeAll">Voir tout</button></div>
     <div class="csc" id="homeCats">
@@ -3733,6 +3906,17 @@ img{contain:paint;}
       <div style="font-size:1.3rem;font-weight:900"><span style="color:var(--or)">KIMORA</span> <span style="color:var(--gr);font-weight:600">Store</span></div>
       <div style="font-size:.68rem;color:var(--gr);margin-top:4px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.5" data-i18n="ftTagline">Boutique en ligne 100% camerounaise — mode, beauté, électronique &amp; digital, livrés partout au Cameroun.</div>
     </div>
+
+    <!-- Bandeau services -->
+    <div class="ft-serv">
+      <div class="ft-sv"><span class="ft-svi"><i data-ico="truck" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftFast">Livraison rapide</b><span data-i18n="ftFastS">Partout au Cameroun</span></div></div>
+      <div class="ft-sv"><span class="ft-svi"><i data-ico="lock" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftSecure2">Paiement sécurisé</b><span data-i18n="ftSecureS">MoMo, OM, à la livraison</span></div></div>
+      <div class="ft-sv"><span class="ft-svi"><i data-ico="refresh" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftReturn">Retours 48h</b><span data-i18n="ftReturnS">Échange ou remboursement</span></div></div>
+      <div class="ft-sv"><span class="ft-svi"><i data-ico="chat" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftSupport">Support 7j/7</b><span data-i18n="ftSupportS">WhatsApp à votre écoute</span></div></div>
+    </div>
+
+    <!-- Réseaux sociaux + application -->
+    <div class="ft-social" id="ftSocial"></div>
 
     <div class="ftlinks" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:.76rem;margin-bottom:16px">
       <div onclick="openPolicy('about')" data-i18n="ftAbout" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">À propos</div>
@@ -4461,6 +4645,27 @@ img{contain:paint;}
               <button class="thprev-btn">Ajouter au panier</button>
             </div>
           </div>
+        </div>
+
+        <div style="background:var(--lt);border-radius:var(--r-md);padding:13px;margin-bottom:12px">
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:4px">Studio de design</div>
+          <div style="font-size:.68rem;color:var(--gr);margin-bottom:10px;line-height:1.5">Colonnes, tailles, espacements, couleurs détaillées et typographie. L'aperçu est instantané.</div>
+          <div id="dsMgr"></div>
+        </div>
+
+        <div style="background:var(--lt);border-radius:var(--r-md);padding:13px;margin-bottom:12px">
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:4px">Sections de la page d'accueil</div>
+          <div style="font-size:.68rem;color:var(--gr);margin-bottom:10px;line-height:1.5">Activez, désactivez et réorganisez les sections vues par vos clients.</div>
+          <div id="secMgr"></div>
+          <button class="bor" style="margin-top:9px" onclick="admSaveSections()"><i data-ico="checkCircle" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Enregistrer</button>
+        </div>
+
+        <div style="background:var(--lt);border-radius:var(--r-md);padding:13px;margin-bottom:12px">
+          <div style="font-size:.82rem;font-weight:800;margin-bottom:4px">Marques populaires</div>
+          <div style="font-size:.68rem;color:var(--gr);margin-bottom:10px;line-height:1.5">Ajoutez le logo (URL) ou laissez le nom s'afficher en texte stylisé.</div>
+          <div id="brandMgr"></div>
+          <div class="cat-add"><input id="newBrand" placeholder="Nom de la marque"><button class="mk-b" onclick="admAddBrand()"><i data-ico="plus" data-ico-size="13" style="display:inline-flex"></i><span>Ajouter</span></button></div>
+          <button class="bor" style="margin-top:9px" onclick="admSaveBrands()"><i data-ico="checkCircle" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Enregistrer les marques</button>
         </div>
 
         <div style="background:var(--lt);border-radius:var(--r-md);padding:13px;margin-bottom:12px">
@@ -5515,12 +5720,44 @@ function applyBranding(){
 }
 
 // ===== PRODUCT IMAGE HELPER =====
+/* ═══════════════ VISUELS PRODUITS ═══════════════
+   Une vraie image prime toujours. À défaut, un placeholder élégant
+   dérivé de la catégorie : dégradé doux, icône SVG, initiales.
+   Dès qu'une image est ajoutée au produit, elle remplace le placeholder
+   automatiquement — aucune modification de code nécessaire. */
+window.CAT_VISUAL={
+  electronique:{ico:'phone',   c1:'#EFF6FF',c2:'#DBEAFE',fg:'#1D4ED8'},
+  telephone:   {ico:'phone',   c1:'#EFF6FF',c2:'#DBEAFE',fg:'#1D4ED8'},
+  vetement:    {ico:'shirt',   c1:'#FFF7ED',c2:'#FFEDD5',fg:'#C2410C'},
+  mode:        {ico:'shirt',   c1:'#FFF7ED',c2:'#FFEDD5',fg:'#C2410C'},
+  chaussure:   {ico:'bike',    c1:'#F5F3FF',c2:'#EDE9FE',fg:'#6D28D9'},
+  beaute:      {ico:'sparkles2',c1:'#FDF2F8',c2:'#FCE7F3',fg:'#BE185D'},
+  sante:       {ico:'shield',  c1:'#ECFDF5',c2:'#D1FAE5',fg:'#047857'},
+  digital:     {ico:'laptop',  c1:'#F8FAFC',c2:'#F1F5F9',fg:'#334155'},
+  maison:      {ico:'home',    c1:'#FFFBEB',c2:'#FEF3C7',fg:'#B45309'},
+  sport:       {ico:'bolt',    c1:'#FEF2F2',c2:'#FEE2E2',fg:'#B91C1C'}
+};
+function catVisual(cat){
+  const k=String(cat||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  for(const key in CAT_VISUAL){if(k.indexOf(key)>=0)return CAT_VISUAL[key];}
+  return {ico:'pkg',c1:'#F9FAFB',c2:'#F3F4F6',fg:'#6B7280'};
+}
+function prodPlaceholder(p,size){
+  const v=catVisual(p&&p.cat);
+  const initials=String((p&&p.name)||'?').trim().split(/\s+/).map(w=>w[0]||'').slice(0,2).join('').toUpperCase();
+  const s=parseInt(size,10)||34;
+  return '<div class="pph" style="background:linear-gradient(135deg,'+v.c1+' 0%,'+v.c2+' 100%);color:'+v.fg+'">'+
+    '<div class="pph-i">'+(typeof ico==='function'?ico(v.ico,s):'')+'</div>'+
+    '<div class="pph-n">'+initials+'</div></div>';
+}
 function prodImgHTML(p,size='3rem'){
-  // Si une vraie image existe (URL http ou base64 data:), afficher UNIQUEMENT l'image
+  // Une vraie image (URL ou base64) prime toujours
   if(p.img&&(p.img.startsWith('http')||p.img.startsWith('data:')))
-    return `<img loading="lazy" src="${p.img}" loading="lazy" onerror="this.parentNode.innerHTML='<span style=\'font-size:${size}\'>'+(this.dataset.emoji||'📦')+'</span>'" data-emoji="${p.icon||'📦'}" style="width:100%;height:100%;object-fit:contain;padding:6px;box-sizing:border-box">`;
-  // Sinon afficher l'emoji
-  return `<span style="font-size:${size}">${p.icon||'📦'}</span>`;
+    return '<img loading="lazy" src="'+p.img+'" alt="'+String(p.name||'').replace(/"/g,'&quot;')+'"'+
+      ' onerror="this.parentNode.innerHTML=prodPlaceholder('+JSON.stringify({cat:p.cat,name:p.name}).replace(/"/g,'&quot;')+',34)"'+
+      ' style="width:100%;height:100%;object-fit:cover">';
+  // Sinon : placeholder premium dérivé de la catégorie
+  return prodPlaceholder(p,34);
 }
 
 // ===== PAGES =====
@@ -5562,6 +5799,7 @@ function pcard(p){
       ${dc?`<div class="pdis">-${dc}%</div>`:''}
       ${p._flash?`<div class="pflash" style="${dc?'top:28px;':''}">${ico('bolt',10,'#fff')}<span>FLASH</span></div>`:(p.featured?`<div class="pfeat" style="${dc?'top:28px;':''}">${icoFill('star',10,'#fff')}<span>${T.feat}</span></div>`:'')}
       <div class="qact"><button class="qab" onclick="event.stopPropagation();qAdd('${p.id}')">${ico('cart',14)}<span>${T.cart}</span></button><button class="qab qbuy" onclick="event.stopPropagation();quickBuy('${p.id}')">${ico('bolt',14)}<span>${T.buy}</span></button></div>
+      <div class="phov"><button class="phb" title="${T.cart}" onclick="event.stopPropagation();qAdd('${p.id}')">${ico('cart',16)}</button><button class="phb" title="${T.view}" onclick="event.stopPropagation();quickView('${p.id}')">${ico('eye',16)}</button></div>
       ${p.stock===0?`<div class="poos"><span>${T.out}</span></div>`:''}
       <button class="pfv${fv?' on':''}" id="fv-${p.id}" onclick="event.stopPropagation();togFv('${p.id}')">${fv?icoFill('heart',16,'#DC2626'):ico('heart',16,'#9CA3AF')}</button>
       <button class="pzoom" title="${T.view}" onclick="event.stopPropagation();quickView('${p.id}')">${ico('eye',14,'#fff')}</button>
@@ -5571,7 +5809,8 @@ function pcard(p){
       <div class="pct">${p.cat}</div>
       <div class="pnm">${p.name}</div>
       <div><span class="ppr">${p.price.toLocaleString('fr-FR')} FCFA</span>${p.oldPrice?`<span class="pol">${p.oldPrice.toLocaleString('fr-FR')}</span>`:''}</div>
-      <div class="pst">${stars} <span style="color:var(--gr);font-size:.62rem">(${p.reviews||0})</span></div>
+      <div class="pst">${stars} <span class="prv">(${p.reviews||0})</span>${(()=>{try{const s=salesCountFor(p.name);return s>0?'<span class="psold">· '+s+' vendu'+(s>1?'s':'')+'</span>':'';}catch(e){return '';}})()}</div>
+      ${dc?`<div class="peco">Économisez ${(p.oldPrice-p.price).toLocaleString('fr-FR')} FCFA</div>`:''}
       <div class="ptrust">
         <span class="ptb ptb-v">${ico('shield',10)}<span>${T.verif}</span></span>
         ${p.type==='digital'?`<span class="ptb ptb-d">${ico('bolt',10)}<span>${T.digi}</span></span>`:`<span class="ptb ptb-f">${ico('truck',10)}<span>${T.fast}</span></span>`}
@@ -5724,30 +5963,391 @@ function doSearch(){
   searchTimer=setTimeout(doSearchNow,250);
   renderSearchSuggestions();
 }
+
+
+
+/* --- Footer : réseaux sociaux et application, alimentés par la config --- */
+function renderFooterSocial(){
+  const el=document.getElementById('ftSocial');if(!el)return;
+  const c=CFG();
+  const T=(TRANSLATIONS[getLang()]||TRANSLATIONS.fr);
+  const links=[];
+  if(c.wa)links.push({i:'chat',l:'WhatsApp',u:'https://wa.me/'+String(c.wa).replace(/\D/g,'')});
+  if(c.fb)links.push({i:'globe',l:'Facebook',u:c.fb.startsWith('http')?c.fb:'https://facebook.com/'+c.fb});
+  if(c.ig)links.push({i:'camera',l:'Instagram',u:c.ig.startsWith('http')?c.ig:'https://instagram.com/'+c.ig});
+  if(c.tiktok)links.push({i:'video',l:'TikTok',u:c.tiktok.startsWith('http')?c.tiktok:'https://tiktok.com/@'+c.tiktok});
+  if(c.email)links.push({i:'mail',l:'E-mail',u:'mailto:'+c.email});
+  let html='';
+  if(links.length){
+    html+='<div class="ft-sh">'+(T.ftFollow||'Suivez-nous')+'</div>'+
+      '<div class="ft-sl">'+links.map(x=>
+        '<a class="ft-si" href="'+x.u+'" target="_blank" rel="noopener" title="'+x.l+'">'+ico(x.i,17)+'</a>').join('')+'</div>';
+  }
+  // Installation de l'application (PWA)
+  html+='<button class="ft-app" onclick="promptInstallApp()">'+ico('download',15)+' <span>'+(T.ftApp||"Installer l'application")+'</span></button>';
+  el.innerHTML=html;
+  if(typeof renderDataIcons==='function')renderDataIcons(el);
+}
+/* Installation PWA : utilise l'invite native si disponible */
+window.deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.deferredPrompt=e;});
+function promptInstallApp(){
+  const T=(TRANSLATIONS[getLang()]||TRANSLATIONS.fr);
+  if(window.deferredPrompt){
+    window.deferredPrompt.prompt();
+    window.deferredPrompt.userChoice.then(function(){window.deferredPrompt=null;});
+    return;
+  }
+  toast(T.ftAppHint||'Menu du navigateur → « Ajouter à l\'écran d\'accueil »');
+}
+
+/* ═══════════════ STUDIO DE DESIGN ═══════════════
+   Tout ce qui touche à l'apparence est piloté par des variables CSS.
+   L'admin les modifie ; l'interface entière suit, sans toucher au code. */
+window.DS_DEFAULT={
+  /* Mise en page */
+  colsDesk:5, colsTab:3, colsMob:2,
+  cardRadius:10, cardPad:0, cardGap:10, imgRatio:100,
+  sectionGap:18, pageMax:1720,
+  /* Typographie */
+  fontScale:100, titleWeight:800,
+  /* Couleurs fines (vide = hérite de la palette principale) */
+  cBtn:'', cBtnTxt:'', cBadge:'', cTitle:'', cText:'', cLink:'',
+  cBg:'', cCard:'', cBorder:'', cHover:''
+};
+function getDS(){
+  try{const d=JSON.parse(localStorage.getItem('kDS')||'null');return Object.assign({},DS_DEFAULT,(d&&typeof d==='object')?d:{});}
+  catch(e){return Object.assign({},DS_DEFAULT);}
+}
+function saveDS(d){
+  lsSet('kDS',JSON.stringify(d));
+  if(typeof fbEnabled!=='undefined'&&fbEnabled)fbDB.collection('config').doc('design').set({ds:d,updated:Date.now()},{merge:true}).catch(()=>{});
+}
+/* Applique le studio : une feuille de style unique, réécrite à chaque changement */
+function applyDS(){
+  const d=getDS();
+  let st=document.getElementById('dsStyle');
+  if(!st){st=document.createElement('style');st.id='dsStyle';document.head.appendChild(st);}
+  const num=(v,def)=>{const n=Number(v);return isFinite(n)&&n>0?n:def;};
+  const col=(v)=>(/^#[0-9a-fA-F]{6}$/.test(String(v||''))?v:'');
+  const css=[];
+  /* Colonnes selon l'appareil */
+  css.push('@media (max-width:767px){.pgrid{grid-template-columns:repeat('+num(d.colsMob,2)+',1fr)!important;}}');
+  css.push('@media (min-width:768px) and (max-width:1023px){.pgrid{grid-template-columns:repeat('+num(d.colsTab,3)+',1fr)!important;}.hrow,.dealrow{grid-template-columns:repeat('+num(d.colsTab,3)+',1fr)!important;}}');
+  css.push('@media (min-width:1024px){.pgrid,.hrow,.dealrow{grid-template-columns:repeat('+num(d.colsDesk,5)+',1fr)!important;}}');
+  /* Cartes */
+  css.push('.pd{border-radius:'+num(d.cardRadius,10)+'px!important;}');
+  if(num(d.cardPad,0)>0)css.push('.pin{padding:'+num(d.cardPad,8)+'px!important;}');
+  css.push('.pgrid{gap:'+num(d.cardGap,10)+'px!important;}');
+  css.push('.pim{aspect-ratio:100/'+num(d.imgRatio,100)+'!important;height:auto!important;}');
+  /* Espacements */
+  css.push('.st{margin-top:'+num(d.sectionGap,18)+'px!important;}');
+  css.push('@media (min-width:1280px){.pg{max-width:'+num(d.pageMax,1720)+'px!important;}}');
+  /* Typographie */
+  const fs=num(d.fontScale,100)/100;
+  if(fs!==1)css.push('html{font-size:'+(16*fs).toFixed(1)+'px;}');
+  css.push('h1,h2,h3,h4,.st h3{font-weight:'+num(d.titleWeight,800)+'!important;}');
+  /* Couleurs fines */
+  const cv=[];
+  if(col(d.cBtn))cv.push('--or:'+col(d.cBtn));
+  if(col(d.cHover))cv.push('--or2:'+col(d.cHover));
+  if(col(d.cText))cv.push('--bk:'+col(d.cText));
+  if(col(d.cBorder))cv.push('--bd:'+col(d.cBorder));
+  if(col(d.cCard))cv.push('--lt:'+col(d.cCard));
+  if(cv.length)css.push(':root{'+cv.join(';')+'}');
+  if(col(d.cBtnTxt))css.push('.bor{color:'+col(d.cBtnTxt)+'!important;}');
+  if(col(d.cBadge))css.push('.pdis,.pflash{background:'+col(d.cBadge)+'!important;}');
+  if(col(d.cTitle))css.push('.st h3,.pnm{color:'+col(d.cTitle)+'!important;}');
+  if(col(d.cLink))css.push('a{color:'+col(d.cLink)+';}');
+  if(col(d.cBg))css.push('body{background:'+col(d.cBg)+'!important;}');
+  st.textContent=css.join('\n');
+}
+function initDS(){
+  applyDS();
+  if(typeof fbEnabled!=='undefined'&&fbEnabled){
+    fbDB.collection('config').doc('design').get().then(doc=>{
+      if(!doc.exists)return;
+      const d=doc.data()&&doc.data().ds;
+      if(d){lsSet('kDS',JSON.stringify(Object.assign({},DS_DEFAULT,d)));applyDS();}
+    }).catch(()=>{});
+  }
+}
+
+/* --- Interface admin du studio --- */
+window.DS_FIELDS=[
+  {g:'Colonnes de produits',f:[
+    {k:'colsDesk',l:'Ordinateur',t:'range',min:2,max:8},
+    {k:'colsTab', l:'Tablette',  t:'range',min:2,max:5},
+    {k:'colsMob', l:'Mobile',    t:'range',min:1,max:3}]},
+  {g:'Cartes produits',f:[
+    {k:'cardRadius',l:'Rayon des coins (px)',t:'range',min:0,max:24},
+    {k:'cardGap',   l:'Espace entre cartes (px)',t:'range',min:4,max:28},
+    {k:'imgRatio',  l:'Hauteur image (%)',t:'range',min:70,max:150},
+    {k:'cardPad',   l:'Marge intérieure (px)',t:'range',min:0,max:20}]},
+  {g:'Mise en page',f:[
+    {k:'sectionGap',l:'Espace entre sections (px)',t:'range',min:8,max:48},
+    {k:'pageMax',   l:'Largeur maximale (px)',t:'range',min:1100,max:1920,step:20}]},
+  {g:'Typographie',f:[
+    {k:'fontScale', l:'Taille générale (%)',t:'range',min:85,max:120},
+    {k:'titleWeight',l:'Épaisseur des titres',t:'range',min:600,max:900,step:100}]},
+  {g:'Couleurs détaillées',f:[
+    {k:'cBtn',   l:'Boutons',t:'color'},
+    {k:'cHover', l:'Survol / accents',t:'color'},
+    {k:'cBadge', l:'Badges promo',t:'color'},
+    {k:'cTitle', l:'Titres',t:'color'},
+    {k:'cText',  l:'Texte',t:'color'},
+    {k:'cLink',  l:'Liens',t:'color'},
+    {k:'cCard',  l:'Fond des cartes',t:'color'},
+    {k:'cBorder',l:'Bordures',t:'color'},
+    {k:'cBg',    l:'Fond du site',t:'color'}]}
+];
+function admRenderDS(){
+  const box=document.getElementById('dsMgr');if(!box)return;
+  const d=getDS();
+  box.innerHTML=DS_FIELDS.map(g=>
+    '<div class="ds-g"><div class="ds-gt">'+g.g+'</div>'+
+    g.f.map(f=>{
+      if(f.t==='color'){
+        const v=d[f.k]||'';
+        return '<div class="ds-row"><span class="ds-l">'+f.l+'</span>'+
+          '<div class="ds-c"><input type="color" id="ds-'+f.k+'" value="'+(v||'#F97316')+'" oninput="dsPreview()">'+
+          '<button class="ds-rst" onclick="dsReset(\''+f.k+'\')" title="Par défaut">'+ico('refresh',12)+'</button></div></div>';
+      }
+      return '<div class="ds-row"><span class="ds-l">'+f.l+'</span>'+
+        '<div class="ds-c"><input type="range" id="ds-'+f.k+'" min="'+f.min+'" max="'+f.max+'" step="'+(f.step||1)+'" value="'+d[f.k]+'" oninput="dsPreview()">'+
+        '<b class="ds-v" id="dsv-'+f.k+'">'+d[f.k]+'</b></div></div>';
+    }).join('')+'</div>').join('')+
+    '<button class="bor" style="margin-top:10px" onclick="admSaveDS()">'+ico('checkCircle',15)+' Publier le design</button>'+
+    '<button class="bou" style="margin-top:7px" onclick="admResetDS()">'+ico('refresh',15)+' Tout réinitialiser</button>';
+}
+/* Aperçu en direct pendant le réglage */
+function dsPreview(){
+  const d=getDS();
+  DS_FIELDS.forEach(g=>g.f.forEach(f=>{
+    const el=document.getElementById('ds-'+f.k);
+    if(!el)return;
+    d[f.k]=(f.t==='color')?el.value:parseInt(el.value,10);
+    const v=document.getElementById('dsv-'+f.k);
+    if(v)v.textContent=el.value;
+  }));
+  lsSet('kDS',JSON.stringify(d));
+  applyDS();
+}
+function dsReset(k){
+  const d=getDS();
+  d[k]=DS_DEFAULT[k];
+  lsSet('kDS',JSON.stringify(d));
+  applyDS();admRenderDS();
+}
+function admSaveDS(){
+  dsPreview();
+  saveDS(getDS());
+  toast('Design publié pour tous vos clients');
+}
+function admResetDS(){
+  if(!confirm('Réinitialiser tous les réglages de design ?'))return;
+  lsSet('kDS',JSON.stringify(Object.assign({},DS_DEFAULT)));
+  saveDS(Object.assign({},DS_DEFAULT));
+  applyDS();admRenderDS();
+  toast('Design réinitialisé');
+}
+
+/* ═══════════════ MENUS DÉROULANTS DU HEADER ═══════════════ */
+function closeAllPops(){
+  document.querySelectorAll('.hpop.on').forEach(p=>p.classList.remove('on'));
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.hdrop'))closeAllPops();
+  if(!e.target.closest('.sbar')&&!e.target.closest('#srchSug'))hideSearchSug();
+});
+
+/* --- Mini panier --- */
+function toggleMiniCart(e){
+  if(e)e.stopPropagation();
+  const el=document.getElementById('miniCart');
+  if(!el)return;
+  // Sur petit écran, la page panier reste plus confortable
+  if(window.innerWidth<768){showPg('cart');return;}
+  const wasOpen=el.classList.contains('on');
+  closeAllPops();
+  if(wasOpen)return;
+  renderMiniCart();
+  el.classList.add('on');
+}
+function renderMiniCart(){
+  const el=document.getElementById('miniCart');if(!el)return;
+  const cart=getCart();
+  const T=(TRANSLATIONS[getLang()]||TRANSLATIONS.fr);
+  if(!cart.length){
+    el.innerHTML='<div class="mc-empty">'+ico('cart',26)+'<div>'+(T.cartEmpty||'Votre panier est vide')+'</div></div>';
+    if(typeof renderDataIcons==='function')renderDataIcons(el);
+    return;
+  }
+  const tot=cart.reduce((s,x)=>s+x.price*x.qty,0);
+  el.innerHTML='<div class="mc-h">'+(T.myCart||'Mon panier')+' <span>('+cart.length+')</span></div>'+
+    '<div class="mc-l">'+cart.slice(0,5).map((x,i)=>{
+      const p=getP().find(y=>y.id===x.id)||x;
+      const img=(p.img&&(p.img.startsWith('http')||p.img.startsWith('data:')))
+        ? '<img src="'+p.img+'" alt="" loading="lazy">'
+        : '<span class="mc-ph">'+ico(catVisual(p.cat).ico,14)+'</span>';
+      return '<div class="mc-i"><span class="mc-im">'+img+'</span>'+
+        '<span class="mc-n">'+String(x.name).replace(/</g,'&lt;')+
+        '<span class="mc-q">'+x.qty+' × '+Number(x.price).toLocaleString('fr-FR')+'</span></span>'+
+        '<button class="mc-x" onclick="event.stopPropagation();rmC('+i+');renderMiniCart()" title="Retirer">'+ico('x',13)+'</button></div>';
+    }).join('')+(cart.length>5?'<div class="mc-more">+ '+(cart.length-5)+' autre(s)</div>':'')+'</div>'+
+    '<div class="mc-t"><span>'+(T.total||'Total')+'</span><b>'+Number(tot).toLocaleString('fr-FR')+' FCFA</b></div>'+
+    '<button class="bor" style="margin:0" onclick="closeAllPops();showPg(\'cart\')">'+(T.viewCart||'Voir le panier')+'</button>'+
+    '<button class="bou" style="margin-top:7px" onclick="closeAllPops();openCK()">'+(T.checkout||'Commander')+'</button>';
+  if(typeof renderDataIcons==='function')renderDataIcons(el);
+}
+
+/* --- Menu utilisateur --- */
+function toggleUserMenu(e){
+  if(e)e.stopPropagation();
+  const el=document.getElementById('userMenu');
+  if(!el)return;
+  if(window.innerWidth<768){showPg('account');return;}
+  const wasOpen=el.classList.contains('on');
+  closeAllPops();
+  if(wasOpen)return;
+  renderUserMenu();
+  el.classList.add('on');
+}
+function renderUserMenu(){
+  const el=document.getElementById('userMenu');if(!el)return;
+  const u=(typeof getUser==='function')?getUser():null;
+  const T=(TRANSLATIONS[getLang()]||TRANSLATIONS.fr);
+  const nOrders=(typeof getOrds==='function')?getOrds().length:0;
+  const nFav=(typeof getWish==='function')?getWish().length:0;
+  const row=(icon,label,cnt,fn)=>'<div class="um-r" onclick="closeAllPops();'+fn+'">'+
+    '<span class="um-i">'+ico(icon,15)+'</span><span class="um-l">'+label+'</span>'+
+    (cnt!==null&&cnt!==undefined?'<span class="um-c">'+cnt+'</span>':'<span class="um-a">'+ico('arrowRight',13)+'</span>')+'</div>';
+  if(u){
+    const initials=String(u.name||u.email||'?').trim().split(/\s+/).map(w=>w[0]||'').slice(0,2).join('').toUpperCase();
+    el.innerHTML='<div class="um-head"><div class="um-av">'+initials+'</div>'+
+      '<div class="um-id"><div class="um-n">'+String(u.name||'Client').replace(/</g,'&lt;')+'</div>'+
+      '<div class="um-e">'+String(u.email||u.phone||'').replace(/</g,'&lt;')+'</div></div></div>'+
+      (u.points?'<div class="um-pts">'+ico('star',13)+' <b>'+u.points+'</b> '+(T.points||'points fidélité')+'</div>':'')+
+      row('pkg',T.myOrders||'Mes commandes',nOrders,"showPg('account')")+
+      row('heart',T.myFav||'Mes favoris',nFav,"showPg('wishlist')")+
+      row('truck',T.trackMyOrder||'Suivre ma commande',null,"openTrack()")+
+      row('user',T.myAccount||'Mon compte',null,"showPg('account')")+
+      '<div class="um-sep"></div>'+
+      '<div class="um-r um-out" onclick="closeAllPops();doLogout()"><span class="um-i">'+ico('x',15)+'</span><span class="um-l">'+(T.logout||'Déconnexion')+'</span></div>';
+  }else{
+    el.innerHTML='<div class="um-guest"><div class="um-gi">'+ico('user',26)+'</div>'+
+      '<div class="um-gt">'+(T.welcomeBack||'Bienvenue !')+'</div>'+
+      '<div class="um-gs">'+(T.loginToAccess||'Connectez-vous pour suivre vos commandes')+'</div></div>'+
+      '<button class="bor" style="margin:0" onclick="closeAllPops();openOv(\'authOv\')">'+(T.login||'Se connecter')+'</button>'+
+      '<button class="bou" style="margin-top:7px" onclick="closeAllPops();openOv(\'authOv\');swAth(\'reg\')">'+(T.register||'Créer un compte')+'</button>'+
+      '<div class="um-sep"></div>'+
+      row('truck',T.trackMyOrder||'Suivre ma commande',null,"openTrack()")+
+      row('heart',T.myFav||'Mes favoris',nFav,"showPg('wishlist')");
+  }
+  if(typeof renderDataIcons==='function')renderDataIcons(el);
+}
+
+/* ═══════════════ RECHERCHE INSTANTANÉE ═══════════════
+   Au focus : historique + catégories + produits populaires.
+   Pendant la saisie : suggestions produits, catégories et marques. */
+function getSearchHist(){try{const a=JSON.parse(localStorage.getItem('kSrchHist')||'[]');return Array.isArray(a)?a:[];}catch(e){return [];}}
+function pushSearchHist(q){
+  q=String(q||'').trim();
+  if(q.length<2)return;
+  try{
+    let a=getSearchHist().filter(x=>x.toLowerCase()!==q.toLowerCase());
+    a.unshift(q);
+    lsSet('kSrchHist',JSON.stringify(a.slice(0,8)));
+  }catch(e){}
+}
+function clearSearchHist(){try{lsSet('kSrchHist','[]');}catch(e){}renderSearchSuggestions();}
+function pickSearch(q){
+  const el=document.getElementById('srch');
+  if(el){el.value=q;pushSearchHist(q);doSearchNow();}
+  hideSearchSug();
+  const g=document.getElementById('hgrid');if(g)g.scrollIntoView({behavior:'smooth'});
+}
+function hideSearchSug(){
+  const box=document.getElementById('srchSug');
+  if(box){box.style.display='none';box.innerHTML='';}
+}
+function srchRow(icon,label,sub,onclick,extra){
+  return '<div class="sg-r" onclick="'+onclick+'">'+
+    '<span class="sg-i">'+ico(icon,15)+'</span>'+
+    '<span class="sg-l">'+label+(sub?'<span class="sg-s">'+sub+'</span>':'')+'</span>'+
+    (extra||'')+'</div>';
+}
 function renderSearchSuggestions(){
   const box=document.getElementById('srchSug');
   const el=document.getElementById('srch');
   if(!box||!el)return;
-  // Ancrage du dropdown
   if(box.parentElement&&getComputedStyle(box.parentElement).position==='static')box.parentElement.style.position='relative';
-  const q=el.value.toLowerCase().trim();
-  if(q.length<2){box.style.display='none';box.innerHTML='';return;}
-  const all=getP();
+  const raw=el.value.trim();
+  const q=raw.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const T=(TRANSLATIONS[getLang()]||TRANSLATIONS.fr);
+
+  /* --- Champ vide : historique, catégories, populaires --- */
+  if(q.length<2){
+    const hist=getSearchHist();
+    const cats=Array.from(new Set(getP().map(p=>p.cat).filter(Boolean))).slice(0,6);
+    const pop=(typeof mostViewed==='function'&&mostViewed(4).length)
+      ? mostViewed(4).map(x=>x.p)
+      : getP().filter(p=>p.featured).slice(0,4);
+    let html='';
+    if(hist.length){
+      html+='<div class="sg-h"><span>'+(T.srchHist||'Recherches récentes')+'</span>'+
+        '<button class="sg-clr" onclick="event.stopPropagation();clearSearchHist()">'+(T.srchClear||'Effacer')+'</button></div>'+
+        hist.map(x=>srchRow('clock',String(x).replace(/</g,'&lt;'),'',"pickSearch('"+String(x).replace(/'/g,"\\'")+"')")).join('');
+    }
+    if(cats.length){
+      html+='<div class="sg-h"><span>'+(T.srchCats||'Catégories')+'</span></div>'+
+        '<div class="sg-chips">'+cats.map(c=>'<button class="sg-chip" onclick="pickSearch(\''+String(c).replace(/'/g,"\\'")+'\')">'+String(c).replace(/</g,'&lt;')+'</button>').join('')+'</div>';
+    }
+    if(pop.length){
+      html+='<div class="sg-h"><span>'+(T.srchPop||'Produits populaires')+'</span></div>'+
+        pop.map(p=>srchProdRow(p)).join('');
+    }
+    if(!html){box.style.display='none';box.innerHTML='';return;}
+    box.innerHTML=html;box.style.display='block';
+    if(typeof renderDataIcons==='function')renderDataIcons(box);
+    return;
+  }
+
+  /* --- Saisie en cours : produits, catégories, marques --- */
+  const norm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const all=getP().filter(p=>p.active!==false);
   const starts=[],contains=[];
   for(const p of all){
-    const nm=(p.name||'').toLowerCase(), ds=(p.desc||'').toLowerCase(), ct=(p.cat||'').toLowerCase();
+    const nm=norm(p.name),ct=norm(p.cat),ds=norm(p.desc);
     if(nm.startsWith(q))starts.push(p);
     else if(nm.includes(q)||ct.includes(q)||ds.includes(q))contains.push(p);
-    if(starts.length>=6)break;
+    if(starts.length>=8)break;
   }
-  const list=[...starts,...contains].slice(0,6);
-  if(!list.length){box.style.display='none';return;}
-  box.innerHTML=list.map(p=>`<div onclick="selectSuggestion('${p.id}')" style="display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer;border-bottom:1px solid var(--lt)" onmouseover="this.style.background='var(--lt)'" onmouseout="this.style.background='#fff'">
-    <div style="width:36px;height:36px;border-radius:var(--r-md);background:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;overflow:hidden;flex-shrink:0">${p.img&&p.img.length>10?`<img loading="lazy" src="${p.img}" style="width:100%;height:100%;object-fit:cover">`:(p.icon||'🛍️')}</div>
-    <div style="flex:1;min-width:0"><div style="font-size:.8rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${p.name}</div><div style="font-size:.7rem;color:var(--or);font-weight:800">${(Number(p.price)||0).toLocaleString('fr-FR')} FCFA</div></div>
-    <div style="color:var(--gr);font-size:.8rem">›</div>
-  </div>`).join('');
-  box.style.display='block';
+  let list=starts.concat(contains).slice(0,6);
+  // Tolérance aux fautes en secours
+  if(!list.length&&typeof kaiSmartSearch==='function')list=kaiSmartSearch(raw,5);
+  const cats=Array.from(new Set(all.map(p=>p.cat).filter(Boolean))).filter(c=>norm(c).includes(q)).slice(0,3);
+  const brands=(typeof getBrands==='function'?getBrands():[]).filter(b=>norm(b.n).includes(q)).slice(0,3);
+
+  let html='';
+  if(cats.length)html+='<div class="sg-h"><span>'+(T.srchCats||'Catégories')+'</span></div>'+
+    cats.map(c=>srchRow('store',String(c).replace(/</g,'&lt;'),'',"pickSearch('"+String(c).replace(/'/g,"\\'")+"')")).join('');
+  if(brands.length)html+='<div class="sg-h"><span>'+(T.brandsTitle||'Marques')+'</span></div>'+
+    brands.map(b=>srchRow('tag',String(b.n).replace(/</g,'&lt;'),'',"pickSearch('"+String(b.n).replace(/'/g,"\\'")+"')")).join('');
+  if(list.length)html+='<div class="sg-h"><span>'+(T.srchProds||'Produits')+'</span></div>'+
+    list.map(p=>srchProdRow(p)).join('');
+  if(!html)html='<div class="sg-empty">'+(T.srchNone||'Aucun résultat — essayez un autre mot')+'</div>';
+  box.innerHTML=html;box.style.display='block';
+  if(typeof renderDataIcons==='function')renderDataIcons(box);
+}
+function srchProdRow(p){
+  const img=(p.img&&(p.img.startsWith('http')||p.img.startsWith('data:')))
+    ? '<img src="'+p.img+'" alt="" loading="lazy">'
+    : '<span class="sg-ph">'+ico(catVisual(p.cat).ico,14)+'</span>';
+  return '<div class="sg-p" onclick="hideSearchSug();pushSearchHist(\''+String(p.name).replace(/'/g,"\\'").slice(0,40)+'\');openP(\''+p.id+'\')">'+
+    '<span class="sg-pi">'+img+'</span>'+
+    '<span class="sg-pn">'+String(p.name).replace(/</g,'&lt;')+'<span class="sg-pc">'+String(p.cat||'').replace(/</g,'&lt;')+'</span></span>'+
+    '<span class="sg-pp">'+Number(p.price||0).toLocaleString('fr-FR')+'</span></div>';
 }
 function selectSuggestion(pid){
   const box=document.getElementById('srchSug');if(box)box.style.display='none';
@@ -8416,8 +9016,8 @@ function fillHomeRow(id,title,items){
   const el=document.getElementById(id);if(!el)return;
   if(!items.length){el.innerHTML='';return;}
   el.innerHTML='<div class="st" style="margin-top:14px"><h3>'+title+'</h3></div>'+
-    '<div style="display:flex;gap:10px;overflow-x:auto;padding:4px 2px 8px;-webkit-overflow-scrolling:touch">'+
-    items.map(p=>'<div style="min-width:155px;max-width:155px;flex-shrink:0">'+pcard(p)+'</div>').join('')+'</div>';
+    '<div class="hrow" style="display:flex;gap:10px;overflow-x:auto;padding:4px 2px 8px;-webkit-overflow-scrolling:touch">'+
+    items.map(p=>'<div style="min-width:165px;max-width:165px;flex-shrink:0">'+pcard(p)+'</div>').join('')+'</div>';
 }
 // ===== SECTIONS D'ACCUEIL ENRICHIES =====
 /* Produits récemment consultés (mémorisés localement) */
@@ -8445,6 +9045,77 @@ function bestSellers(all,limit){
 }
 
 /* Offre du jour : la meilleure remise, avec compte à rebours jusqu'à minuit */
+
+/* ═══════════════ MARQUES POPULAIRES ═══════════════ */
+window.BRANDS_DEFAULT=[
+  {n:'Samsung',c:'#1428A0'},{n:'Apple',c:'#111827'},{n:'Xiaomi',c:'#FF6900'},
+  {n:'HP',c:'#0096D6'},{n:'Dell',c:'#007DB8'},{n:'Lenovo',c:'#E2231A'},
+  {n:'Nike',c:'#111827'},{n:'Adidas',c:'#111827'},{n:'FILA',c:'#00246B'},{n:'Tecno',c:'#0B63CE'}
+];
+function getBrands(){
+  try{const b=JSON.parse(localStorage.getItem('kBrands')||'null');if(Array.isArray(b))return b;}catch(e){}
+  return BRANDS_DEFAULT.map(x=>Object.assign({},x,{img:''}));
+}
+function saveBrands(list){
+  lsSet('kBrands',JSON.stringify(list));
+  if(typeof fbEnabled!=='undefined'&&fbEnabled)fbDB.collection('config').doc('brands').set({items:list,updated:Date.now()},{merge:true}).catch(()=>{});
+}
+function renderBrands(){
+  const el=document.getElementById('homeBrands');if(!el)return;
+  if(!sectionEnabled('brands')){el.innerHTML='';return;}
+  const b=getBrands();
+  if(!b.length){el.innerHTML='';return;}
+  const t=(TRANSLATIONS[getLang()]||TRANSLATIONS.fr);
+  el.innerHTML='<div class="st" style="margin-top:18px"><h3>'+(t.brandsTitle||'Marques populaires')+'</h3></div>'+
+    '<div class="brands">'+b.slice(0,14).map(x=>
+      '<div class="brand" onclick="searchBrand(\''+String(x.n).replace(/'/g,"\\'")+'\')">'+
+      (x.img?'<img src="'+x.img+'" alt="'+String(x.n).replace(/"/g,'')+'" loading="lazy">'
+            :'<span class="brand-t" style="color:'+(x.c||'#374151')+'">'+String(x.n).replace(/</g,'&lt;')+'</span>')+
+      '</div>').join('')+'</div>';
+}
+function searchBrand(name){
+  const s=document.getElementById('srch');
+  if(s){s.value=name;if(typeof doSearch==='function')doSearch();}
+  const g=document.getElementById('hgrid');if(g)g.scrollIntoView({behavior:'smooth'});
+}
+
+/* ═══════════════ SECTIONS D'ACCUEIL CONFIGURABLES ═══════════════ */
+window.HOME_SECTIONS=[
+  {k:'deal',   n:'Offres du jour',        el:'homeDealSec'},
+  {k:'promo',  n:'Promotions',            el:'homePromoSec'},
+  {k:'best',   n:'Meilleures ventes',     el:'homeBestSec'},
+  {k:'new',    n:'Nouveautés',            el:'homeNewSec'},
+  {k:'feat',   n:'Sélection Kimora',      el:'homeFeatSec'},
+  {k:'recent', n:'Récemment consultés',   el:'homeRecentSec'},
+  {k:'brands', n:'Marques populaires',    el:'homeBrands'},
+  {k:'reels',  n:'Ils ont reçu leur colis',el:'homeReels'},
+  {k:'revs',   n:'Avis clients',          el:'homeRevs'}
+];
+function getSectionCfg(){
+  const c=CFG().sections;
+  if(c&&typeof c==='object')return c;
+  const d={};HOME_SECTIONS.forEach((s,i)=>{d[s.k]={on:true,order:i};});
+  return d;
+}
+function sectionEnabled(k){
+  const c=getSectionCfg();
+  return !c[k]||c[k].on!==false;
+}
+function applySections(){
+  try{
+    const c=getSectionCfg();
+    const ref=document.getElementById('homeDealSec');
+    const parent=ref&&ref.parentNode;
+    const list=HOME_SECTIONS.slice().sort((a,b)=>((c[a.k]&&c[a.k].order)||0)-((c[b.k]&&c[b.k].order)||0));
+    list.forEach(s=>{
+      const el=document.getElementById(s.el);
+      if(!el)return;
+      el.style.display=(c[s.k]&&c[s.k].on===false)?'none':'';
+      if(parent&&el.parentNode===parent)parent.appendChild(el);
+    });
+  }catch(e){}
+}
+
 function renderDealOfDay(all){
   const el=document.getElementById('homeDealSec');if(!el)return;
   const deals=all.filter(p=>p.oldPrice&&p.oldPrice>p.price)
@@ -8496,6 +9167,8 @@ function renderHomeSections(){
   try{
     const all=getP();
     renderDealOfDay(all);
+    renderBrands();
+    setTimeout(applySections,60);
     // 🔥 Promotions : plus grosses remises d'abord
     const promos=all.filter(p=>p.oldPrice&&p.oldPrice>p.price)
       .sort((a,b)=>(1-b.price/b.oldPrice)-(1-a.price/a.oldPrice)).slice(0,8);
@@ -8540,7 +9213,8 @@ window.addEventListener('load',()=>{
   setTimeout(()=>{try{initTheme();syncSeoUrls();}catch(e){}},1200);
   setTimeout(()=>{try{applyMaintenance();}catch(e){}},1800);
   setTimeout(()=>{try{initBanners();}catch(e){}},1400);
-  setTimeout(()=>{try{initFont();applyAnim();}catch(e){}},200);
+  setTimeout(()=>{try{initFont();applyAnim();initDS();}catch(e){}},200);
+  setTimeout(()=>{try{renderFooterSocial();}catch(e){}},700);
   setTimeout(()=>{try{bumpVisit();}catch(e){}},2500);
   setTimeout(()=>{try{loadHomeReviews();}catch(e){}},1500);
   setTimeout(()=>{try{loadHomeReels();}catch(e){}},1800);
@@ -9251,6 +9925,78 @@ function kaiSuggestOnProduct(p){
   }catch(e){}
 }
 
+
+/* --- Admin : sections d'accueil et marques --- */
+function admRenderSections(){
+  const box=document.getElementById('secMgr');if(!box)return;
+  const c=getSectionCfg();
+  const list=HOME_SECTIONS.slice().sort((a,b)=>((c[a.k]&&c[a.k].order)||0)-((c[b.k]&&c[b.k].order)||0));
+  box.innerHTML=list.map((s,i)=>
+    '<div class="sec-row">'+
+      '<label class="sec-chk"><input type="checkbox" class="secOn" data-k="'+s.k+'"'+((c[s.k]&&c[s.k].on===false)?'':' checked')+'><span>'+s.n+'</span></label>'+
+      '<div class="sec-mv"><button class="mk-b" onclick="moveSection('+i+',-1)" title="Monter">'+ico('arrowRight',12)+'</button>'+
+      '<button class="mk-b" onclick="moveSection('+i+',1)" title="Descendre">'+ico('arrowRight',12)+'</button></div>'+
+    '</div>').join('');
+}
+function moveSection(i,dir){
+  const c=getSectionCfg();
+  const list=HOME_SECTIONS.slice().sort((a,b)=>((c[a.k]&&c[a.k].order)||0)-((c[b.k]&&c[b.k].order)||0));
+  const j=i+dir;
+  if(j<0||j>=list.length)return;
+  const t=list[i];list[i]=list[j];list[j]=t;
+  const out={};
+  list.forEach((s,idx)=>{out[s.k]={on:!(c[s.k]&&c[s.k].on===false),order:idx};});
+  saveCFG2({sections:out});
+  admRenderSections();applySections();
+}
+function admSaveSections(){
+  const c=getSectionCfg();
+  const out={};
+  document.querySelectorAll('.secOn').forEach((el,idx)=>{
+    const k=el.getAttribute('data-k');
+    out[k]={on:el.checked,order:(c[k]&&c[k].order!==undefined)?c[k].order:idx};
+  });
+  saveCFG2({sections:out});
+  applySections();
+  toast('Sections enregistrées');
+}
+function admRenderBrands(){
+  const box=document.getElementById('brandMgr');if(!box)return;
+  const b=getBrands();
+  box.innerHTML=b.length?b.map((x,i)=>
+    '<div class="brand-ed"><input id="brN'+i+'" value="'+String(x.n||'').replace(/"/g,'&quot;')+'" placeholder="Nom">'+
+    '<input id="brI'+i+'" value="'+String(x.img||'').replace(/"/g,'&quot;')+'" placeholder="URL du logo (facultatif)">'+
+    '<button class="mk-b mk-del" onclick="admDelBrand('+i+')" title="Supprimer">'+ico('trash',12)+'</button></div>').join('')
+    :'<div class="dash-empty">Aucune marque</div>';
+}
+function admAddBrand(){
+  const v=(document.getElementById('newBrand').value||'').trim();
+  if(!v){toast('Indiquez un nom');return;}
+  const b=getBrands();
+  if(b.some(x=>x.n.toLowerCase()===v.toLowerCase())){toast('Cette marque existe déjà');return;}
+  b.push({n:v,img:'',c:'#374151'});
+  saveBrands(b);admRenderBrands();renderBrands();
+  document.getElementById('newBrand').value='';
+  toast('Marque ajoutée');
+}
+function admDelBrand(i){
+  const b=getBrands();
+  if(!b[i])return;
+  if(!confirm('Supprimer la marque « '+b[i].n+' » ?'))return;
+  b.splice(i,1);saveBrands(b);admRenderBrands();renderBrands();
+  toast('Marque supprimée');
+}
+function admSaveBrands(){
+  const b=getBrands();
+  b.forEach((x,i)=>{
+    const n=document.getElementById('brN'+i),im=document.getElementById('brI'+i);
+    if(n)x.n=n.value.trim()||x.n;
+    if(im)x.img=im.value.trim();
+  });
+  saveBrands(b);renderBrands();
+  toast('Marques enregistrées');
+}
+
 /* --- Panneau admin de Kimora AI --- */
 function admRenderKai(){
   const sb=document.getElementById('kaiStatsBox');
@@ -9864,7 +10610,7 @@ function applyLangPage(nm){
 
 // ====== SYSTÈME DE LANGUES ======
 const TRANSLATIONS={
-  fr:{ftTagline:"Boutique en ligne 100% camerounaise — mode, beauté, électronique & digital, livrés partout au Cameroun.",ftAbout:"À propos",ftContact:"Contact",ftCgv:"Conditions de vente",ftPrivacy:"Confidentialité",ftShipping:"Livraison",ftReturns:"Retours",ftPayment:"Paiement",ftCookies:"Cookies",ftLegal:"Mentions légales",ftFaq:"Aide & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Paiement à la livraison",ftSecure:"Achat 100% sécurisé",ftVerified:"Vendeur vérifié",ftRights:"Tous droits réservés",ftMade:"Fait au Cameroun",welcomeTitle:'Bienvenue chez Kimora Store',welcomeSub:'Votre boutique 100% camerounaise : mode, beauté, électronique & digital — livrés chez vous, où que vous soyez.',welcomeCta:'Découvrir la boutique →',welcomeTrust:'🛡️ Vendeur vérifié · Des milliers de clients satisfaits',catElec:"Électronique",catElecSub:"Smartphones & Gadgets",catBeau:"Beauté",catBeauSub:"Soins & Cosmétiques",catDig:"Digital",catDigSub:"Logiciels & Ebooks",catMode:"Mode",catModeSub:"Vêtements & Chaussures",promosRow2:"Promotions",promo2Sub:"Les meilleures offres du moment",promo2Btn:"J'en profite →",new2Title:"Nouveautés",new2Sub:"Découvrez les derniers arrivages",new2Btn:"Découvrir →",stripBanner:"🔥 Vente Flash -40% électronique · 🆕 Nouveautés chaque semaine · 🚚 Livraison à moindre coût partout au Cameroun · ⚠️ Évitez les arnaques : commandez uniquement via l'app · 💬 Discutez avec nous sur WhatsApp avant tout achat · 💳 Paiement sécurisé MTN MoMo & Orange Money · 🛡️ 100% fiable & vérifié",promosRow:'Promotions',newRow:'Nouveautés',featRow:'Sélection Kimora',whyUs:'Pourquoi nous choisir ?',trust1t:'Livraison rapide',trust1s:'Partout au Cameroun',trust2t:'Paiement sécurisé',trust2s:'MTN MoMo & Orange Money',trust3t:'Retours 48h',trust3s:'Échange ou remboursement',trust4t:'Support 7j/7',trust4s:'WhatsApp à votre écoute',homeRevs:'Ils nous font confiance',reelsTitle:'Ils ont reçu leurs colis',reelsSub:'Vidéos réelles de clients — publiées en anonyme 🔒',reelsBtn:'Vous avez reçu un colis ? Envoyez votre vidéo (anonyme)',dealTitle:'Offres du jour',voiceListen:'Je vous écoute…',voiceNo:'La voix n\'est pas prise en charge sur ce navigateur',voiceDenied:'Accès au micro refusé',dealEnds:'Se termine dans',dealBtn:'Tout voir',bestRow:'Meilleures ventes',recentRow:'Récemment consultés',nlTitle:'Restez informé des bons plans',nlSub:'Promotions, nouveautés et ventes flash — directement sur WhatsApp.',nlBtn:"Je m'abonne",nlNote:'Aucun spam. Désabonnement à tout moment.',nlPh:'6XX XXX XXX',jsFlash:'Chaque jour à 8h & 16h',jsDelivT:'Livraison',jsDelivS:'Partout au Cameroun',jsNewS:'Chaque semaine',jsPromoT:'Promotions',jsPromoS:'Jusqu\'à -67%',jsHelpT:'Aide & Support',jsHelpS:'WhatsApp 7j/7',jsPayT:'Paiement',jsPayS:'MoMo · OM · à la livraison',jsPayInfo:'MTN MoMo · Orange Money · Paiement à la livraison',verifClient:'👤 Client vérifié',rvTitle:'Avis clients',rvBtn:'✍️ Donner mon avis',rvNone:'Aucun avis pour l\'instant. Soyez le premier ! ⭐',stockIn:'✅ En stock — disponible',stockLow:'⚠️ Plus que {n} en stock !',stockOut:'❌ Rupture de stock',stockDig:'✅ Disponible immédiatement après paiement',simTitle:'Produits similaires',reelAsk:'🎥 Aidez d\'autres clients : voulez-vous envoyer une courte vidéo de votre colis reçu ?\n\n🔒 Votre nom et votre numéro ne seront JAMAIS publiés (anonyme).',search:'Rechercher un produit...',home:'Accueil',shop:'Boutique',cart:'Panier',fav:'Favoris',account:'Compte',
+  fr:{ftTagline:"Boutique en ligne 100% camerounaise — mode, beauté, électronique & digital, livrés partout au Cameroun.",ftAbout:"À propos",ftContact:"Contact",ftCgv:"Conditions de vente",ftPrivacy:"Confidentialité",ftShipping:"Livraison",ftReturns:"Retours",ftPayment:"Paiement",ftCookies:"Cookies",ftLegal:"Mentions légales",ftFaq:"Aide & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Paiement à la livraison",ftSecure:"Achat 100% sécurisé",ftVerified:"Vendeur vérifié",ftRights:"Tous droits réservés",ftMade:"Fait au Cameroun",welcomeTitle:'Bienvenue chez Kimora Store',welcomeSub:'Votre boutique 100% camerounaise : mode, beauté, électronique & digital — livrés chez vous, où que vous soyez.',welcomeCta:'Découvrir la boutique →',welcomeTrust:'🛡️ Vendeur vérifié · Des milliers de clients satisfaits',catElec:"Électronique",catElecSub:"Smartphones & Gadgets",catBeau:"Beauté",catBeauSub:"Soins & Cosmétiques",catDig:"Digital",catDigSub:"Logiciels & Ebooks",catMode:"Mode",catModeSub:"Vêtements & Chaussures",promosRow2:"Promotions",promo2Sub:"Les meilleures offres du moment",promo2Btn:"J'en profite →",new2Title:"Nouveautés",new2Sub:"Découvrez les derniers arrivages",new2Btn:"Découvrir →",stripBanner:"🔥 Vente Flash -40% électronique · 🆕 Nouveautés chaque semaine · 🚚 Livraison à moindre coût partout au Cameroun · ⚠️ Évitez les arnaques : commandez uniquement via l'app · 💬 Discutez avec nous sur WhatsApp avant tout achat · 💳 Paiement sécurisé MTN MoMo & Orange Money · 🛡️ 100% fiable & vérifié",promosRow:'Promotions',newRow:'Nouveautés',featRow:'Sélection Kimora',whyUs:'Pourquoi nous choisir ?',trust1t:'Livraison rapide',trust1s:'Partout au Cameroun',trust2t:'Paiement sécurisé',trust2s:'MTN MoMo & Orange Money',trust3t:'Retours 48h',trust3s:'Échange ou remboursement',trust4t:'Support 7j/7',trust4s:'WhatsApp à votre écoute',homeRevs:'Ils nous font confiance',reelsTitle:'Ils ont reçu leurs colis',reelsSub:'Vidéos réelles de clients — publiées en anonyme 🔒',reelsBtn:'Vous avez reçu un colis ? Envoyez votre vidéo (anonyme)',dealTitle:'Offres du jour',brandsTitle:'Marques populaires',srchHist:'Recherches récentes',srchClear:'Effacer',srchCats:'Catégories',srchPop:'Produits populaires',srchProds:'Produits',srchNone:'Aucun résultat — essayez un autre mot',myCart:'Mon panier',viewCart:'Voir le panier',cartEmpty:'Votre panier est vide',points:'points fidélité',welcomeBack:'Bienvenue !',loginToAccess:'Connectez-vous pour suivre vos commandes',ftFollow:'Suivez-nous',ftApp:"Installer l'application",ftAppHint:"Menu du navigateur → Ajouter à l'écran d'accueil",ftFast:'Livraison rapide',ftFastS:'Partout au Cameroun',ftSecure2:'Paiement sécurisé',ftSecureS:'MoMo, OM, à la livraison',ftReturn:'Retours 48h',ftReturnS:'Échange ou remboursement',ftSupport:'Support 7j/7',ftSupportS:'WhatsApp à votre écoute',flashSub:'Offres limitées — profitez-en vite',flashEnds:'Se termine dans',flashAll:'Voir toutes les offres',voiceListen:'Je vous écoute…',voiceNo:'La voix n\'est pas prise en charge sur ce navigateur',voiceDenied:'Accès au micro refusé',dealEnds:'Se termine dans',dealBtn:'Tout voir',bestRow:'Meilleures ventes',recentRow:'Récemment consultés',nlTitle:'Restez informé des bons plans',nlSub:'Promotions, nouveautés et ventes flash — directement sur WhatsApp.',nlBtn:"Je m'abonne",nlNote:'Aucun spam. Désabonnement à tout moment.',nlPh:'6XX XXX XXX',jsFlash:'Chaque jour à 8h & 16h',jsDelivT:'Livraison',jsDelivS:'Partout au Cameroun',jsNewS:'Chaque semaine',jsPromoT:'Promotions',jsPromoS:'Jusqu\'à -67%',jsHelpT:'Aide & Support',jsHelpS:'WhatsApp 7j/7',jsPayT:'Paiement',jsPayS:'MoMo · OM · à la livraison',jsPayInfo:'MTN MoMo · Orange Money · Paiement à la livraison',verifClient:'👤 Client vérifié',rvTitle:'Avis clients',rvBtn:'✍️ Donner mon avis',rvNone:'Aucun avis pour l\'instant. Soyez le premier ! ⭐',stockIn:'✅ En stock — disponible',stockLow:'⚠️ Plus que {n} en stock !',stockOut:'❌ Rupture de stock',stockDig:'✅ Disponible immédiatement après paiement',simTitle:'Produits similaires',reelAsk:'🎥 Aidez d\'autres clients : voulez-vous envoyer une courte vidéo de votre colis reçu ?\n\n🔒 Votre nom et votre numéro ne seront JAMAIS publiés (anonyme).',search:'Rechercher un produit...',home:'Accueil',shop:'Boutique',cart:'Panier',fav:'Favoris',account:'Compte',
     categories:'Catégories',seeAll:'Voir tout',popular:'Produits populaires',addCart:'+ Panier',
     flashSale:'VENTES FLASH',promos:'Promos',new:'Nouveautés',digital:'Digital',popular2:'Populaires',
     myCart:'Mon Panier',myFav:'Mes Favoris',emptyCart:'Panier vide',emptyCartSub:'Ajoutez des produits depuis la boutique',explore:'Explorer',
@@ -9875,7 +10621,7 @@ const TRANSLATIONS={
     catAll:'Tout',catPhone:'Téléphones',catBeauty:'Beauté',catCloth:'Vêtements',catShoes:'Chaussures',catDigital:'Digital',catHome:'Maison',catSport:'Sports',catHealth:'Santé',
     myOrders:'Mes commandes',ordersSub:'Suivre vos livraisons',favSub:'Produits sauvegardés',downloads:'Mes téléchargements',dlSub:'Produits digitaux achetés',logout:'Déconnexion',addCartBtn:'🛒 Ajouter au panier',favBtn:'Favoris',shareBtn:'📤 Partager',compareBtn:'⚖️ Comparer',trackMyOrder:'📦 Suivre ma commande',whatIncluded:'✅ Ce qui est inclus',customerReviews:'⭐ Avis clients',leaveReview:'✍️ Laisser un avis',youMayLike:'💡 Vous aimerez aussi',
     notifs:'Notifications',free:'Gratuite',summer:'Soldes d\'été !',summerSub:'Jusqu\'à -50% sur tout',deliveryAddress:'📍 Adresse de livraison',fullName:'Nom complet *',phone:'Téléphone *',paymentMode:'💳 Mode de paiement',promoCode:'🎟️ Code promo',confirmPay:'🔒 Confirmer le paiement',cancel:'Annuler',loginTab:'Se connecter',email:'📧 Email',password:'🔒 Mot de passe',fullNameReg:'👤 Nom complet *',onDelivery:'À la livraison',typeMsg:'Écrivez un message...',checkout:'Passer commande',orderPlaced:'Commande confirmée !',trackOrder:'Suivre ma commande',close:'Fermer',trackTitle:'Suivi en temps réel',reference:'Référence',estArrival:'Arrivée estimée',statusConfirmed:'✅ Commande confirmée',statusPrep:'📦 Préparation en cours',statusRoute:'🚚 Votre colis est en route',statusArrived:'🎉 Colis arrivé !',subConfirmed:'Paiement reçu, merci !',subPrep:'Nous préparons votre colis',subRoute:'Le livreur se dirige vers vous',subArrived:'Signez pour confirmer la réception',stepConfirmed:'Confirmée',stepPrep:'Préparation',stepRoute:'En route',stepDelivered:'Livré',yourDriver:'Votre livreur Kimora',driverOnWay:'🏍️ En chemin vers vous',confirmReception:'Confirmer la réception',signBelow:'Signez ci-dessous pour valider la livraison',clearSign:'🔄 Effacer',validateReception:'✅ Valider la réception',contactWA:'💬 Contacter par WhatsApp',deliveredSigned:'✅ Colis livré et signé !',thankYou:'Merci d\'avoir choisi Kimora Store 🧡',pleaseSign:'⚠️ Veuillez signer d\'abord',deliveryConfirmed:'🎉 Livraison confirmée ! Merci pour votre confiance',admPanel:'⚙️ Panneau Admin',admLogoutBtn:'🔒 Déconnexion',admStats:'📊 Stats',admProds:'📦 Produits',admSales:'🛒 Ventes',admClients:'👥 Clients',admProspects:'🎯 Prospects',admDeliv:'🚚 Livraisons',admDrivers:'🏍️ Livreurs',admShop:'🏪 Boutique',admContact:'📱 Contact',admSecu:'Sécurité',admTheme:'Thème',admMkt:'Marketing',admPrepare:'📦 Préparer',admSend:'🚚 Envoyer',admDelivered:'✅ Livré',admAssign:'Assigner un livreur',admDriverLbl:'Livreur',admNotify:'💬 Notifier le client',admTrace:'🔍 Voir la traçabilité (départ + réception)',admContactCl:'💬 Contacter',admLastOrder:'Dernière commande',admOrderD:'Commande',admPickupD:'Prise en charge',admDeliveredD:'Livrée',admRegisteredD:'Inscrit le',admSendCode:'💬 Envoyer code',admDone:'Livrées',admInProg:'En cours',admTotal:'Total',minutes:'min'},
-  en:{ftTagline:"100% Cameroonian online shop — fashion, beauty, electronics & digital, delivered all over Cameroon.",ftAbout:"About us",ftContact:"Contact",ftCgv:"Terms of sale",ftPrivacy:"Privacy",ftShipping:"Shipping",ftReturns:"Returns",ftPayment:"Payment",ftCookies:"Cookies",ftLegal:"Legal notice",ftFaq:"Help & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Cash on delivery",ftSecure:"100% secure checkout",ftVerified:"Verified seller",ftRights:"All rights reserved",ftMade:"Made with 🧡 in Cameroon",welcomeTitle:'Welcome to Kimora Store 👋',welcomeSub:'Your 100% Cameroonian shop: fashion, beauty, electronics & digital — delivered right to you, wherever you are.',welcomeCta:'Discover the shop →',welcomeTrust:'🛡️ Verified seller · Thousands of happy customers',catElec:"Electronics",catElecSub:"Smartphones & Gadgets",catBeau:"Beauty",catBeauSub:"Skincare & Cosmetics",catDig:"Digital",catDigSub:"Software & Ebooks",catMode:"Fashion",catModeSub:"Clothing & Shoes",promosRow2:"Deals",promo2Sub:"The best offers of the moment",promo2Btn:"Grab it →",new2Title:"New arrivals",new2Sub:"Discover the latest items",new2Btn:"Discover →",stripBanner:"🔥 Flash Sale -40% electronics · 🆕 New arrivals every week · 🚚 Low-cost delivery all over Cameroon · ⚠️ Avoid scams: order only via the app · 💬 Chat with us on WhatsApp before buying · 💳 Secure payment MTN MoMo & Orange Money · 🛡️ 100% reliable & verified",promosRow:'🔥 Deals',newRow:'🆕 New arrivals',featRow:'⭐ Kimora Selection',whyUs:'Why choose us?',trust1t:'Fast delivery',trust1s:'All over Cameroon',trust2t:'Secure payment',trust2s:'MTN MoMo & Orange Money',trust3t:'48h returns',trust3s:'Exchange or refund',trust4t:'Support 7/7',trust4s:'WhatsApp at your service',homeRevs:'💬 They trust us',reelsTitle:'🎥 They received their packages',reelsSub:'Real customer videos — published anonymously 🔒',reelsBtn:'Received a package? Send your video (anonymous)',dealTitle:'Deals of the day',voiceListen:'Listening…',voiceNo:'Voice input is not supported on this browser',voiceDenied:'Microphone access denied',dealEnds:'Ends in',dealBtn:'See all',bestRow:'Best sellers',recentRow:'Recently viewed',nlTitle:'Never miss a deal',nlSub:'Promotions, new arrivals and flash sales — straight to WhatsApp.',nlBtn:'Subscribe',nlNote:'No spam. Unsubscribe anytime.',nlPh:'6XX XXX XXX',jsFlash:'Every day at 8am & 4pm',jsDelivT:'Delivery',jsDelivS:'All over Cameroon',jsNewS:'Every week',jsPromoT:'Promotions',jsPromoS:'Up to -67%',jsHelpT:'Help & Support',jsHelpS:'WhatsApp 7/7',jsPayT:'Payment',jsPayS:'MoMo · OM · on delivery',jsPayInfo:'MTN MoMo · Orange Money · Pay on delivery',verifClient:'👤 Verified customer',rvTitle:'⭐ Customer reviews',rvBtn:'✍️ Write a review',rvNone:'No reviews yet. Be the first! ⭐',stockIn:'✅ In stock — available',stockLow:'⚠️ Only {n} left in stock!',stockOut:'❌ Out of stock',stockDig:'✅ Available immediately after payment',simTitle:'🛍️ Similar products',reelAsk:'🎥 Help other customers: would you like to send a short video of your received package?\n\n🔒 Your name and number will NEVER be published (anonymous).',search:'Search a product...',home:'Home',shop:'Shop',cart:'Cart',fav:'Favorites',account:'Account',
+  en:{ftTagline:"100% Cameroonian online shop — fashion, beauty, electronics & digital, delivered all over Cameroon.",ftAbout:"About us",ftContact:"Contact",ftCgv:"Terms of sale",ftPrivacy:"Privacy",ftShipping:"Shipping",ftReturns:"Returns",ftPayment:"Payment",ftCookies:"Cookies",ftLegal:"Legal notice",ftFaq:"Help & FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Cash on delivery",ftSecure:"100% secure checkout",ftVerified:"Verified seller",ftRights:"All rights reserved",ftMade:"Made with 🧡 in Cameroon",welcomeTitle:'Welcome to Kimora Store 👋',welcomeSub:'Your 100% Cameroonian shop: fashion, beauty, electronics & digital — delivered right to you, wherever you are.',welcomeCta:'Discover the shop →',welcomeTrust:'🛡️ Verified seller · Thousands of happy customers',catElec:"Electronics",catElecSub:"Smartphones & Gadgets",catBeau:"Beauty",catBeauSub:"Skincare & Cosmetics",catDig:"Digital",catDigSub:"Software & Ebooks",catMode:"Fashion",catModeSub:"Clothing & Shoes",promosRow2:"Deals",promo2Sub:"The best offers of the moment",promo2Btn:"Grab it →",new2Title:"New arrivals",new2Sub:"Discover the latest items",new2Btn:"Discover →",stripBanner:"🔥 Flash Sale -40% electronics · 🆕 New arrivals every week · 🚚 Low-cost delivery all over Cameroon · ⚠️ Avoid scams: order only via the app · 💬 Chat with us on WhatsApp before buying · 💳 Secure payment MTN MoMo & Orange Money · 🛡️ 100% reliable & verified",promosRow:'🔥 Deals',newRow:'🆕 New arrivals',featRow:'⭐ Kimora Selection',whyUs:'Why choose us?',trust1t:'Fast delivery',trust1s:'All over Cameroon',trust2t:'Secure payment',trust2s:'MTN MoMo & Orange Money',trust3t:'48h returns',trust3s:'Exchange or refund',trust4t:'Support 7/7',trust4s:'WhatsApp at your service',homeRevs:'💬 They trust us',reelsTitle:'🎥 They received their packages',reelsSub:'Real customer videos — published anonymously 🔒',reelsBtn:'Received a package? Send your video (anonymous)',dealTitle:'Deals of the day',brandsTitle:'Popular brands',srchHist:'Recent searches',srchClear:'Clear',srchCats:'Categories',srchPop:'Popular products',srchProds:'Products',srchNone:'No result — try another word',myCart:'My cart',viewCart:'View cart',cartEmpty:'Your cart is empty',points:'loyalty points',welcomeBack:'Welcome!',loginToAccess:'Sign in to track your orders',ftFollow:'Follow us',ftApp:'Install the app',ftAppHint:'Browser menu → Add to home screen',ftFast:'Fast delivery',ftFastS:'All over Cameroon',ftSecure2:'Secure payment',ftSecureS:'MoMo, OM, on delivery',ftReturn:'48h returns',ftReturnS:'Exchange or refund',ftSupport:'Support 7/7',ftSupportS:'WhatsApp at your service',flashSub:'Limited offers — hurry up',flashEnds:'Ends in',flashAll:'See all deals',voiceListen:'Listening…',voiceNo:'Voice input is not supported on this browser',voiceDenied:'Microphone access denied',dealEnds:'Ends in',dealBtn:'See all',bestRow:'Best sellers',recentRow:'Recently viewed',nlTitle:'Never miss a deal',nlSub:'Promotions, new arrivals and flash sales — straight to WhatsApp.',nlBtn:'Subscribe',nlNote:'No spam. Unsubscribe anytime.',nlPh:'6XX XXX XXX',jsFlash:'Every day at 8am & 4pm',jsDelivT:'Delivery',jsDelivS:'All over Cameroon',jsNewS:'Every week',jsPromoT:'Promotions',jsPromoS:'Up to -67%',jsHelpT:'Help & Support',jsHelpS:'WhatsApp 7/7',jsPayT:'Payment',jsPayS:'MoMo · OM · on delivery',jsPayInfo:'MTN MoMo · Orange Money · Pay on delivery',verifClient:'👤 Verified customer',rvTitle:'⭐ Customer reviews',rvBtn:'✍️ Write a review',rvNone:'No reviews yet. Be the first! ⭐',stockIn:'✅ In stock — available',stockLow:'⚠️ Only {n} left in stock!',stockOut:'❌ Out of stock',stockDig:'✅ Available immediately after payment',simTitle:'🛍️ Similar products',reelAsk:'🎥 Help other customers: would you like to send a short video of your received package?\n\n🔒 Your name and number will NEVER be published (anonymous).',search:'Search a product...',home:'Home',shop:'Shop',cart:'Cart',fav:'Favorites',account:'Account',
     categories:'Categories',seeAll:'See all',popular:'Popular products',addCart:'+ Cart',
     flashSale:'FLASH SALES',promos:'Deals',new:'New',digital:'Digital',popular2:'Popular',
     myCart:'My Cart',myFav:'My Favorites',emptyCart:'Empty cart',emptyCartSub:'Add products from the shop',explore:'Explore',
@@ -9886,7 +10632,7 @@ const TRANSLATIONS={
     catAll:'All',catPhone:'Phones',catBeauty:'Beauty',catCloth:'Clothes',catShoes:'Shoes',catDigital:'Digital',catHome:'Home',catSport:'Sports',catHealth:'Santé',
     myOrders:'My orders',ordersSub:'Track your deliveries',favSub:'Saved products',downloads:'My downloads',dlSub:'Purchased digital products',logout:'Logout',addCartBtn:'🛒 Add to cart',favBtn:'Favorites',shareBtn:'📤 Share',compareBtn:'⚖️ Compare',trackMyOrder:'📦 Track my order',whatIncluded:'✅ What\'s included',customerReviews:'⭐ Customer reviews',leaveReview:'✍️ Leave a review',youMayLike:'💡 You may also like',
     notifs:'Notifications',free:'Free',summer:'Summer sales!',summerSub:'Up to -50% on everything',deliveryAddress:'📍 Delivery address',fullName:'Full name *',phone:'Phone *',paymentMode:'💳 Payment method',promoCode:'🎟️ Promo code',confirmPay:'🔒 Confirm payment',cancel:'Cancel',loginTab:'Login',email:'📧 Email',password:'🔒 Password',fullNameReg:'👤 Full name *',onDelivery:'On delivery',typeMsg:'Type a message...',checkout:'Checkout',orderPlaced:'Order confirmed!',trackOrder:'Track my order',close:'Close',trackTitle:'Real-time tracking',reference:'Reference',estArrival:'Est. arrival',statusConfirmed:'✅ Order confirmed',statusPrep:'📦 Preparing',statusRoute:'🚚 Your package is on the way',statusArrived:'🎉 Package arrived!',subConfirmed:'Payment received, thank you!',subPrep:'We are preparing your package',subRoute:'The driver is heading to you',subArrived:'Sign to confirm receipt',stepConfirmed:'Confirmed',stepPrep:'Preparing',stepRoute:'On the way',stepDelivered:'Delivered',yourDriver:'Your Kimora driver',driverOnWay:'🏍️ On the way to you',confirmReception:'Confirm receipt',signBelow:'Sign below to validate delivery',clearSign:'🔄 Clear',validateReception:'✅ Validate receipt',contactWA:'💬 Contact via WhatsApp',deliveredSigned:'✅ Package delivered and signed!',thankYou:'Thank you for choosing Kimora Store 🧡',pleaseSign:'⚠️ Please sign first',deliveryConfirmed:'🎉 Delivery confirmed! Thank you for your trust',admPanel:'⚙️ Admin Panel',admLogoutBtn:'🔒 Logout',admStats:'📊 Stats',admProds:'📦 Products',admSales:'🛒 Sales',admClients:'👥 Clients',admProspects:'🎯 Prospects',admDeliv:'🚚 Deliveries',admDrivers:'🏍️ Drivers',admShop:'🏪 Shop',admContact:'📱 Contact',admSecu:'Security',admTheme:'Theme',admMkt:'Marketing',admPrepare:'📦 Prepare',admSend:'🚚 Send',admDelivered:'✅ Delivered',admAssign:'Assign a driver',admDriverLbl:'Driver',admNotify:'💬 Notify client',admTrace:'🔍 View traceability (pickup + receipt)',admContactCl:'💬 Contact',admLastOrder:'Last order',admOrderD:'Order',admPickupD:'Picked up',admDeliveredD:'Delivered',admRegisteredD:'Registered on',admSendCode:'💬 Send code',admDone:'Delivered',admInProg:'In progress',admTotal:'Total',minutes:'min'},
-  ar:{ftTagline:"متجر كاميروني 100% — أزياء، جمال، إلكترونيات ورقمي، توصيل في جميع أنحاء الكاميرون.",ftAbout:"من نحن",ftContact:"اتصل بنا",ftCgv:"شروط البيع",ftPrivacy:"الخصوصية",ftShipping:"التوصيل",ftReturns:"الإرجاع",ftPayment:"الدفع",ftCookies:"ملفات تعريف الارتباط",ftLegal:"إشعار قانوني",ftFaq:"المساعدة والأسئلة الشائعة",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"الدفع عند الاستلام",ftSecure:"دفع آمن 100%",ftVerified:"بائع موثّق",ftRights:"جميع الحقوق محفوظة",ftMade:"صُنع بحب 🧡 في الكاميرون",welcomeTitle:'مرحباً بكم في Kimora Store 👋',welcomeSub:'متجركم الكاميروني 100%: أزياء، جمال، إلكترونيات ورقمي — يصلكم أينما كنتم.',welcomeCta:'اكتشف المتجر ←',welcomeTrust:'🛡️ بائع موثّق · آلاف العملاء الراضين',catElec:"إلكترونيات",catElecSub:"هواتف وأدوات ذكية",catBeau:"جمال",catBeauSub:"عناية ومستحضرات تجميل",catDig:"رقمي",catDigSub:"برامج وكتب إلكترونية",catMode:"موضة",catModeSub:"ملابس وأحذية",promosRow2:"عروض",promo2Sub:"أفضل العروض الآن",promo2Btn:"اغتنمها →",new2Title:"وصل حديثاً",new2Sub:"اكتشف أحدث المنتجات",new2Btn:"اكتشف →",stripBanner:"🔥 تخفيضات سريعة -40% إلكترونيات · 🆕 وصولات جديدة كل أسبوع · 🚚 توصيل رخيص في كل الكاميرون · ⚠️ تجنّب الاحتيال: اطلب عبر التطبيق فقط · 💬 تحدّث معنا على واتساب قبل الشراء · 💳 دفع آمن MTN MoMo و Orange Money · 🛡️ موثوق 100%",promosRow:'🔥 عروض',newRow:'🆕 وصل حديثاً',featRow:'⭐ اختيار كيمورا',whyUs:'لماذا تختارنا؟',trust1t:'توصيل سريع',trust1s:'في جميع أنحاء الكاميرون',trust2t:'دفع آمن',trust2s:'MTN MoMo و Orange Money',trust3t:'إرجاع خلال 48 ساعة',trust3s:'استبدال أو استرداد',trust4t:'دعم 7/7',trust4s:'واتساب في خدمتك',homeRevs:'💬 يثقون بنا',reelsTitle:'🎥 استلموا طرودهم',reelsSub:'فيديوهات حقيقية من العملاء — تُنشر بشكل مجهول 🔒',reelsBtn:'استلمت طردك؟ أرسل الفيديو (مجهول)',dealTitle:'عروض اليوم',voiceListen:'أستمع إليك…',voiceNo:'الإدخال الصوتي غير مدعوم',voiceDenied:'تم رفض الوصول إلى الميكروفون',dealEnds:'ينتهي خلال',dealBtn:'عرض الكل',bestRow:'الأكثر مبيعاً',recentRow:'شوهد مؤخراً',nlTitle:'ابق على اطلاع بالعروض',nlSub:'العروض والجديد مباشرة على واتساب.',nlBtn:'اشترك',nlNote:'بدون إزعاج. يمكنك إلغاء الاشتراك.',nlPh:'6XX XXX XXX',verifClient:'👤 عميل موثّق',rvTitle:'⭐ آراء العملاء',rvBtn:'✍️ اكتب رأيك',rvNone:'لا توجد آراء بعد. كن الأول! ⭐',stockIn:'✅ متوفر في المخزون',stockLow:'⚠️ تبقى {n} فقط!',stockOut:'❌ نفد المخزون',stockDig:'✅ متاح فوراً بعد الدفع',simTitle:'🛍️ منتجات مشابهة',reelAsk:'🎥 ساعد عملاء آخرين: هل تريد إرسال فيديو قصير لطردك المستلم؟\n\n🔒 لن يُنشر اسمك أو رقمك أبداً (مجهول).',search:'ابحث عن منتج...',home:'الرئيسية',shop:'المتجر',cart:'السلة',fav:'المفضلة',account:'الحساب',
+  ar:{ftTagline:"متجر كاميروني 100% — أزياء، جمال، إلكترونيات ورقمي، توصيل في جميع أنحاء الكاميرون.",ftAbout:"من نحن",ftContact:"اتصل بنا",ftCgv:"شروط البيع",ftPrivacy:"الخصوصية",ftShipping:"التوصيل",ftReturns:"الإرجاع",ftPayment:"الدفع",ftCookies:"ملفات تعريف الارتباط",ftLegal:"إشعار قانوني",ftFaq:"المساعدة والأسئلة الشائعة",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"الدفع عند الاستلام",ftSecure:"دفع آمن 100%",ftVerified:"بائع موثّق",ftRights:"جميع الحقوق محفوظة",ftMade:"صُنع بحب 🧡 في الكاميرون",welcomeTitle:'مرحباً بكم في Kimora Store 👋',welcomeSub:'متجركم الكاميروني 100%: أزياء، جمال، إلكترونيات ورقمي — يصلكم أينما كنتم.',welcomeCta:'اكتشف المتجر ←',welcomeTrust:'🛡️ بائع موثّق · آلاف العملاء الراضين',catElec:"إلكترونيات",catElecSub:"هواتف وأدوات ذكية",catBeau:"جمال",catBeauSub:"عناية ومستحضرات تجميل",catDig:"رقمي",catDigSub:"برامج وكتب إلكترونية",catMode:"موضة",catModeSub:"ملابس وأحذية",promosRow2:"عروض",promo2Sub:"أفضل العروض الآن",promo2Btn:"اغتنمها →",new2Title:"وصل حديثاً",new2Sub:"اكتشف أحدث المنتجات",new2Btn:"اكتشف →",stripBanner:"🔥 تخفيضات سريعة -40% إلكترونيات · 🆕 وصولات جديدة كل أسبوع · 🚚 توصيل رخيص في كل الكاميرون · ⚠️ تجنّب الاحتيال: اطلب عبر التطبيق فقط · 💬 تحدّث معنا على واتساب قبل الشراء · 💳 دفع آمن MTN MoMo و Orange Money · 🛡️ موثوق 100%",promosRow:'🔥 عروض',newRow:'🆕 وصل حديثاً',featRow:'⭐ اختيار كيمورا',whyUs:'لماذا تختارنا؟',trust1t:'توصيل سريع',trust1s:'في جميع أنحاء الكاميرون',trust2t:'دفع آمن',trust2s:'MTN MoMo و Orange Money',trust3t:'إرجاع خلال 48 ساعة',trust3s:'استبدال أو استرداد',trust4t:'دعم 7/7',trust4s:'واتساب في خدمتك',homeRevs:'💬 يثقون بنا',reelsTitle:'🎥 استلموا طرودهم',reelsSub:'فيديوهات حقيقية من العملاء — تُنشر بشكل مجهول 🔒',reelsBtn:'استلمت طردك؟ أرسل الفيديو (مجهول)',dealTitle:'عروض اليوم',brandsTitle:'ماركات شهيرة',flashSub:'عروض محدودة',flashEnds:'ينتهي خلال',flashAll:'كل العروض',voiceListen:'أستمع إليك…',voiceNo:'الإدخال الصوتي غير مدعوم',voiceDenied:'تم رفض الوصول إلى الميكروفون',dealEnds:'ينتهي خلال',dealBtn:'عرض الكل',bestRow:'الأكثر مبيعاً',recentRow:'شوهد مؤخراً',nlTitle:'ابق على اطلاع بالعروض',nlSub:'العروض والجديد مباشرة على واتساب.',nlBtn:'اشترك',nlNote:'بدون إزعاج. يمكنك إلغاء الاشتراك.',nlPh:'6XX XXX XXX',verifClient:'👤 عميل موثّق',rvTitle:'⭐ آراء العملاء',rvBtn:'✍️ اكتب رأيك',rvNone:'لا توجد آراء بعد. كن الأول! ⭐',stockIn:'✅ متوفر في المخزون',stockLow:'⚠️ تبقى {n} فقط!',stockOut:'❌ نفد المخزون',stockDig:'✅ متاح فوراً بعد الدفع',simTitle:'🛍️ منتجات مشابهة',reelAsk:'🎥 ساعد عملاء آخرين: هل تريد إرسال فيديو قصير لطردك المستلم؟\n\n🔒 لن يُنشر اسمك أو رقمك أبداً (مجهول).',search:'ابحث عن منتج...',home:'الرئيسية',shop:'المتجر',cart:'السلة',fav:'المفضلة',account:'الحساب',
     categories:'الفئات',seeAll:'عرض الكل',popular:'المنتجات الشائعة',addCart:'+ السلة',
     flashSale:'تخفيضات سريعة',promos:'عروض',new:'جديد',digital:'رقمي',popular2:'شائع',
     myCart:'سلتي',myFav:'مفضلتي',emptyCart:'السلة فارغة',emptyCartSub:'أضف منتجات من المتجر',explore:'استكشف',
@@ -9897,7 +10643,7 @@ const TRANSLATIONS={
     catAll:'الكل',catPhone:'هواتف',catBeauty:'جمال',catCloth:'ملابس',catShoes:'أحذية',catDigital:'رقمي',catHome:'منزل',catSport:'رياضة',
     myOrders:'طلباتي',ordersSub:'تتبع شحناتك',favSub:'المنتجات المحفوظة',downloads:'تنزيلاتي',dlSub:'المنتجات الرقمية المشتراة',logout:'تسجيل الخروج',addCartBtn:'🛒 أضف إلى السلة',favBtn:'المفضلة',shareBtn:'📤 مشاركة',compareBtn:'⚖️ قارن',trackMyOrder:'📦 تتبع طلبي',whatIncluded:'✅ ما هو مشمول',customerReviews:'⭐ آراء العملاء',leaveReview:'✍️ اترك تقييمًا',youMayLike:'💡 قد يعجبك أيضًا',
     notifs:'الإشعارات',free:'مجاني',summer:'تخفيضات الصيف!',summerSub:'حتى -50% على كل شيء',deliveryAddress:'📍 عنوان التوصيل',fullName:'الاسم الكامل *',phone:'الهاتف *',paymentMode:'💳 طريقة الدفع',promoCode:'🎟️ رمز الخصم',confirmPay:'🔒 تأكيد الدفع',cancel:'إلغاء',loginTab:'تسجيل الدخول',email:'📧 البريد الإلكتروني',password:'🔒 كلمة المرور',fullNameReg:'👤 الاسم الكامل *',onDelivery:'عند التسليم',typeMsg:'اكتب رسالة...',checkout:'إتمام الطلب',orderPlaced:'تم تأكيد الطلب!',trackOrder:'تتبع طلبي',close:'إغلاق',trackTitle:'تتبع مباشر',reference:'المرجع',estArrival:'الوصول المقدر',statusConfirmed:'✅ تم تأكيد الطلب',statusPrep:'📦 قيد التحضير',statusRoute:'🚚 طردك في الطريق',statusArrived:'🎉 وصل الطرد!',subConfirmed:'تم استلام الدفع، شكرا!',subPrep:'نحن نحضر طردك',subRoute:'السائق متجه إليك',subArrived:'وقّع لتأكيد الاستلام',stepConfirmed:'مؤكد',stepPrep:'تحضير',stepRoute:'في الطريق',stepDelivered:'تم التسليم',yourDriver:'موصّل كيمورا',driverOnWay:'🏍️ في الطريق إليك',confirmReception:'تأكيد الاستلام',signBelow:'وقّع أدناه للتحقق من التسليم',clearSign:'🔄 مسح',validateReception:'✅ تأكيد الاستلام',contactWA:'💬 تواصل عبر واتساب',deliveredSigned:'✅ تم التسليم والتوقيع!',thankYou:'شكرا لاختيارك كيمورا 🧡',pleaseSign:'⚠️ يرجى التوقيع أولا',deliveryConfirmed:'🎉 تم تأكيد التسليم! شكرا لثقتك',minutes:'دقيقة'},
-  es:{ftTagline:"Tienda 100% camerunesa — moda, belleza, electrónica y digital, entregado en todo Camerún.",ftAbout:"Sobre nosotros",ftContact:"Contacto",ftCgv:"Condiciones de venta",ftPrivacy:"Privacidad",ftShipping:"Envío",ftReturns:"Devoluciones",ftPayment:"Pago",ftCookies:"Cookies",ftLegal:"Aviso legal",ftFaq:"Ayuda y FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Pago contra entrega",ftSecure:"Compra 100% segura",ftVerified:"Vendedor verificado",ftRights:"Todos los derechos reservados",ftMade:"Hecho con 🧡 en Camerún",welcomeTitle:'¡Bienvenido a Kimora Store! 👋',welcomeSub:'Tu tienda 100% camerunesa: moda, belleza, electrónica y digital — entregado donde estés.',welcomeCta:'Descubrir la tienda →',welcomeTrust:'🛡️ Vendedor verificado · Miles de clientes satisfechos',catElec:"Electrónica",catElecSub:"Smartphones y Gadgets",catBeau:"Belleza",catBeauSub:"Cuidado y Cosméticos",catDig:"Digital",catDigSub:"Software y Ebooks",catMode:"Moda",catModeSub:"Ropa y Zapatos",promosRow2:"Ofertas",promo2Sub:"Las mejores ofertas del momento",promo2Btn:"Aprovechar →",new2Title:"Novedades",new2Sub:"Descubre lo último",new2Btn:"Descubrir →",stripBanner:"🔥 Venta Flash -40% electrónica · 🆕 Novedades cada semana · 🚚 Envío económico en todo Camerún · ⚠️ Evita estafas: pide solo por la app · 💬 Chatea con nosotros en WhatsApp antes de comprar · 💳 Pago seguro MTN MoMo & Orange Money · 🛡️ 100% fiable y verificado",promosRow:'🔥 Ofertas',newRow:'🆕 Novedades',featRow:'⭐ Selección Kimora',whyUs:'¿Por qué elegirnos?',trust1t:'Entrega rápida',trust1s:'En todo Camerún',trust2t:'Pago seguro',trust2s:'MTN MoMo y Orange Money',trust3t:'Devoluciones 48h',trust3s:'Cambio o reembolso',trust4t:'Soporte 7/7',trust4s:'WhatsApp a tu servicio',homeRevs:'💬 Confían en nosotros',reelsTitle:'🎥 Recibieron sus paquetes',reelsSub:'Vídeos reales de clientes — publicados de forma anónima 🔒',reelsBtn:'¿Recibiste un paquete? Envía tu vídeo (anónimo)',dealTitle:'Ofertas del día',voiceListen:'Te escucho…',voiceNo:'La voz no es compatible con este navegador',voiceDenied:'Acceso al micrófono denegado',dealEnds:'Termina en',dealBtn:'Ver todo',bestRow:'Más vendidos',recentRow:'Vistos recientemente',nlTitle:'No te pierdas ninguna oferta',nlSub:'Promociones y novedades directamente en WhatsApp.',nlBtn:'Suscribirme',nlNote:'Sin spam. Cancela cuando quieras.',nlPh:'6XX XXX XXX',verifClient:'👤 Cliente verificado',rvTitle:'⭐ Opiniones de clientes',rvBtn:'✍️ Escribir opinión',rvNone:'Aún no hay opiniones. ¡Sé el primero! ⭐',stockIn:'✅ En stock — disponible',stockLow:'⚠️ ¡Solo quedan {n}!',stockOut:'❌ Agotado',stockDig:'✅ Disponible inmediatamente tras el pago',simTitle:'🛍️ Productos similares',reelAsk:'🎥 Ayuda a otros clientes: ¿quieres enviar un vídeo corto de tu paquete recibido?\n\n🔒 Tu nombre y número NUNCA serán publicados (anónimo).',search:'Buscar un producto...',home:'Inicio',shop:'Tienda',cart:'Carrito',fav:'Favoritos',account:'Cuenta',
+  es:{ftTagline:"Tienda 100% camerunesa — moda, belleza, electrónica y digital, entregado en todo Camerún.",ftAbout:"Sobre nosotros",ftContact:"Contacto",ftCgv:"Condiciones de venta",ftPrivacy:"Privacidad",ftShipping:"Envío",ftReturns:"Devoluciones",ftPayment:"Pago",ftCookies:"Cookies",ftLegal:"Aviso legal",ftFaq:"Ayuda y FAQ",ftMtn:"MTN MoMo",ftOrange:"Orange Money",ftCod:"Pago contra entrega",ftSecure:"Compra 100% segura",ftVerified:"Vendedor verificado",ftRights:"Todos los derechos reservados",ftMade:"Hecho con 🧡 en Camerún",welcomeTitle:'¡Bienvenido a Kimora Store! 👋',welcomeSub:'Tu tienda 100% camerunesa: moda, belleza, electrónica y digital — entregado donde estés.',welcomeCta:'Descubrir la tienda →',welcomeTrust:'🛡️ Vendedor verificado · Miles de clientes satisfechos',catElec:"Electrónica",catElecSub:"Smartphones y Gadgets",catBeau:"Belleza",catBeauSub:"Cuidado y Cosméticos",catDig:"Digital",catDigSub:"Software y Ebooks",catMode:"Moda",catModeSub:"Ropa y Zapatos",promosRow2:"Ofertas",promo2Sub:"Las mejores ofertas del momento",promo2Btn:"Aprovechar →",new2Title:"Novedades",new2Sub:"Descubre lo último",new2Btn:"Descubrir →",stripBanner:"🔥 Venta Flash -40% electrónica · 🆕 Novedades cada semana · 🚚 Envío económico en todo Camerún · ⚠️ Evita estafas: pide solo por la app · 💬 Chatea con nosotros en WhatsApp antes de comprar · 💳 Pago seguro MTN MoMo & Orange Money · 🛡️ 100% fiable y verificado",promosRow:'🔥 Ofertas',newRow:'🆕 Novedades',featRow:'⭐ Selección Kimora',whyUs:'¿Por qué elegirnos?',trust1t:'Entrega rápida',trust1s:'En todo Camerún',trust2t:'Pago seguro',trust2s:'MTN MoMo y Orange Money',trust3t:'Devoluciones 48h',trust3s:'Cambio o reembolso',trust4t:'Soporte 7/7',trust4s:'WhatsApp a tu servicio',homeRevs:'💬 Confían en nosotros',reelsTitle:'🎥 Recibieron sus paquetes',reelsSub:'Vídeos reales de clientes — publicados de forma anónima 🔒',reelsBtn:'¿Recibiste un paquete? Envía tu vídeo (anónimo)',dealTitle:'Ofertas del día',brandsTitle:'Marcas populares',flashSub:'Ofertas limitadas',flashEnds:'Termina en',flashAll:'Ver todas las ofertas',voiceListen:'Te escucho…',voiceNo:'La voz no es compatible con este navegador',voiceDenied:'Acceso al micrófono denegado',dealEnds:'Termina en',dealBtn:'Ver todo',bestRow:'Más vendidos',recentRow:'Vistos recientemente',nlTitle:'No te pierdas ninguna oferta',nlSub:'Promociones y novedades directamente en WhatsApp.',nlBtn:'Suscribirme',nlNote:'Sin spam. Cancela cuando quieras.',nlPh:'6XX XXX XXX',verifClient:'👤 Cliente verificado',rvTitle:'⭐ Opiniones de clientes',rvBtn:'✍️ Escribir opinión',rvNone:'Aún no hay opiniones. ¡Sé el primero! ⭐',stockIn:'✅ En stock — disponible',stockLow:'⚠️ ¡Solo quedan {n}!',stockOut:'❌ Agotado',stockDig:'✅ Disponible inmediatamente tras el pago',simTitle:'🛍️ Productos similares',reelAsk:'🎥 Ayuda a otros clientes: ¿quieres enviar un vídeo corto de tu paquete recibido?\n\n🔒 Tu nombre y número NUNCA serán publicados (anónimo).',search:'Buscar un producto...',home:'Inicio',shop:'Tienda',cart:'Carrito',fav:'Favoritos',account:'Cuenta',
     categories:'Categorías',seeAll:'Ver todo',popular:'Productos populares',addCart:'+ Carrito',
     flashSale:'VENTAS FLASH',promos:'Ofertas',new:'Nuevo',digital:'Digital',popular2:'Popular',
     myCart:'Mi Carrito',myFav:'Mis Favoritos',emptyCart:'Carrito vacío',emptyCartSub:'Añade productos desde la tienda',explore:'Explorar',
@@ -10575,6 +11321,7 @@ function admRenderTheme(){
   try{admRenderFonts();}catch(e){}
   try{admRenderAnim();}catch(e){}
   try{admRenderKai();}catch(e){}
+  try{admRenderSections();admRenderBrands();admRenderDS();}catch(e){}
   const pre=document.getElementById('thPresets');
   if(pre)pre.innerHTML=THEME_PRESETS.map((p,i)=>
     '<button class="thp" onclick="admApplyPreset('+i+')" title="'+p.n+'">'+
