@@ -1,19 +1,13 @@
-[build]
-  command = "echo 'Build completed'"
-  publish = "."
 [functions]
   directory = "netlify/functions"
+
+# Statut de paiement Fapshi : /api/payment-status/{transId} -> fonction payment-status
+[[redirects]]
+  from = "/api/payment-status/*"
+  to = "/.netlify/functions/payment-status/:splat"
+  status = 200
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    Referrer-Policy = "strict-origin-when-cross-origin"
