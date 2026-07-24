@@ -2448,7 +2448,12 @@ window.ICONS={
  mic:'<rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21M8.5 21h7"/>',
  speaker:'<path d="M4 9.5h3.5L12 5.5v13L7.5 14.5H4z"/><path d="M16 9.2a4 4 0 0 1 0 5.6"/><path d="M18.6 6.6a7.6 7.6 0 0 1 0 10.8"/>',
  speakerOff:'<path d="M4 9.5h3.5L12 5.5v13L7.5 14.5H4z"/><path d="m16.5 9.5 5 5M21.5 9.5l-5 5"/>',
- send:'<path d="m21 3-9.5 9.5"/><path d="M21 3 14.5 21l-3-7.5L4 10.5z"/>'
+ send:'<path d="m21 3-9.5 9.5"/><path d="M21 3 14.5 21l-3-7.5L4 10.5z"/>',
+ sun:'<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>',
+ moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5z"/>',
+ folder:'<path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h4l2 2.5h7A1.5 1.5 0 0 1 19 9v8.5A1.5 1.5 0 0 1 17.5 19h-13A1.5 1.5 0 0 1 3 17.5z"/>',
+ inbox:'<path d="M5 5h14l2 7v6H3v-6z"/><path d="M3 12h5l1.5 2.5h5L16 12h5"/>',
+ target:'<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>'
 };
 window.ico=function(name,size,color){
   var p=window.ICONS[name];if(!p)return '';
@@ -2472,7 +2477,7 @@ window.addEventListener('unhandledrejection',function(e){window.__errors.push('P
 window.showDiag=function(){
   // Réservé à l'admin connecté : les clients ne peuvent jamais voir les erreurs techniques
   var isAdmin=false;try{isAdmin=(typeof estAdminConnecte==='function')&&estAdminConnecte();}catch(e){}
-  if(!isAdmin){if(typeof toast==='function')toast('🔒 Réservé à l\'administrateur');return;}
+  if(!isAdmin){if(typeof toast==='function')toast('Réservé à l\'administrateur');return;}
   var d=document.getElementById('diagBox');
   if(!d){d=document.createElement('div');d.id='diagBox';d.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:#111;color:#0f0;font:12px monospace;padding:16px;z-index:99999;overflow:auto;white-space:pre-wrap';document.body.appendChild(d);}
   var fb=(typeof fbEnabled!=='undefined'&&fbEnabled)?'OUI':'NON';
@@ -2829,7 +2834,7 @@ body.dark .kai-hero .kh-name{color:#FDBA74;}
 
 /* MODE SOMBRE */
 body.dark{--bk:#F9FAFB;--gr:#9CA3AF;--lt:#1F2937;--bd:#374151;background:#111827;}
-body.dark .nav{background:var(--or);}
+body.dark .nav{background:#1F2937;border-bottom-color:#374151;}
 body.dark .pd,body.dark .md,body.dark .bnav,body.dark #pg-boutique>div,body.dark #pg-cart>div,body.dark #pg-wishlist>div,body.dark #pg-account>div:first-child{background:#1F2937;color:#F9FAFB;}
 body.dark .psc,body.dark .fc,body.dark .cic,body.dark .fi,body.dark .pop,body.dark .qb{background:#374151;color:#F9FAFB;border-color:#4B5563;}
 body.dark .fc.on,body.dark .pop.on{background:var(--or);color:#fff;}
@@ -4136,7 +4141,7 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
     <div>
       <div class="mi" onclick="openTrack()"><div class="mic"><i data-ico="pkg" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></div><div><div class="mit" data-i18n="myOrders">Mes commandes</div><div class="mis" data-i18n="ordersSub">Suivre vos livraisons</div></div><div class="mia">›</div></div>
       <div class="mi" onclick="showPg('wishlist')"><div class="mic"><i data-ico="heart" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></div><div><div class="mit">Mes favoris</div><div class="mis">Produits sauvegardés</div></div><div class="mia">›</div></div>
-      <div class="mi" onclick="openDL()"><div class="mic">⬇️</div><div><div class="mit">Mes téléchargements</div><div class="mis">Produits digitaux achetés</div></div><div class="mia">›</div></div>
+      <div class="mi" onclick="openDL()"><div class="mic"><i data-ico="download" data-ico-size="18" style="display:inline-flex"></i></div><div><div class="mit">Mes téléchargements</div><div class="mis">Produits digitaux achetés</div></div><div class="mia">›</div></div>
       <div class="mi" onclick="toggleDark()"><div class="mic" id="darkIcon"><i data-ico="sparkle" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> </div><div><div class="mit" id="darkLabel">Mode sombre</div><div class="mis">Confort visuel</div></div><div class="mia">›</div></div>
       <div class="mi" onclick="openLoyalty()"><div class="mic"><i data-ico="gift" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></div><div><div class="mit">Programme fidélité</div><div class="mis">Gagnez des points à chaque achat</div></div><div class="mia">›</div></div>
       <div class="mi" onclick="openGiftCard()"><div class="mic"><i data-ico="ticket" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></div><div><div class="mit">Cartes cadeaux</div><div class="mis">Offrez ou utilisez un bon</div></div><div class="mia">›</div></div>
@@ -4204,10 +4209,10 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
         </div>
         <div id="rvAvg" style="margin-bottom:10px"></div>
         <div id="rvForm" class="hide" style="background:var(--lt);border-radius:var(--r-lg);padding:12px;margin-bottom:12px">
-          <input class="fi" id="rvName" placeholder="👤 Votre nom" maxlength="40">
+          <input class="fi" id="rvName" placeholder="Votre nom" maxlength="40">
           <div style="font-size:.76rem;font-weight:700;margin:4px 0 6px">Votre note :</div>
           <div id="rvStars" style="cursor:pointer;margin-bottom:8px;display:flex;gap:4px" class="starpick"></div>
-          <textarea class="fi" id="rvComment" placeholder="💬 Votre commentaire..." rows="3" maxlength="400" style="resize:none"></textarea>
+          <textarea class="fi" id="rvComment" placeholder="Votre commentaire..." rows="3" maxlength="400" style="resize:none"></textarea>
           <div style="display:flex;align-items:center;gap:8px;margin:6px 0 10px">
             <label style="background:#fff;border:1px dashed var(--or);color:var(--or);padding:8px 12px;border-radius:var(--r-md);font-size:.72rem;font-weight:700;cursor:pointer"><i data-ico="camera" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Photo (optionnel)
               <input type="file" accept="image/*" onchange="captureReviewPhoto(event)" style="display:none"></label>
@@ -4267,9 +4272,9 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
           <div class="pop" id="py-or" onclick="selP('orange')"><div class="poi"><span class="om-dot"></span></div><div class="pon">Orange Money</div></div>
           <div class="pop" id="py-lv" onclick="selP('livraison')"><div class="poi"><i data-ico="truck" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></div><div class="pon" data-i18n="onDelivery">À la livraison</div></div>
         </div>
-        <div id="ppw"><input class="fi" id="ckpay" type="tel" placeholder="📞 Numéro MTN MoMo (9 chiffres)" maxlength="9" oninput="this.value=this.value.replace(/\D/g,'')"></div>
+        <div id="ppw"><input class="fi" id="ckpay" type="tel" placeholder="Numéro MTN MoMo (9 chiffres)" maxlength="9" oninput="this.value=this.value.replace(/\D/g,'')"></div>
         <div style="display:flex;gap:8px;margin-bottom:12px">
-          <input class="fi" id="ckPromo" placeholder="🎟️ Code promo" data-i18n-ph="promoCode" style="margin-bottom:0;flex:1;text-transform:uppercase">
+          <input class="fi" id="ckPromo" placeholder="Code promo" data-i18n-ph="promoCode" style="margin-bottom:0;flex:1;text-transform:uppercase">
           <button onclick="applyPromo()" style="background:var(--bk);color:#fff;border:none;padding:0 18px;border-radius:var(--r-md);font-weight:700;font-size:.8rem;cursor:pointer">OK</button>
         </div>
         <div id="promoMsg" style="font-size:.78rem;margin-bottom:8px"></div>
@@ -4282,7 +4287,7 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
         <div class="sci"><i data-ico="checkCircle" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></div>
         <h3>Commande confirmée !</h3>
         <p id="ckmsg">Votre commande a été reçue.</p>
-        <button class="bor hide" id="dlbtn" onclick="doDownload()" style="margin-bottom:10px">⬇️ Télécharger maintenant</button>
+        <button class="bor hide" id="dlbtn" onclick="doDownload()" style="margin-bottom:10px">Télécharger maintenant</button>
         <button class="bor hide" id="trbtn" style="margin-bottom:10px" onclick="openTrack()" data-i18n="trackMyOrder"><i data-ico="pkg" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Suivre ma commande</button>
         <button class="bou" onclick="closeOv('ckOv')">Fermer</button>
       </div>
@@ -4300,15 +4305,15 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
         <button class="att" id="rgtab" onclick="swAth('reg')">S'inscrire</button>
       </div>
       <div id="lgf">
-        <input class="fi" id="lgph" type="text" placeholder="📞 Téléphone ou 📧 email">
-        <input class="fi" id="lgpw" type="password" placeholder="🔒 Mot de passe" data-i18n-ph="password">
+        <input class="fi" id="lgph" type="text" placeholder="Téléphone ou email">
+        <input class="fi" id="lgpw" type="password" placeholder="Mot de passe" data-i18n-ph="password">
         <button class="bor" onclick="doLogin()">Se connecter</button>
         <div onclick="forgotPassword()" style="text-align:center;margin-top:10px;font-size:.74rem;color:var(--or);font-weight:700;cursor:pointer">Mot de passe oublié ?</div>
       </div>
       <div id="rgf" class="hide">
-        <input class="fi" id="rgnm" placeholder="👤 Nom complet *" data-i18n-ph="fullNameReg">
-        <input class="fi" id="rgph" type="text" placeholder="📞 Téléphone OU 📧 email *">
-        <input class="fi" id="rgpw" type="password" placeholder="🔒 Mot de passe * (min 6 caractères)">
+        <input class="fi" id="rgnm" placeholder="Nom complet *" data-i18n-ph="fullNameReg">
+        <input class="fi" id="rgph" type="text" placeholder="Téléphone OU email *">
+        <input class="fi" id="rgpw" type="password" placeholder="Mot de passe * (min 6 caractères)">
         <button class="bor" onclick="doReg()">Créer mon compte</button>
         <div style="font-size:.64rem;color:var(--gr);text-align:center;margin-top:8px"><i data-ico="lock" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Votre compte est sécurisé et accessible depuis tous vos appareils</div>
       </div>
@@ -4320,7 +4325,7 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
 <div class="ov" id="dlOv" onclick="cbg(event,'dlOv')">
   <div class="md">
     <div class="mh"></div>
-    <div class="mhd"><h2>⬇️ Téléchargements</h2><button class="xb" onclick="closeOv('dlOv')"><i data-ico="x" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button></div>
+    <div class="mhd"><h2>Téléchargements</h2><button class="xb" onclick="closeOv('dlOv')"><i data-ico="x" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button></div>
     <div class="mb" id="dlcont"></div>
   </div>
 </div>
@@ -4333,7 +4338,7 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
     <div class="mb">
       <!-- Recherche par numéro de suivi -->
       <div style="display:flex;gap:8px;margin-bottom:12px">
-        <input class="fi" id="trackSearch" placeholder="🔖 Entrez votre numéro de suivi" style="margin-bottom:0;flex:1;text-transform:uppercase;font-size:.8rem">
+        <input class="fi" id="trackSearch" placeholder="Entrez votre numéro de suivi" style="margin-bottom:0;flex:1;text-transform:uppercase;font-size:.8rem">
         <button onclick="searchByTracking()" style="background:var(--or);color:#fff;border:none;padding:0 16px;border-radius:var(--r-md);font-weight:700;cursor:pointer"><i data-ico="search" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button>
       </div>
       <!-- Référence + ETA -->
@@ -4446,8 +4451,8 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
     <div class="mh"></div>
     <div class="mhd"><h2><i data-ico="lock" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Accès Administrateur</h2><button class="xb" onclick="closeOv('admLoginOv')"><i data-ico="x" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button></div>
     <div class="mb">
-      <input class="fi" id="admU" type="email" placeholder="📧 Email admin" autocomplete="off">
-      <input class="fi" id="admP" type="password" placeholder="🔒 Mot de passe" autocomplete="off">
+      <input class="fi" id="admU" type="email" placeholder="Email admin" autocomplete="off">
+      <input class="fi" id="admP" type="password" placeholder="Mot de passe" autocomplete="off">
       <button class="bor" onclick="admDoLogin()">Accéder au panneau</button>
       <div style="font-size:.72rem;color:var(--gr);margin-top:12px;text-align:center"><i data-ico="lock" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Connexion sécurisée Firebase</div>
     </div>
@@ -4626,8 +4631,8 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
           <div style="font-weight:900;font-size:.8rem;margin-bottom:4px"><i data-ico="key" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Réinitialiser le mot de passe d'un client</div>
           <div style="font-size:.64rem;color:var(--gr);margin-bottom:8px">Le client vous contacte sur WhatsApp (mot de passe oublié). Vérifiez que c'est bien son numéro, entrez un mot de passe temporaire, puis envoyez-le-lui sur WhatsApp.</div>
           <div style="display:flex;gap:6px">
-            <input class="fi" id="rpPhone" placeholder="📞 Numéro du client" style="margin-bottom:6px;flex:1">
-            <input class="fi" id="rpPass" placeholder="🔑 Nouveau mot de passe" style="margin-bottom:6px;flex:1">
+            <input class="fi" id="rpPhone" placeholder="Numéro du client" style="margin-bottom:6px;flex:1">
+            <input class="fi" id="rpPass" placeholder="Nouveau mot de passe" style="margin-bottom:6px;flex:1">
           </div>
           <button class="bou" style="margin-top:0" onclick="admResetClientPw()"><i data-ico="refresh" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Réinitialiser</button>
           <div id="rpStatus" style="font-size:.68rem;margin-top:6px"></div>
@@ -4692,10 +4697,10 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
           <div style="font-size:.85rem;font-weight:900;margin-bottom:6px"><i data-ico="video" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Vidéos colis reçus (réels)</div>
           <div style="font-size:.66rem;color:var(--gr);margin-bottom:10px;line-height:1.5"><i data-ico="lock" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Protection clients : ne publiez JAMAIS le nom, le numéro, l'adresse ou le visage d'un client sans son accord. Les vidéos s'affichent en anonyme (« Client vérifié · Ville »).</div>
           <div id="reelList" style="margin-bottom:10px"></div>
-          <input class="fi" id="nrUrl" placeholder="🔗 Lien vidéo (TikTok, YouTube ou .mp4)">
+          <input class="fi" id="nrUrl" placeholder="Lien vidéo (TikTok, YouTube ou .mp4)">
           <div style="display:flex;gap:6px">
             <input class="fi" id="nrCity" placeholder="Ville (ex: Douala)" style="flex:1">
-            <input class="fi" id="nrCap" placeholder="Légende (ex: Smartphone reçu ✅)" style="flex:2">
+            <input class="fi" id="nrCap" placeholder="Légende (ex: Smartphone reçu)" style="flex:2">
           </div>
           <button class="bou" style="margin-top:0" onclick="admAddReel()"><i data-ico="plus" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Publier cette vidéo</button>
         </div>
@@ -4908,8 +4913,8 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
         <div id="admGalPrev" style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px"></div>
         <div style="font-size:.66rem;color:var(--gr);margin-top:5px;line-height:1.4" id="uploadHint"><i data-ico="phone" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Galerie : affichée dans l'app<br><i data-ico="globe" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Lien http : visible aussi sur WhatsApp</div>
       </div>
-      <input class="fi" id="apImgUrl" placeholder="🔗 OU collez un lien image (https://...) pour WhatsApp" oninput="admImgUrlPreview()">
-      <textarea class="fi" id="apImgs" placeholder="🖼️ Galerie : liens images supplémentaires (un par ligne, max 9)" rows="2" style="resize:none"></textarea>
+      <input class="fi" id="apImgUrl" placeholder="OU collez un lien image (https://...) pour WhatsApp" oninput="admImgUrlPreview()">
+      <textarea class="fi" id="apImgs" placeholder="Galerie : liens images supplémentaires (un par ligne, max 9)" rows="2" style="resize:none"></textarea>
       <div style="margin-top:8px;border:1.5px solid var(--or);border-radius:var(--r-lg);padding:10px;background:#EFF6FF">
         <div style="font-weight:900;font-size:.8rem;margin-bottom:4px"><i data-ico="sparkle" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Variantes de couleurs</div>
         <div style="font-size:.64rem;color:var(--gr);margin-bottom:8px">Un seul produit, plusieurs couleurs — chaque couleur a sa propre galerie (5 à 10 photos). Le client voit les photos changer selon la couleur choisie.</div>
@@ -4986,7 +4991,7 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
       <button class="bou" style="margin-bottom:8px;text-align:left" onclick="setSort('price-asc')"><i data-ico="card" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Prix : moins cher d'abord</button>
       <button class="bou" style="margin-bottom:8px;text-align:left" onclick="setSort('price-desc')"><i data-ico="card" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Prix : plus cher d'abord</button>
       <button class="bou" style="margin-bottom:8px;text-align:left" onclick="setSort('rating')"><i data-ico="star" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Mieux notés</button>
-      <button class="bou" style="margin-bottom:8px;text-align:left" onclick="setSort('newest')">🆕 Nouveautés</button>
+      <button class="bou" style="margin-bottom:8px;text-align:left" onclick="setSort('newest')">Nouveautés</button>
       <div style="border-top:1px solid var(--bd);margin:14px 0;padding-top:14px">
         <div style="font-size:.82rem;font-weight:800;margin-bottom:10px"><i data-ico="card" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Filtrer par prix (FCFA)</div>
         <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
@@ -5466,10 +5471,10 @@ function renderRecentHome(){
   const sec=document.getElementById('recentSection');
   if(!sec)return;
   if(recent.length<2){sec.innerHTML='';return;}
-  const title={fr:'🕐 Vus récemment',en:'🕐 Recently viewed',ar:'🕐 شوهد مؤخرا',es:'🕐 Vistos recientemente'}[getLang()]||'🕐 Vus récemment';
+  const title={fr:'Vus récemment',en:'Recently viewed',ar:'🕐 شوهد مؤخرا',es:'Vistos recientemente'}[getLang()]||'Vus récemment';
   sec.innerHTML='<div class="sec"><div class="st"><h3>'+title+'</h3></div><div style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 10px 4px">'+
     recent.slice(0,8).map(p=>{
-      const img=isImg(p.img)?`<img loading="lazy" src="${p.img}" style="width:100%;height:100%;object-fit:cover">`:`<span style="font-size:1.6rem">${p.icon||'📦'}</span>`;
+      const img=isImg(p.img)?`<img loading="lazy" src="${p.img}" style="width:100%;height:100%;object-fit:cover">`:`<span style="display:inline-flex;color:var(--gr)">${ico(catVisual(p.cat).ico,28)}</span>`;
       return `<div onclick="openP('${p.id}')" style="flex-shrink:0;width:80px;cursor:pointer"><div style="width:80px;height:80px;background:#fff;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:4px">${img}</div><div style="font-size:.62rem;font-weight:700;color:var(--or)">${p.price.toLocaleString('fr-FR')} F</div></div>`;
     }).join('')+'</div></div>';
 }
@@ -5480,7 +5485,7 @@ function renderRecentHome(){
 function imageSearch(e){
   const file=e.target.files[0];
   if(!file)return;
-  toast('📷 Analyse de l\'image...');
+  toast('Analyse de l\'image...');
   // Afficher un aperçu et proposer de contacter le vendeur avec la photo
   const reader=new FileReader();
   reader.onload=ev=>{
@@ -5519,13 +5524,13 @@ function openImageSearchResult(imgData){
       <img loading="lazy" src="${imgData}" style="max-width:100%;max-height:200px;border-radius:var(--r-lg);border:2px solid var(--or)">
     </div>
     <div style="background:#fff;border-radius:var(--r-md);padding:12px;margin-bottom:16px;font-size:.78rem;color:var(--or);line-height:1.5">
-      📷 Vous cherchez un produit similaire à cette image ? Choisissez une catégorie ou envoyez la photo à notre équipe qui trouvera le produit pour vous !
+      Vous cherchez un produit similaire à cette image ? Choisissez une catégorie ou envoyez la photo à notre équipe qui trouvera le produit pour vous !
     </div>
     <div style="font-size:.82rem;font-weight:800;margin-bottom:10px">Parcourir par catégorie :</div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px">
       ${cats.map(c=>`<button onclick="imgSearchCategory('${c.cat}')" style="background:var(--lt);border:1px solid var(--bd);border-radius:var(--r-md);padding:12px 8px;cursor:pointer;text-align:center"><div style="font-size:1.5rem">${c.icon}</div><div style="font-size:.68rem;font-weight:700;margin-top:4px">${c.name}</div></button>`).join('')}
     </div>
-    <button class="bor" style="background:#25D166" onclick="imgSearchContactVendor()">📤 Envoyer la photo au vendeur (WhatsApp)</button>
+    <button class="bor" style="background:#25D166" onclick="imgSearchContactVendor()">Envoyer la photo au vendeur (WhatsApp)</button>
   `;
   openOv('imgSearchOv');
 }
@@ -5538,37 +5543,37 @@ function imgSearchCategory(cat){
   const gt=document.getElementById('gtitle');if(gt)gt.textContent=titles[cat]||'Produits';
   showPg('home');
   window.scrollTo({top:0,behavior:'smooth'});
-  toast('🔍 Voici nos produits dans cette catégorie');
+  toast('Voici nos produits dans cette catégorie');
 }
 function imgSearchContactVendor(){
   closeOv('imgSearchOv');
   const cfg=CFG();
-  const msg=waT().imgSearch||'📷 Kimora Store';
+  const msg=waT().imgSearch||'Kimora Store';
   // Le formulaire prospect enregistre AUSSI la photo dans l'admin (window.imgSearchData)
   if(typeof openProspectForm==='function'){
-    openProspectForm(msg,'🔍 Recherche par photo');
+    openProspectForm(msg,'Recherche par photo');
   }else{
     openWhatsAppExternal(cfg.wa,msg);
   }
-  setTimeout(()=>toast('✅ Votre photo est envoyée au vendeur'),1200);
+  setTimeout(()=>toast('Votre photo est envoyée au vendeur'),1200);
 }
 
 function voiceSearch(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){toast('🎤 Recherche vocale non supportée sur ce navigateur');return;}
+  if(!SR){toast('Recherche vocale non supportée sur ce navigateur');return;}
   const rec=new SR();
   const langMap={fr:'fr-FR',en:'en-US',ar:'ar-SA',es:'es-ES'};
   rec.lang=langMap[getLang()]||'fr-FR';
   rec.interimResults=false;rec.maxAlternatives=1;
-  toast('🎤 Parlez maintenant...');
+  toast('Parlez maintenant...');
   rec.start();
   rec.onresult=e=>{
     const text=e.results[0][0].transcript;
     document.getElementById('srch').value=text;
     doSearch();
-    toast('🔍 Recherche : '+text);
+    toast('Recherche : '+text);
   };
-  rec.onerror=()=>{toast('🎤 Erreur, réessayez');};
+  rec.onerror=()=>{toast('Erreur, réessayez');};
 }
 
 // ====== MODE SOMBRE ======
@@ -5577,21 +5582,21 @@ function toggleDark(){
   lsSet('kDark',isDark?'1':'0');
   const icon=document.getElementById('darkIcon');
   const label=document.getElementById('darkLabel');
-  if(icon)icon.textContent=isDark?'☀️':'🌙';
+  if(icon)icon.innerHTML=ico(isDark?'sun':'moon',16);
   if(label)label.textContent=isDark?'Mode clair':'Mode sombre';
-  toast(isDark?'🌙 Mode sombre activé':'☀️ Mode clair activé');
+  toast(isDark?'Mode sombre activé':'Mode clair activé');
 }
 function initDark(){
   if(localStorage.getItem('kDark')==='1'){
     document.body.classList.add('dark');
     const icon=document.getElementById('darkIcon');const label=document.getElementById('darkLabel');
-    if(icon)icon.textContent='☀️';if(label)label.textContent='Mode clair';
+    if(icon)icon.innerHTML=ico('sun',16);if(label)label.textContent='Mode clair';
   }
 }
 
 // FIREBASE - Synchronisation temps réel multi-utilisateurs
 // ============================================================
-// ⚠️ REMPLACEZ cette config par la vôtre (voir guide)
+// REMPLACEZ cette config par la vôtre (voir guide)
 // Ces clés sont PUBLIQUES par design (sécurité = Rules Firestore)
 const FIREBASE_CONFIG={
   apiKey:"AIzaSyAr0xue1h91QGx9Ru65Q3Flg8HecsTPlZc",
@@ -5622,7 +5627,7 @@ function initFirebase(){
       if(!u && !window.authInProgress){ fbAuth.signInAnonymously().catch(e=>console.warn('Auth anonyme:',e.code)); }
     });
     fbEnabled=true;
-    console.log('✅ Firebase connecté');
+    console.log('Firebase connecté');
     return true;
   }catch(e){
     console.error('Erreur Firebase:',e.message);
@@ -5668,7 +5673,7 @@ async function cloudAddProduct(product){
     return true;
   }catch(e){
     console.error('Erreur ajout cloud:',e.message);
-    toast('⚠️ Erreur de synchronisation');
+    toast('Erreur de synchronisation');
     return false;
   }
 }
@@ -5771,7 +5776,7 @@ const CFG=()=>JSON.parse(localStorage.getItem('kCfg')||JSON.stringify({
   wa:'237678689053',email:'',tiktok:'',
   livraison:1500,delai:'2-3 jours ouvrables',freeDel:20000,
   bannerTitle:'Soldes d\'été !',bannerDesc:'Jusqu\'à -50% sur tout',
-  stripText:'🔥 Vente Flash -40% électronique · 🆕 Nouveautés chaque semaine · 🚚 Livraison à moindre coût partout au Cameroun · ⚠️ Évitez les arnaques : commandez uniquement via l\'app · 💬 Discutez sur WhatsApp avant tout achat · 💳 Paiement sécurisé MTN MoMo & Orange Money · 🛡️ 100% fiable & vérifié',
+  stripText:'Vente Flash -40% électronique · Nouveautés chaque semaine · Livraison à moindre coût partout au Cameroun · Évitez les arnaques : commandez uniquement via l\'app · Discutez sur WhatsApp avant tout achat · Paiement sécurisé MTN MoMo & Orange Money · 100% fiable & vérifié',
   promoTitle:'Vente Flash !',promoDesc:'Offres limitées',showPromo:false
 }));
 
@@ -6022,7 +6027,7 @@ function checkAbandonedCart(){
   if(lastActivity&&(now-lastActivity>1800000)&&(now-lastReminder>86400000)){
     setTimeout(()=>{
       const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
-      if(confirm('🛒 Vous avez '+cart.length+' article(s) dans votre panier ('+total.toLocaleString('fr-FR')+' FCFA).\n\nFinaliser votre commande maintenant ?')){
+      if(confirm('Vous avez '+cart.length+' article(s) dans votre panier ('+total.toLocaleString('fr-FR')+' FCFA).\n\nFinaliser votre commande maintenant ?')){
         nav('cart');
       }
       lsSet('kCartReminder',now);
@@ -6040,7 +6045,7 @@ function applyPriceFilter(){
   closeOv('sortOv');
   displayLimit=12;
   applyF();
-  toast('💰 Filtre prix appliqué');
+  toast('Filtre prix appliqué');
 }
 function clearPriceFilter(){
   priceFilterMin=null;priceFilterMax=null;
@@ -6108,7 +6113,7 @@ function renderG(prods){
   }
   if(prods.length>displayLimit){
     lm.style.display='block';
-    lm.textContent='⬇️ Voir plus ('+(prods.length-displayLimit)+' produits)';
+    lm.textContent='Voir plus ('+(prods.length-displayLimit)+' produits)';
   }else{
     lm.style.display='none';
   }
@@ -6581,10 +6586,10 @@ function openP(id){
   di.innerHTML='';
   if(isImg(p.img)){
     const im=document.createElement('img');im.src=p.img;im.style.cssText='width:100%;height:100%;object-fit:contain;background:#fff;cursor:zoom-in;padding:10px;box-sizing:border-box;';im.onclick=()=>openImageZoom(p.img);
-    im.onerror=()=>{di.innerHTML='<span style="font-size:5rem">'+(p.icon||'📦')+'</span>';};
+    im.onerror=()=>{di.innerHTML='<span style="display:inline-flex;color:var(--gr)">'+ico(catVisual(p.cat).ico,72)+'</span>';};
     di.appendChild(im);
   }else{
-    const em=document.createElement('span');em.style.cssText='font-size:5rem;';em.textContent=p.icon||'📦';di.appendChild(em);
+    const em=document.createElement('span');em.style.cssText='display:inline-flex;color:#9CA3AF';em.innerHTML=ico(catVisual(p.cat).ico,72);di.appendChild(em);
   }
   document.getElementById('dcat').textContent=p.cat.charAt(0).toUpperCase()+p.cat.slice(1);
   document.getElementById('dtit').textContent=p.name;
@@ -6597,7 +6602,7 @@ function openP(id){
   document.getElementById('dst').innerHTML=starRow(p.rating,15);
   document.getElementById('drv').textContent='('+p.reviews+' avis)';
   const dt=document.getElementById('dtp');
-  dt.textContent=p.type==='digital'?'⚡ Digital':'🚚 Physique';
+  dt.textContent=p.type==='digital'?'Digital':'Physique';
   dt.style.cssText=p.type==='digital'?'background:#DCFCE7;color:var(--gn);font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:var(--r-xs);margin-left:auto':'background:#DBEAFE;color:#2563EB;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:var(--r-xs);margin-left:auto';
   document.getElementById('dds').textContent=p.desc;
   document.getElementById('dfts').innerHTML=(p.features||[]).map(f=>`<div class="dfi">${f}</div>`).join('');
@@ -6614,7 +6619,7 @@ function openP(id){
   if(p.type==='digital'){document.getElementById('dlvic').textContent='⚡';document.getElementById('dlvt').textContent='Téléchargement instantané';document.getElementById('dlvd').textContent='Disponible immédiatement après paiement';}
   else{const cfg=CFG();document.getElementById('dlvic').textContent='🚚';document.getElementById('dlvt').textContent='Livraison à '+cfg.city;document.getElementById('dlvd').textContent=cfg.delai+' · Paiement à la livraison disponible';}
   const td=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;
-  document.getElementById('dab').textContent=p.type==='digital'?(getLang()==='en'?'💳 Buy now':getLang()==='ar'?'💳 اشتري الآن':getLang()==='es'?'💳 Comprar ahora':'💳 Acheter maintenant'):'🛒 '+td.addCart.replace('+ ','').replace('+','');
+  document.getElementById('dab').textContent=p.type==='digital'?(getLang()==='en'?'Buy now':getLang()==='ar'?'💳 اشتري الآن':getLang()==='es'?'Comprar ahora':'Acheter maintenant'):'🛒 '+td.addCart.replace('+ ','').replace('+','');
   document.getElementById('dfvt').textContent=getWish().includes(p.id)?'Retirer':'Favoris';
   renderReviews(p);
   renderReco(p);
@@ -6629,12 +6634,12 @@ function sCl(c,el){selCl=c;document.querySelectorAll('#dcl .vp').forEach(x=>x.cl
 function addCartQuick(){
   // Si le produit a des tailles/couleurs non sélectionnées, guider vers les options
   if(curP&&curP.sizes&&curP.sizes.length&&!selSz){
-    toast('👇 Choisissez la taille ci-dessous');
+    toast('Choisissez la taille ci-dessous');
     const el=document.getElementById('dszw');if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
     return;
   }
   if(curP&&curP.colors&&curP.colors.length&&!selCl){
-    toast('👇 Choisissez la couleur ci-dessous');
+    toast('Choisissez la couleur ci-dessous');
     const el=document.getElementById('dclw');if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
     return;
   }
@@ -6643,30 +6648,30 @@ function addCartQuick(){
 
 function addCart(){
   const p=curP;if(!p)return;
-  if(p.sizes&&p.sizes.length&&!selSz){toast('⚠️ Choisissez une taille');return;}
+  if(p.sizes&&p.sizes.length&&!selSz){toast('Choisissez une taille');return;}
   const cart=getCart();
   const ex=cart.find(x=>x.id===p.id&&x.size===selSz&&x.color===selCl);
   if(ex)ex.qty++;else cart.push({id:p.id,icon:p.icon,img:p.img||'',name:p.name,price:p.price,type:p.type,file:p.file||null,link:p.link||null,size:selSz,color:selCl,qty:1});
-  svCart(cart);closeOv('prodOv');toast('✅ Ajouté au panier !');
+  svCart(cart);closeOv('prodOv');toast('Ajouté au panier !');
 }
 function qAdd(id){
   const p=getP().find(x=>x.id===id);if(!p)return;
   if((p.sizes&&p.sizes.length)||(p.colors&&p.colors.length)){openP(id);return;}
   const cart=getCart(),ex=cart.find(x=>x.id===p.id);
   if(ex)ex.qty++;else cart.push({id:p.id,icon:p.icon,img:p.img||'',name:p.name,price:p.price,type:p.type,file:p.file||null,link:p.link||null,qty:1});
-  svCart(cart);toast('✅ Ajouté !');
+  svCart(cart);toast('Ajouté !');
 }
 function renderCart(){
   const cart=getCart(),c=document.getElementById('cartcont');
   const tt=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;
-  if(!cart.length){const tt=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;c.innerHTML=`<div class="empty"><div class="ei">🛒</div><h3>${tt.emptyCart}</h3><p>${tt.emptyCartSub}</p><button class="bor" onclick="showPg('home')">${tt.explore}</button></div>`;return;}
+  if(!cart.length){const tt=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;c.innerHTML=`<div class="empty"><div class="ei"><i data-ico="cart" data-ico-size="44" style="display:inline-flex"></i></div><h3>${tt.emptyCart}</h3><p>${tt.emptyCartSub}</p><button class="bor" onclick="showPg('home')">${tt.explore}</button></div>`;return;}
   const tot=cart.reduce((s,x)=>s+x.price*x.qty,0);
   const hp=cart.some(x=>x.type==='physical');
   const cfg=CFG();const liv=hp&&tot<cfg.freeDel?cfg.livraison:0;
   c.innerHTML=cart.map((it,i)=>`<div class="cit">
     <div class="cimg">${isImg(it.img)?`<img loading="lazy" src="${it.img}" onerror="this.parentNode.innerHTML='<span style=\'font-size:1.8rem\'>${it.icon||'📦'}</span>'" style="width:100%;height:100%;object-fit:cover">`:`<span style="font-size:1.8rem">${it.icon||'📦'}</span>`}</div>
     <div class="cinf"><div class="cnm">${it.name}</div>${it.size||it.color?`<div class="cvr">${[it.size,it.color].filter(Boolean).join(' · ')}</div>`:''}<div class="cpr">${(it.price*it.qty).toLocaleString('fr-FR')} FCFA</div>
-    <div class="cac"><button class="qb" onclick="uQty(${i},-1)">−</button><span class="qv">${it.qty}</span><button class="qb" onclick="uQty(${i},1)">+</button><button class="rb" onclick="rmC(${i})">🗑️ Retirer</button></div></div></div>`).join('')+
+    <div class="cac"><button class="qb" onclick="uQty(${i},-1)">−</button><span class="qv">${it.qty}</span><button class="qb" onclick="uQty(${i},1)">+</button><button class="rb" onclick="rmC(${i})">Retirer</button></div></div></div>`).join('')+
   `<div class="tot"><div class="tr"><span>${tt.subtotal}</span><span>${tot.toLocaleString('fr-FR')} FCFA</span></div><div class="tr"><span>${tt.delivery}</span><span>${liv?liv.toLocaleString('fr-FR')+' FCFA':'🎉 '+tt.free}</span></div><div class="tr tt"><span>${tt.total}</span><span>${(tot+liv).toLocaleString('fr-FR')} FCFA</span></div></div>
   <button class="bor actn" onclick="openCK()">🔒 ${tt.checkout||'Passer commande'}</button>
   <button class="bor" style="background:#25D166;margin-top:9px" onclick="chatCartWA()">${window.WA_SVG} ${tt.chatPay}</button>
@@ -6677,7 +6682,7 @@ function rmC(i){const c=getCart();c.splice(i,1);svCart(c);renderCart();}
 
 // ===== CHECKOUT =====
 function openCK(){
-  const cart=getCart();if(!cart.length){toast('⚠️ Panier vide');return;}
+  const cart=getCart();if(!cart.length){toast('Panier vide');return;}
   const hp=cart.some(x=>x.type==='physical');
   document.getElementById('ckph').style.display=hp?'block':'none';
   document.getElementById('ckdig').classList.toggle('hide',hp);
@@ -6719,7 +6724,7 @@ function selP(m){
     if(btn)btn.classList.toggle('on',k===idMap[m]);
   });
   document.getElementById('ppw').style.display=m==='livraison'?'none':'block';
-  if(m!=='livraison')document.getElementById('ckpay').placeholder=m==='mtn'?'📞 Numéro MTN MoMo (9 chiffres)':'📞 Numéro Orange Money (9 chiffres)';
+  if(m!=='livraison')document.getElementById('ckpay').placeholder=m==='mtn'?'Numéro MTN MoMo (9 chiffres)':'Numéro Orange Money (9 chiffres)';
 }
 // Configuration : true = vrai paiement Fapshi, false = simulation
 const FAPSHI_ENABLED=true; // Paiement réel activé (clés Live dans Netlify)
@@ -6727,8 +6732,8 @@ const FAPSHI_ENABLED=true; // Paiement réel activé (clés Live dans Netlify)
 function confPay(){
   const cart=getCart();
   const hp=cart.some(x=>x.type==='physical');
-  if(hp&&(!document.getElementById('cknm').value.trim()||!document.getElementById('cktel').value.trim()||!document.getElementById('ckvl').value)){toast('⚠️ Remplissez nom, téléphone et ville');return;}
-  if(pm!=='livraison'&&document.getElementById('ckpay').value.length<9){toast('⚠️ Numéro Mobile Money requis');return;}
+  if(hp&&(!document.getElementById('cknm').value.trim()||!document.getElementById('cktel').value.trim()||!document.getElementById('ckvl').value)){toast('Remplissez nom, téléphone et ville');return;}
+  if(pm!=='livraison'&&document.getElementById('ckpay').value.length<9){toast('Numéro Mobile Money requis');return;}
 
   // Paiement à la livraison = pas de Fapshi, commande directe
   if(pm==='livraison'){finalizeOrder();return;}
@@ -6784,7 +6789,7 @@ async function payWithFapshi(){
   }catch(err){
     document.getElementById('ckld').classList.remove('on');
     document.getElementById('ck1').style.display='block';
-    toast('❌ Erreur de connexion. Réessayez.');
+    toast('Erreur de connexion. Réessayez.');
   }
 }
 
@@ -6802,7 +6807,7 @@ function pollFapshiStatus(transId,trackNum){
         clearInterval(poll);
         document.getElementById('ckld').classList.remove('on');
         document.getElementById('ck1').style.display='block';
-        toast(data.status==='EXPIRED'?'⏱️ Paiement expiré':'❌ Paiement refusé');
+        toast(data.status==='EXPIRED'?'⏱️ Paiement expiré':'Paiement refusé');
       }
     }catch(err){}
     if(attempts>=maxAttempts){
@@ -6837,10 +6842,10 @@ function finalizeOrder(trackNum){
   const u=getUser();if(u){u.points=(u.points||0)+100;lsSet('kUser',JSON.stringify(u));const us=JSON.parse(localStorage.getItem('kUsers')||'[]');const ui=us.findIndex(x=>x.email===u.email);if(ui>=0){us[ui].points=u.points;lsSet('kUsers',JSON.stringify(us));}}
   if(hd){const dls=getDL();cart.filter(x=>x.type==='digital').forEach(x=>dls.push({id:x.id,name:x.name,icon:x.icon,file:x.file,link:x.link||'#',date:new Date().toLocaleDateString('fr-FR')}));lsSet('kDL',JSON.stringify(dls));}
   svCart([]);updAcc();activePromo=null;
-  document.getElementById('ckmsg').innerHTML=(hd&&!hp2?'Vos produits digitaux sont prêts !':hp2&&!hd?'Livraison sous '+cfg.delai+' à '+cfg.city+'.':'Commande confirmée !')+(hp2?'<br><br><div style="background:#fff;border-radius:var(--r-md);padding:10px;margin-top:8px"><div style="font-size:.7rem;color:var(--gr)">🔖 Numéro de suivi</div><div style="font-size:1rem;font-weight:900;color:var(--or);letter-spacing:.5px">'+ord.tracking+'</div></div>':'');
+  document.getElementById('ckmsg').innerHTML=(hd&&!hp2?'Vos produits digitaux sont prêts !':hp2&&!hd?'Livraison sous '+cfg.delai+' à '+cfg.city+'.':'Commande confirmée !')+(hp2?'<br><br><div style="background:#fff;border-radius:var(--r-md);padding:10px;margin-top:8px"><div style="font-size:.7rem;color:var(--gr)">Numéro de suivi</div><div style="font-size:1rem;font-weight:900;color:var(--or);letter-spacing:.5px">'+ord.tracking+'</div></div>':'');
   document.getElementById('dlbtn').classList.toggle('hide',!hd);
   document.getElementById('trbtn').classList.toggle('hide',!hp2);
-  if(cfg.wa){const base=appUrl();const waMsg='🛒 Nouvelle commande\n🔖 Suivi : '+ord.tracking+'\n📦 '+ord.items.join(', ')+'\n💰 '+ord.total.toLocaleString('fr-FR')+' FCFA\n👤 '+ord.name+'\n📞 '+ord.phone+'\n📍 '+ord.city+' - '+(ord.address||'N/A')+'\n💳 '+(pm==='livraison'?'À la livraison':pm.toUpperCase())+'\n📅 '+ord.date+'\n\n🗺️ Suivi : '+base+'?track='+ord.tracking;setTimeout(()=>openWhatsAppExternal(cfg.wa,waMsg),500);}
+  if(cfg.wa){const base=appUrl();const waMsg='Nouvelle commande\nSuivi : '+ord.tracking+'\n📦 '+ord.items.join(', ')+'\n💰 '+ord.total.toLocaleString('fr-FR')+' FCFA\n👤 '+ord.name+'\n📞 '+ord.phone+'\n📍 '+ord.city+' - '+(ord.address||'N/A')+'\n💳 '+(pm==='livraison'?'À la livraison':pm.toUpperCase())+'\n📅 '+ord.date+'\n\nSuivi : '+base+'?track='+ord.tracking;setTimeout(()=>openWhatsAppExternal(cfg.wa,waMsg),500);}
 }
 function doDownload(){const dls=getDL();if(dls.length){const l=dls[dls.length-1];if(l.link&&l.link!=='#')window.open(l.link,'_blank');toast('⬇️ '+l.name);}closeOv('ckOv');}
 
@@ -6851,12 +6856,12 @@ function togFv(id){
   lsSet('kWish',JSON.stringify(w));
   const b=document.getElementById('fv-'+id);
   if(b){b.textContent=w.includes(id)?'❤️':'🤍';b.classList.toggle('on',w.includes(id));}
-  toast(w.includes(id)?'❤️ Ajouté aux favoris':'🤍 Retiré');updBdg();
+  toast(w.includes(id)?'Ajouté aux favoris':'Retiré');updBdg();
 }
 function togFavModal(){if(curP){togFv(curP.id);document.getElementById('dfvt').textContent=getWish().includes(curP.id)?'Retirer des favoris':'Ajouter aux favoris';}}
 function renderWish(){
   const favs=getP().filter(p=>getWish().includes(p.id));
-  const tw=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;document.getElementById('wlcont').innerHTML=!favs.length?`<div class="empty"><div class="ei">❤️</div><h3>${tw.myFav}</h3><p>❤️</p><button class="bor" onclick="showPg('home')">${tw.explore}</button></div>`:`<div class="pgrid" style="margin-top:10px">${favs.map(pcard).join('')}</div>`;
+  const tw=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;document.getElementById('wlcont').innerHTML=!favs.length?`<div class="empty"><div class="ei"><i data-ico="heart" data-ico-size="44" style="display:inline-flex"></i></div><h3>${tw.myFav}</h3><p>❤️</p><button class="bor" onclick="showPg('home')">${tw.explore}</button></div>`:`<div class="pgrid" style="margin-top:10px">${favs.map(pcard).join('')}</div>`;
 }
 
 // ===== AUTH =====
@@ -6879,29 +6884,29 @@ function isEmail(v){return /@/.test(v)&&/\.[a-z]{2,}$/i.test(v.trim());}
 function authEmail(id){id=(id||'').trim();return isEmail(id)?id.toLowerCase():phoneMail(normPhone(id));}
 function doLogin(){
   const id=document.getElementById('lgph').value.trim(),pw=document.getElementById('lgpw').value;
-  if(!id||!pw){toast('⚠️ Entrez votre téléphone/email et votre mot de passe');return;}
-  if(!isEmail(id)&&normPhone(id).length<9){toast('⚠️ Téléphone ou email invalide');return;}
-  if(!fbEnabled||!fbAuth){toast('❌ Connexion au serveur indisponible');return;}
+  if(!id||!pw){toast('Entrez votre téléphone/email et votre mot de passe');return;}
+  if(!isEmail(id)&&normPhone(id).length<9){toast('Téléphone ou email invalide');return;}
+  if(!fbEnabled||!fbAuth){toast('Connexion au serveur indisponible');return;}
   fbAuth.signInWithEmailAndPassword(authEmail(id),pw).then(cred=>{
     const u={name:cred.user.displayName||'Client',phone:isEmail(id)?'':normPhone(id),email:isEmail(id)?id.toLowerCase():'',points:100};
     lsSet('kUser',JSON.stringify(u));
-    closeOv('authOv');updAcc();toast('✅ Bienvenue '+u.name+' !');
+    closeOv('authOv');updAcc();toast('Bienvenue '+u.name+' !');
   }).catch(err=>{
-    if(err.code==='auth/user-not-found')toast('❌ Aucun compte avec cet identifiant. Inscrivez-vous !');
-    else if(err.code==='auth/too-many-requests')toast('⚠️ Trop d\'essais, patientez quelques minutes');
-    else toast('❌ Identifiant ou mot de passe incorrect');
+    if(err.code==='auth/user-not-found')toast('Aucun compte avec cet identifiant. Inscrivez-vous !');
+    else if(err.code==='auth/too-many-requests')toast('Trop d\'essais, patientez quelques minutes');
+    else toast('Identifiant ou mot de passe incorrect');
   });
 }
 function forgotPassword(){
   const id=(document.getElementById('lgph').value||'').trim();
   // Compte avec un vrai email => réinitialisation automatique par email
   if(isEmail(id)){
-    if(!fbEnabled||!fbAuth){toast('❌ Service indisponible');return;}
+    if(!fbEnabled||!fbAuth){toast('Service indisponible');return;}
     fbAuth.sendPasswordResetEmail(id.toLowerCase()).then(()=>{
-      toast('📧 Email de réinitialisation envoyé ! Vérifiez votre boîte (et les spams).');
+      toast('Email de réinitialisation envoyé ! Vérifiez votre boîte (et les spams).');
     }).catch(err=>{
-      if(err.code==='auth/user-not-found')toast('❌ Aucun compte avec cet email');
-      else toast('❌ Erreur, réessayez');
+      if(err.code==='auth/user-not-found')toast('Aucun compte avec cet email');
+      else toast('Erreur, réessayez');
     });
     return;
   }
@@ -6910,34 +6915,34 @@ function forgotPassword(){
   const wa=CFG().wa||'237678689053';
   const w=waT();
   openWhatsAppExternal(wa,w.forgot+(ph||'(mon numéro)'));
-  toast('💬 Nous vous aiderons à récupérer votre compte sur WhatsApp');
+  toast('Nous vous aiderons à récupérer votre compte sur WhatsApp');
 }
 function doReg(){
   const nm=document.getElementById('rgnm').value.trim();
   const id=document.getElementById('rgph').value.trim();
   const pw=document.getElementById('rgpw').value;
-  if(!nm||!id||!pw){toast('⚠️ Champs obligatoires manquants');return;}
+  if(!nm||!id||!pw){toast('Champs obligatoires manquants');return;}
   const email=isEmail(id),ph=email?'':normPhone(id);
-  if(!email&&ph.length<9){toast('⚠️ Téléphone ou email invalide');return;}
-  if(pw.length<6){toast('⚠️ Mot de passe trop court (min 6)');return;}
-  if(!fbEnabled||!fbAuth){toast('❌ Connexion au serveur indisponible');return;}
+  if(!email&&ph.length<9){toast('Téléphone ou email invalide');return;}
+  if(pw.length<6){toast('Mot de passe trop court (min 6)');return;}
+  if(!fbEnabled||!fbAuth){toast('Connexion au serveur indisponible');return;}
   fbAuth.createUserWithEmailAndPassword(authEmail(id),pw).then(cred=>{
     cred.user.updateProfile({displayName:nm}).catch(()=>{});
     const u={name:nm,phone:ph,email:email?id.toLowerCase():'',points:100};
     lsSet('kUser',JSON.stringify(u));
     const us=JSON.parse(localStorage.getItem('kUsers')||'[]');
     us.push({name:nm,phone:ph,email:email?id.toLowerCase():'',points:100});lsSet('kUsers',JSON.stringify(us));
-    closeOv('authOv');updAcc();toast('🎉 Compte créé ! +100 points offerts !');
+    closeOv('authOv');updAcc();toast('Compte créé ! +100 points offerts !');
   }).catch(err=>{
-    if(err.code==='auth/email-already-in-use')toast('❌ Cet identifiant a déjà un compte. Connectez-vous !');
-    else toast('❌ Erreur, vérifiez le numéro et réessayez');
+    if(err.code==='auth/email-already-in-use')toast('Cet identifiant a déjà un compte. Connectez-vous !');
+    else toast('Erreur, vérifiez le numéro et réessayez');
   });
 }
 function doLogout(){
   localStorage.removeItem('kUser');
   lsSet('kStay','');
   if(fbAuth&&fbAuth.currentUser&&!fbAuth.currentUser.isAnonymous)fbAuth.signOut().catch(()=>{});
-  updAcc();toast('👋 Déconnecté');
+  updAcc();toast('Déconnecté');
 }
 function updAcc(){
   const u=getUser();
@@ -6949,8 +6954,8 @@ function updAcc(){
 // ===== DOWNLOADS =====
 function openDL(){
   const dls=getDL();
-  document.getElementById('dlcont').innerHTML=!dls.length?`<div class="empty"><div class="ei">📁</div><h3>Aucun téléchargement</h3><p>Vos achats digitaux apparaîtront ici</p></div>`:
-  dls.map(d=>`<div class="mi"><div class="mic">${d.icon}</div><div><div class="mit">${d.name}</div><div class="mis">${d.date} · ${d.file||'fichier'}</div></div><button onclick="window.open('${d.link||'#'}','_blank')" style="background:var(--or);color:#fff;border:none;padding:6px 12px;border-radius:var(--r-sm);cursor:pointer;font-size:.73rem;font-weight:800;margin-left:auto">⬇️</button></div>`).join('');
+  document.getElementById('dlcont').innerHTML=!dls.length?`<div class="empty"><div class="ei"><i data-ico="folder" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucun téléchargement</h3><p>Vos achats digitaux apparaîtront ici</p></div>`:
+  dls.map(d=>`<div class="mi"><div class="mic">${ico('download',18)}</div><div><div class="mit">${d.name}</div><div class="mis">${d.date} · ${d.file||'fichier'}</div></div><button onclick="window.open('${d.link||'#'}','_blank')" style="background:var(--or);color:#fff;border:none;padding:6px 12px;border-radius:var(--r-sm);cursor:pointer;font-size:.73rem;font-weight:800;margin-left:auto">⬇️</button></div>`).join('');
   openOv('dlOv');
 }
 
@@ -7030,7 +7035,7 @@ function checkDriverLink(){
   const driverCode=params.get('driver');
   if(!driverCode)return;
   const code=driverCode.toUpperCase();
-  toast('🏍️ Connexion livreur...');
+  toast('Connexion livreur...');
   let attempts=0;
   const tryConnect=()=>{
     attempts++;
@@ -7046,7 +7051,7 @@ function checkDriverLink(){
       return true;
     }
     if(attempts<5){setTimeout(tryConnect,1500);}
-    else{toast('⚠️ Code livreur introuvable. Vérifiez avec l\'admin.');}
+    else{toast('Code livreur introuvable. Vérifiez avec l\'admin.');}
     return false;
   };
   setTimeout(tryConnect,1200);
@@ -7068,7 +7073,7 @@ function genDriverCode(){
 function admAddDriver(){
   const name=document.getElementById('drvName').value.trim();
   const phone=document.getElementById('drvPhone').value.trim();
-  if(!name||!phone){toast('⚠️ Nom et téléphone requis');return;}
+  if(!name||!phone){toast('Nom et téléphone requis');return;}
   const code=genDriverCode();
   const driver={id:'d'+Date.now(),name,phone:phone.replace(/\D/g,''),code,active:true,created:Date.now()};
   const drivers=getDrivers();
@@ -7080,9 +7085,9 @@ function admAddDriver(){
   admRenderDrivers();
   // Partager le code au livreur par WhatsApp
   const base=appUrl();
-  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+name+' !\n\nVotre compte livreur est créé.\n\n🔑 Votre code : *'+code+'*\n\n📲 Cliquez pour accéder à votre tableau de bord :\n'+base+'?driver='+code+'\n\n(Vous devrez compléter votre profil : photo + CNI pour la sécurité)';
-  setTimeout(()=>{if(confirm('✅ Livreur créé ! Code : '+code+'\n\nEnvoyer le code au livreur par WhatsApp ?'))openWhatsAppExternal(phone,msg);},300);
-  toast('✅ Livreur créé : '+code);
+  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+name+' !\n\nVotre compte livreur est créé.\n\nVotre code : *'+code+'*\n\nCliquez pour accéder à votre tableau de bord :\n'+base+'?driver='+code+'\n\n(Vous devrez compléter votre profil : photo + CNI pour la sécurité)';
+  setTimeout(()=>{if(confirm('Livreur créé ! Code : '+code+'\n\nEnvoyer le code au livreur par WhatsApp ?'))openWhatsAppExternal(phone,msg);},300);
+  toast('Livreur créé : '+code);
 }
 
 function getDrivers(){return JSON.parse(localStorage.getItem('kDrivers')||'[]');}
@@ -7106,7 +7111,7 @@ function initAdminLiveMap(){
   adminMapMarkers={};
   // Écouter les positions des livraisons en temps réel
   if(!fbEnabled){
-    document.getElementById('adminMapLegend').innerHTML='<div style="text-align:center;color:var(--gr);font-size:.78rem;padding:12px">⚠️ Firebase requis pour le suivi temps réel</div>';
+    document.getElementById('adminMapLegend').innerHTML='<div style="text-align:center;color:var(--gr);font-size:.78rem;padding:12px">Firebase requis pour le suivi temps réel</div>';
     updateAdminMapFromLocal();
     return;
   }
@@ -7137,7 +7142,7 @@ function renderAdminMapMarkers(drivers){
   adminMapMarkers={};
   const legend=document.getElementById('adminMapLegend');
   if(!drivers.length){
-    if(legend)legend.innerHTML='<div style="text-align:center;color:var(--gr);font-size:.78rem;padding:12px">🏍️ Aucun livreur en déplacement actuellement</div>';
+    if(legend)legend.innerHTML='<div style="text-align:center;color:var(--gr);font-size:.78rem;padding:12px">Aucun livreur en déplacement actuellement</div>';
     return;
   }
   const bounds=[];
@@ -7153,11 +7158,11 @@ function renderAdminMapMarkers(drivers){
   else if(bounds.length>1){adminMap.fitBounds(bounds,{padding:[40,40]});}
   // Légende
   if(legend){
-    legend.innerHTML='<div style="font-size:.8rem;font-weight:800;margin-bottom:8px">🏍️ Livreurs actifs ('+drivers.length+')</div>'+
+    legend.innerHTML='<div style="font-size:.8rem;font-weight:800;margin-bottom:8px">Livreurs actifs ('+drivers.length+')</div>'+
       drivers.map(d=>`<div onclick="adminMapFocus(${d.lat},${d.lng})" style="display:flex;align-items:center;gap:10px;background:var(--lt);border-radius:var(--r-md);padding:10px;margin-bottom:8px;cursor:pointer">
         ${d.photo?`<img loading="lazy" src="${d.photo}" style="width:36px;height:36px;border-radius:50%;object-fit:cover">`:'<div style="width:36px;height:36px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center">🏍️</div>'}
         <div style="flex:1"><div style="font-size:.8rem;font-weight:700">${d.name}</div><div style="font-size:.68rem;color:var(--gr)">📦 ${d.orderId||''} · 🕐 ${d.lastUpdate?new Date(d.lastUpdate).toLocaleTimeString('fr-FR'):'N/A'}</div></div>
-        <div style="color:var(--or);font-size:1.2rem">📍</div>
+        <div style="color:var(--or);font-size:1.2rem"><i data-ico="pin" data-ico-size="18" style="display:inline-flex"></i></div>
       </div>`).join('');
   }
 }
@@ -7186,7 +7191,7 @@ function admRenderDrivers(){
   const drivers=getDrivers();
   const cont=document.getElementById('admDriverList');
   if(!cont)return;
-  if(!drivers.length){cont.innerHTML='<div class="empty"><div class="ei">🏍️</div><h3>Aucun livreur</h3><p>Créez votre premier livreur ci-dessus</p></div>';return;}
+  if(!drivers.length){cont.innerHTML='<div class="empty"><div class="ei"><i data-ico="bike" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucun livreur</h3><p>Créez votre premier livreur ci-dessus</p></div>';return;}
   // Compter les livraisons de chaque livreur
   const ords=getOrds();
   function countDeliveries(driverId){
@@ -7203,12 +7208,12 @@ function admRenderDrivers(){
   cont.innerHTML='<div style="font-size:.82rem;font-weight:800;margin-bottom:10px">Livreurs ('+drivers.length+')</div>'+
     drivers.map(d=>{
       const stats=countDeliveries(d.id);
-      const profileBadge=d.photo&&d.cni?'<span style="background:#DCFCE7;color:var(--gn);font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:var(--r-xs)">✅ Profil complet</span>':'<span style="background:#FEF3C7;color:#D97706;font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:var(--r-xs)">⏳ Profil incomplet</span>';
+      const profileBadge=d.photo&&d.cni?'<span style="background:#DCFCE7;color:var(--gn);font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:var(--r-xs)">Profil complet</span>':'<span style="background:#FEF3C7;color:#D97706;font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:var(--r-xs)">⏳ Profil incomplet</span>';
       return `<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:10px">
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div style="display:flex;align-items:center;gap:10px">
           ${d.photo?`<img loading="lazy" src="${d.photo}" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--or)">`:'<div style="width:44px;height:44px;border-radius:50%;background:var(--bd);display:flex;align-items:center;justify-content:center;font-size:1.3rem">🏍️</div>'}
-          <div><div style="font-size:.85rem;font-weight:800">${d.name}</div><div style="font-size:.72rem;color:var(--gr)">📞 ${d.phone}</div>${d.cni?`<div style="font-size:.66rem;color:var(--gr)">🪪 CNI: ${d.cni}</div>`:''}${(()=>{const ts=d.created||(d.id&&/^d\d+$/.test(d.id)?parseInt(d.id.slice(1)):0);return ts?`<div style="font-size:.66rem;color:var(--gr)">📅 ${AT('admRegisteredD')} ${new Date(ts).toLocaleDateString('fr-FR')}</div>`:'';})()}</div>
+          <div><div style="font-size:.85rem;font-weight:800">${d.name}</div><div style="font-size:.72rem;color:var(--gr)">📞 ${d.phone}</div>${d.cni?`<div style="font-size:.66rem;color:var(--gr)">CNI: ${d.cni}</div>`:''}${(()=>{const ts=d.created||(d.id&&/^d\d+$/.test(d.id)?parseInt(d.id.slice(1)):0);return ts?`<div style="font-size:.66rem;color:var(--gr)">📅 ${AT('admRegisteredD')} ${new Date(ts).toLocaleDateString('fr-FR')}</div>`:'';})()}</div>
         </div>
         <div style="text-align:right"><div style="font-size:.7rem;color:var(--gr)">Code</div><div style="font-size:.85rem;font-weight:900;color:var(--or)">${d.code}</div></div>
       </div>
@@ -7228,7 +7233,7 @@ function admRenderDrivers(){
 function admShareDriverCode(id){
   const d=getDrivers().find(x=>x.id===id);if(!d)return;
   const base=appUrl();
-  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+d.name+' !\n\n🔑 Votre code : *'+d.code+'*\n\n📲 Cliquez pour accéder :\n'+base+'?driver='+d.code+'\n\n(Complétez votre profil : photo + CNI)';
+  const msg='🏍️ *KIMORA STORE - Compte Livreur*\n\nBonjour '+d.name+' !\n\nVotre code : *'+d.code+'*\n\nCliquez pour accéder :\n'+base+'?driver='+d.code+'\n\n(Complétez votre profil : photo + CNI)';
   openWhatsAppExternal(d.phone,msg);
 }
 
@@ -7238,7 +7243,7 @@ async function admDelDriver(id){
   await cloudDeleteDriver(id);
   saveDrivers(getDrivers().filter(d=>d.id!==id));
   admRenderDrivers();
-  toast('🗑️ Livreur supprimé');
+  toast('Livreur supprimé');
 }
 
 // ===== FIREBASE : sync livreurs =====
@@ -7315,7 +7320,7 @@ function syncMyDeliveriesFromCloud(){
 // ===== ASSIGNER un livreur à une commande (admin) =====
 function admAssignDriver(orderId){
   const drivers=getDrivers();
-  if(!drivers.length){toast('⚠️ Créez d\'abord un livreur');return;}
+  if(!drivers.length){toast('Créez d\'abord un livreur');return;}
   assignOrderId=orderId;
   const cont=document.getElementById('assignDriverList');
   cont.innerHTML=drivers.map(d=>`<button class="bor" style="margin-bottom:8px" onclick="admDoAssign('${d.id}')">🏍️ ${d.name} (${d.code})</button>`).join('');
@@ -7340,11 +7345,11 @@ function admDoAssign(driverId){
   cloudSaveDelivery(assignOrderId,ds);
   closeOv('assignDriverOv');
   admRenderDeliv();
-  toast('✅ Livraison assignée à '+driver.name);
+  toast('Livraison assignée à '+driver.name);
   // Notifier le livreur
   const ord=getOrds().find(o=>o.id===assignOrderId);
   if(ord){
-    const msg='🏍️ *Nouvelle livraison !*\n\n📦 '+ord.tracking+'\n👤 Client : '+ord.name+'\n📍 '+ord.city+'\n📞 '+ord.phone+'\n\nConnectez-vous à l\'app pour démarrer.';
+    const msg='🏍️ *Nouvelle livraison !*\n\n📦 '+ord.tracking+'\nClient : '+ord.name+'\n📍 '+ord.city+'\n📞 '+ord.phone+'\n\nConnectez-vous à l\'app pour démarrer.';
     setTimeout(()=>{if(confirm('Notifier '+driver.name+' ?'))openWhatsAppExternal(driver.phone,msg);},300);
   }
 }
@@ -7377,7 +7382,7 @@ function captureDriverPhoto(e){
       canvas.getContext('2d').drawImage(im,0,0,w,h);
       driverPhotoData=canvas.toDataURL('image/jpeg',0.7);
       document.getElementById('driverPhotoPreview').innerHTML='<img loading="lazy" src="'+driverPhotoData+'" style="width:100%;height:100%;object-fit:cover">';
-      toast('📷 Photo ajoutée');
+      toast('Photo ajoutée');
     };
     im.src=ev.target.result;
   };
@@ -7387,9 +7392,9 @@ function saveDriverProfile(){
   const phone=document.getElementById('driverProfilePhone').value.trim();
   const cni=document.getElementById('driverProfileCNI').value.trim();
   const vehicle=document.getElementById('driverVehicle').value;
-  if(!driverPhotoData){toast('⚠️ Prenez votre photo');return;}
-  if(!phone){toast('⚠️ Entrez votre téléphone');return;}
-  if(!cni){toast('⚠️ Entrez votre numéro CNI');return;}
+  if(!driverPhotoData){toast('Prenez votre photo');return;}
+  if(!phone){toast('Entrez votre téléphone');return;}
+  if(!cni){toast('Entrez votre numéro CNI');return;}
   // Mettre à jour le livreur
   currentDriver.photo=driverPhotoData;
   currentDriver.phone=phone.replace(/\D/g,'');
@@ -7405,7 +7410,7 @@ function saveDriverProfile(){
   lsSet('kCurrentDriver',JSON.stringify(currentDriver));
   cloudSaveDriver(currentDriver);
   closeOv('driverProfileOv');
-  toast('✅ Profil enregistré ! Bienvenue');
+  toast('Profil enregistré ! Bienvenue');
   openDriverDashboard();
 }
 
@@ -7417,9 +7422,9 @@ function openDriverLogin(){
 }
 function driverLogin(){
   const code=document.getElementById('driverCode').value.trim().toUpperCase();
-  if(!code){toast('⚠️ Entrez votre code');return;}
+  if(!code){toast('Entrez votre code');return;}
   const driver=getDrivers().find(d=>d.code===code);
-  if(!driver){toast('❌ Code invalide');return;}
+  if(!driver){toast('Code invalide');return;}
   currentDriver=driver;
   lsSet('kCurrentDriver',JSON.stringify(driver));
   syncMyDeliveriesFromCloud();
@@ -7466,16 +7471,16 @@ function renderDriverJournal(){
     '<div style="background:#fff;border-radius:var(--r-md);padding:11px;text-align:center"><div style="font-size:1.3rem;font-weight:900;color:var(--or)">'+inProgress.length+'</div><div style="font-size:.6rem;color:var(--gr)">En cours</div></div>'+
     '<div style="background:var(--lt);border-radius:var(--r-md);padding:11px;text-align:center"><div style="font-size:1.3rem;font-weight:900">'+myDeliv.length+'</div><div style="font-size:.6rem;color:var(--gr)">Total</div></div>'+
     '</div>';
-  html+='<div style="background:#EFF6FF;border-radius:var(--r-md);padding:12px;margin-bottom:16px;text-align:center"><div style="font-size:.7rem;color:var(--gr)">💰 Valeur totale des colis livrés</div><div style="font-size:1.3rem;font-weight:900;color:#2563EB">'+totalValue.toLocaleString('fr-FR')+' FCFA</div></div>';
+  html+='<div style="background:#EFF6FF;border-radius:var(--r-md);padding:12px;margin-bottom:16px;text-align:center"><div style="font-size:.7rem;color:var(--gr)">Valeur totale des colis livrés</div><div style="font-size:1.3rem;font-weight:900;color:#2563EB">'+totalValue.toLocaleString('fr-FR')+' FCFA</div></div>';
   // Historique
   if(!myDeliv.length){
-    html+='<div class="empty"><div class="ei">📭</div><h3>Aucune livraison</h3><p>Votre historique apparaîtra ici</p></div>';
+    html+='<div class="empty"><div class="ei"><i data-ico="inbox" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucune livraison</h3><p>Votre historique apparaîtra ici</p></div>';
   }else{
-    html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:10px">📋 Historique complet</div>';
+    html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:10px">Historique complet</div>';
     html+=myDeliv.map(o=>{
       const ds=getDelivState(o.id);
       const isDone=ds.step>=3||ds.signed;
-      const statusBadge=isDone?'<span style="background:#DCFCE7;color:var(--gn);font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:var(--r-xs)">✅ Livrée</span>':'<span style="background:#fff;color:var(--or);font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:var(--r-xs)">🚚 En cours</span>';
+      const statusBadge=isDone?'<span style="background:#DCFCE7;color:var(--gn);font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:var(--r-xs)">Livrée</span>':'<span style="background:#fff;color:var(--or);font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:var(--r-xs)">En cours</span>';
       return `<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:8px">
         <div style="display:flex;justify-content:space-between;align-items:start">
           <div style="flex:1"><div style="font-size:.76rem;font-weight:800;color:var(--or)">🔖 ${o.tracking||o.id}</div><div style="font-size:.74rem;font-weight:700;margin-top:2px">👤 ${o.name}</div><div style="font-size:.7rem;color:var(--gr)">📍 ${o.city||''}</div></div>
@@ -7485,7 +7490,7 @@ function renderDriverJournal(){
           ${statusBadge}
           <div style="font-size:.66rem;color:var(--gr)">${ds.signedAt||ds.deliveredAt||ds.pickupAt||''}</div>
         </div>
-        ${isDone?`<button onclick="admViewProof('${o.id}','${(o.name||'').replace(/'/g,'')}','${o.tracking||o.id}')" style="width:100%;margin-top:8px;background:#EFF6FF;border:1px solid #BFDBFE;color:#2563EB;padding:7px;border-radius:var(--r-md);font-size:.7rem;font-weight:800;cursor:pointer">📋 Voir la preuve de réception</button>`:''}
+        ${isDone?`<button onclick="admViewProof('${o.id}','${(o.name||'').replace(/'/g,'')}','${o.tracking||o.id}')" style="width:100%;margin-top:8px;background:#EFF6FF;border:1px solid #BFDBFE;color:#2563EB;padding:7px;border-radius:var(--r-md);font-size:.7rem;font-weight:800;cursor:pointer">Voir la preuve de réception</button>`:''}
       </div>`;
     }).join('');
   }
@@ -7510,15 +7515,15 @@ function renderDriverDashboard(){
   let html='<div style="background:var(--or);border-radius:var(--r-lg);padding:16px;color:#fff;margin-bottom:14px"><div style="font-size:.75rem;opacity:.9">Bonjour</div><div style="font-size:1.1rem;font-weight:900">🏍️ '+currentDriver.name+'</div><div style="font-size:.72rem;opacity:.9;margin-top:4px">Code : '+currentDriver.code+'</div></div>';
   // Cartes statistiques
   html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">'+
-    '<div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--gn)">'+completed.length+'</div><div style="font-size:.64rem;color:var(--gr)">✅ Total livrées</div></div>'+
-    '<div style="background:#fff;border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--or)">'+myDeliveries.length+'</div><div style="font-size:.64rem;color:var(--gr)">🚚 En cours</div></div>'+
-    '<div style="background:#EFF6FF;border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:#2563EB">'+todayDeliv.length+'</div><div style="font-size:.64rem;color:var(--gr)">📅 Aujourd\'hui</div></div>'+
-    '<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1rem;font-weight:900">'+totalValue.toLocaleString('fr-FR')+'</div><div style="font-size:.64rem;color:var(--gr)">💰 FCFA livrés</div></div>'+
+    '<div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--gn)">'+completed.length+'</div><div style="font-size:.64rem;color:var(--gr)">Total livrées</div></div>'+
+    '<div style="background:#fff;border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--or)">'+myDeliveries.length+'</div><div style="font-size:.64rem;color:var(--gr)">En cours</div></div>'+
+    '<div style="background:#EFF6FF;border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:#2563EB">'+todayDeliv.length+'</div><div style="font-size:.64rem;color:var(--gr)">Aujourd\'hui</div></div>'+
+    '<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;text-align:center"><div style="font-size:1rem;font-weight:900">'+totalValue.toLocaleString('fr-FR')+'</div><div style="font-size:.64rem;color:var(--gr)">FCFA livrés</div></div>'+
     '</div>';
-  html+='<button class="bou" style="margin-bottom:14px" onclick="openDriverJournal()">📊 Voir mon journal complet</button>';
-  html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:10px">🚚 Mes livraisons en cours ('+myDeliveries.length+')</div>';
+  html+='<button class="bou" style="margin-bottom:14px" onclick="openDriverJournal()">Voir mon journal complet</button>';
+  html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:10px">Mes livraisons en cours ('+myDeliveries.length+')</div>';
   if(!myDeliveries.length){
-    html+='<div class="empty"><div class="ei">📭</div><h3>Aucune livraison</h3><p>Les livraisons assignées apparaîtront ici</p></div>';
+    html+='<div class="empty"><div class="ei"><i data-ico="inbox" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucune livraison</h3><p>Les livraisons assignées apparaîtront ici</p></div>';
   }else{
     html+=myDeliveries.map(o=>{
       const ds=getDelivState(o.id);
@@ -7527,13 +7532,13 @@ function renderDriverDashboard(){
         <div style="font-size:.8rem;font-weight:700;margin-top:4px">👤 ${o.name}</div>
         <div style="font-size:.73rem;color:var(--gr)">📍 ${o.city} ${o.address?'- '+o.address:''}</div>
         <div style="font-size:.73rem;color:var(--gr)">📞 ${o.phone}</div>
-        <div style="background:#fff;border-radius:var(--r-md);padding:8px;margin-top:10px;font-size:.68rem;color:var(--or);text-align:center">📍 Activez le partage GPS pour que le client suive votre position en temps réel</div>
-        ${!ds.pickupSigned?`<button onclick="driverSignPickup('${o.id}')" style="width:100%;margin-top:8px;background:#2563EB;color:#fff;border:none;padding:11px;border-radius:var(--r-sm);font-size:.75rem;font-weight:800;cursor:pointer">✍️ Signer la prise en charge du colis</button>`:`<div style="background:#DCFCE7;border-radius:var(--r-sm);padding:8px;margin-top:8px;text-align:center;font-size:.72rem;color:var(--gn);font-weight:700">✅ Colis pris en charge le ${ds.pickupAt||''}</div>`}
+        <div style="background:#fff;border-radius:var(--r-md);padding:8px;margin-top:10px;font-size:.68rem;color:var(--or);text-align:center">Activez le partage GPS pour que le client suive votre position en temps réel</div>
+        ${!ds.pickupSigned?`<button onclick="driverSignPickup('${o.id}')" style="width:100%;margin-top:8px;background:#2563EB;color:#fff;border:none;padding:11px;border-radius:var(--r-sm);font-size:.75rem;font-weight:800;cursor:pointer">Signer la prise en charge du colis</button>`:`<div style="background:#DCFCE7;border-radius:var(--r-sm);padding:8px;margin-top:8px;text-align:center;font-size:.72rem;color:var(--gn);font-weight:700">Colis pris en charge le ${ds.pickupAt||''}</div>`}
         <div style="display:flex;gap:6px;margin-top:8px">
-          <button onclick="driverCallClient('${o.phone}')" style="flex:1;background:#25D166;color:#fff;border:none;padding:10px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer">📞 Appeler</button>
-          <button id="gpsBtn-${o.id}" onclick="driverToggleGPS('${o.id}')" style="flex:2;background:var(--or);color:#fff;border:none;padding:10px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer">📍 Démarrer partage GPS</button>
+          <button onclick="driverCallClient('${o.phone}')" style="flex:1;background:#25D166;color:#fff;border:none;padding:10px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer">Appeler</button>
+          <button id="gpsBtn-${o.id}" onclick="driverToggleGPS('${o.id}')" style="flex:2;background:var(--or);color:#fff;border:none;padding:10px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer">Démarrer partage GPS</button>
         </div>
-        <button onclick="driverMarkDelivered('${o.id}')" style="width:100%;margin-top:6px;background:var(--gn);color:#fff;border:none;padding:10px;border-radius:var(--r-sm);font-size:.75rem;font-weight:800;cursor:pointer">✅ Marquer comme LIVRÉ</button>
+        <button onclick="driverMarkDelivered('${o.id}')" style="width:100%;margin-top:6px;background:var(--gn);color:#fff;border:none;padding:10px;border-radius:var(--r-sm);font-size:.75rem;font-weight:800;cursor:pointer">Marquer comme LIVRÉ</button>
       </div>`;
     }).join('');
   }
@@ -7555,8 +7560,8 @@ function driverToggleGPS(orderId){
     toast('⏹️ Partage GPS arrêté');
     return;
   }
-  if(!navigator.geolocation){toast('⚠️ GPS non supporté sur cet appareil');return;}
-  toast('📍 Activation du GPS...');
+  if(!navigator.geolocation){toast('GPS non supporté sur cet appareil');return;}
+  toast('Activation du GPS...');
   gpsWatchId=navigator.geolocation.watchPosition(pos=>{
     const lat=pos.coords.latitude,lng=pos.coords.longitude;
     let ds=getDelivState(orderId)||{};
@@ -7567,7 +7572,7 @@ function driverToggleGPS(orderId){
     if(btn){btn.textContent='EN DIRECT — Arrêter';btn.style.background='#DC2626';}
     gpsActiveOrder=orderId;
   },err=>{
-    toast('⚠️ Activez la localisation dans les paramètres');
+    toast('Activez la localisation dans les paramètres');
     if(btn){btn.textContent='Démarrer le partage GPS';}
   },{enableHighAccuracy:true,maximumAge:3000,timeout:15000});
 }
@@ -7575,8 +7580,8 @@ function driverToggleGPS(orderId){
 // ===== GPS TEMPS RÉEL (le grand défi !) =====
 let gpsWatchId=null;
 function driverStartGPS(orderId){
-  if(!navigator.geolocation){toast('⚠️ GPS non supporté');return;}
-  toast('📍 Activation du GPS...');
+  if(!navigator.geolocation){toast('GPS non supporté');return;}
+  toast('Activation du GPS...');
   gpsWatchId=navigator.geolocation.watchPosition(pos=>{
     const lat=pos.coords.latitude,lng=pos.coords.longitude;
     // Sauvegarder la position dans Firebase → le client la voit en temps réel
@@ -7587,9 +7592,9 @@ function driverStartGPS(orderId){
     ds.step=Math.max(ds.step||0,2);
     saveDelivState(orderId,ds);
     cloudSaveDelivery(orderId,ds);
-    toast('📍 Position partagée en temps réel');
+    toast('Position partagée en temps réel');
   },err=>{
-    toast('⚠️ Activez la localisation');
+    toast('Activez la localisation');
   },{enableHighAccuracy:true,maximumAge:5000,timeout:10000});
   // Bouton devient "Arrêter"
   event.target.textContent='⏹️ Arrêter GPS';
@@ -7608,7 +7613,7 @@ function driverMarkDelivered(orderId){
   saveDelivState(orderId,ds);
   cloudSaveDelivery(orderId,ds);
   if(gpsWatchId!=null){navigator.geolocation.clearWatch(gpsWatchId);gpsWatchId=null;}
-  toast('✅ Marqué comme livré ! Le client va signer.');
+  toast('Marqué comme livré ! Le client va signer.');
   renderDriverDashboard();
 }
 function driverLogout(){
@@ -7640,7 +7645,7 @@ function capturePickupSelfie(e){
       pickupSelfieData=canvas.toDataURL('image/jpeg',0.7);
       const prev=document.getElementById('pickupSelfiePreview');
       if(prev)prev.innerHTML='<img loading="lazy" src="'+pickupSelfieData+'" style="width:100%;height:100%;object-fit:cover">';
-      toast('🤳 Selfie ajouté');
+      toast('Selfie ajouté');
       // Étape suivante guidée : photo du colis
       setTimeout(()=>{if(!pickupPhotoData){const inp=document.getElementById('pickupPhotoInput');if(inp)inp.click();}},600);
     };
@@ -7665,7 +7670,7 @@ function capturePickupPhoto(e){
       pickupPhotoData=canvas.toDataURL('image/jpeg',0.7);
       const prev=document.getElementById('pickupPhotoPreview');
       if(prev){prev.style.height='140px';prev.innerHTML='<img loading="lazy" src="'+pickupPhotoData+'" style="width:100%;height:140px;object-fit:cover;border-radius:var(--r-md)">';}
-      toast('📦 Photo du colis ajoutée');
+      toast('Photo du colis ajoutée');
       // Étape finale guidée : faire défiler jusqu'à la zone de signature
       setTimeout(()=>{const pad=document.getElementById('pickupSignPad');if(pad)pad.scrollIntoView({behavior:'smooth',block:'center'});},500);
     };
@@ -7710,9 +7715,9 @@ function initPickupSignPad(){
 }
 function clearPickupSign(){if(pickupSignCtx){pickupSignCtx.clearRect(0,0,pickupSignCtx.canvas.width,pickupSignCtx.canvas.height);pickupHasSigned=false;}}
 function confirmPickup(){
-  if(!pickupSelfieData){toast('⚠️ Prenez votre selfie d\'abord');return;}
-  if(!pickupPhotoData){toast('⚠️ Photographiez le colis');return;}
-  if(!pickupHasSigned){toast('⚠️ Veuillez signer');return;}
+  if(!pickupSelfieData){toast('Prenez votre selfie d\'abord');return;}
+  if(!pickupPhotoData){toast('Photographiez le colis');return;}
+  if(!pickupHasSigned){toast('Veuillez signer');return;}
   const canvas=document.getElementById('pickupSignPad');
   const sigData=canvas.toDataURL('image/png');
   let ds=getDelivState(pickupOrderId)||{};
@@ -7729,7 +7734,7 @@ function confirmPickup(){
   saveDelivState(pickupOrderId,ds);
   cloudSaveDelivery(pickupOrderId,ds);
   closeOv('pickupSignOv');
-  toast('✅ Prise en charge confirmée !');
+  toast('Prise en charge confirmée !');
   renderDriverDashboard();
   // Notifier le client sur WhatsApp
   const ord=getOrds().find(o=>o.id===pickupOrderId);
@@ -7762,12 +7767,12 @@ function showPickupSignature(){
   const cont=document.getElementById('pickupSigViewContent');
   const driver=window.currentTrackDriver;
   cont.innerHTML=`
-    ${window.currentPickupSelfie?`<div style="text-align:center;margin-bottom:12px"><img loading="lazy" src="${window.currentPickupSelfie}" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gn)"><div style="font-size:.64rem;color:var(--gn);margin-top:4px">🤳 Selfie pris à la prise en charge</div></div>`:(driver&&driver.photo?`<div style="text-align:center;margin-bottom:12px"><img loading="lazy" src="${driver.photo}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--gn)"></div>`:'')}
+    ${window.currentPickupSelfie?`<div style="text-align:center;margin-bottom:12px"><img loading="lazy" src="${window.currentPickupSelfie}" style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gn)"><div style="font-size:.64rem;color:var(--gn);margin-top:4px">Selfie pris à la prise en charge</div></div>`:(driver&&driver.photo?`<div style="text-align:center;margin-bottom:12px"><img loading="lazy" src="${driver.photo}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--gn)"></div>`:'')}
     <div style="text-align:center;font-size:.85rem;font-weight:800;margin-bottom:4px">${driver?driver.name:'Livreur'}</div>
     <div style="text-align:center;font-size:.72rem;color:var(--gr);margin-bottom:14px">a pris en charge votre colis</div>
-    ${window.currentPickupSig?`<div style="background:#fff;border:2px solid var(--bd);border-radius:var(--r-md);padding:10px;margin-bottom:12px"><div style="font-size:.7rem;color:var(--gr);margin-bottom:6px">✍️ Signature :</div><img loading="lazy" src="${window.currentPickupSig}" style="width:100%"></div>`:''}
-    ${window.currentPickupPhoto?`<div style="background:#fff;border:2px solid var(--bd);border-radius:var(--r-md);padding:10px"><div style="font-size:.7rem;color:var(--gr);margin-bottom:6px">📦 État du colis au départ :</div><img loading="lazy" src="${window.currentPickupPhoto}" style="width:100%;border-radius:var(--r-md)"></div>`:''}
-    <div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;margin-top:12px;font-size:.75rem;color:var(--gn);text-align:center">🔒 Cette signature engage le livreur à vous livrer le colis. Vous êtes protégé.</div>
+    ${window.currentPickupSig?`<div style="background:#fff;border:2px solid var(--bd);border-radius:var(--r-md);padding:10px;margin-bottom:12px"><div style="font-size:.7rem;color:var(--gr);margin-bottom:6px">Signature :</div><img loading="lazy" src="${window.currentPickupSig}" style="width:100%"></div>`:''}
+    ${window.currentPickupPhoto?`<div style="background:#fff;border:2px solid var(--bd);border-radius:var(--r-md);padding:10px"><div style="font-size:.7rem;color:var(--gr);margin-bottom:6px">État du colis au départ :</div><img loading="lazy" src="${window.currentPickupPhoto}" style="width:100%;border-radius:var(--r-md)"></div>`:''}
+    <div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;margin-top:12px;font-size:.75rem;color:var(--gn);text-align:center">Cette signature engage le livreur à vous livrer le colis. Vous êtes protégé.</div>
   `;
   openOv('pickupSigViewOv');
 }
@@ -7791,7 +7796,7 @@ function updateDriverCardInfo(ds){
   if(infoEl)infoEl.textContent=(driver.vehicle||'🏍️')+' En chemin vers vous';
   // Sécurité (CNI vérifiée)
   const secEl=document.getElementById('driverSecurity');
-  if(secEl&&driver.cni)secEl.innerHTML='✅ Identité vérifiée';
+  if(secEl&&driver.cni)secEl.innerHTML='Identité vérifiée';
   // Bouton voir CNI
   const idBtn=document.getElementById('driverIdBtn');
   if(idBtn&&driver.photo&&driver.cni)idBtn.style.display='block';
@@ -7807,14 +7812,14 @@ function showDriverID(){
       ${d.photo?`<img loading="lazy" src="${d.photo}" style="width:130px;height:130px;border-radius:50%;object-fit:cover;border:3px solid var(--or)">`:'<div style="width:130px;height:130px;border-radius:50%;background:var(--lt);display:flex;align-items:center;justify-content:center;font-size:3rem;margin:0 auto">🧑‍✈️</div>'}
     </div>
     <div style="background:var(--lt);border-radius:var(--r-md);padding:14px">
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)"><span style="color:var(--gr);font-size:.8rem">👤 Nom</span><span style="font-weight:700;font-size:.82rem">${d.name}</span></div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)"><span style="color:var(--gr);font-size:.8rem">📞 Téléphone</span><span style="font-weight:700;font-size:.82rem">${d.phone}</span></div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)"><span style="color:var(--gr);font-size:.8rem">🪪 CNI</span><span style="font-weight:700;font-size:.82rem">${d.cni||'N/A'}</span></div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="color:var(--gr);font-size:.8rem">🏍️ Véhicule</span><span style="font-weight:700;font-size:.82rem">${d.vehicle||'Moto'}</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)"><span style="color:var(--gr);font-size:.8rem">Nom</span><span style="font-weight:700;font-size:.82rem">${d.name}</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)"><span style="color:var(--gr);font-size:.8rem">Téléphone</span><span style="font-weight:700;font-size:.82rem">${d.phone}</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bd)"><span style="color:var(--gr);font-size:.8rem">CNI</span><span style="font-weight:700;font-size:.82rem">${d.cni||'N/A'}</span></div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="color:var(--gr);font-size:.8rem">Véhicule</span><span style="font-weight:700;font-size:.82rem">${d.vehicle||'Moto'}</span></div>
     </div>
-    <div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;margin-top:12px;font-size:.75rem;color:var(--gn);text-align:center">🔒 Ce livreur est enregistré et vérifié par Kimora Store. Gardez ces informations pour votre sécurité.</div>
-    <button class="bor" style="margin-top:12px;background:#25D166" onclick="openWhatsAppExternal('${d.phone}',waT().driver)">💬 Contacter le livreur</button>
-    <button class="bor" style="margin-top:9px;background:#475569" onclick="sendReelWA()">🎥 Filmer mon colis reçu (anonyme)</button>
+    <div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;margin-top:12px;font-size:.75rem;color:var(--gn);text-align:center">Ce livreur est enregistré et vérifié par Kimora Store. Gardez ces informations pour votre sécurité.</div>
+    <button class="bor" style="margin-top:12px;background:#25D166" onclick="openWhatsAppExternal('${d.phone}',waT().driver)">Contacter le livreur</button>
+    <button class="bor" style="margin-top:9px;background:#475569" onclick="sendReelWA()">Filmer mon colis reçu (anonyme)</button>
   `;
   openOv('driverIDOv');
 }
@@ -7876,7 +7881,7 @@ function getCurrentTrackOrder(){
 }
 function openEditPhone(){
   const ord=getCurrentTrackOrder();
-  if(!ord){toast('⚠️ Aucune commande');return;}
+  if(!ord){toast('Aucune commande');return;}
   currentTrackOrder=ord;
   const el=document.getElementById('newClientPhone');
   if(el)el.value=ord.phone||'';
@@ -7884,7 +7889,7 @@ function openEditPhone(){
 }
 function saveClientPhone(){
   const newPhone=document.getElementById('newClientPhone').value.trim().replace(/\D/g,'');
-  if(newPhone.length<9){toast('⚠️ Numéro invalide (9 chiffres)');return;}
+  if(newPhone.length<9){toast('Numéro invalide (9 chiffres)');return;}
   const ord=currentTrackOrder||getCurrentTrackOrder();
   if(!ord)return;
   // Mettre à jour la commande
@@ -7894,7 +7899,7 @@ function saveClientPhone(){
   if(idx>=0){ords[idx].phone=newPhone;lsSet('kOrders',JSON.stringify(ords));}
   cloudSaveOrder(ord);
   closeOv('editPhoneOv');
-  toast('✅ Numéro mis à jour !');
+  toast('Numéro mis à jour !');
   // Notifier le vendeur du changement
   const cfg=CFG();
   if(cfg.wa){
@@ -7904,11 +7909,11 @@ function saveClientPhone(){
 }
 function clientCancelOrder(){
   const ord=getCurrentTrackOrder();
-  if(!ord){toast('⚠️ Aucune commande');return;}
+  if(!ord){toast('Aucune commande');return;}
   const ds=getDelivState(ord.id)||{step:0};
   // Ne pas annuler si déjà livré
-  if(ds.step>=3||ds.signed){toast('⚠️ Commande déjà livrée, impossible d\'annuler');return;}
-  if(!confirm('❌ Annuler la commande '+(ord.tracking||ord.id)+' ?\n\nProduit : '+(ord.items||[]).join(', ')+'\nMontant : '+ord.total.toLocaleString('fr-FR')+' FCFA\n\nConfirmer l\'annulation ?'))return;
+  if(ds.step>=3||ds.signed){toast('Commande déjà livrée, impossible d\'annuler');return;}
+  if(!confirm('Annuler la commande '+(ord.tracking||ord.id)+' ?\n\nProduit : '+(ord.items||[]).join(', ')+'\nMontant : '+ord.total.toLocaleString('fr-FR')+' FCFA\n\nConfirmer l\'annulation ?'))return;
   // Marquer comme annulée
   ord.status='cancelled';ord.cancelledAt=new Date().toLocaleString('fr-FR');
   const ords=getOrds();
@@ -7916,7 +7921,7 @@ function clientCancelOrder(){
   if(idx>=0){ords[idx].status='cancelled';ords[idx].cancelledAt=ord.cancelledAt;lsSet('kOrders',JSON.stringify(ords));}
   cloudSaveOrder(ord);
   closeTrack();
-  toast('❌ Commande annulée');
+  toast('Commande annulée');
   // Notifier le vendeur
   const cfg=CFG();
   if(cfg.wa){
@@ -7968,13 +7973,13 @@ function openTrack(){
 
 function searchByTracking(){
   const num=document.getElementById('trackSearch').value.trim().toUpperCase();
-  if(!num){toast('⚠️ Entrez un numéro de suivi');return;}
+  if(!num){toast('Entrez un numéro de suivi');return;}
   const ords=getOrds();
   const ord=ords.find(o=>o.tracking&&o.tracking.toUpperCase()===num);
-  if(!ord){toast('❌ Aucune commande avec ce numéro');return;}
+  if(!ord){toast('Aucune commande avec ce numéro');return;}
   // Charger cette commande dans le suivi
   loadOrderTracking(ord);
-  toast('✅ Commande trouvée !');
+  toast('Commande trouvée !');
 }
 
 function loadOrderTracking(ord){
@@ -8040,7 +8045,7 @@ function initDeliveryMap(dstate,orderId){
   const driverIcon=L.divIcon({html:'<div style="background:#2563EB;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(249,115,22,.6);border:3px solid #fff;animation:pulse 1.5s infinite"><span style="font-size:1.3rem">🏍️</span></div>',className:'',iconSize:[42,42],iconAnchor:[21,21]});
   
   boutiqueMarker=L.marker(dstate.boutique,{icon:shopIcon}).addTo(delivMap).bindPopup('🏪 '+(CFG().name||'Boutique'));
-  clientMarker=L.marker(dstate.client,{icon:clientIcon}).addTo(delivMap).bindPopup('🏠 Votre adresse');
+  clientMarker=L.marker(dstate.client,{icon:clientIcon}).addTo(delivMap).bindPopup('Votre adresse');
   driverMarker=L.marker(dstate.driver,{icon:driverIcon}).addTo(delivMap).bindPopup('🏍️ '+dstate.driverName);
   
   // Ligne de route
@@ -8145,7 +8150,7 @@ function captureReceiptPhoto(e){
       receiptPhotoData=canvas.toDataURL('image/jpeg',0.7);
       const prev=document.getElementById('receiptPhotoPreview');
       if(prev){prev.style.height='120px';prev.innerHTML=`<img loading="lazy" src="${receiptPhotoData}" style="width:100%;height:120px;object-fit:cover;border-radius:var(--r-md)">`;}
-      toast('📷 Photo ajoutée');
+      toast('Photo ajoutée');
     };
     im.src=ev.target.result;
   };
@@ -8191,7 +8196,7 @@ function confirmDelivery(){
     saveDelivState(ord.id,dstate);
     // Notifier le vendeur sur WhatsApp
     const cfg=CFG();const wa=cfg.wa||'237678689053';
-    const msg='✅ *LIVRAISON CONFIRMÉE*\n\n📦 Commande '+ord.id+'\n👤 '+(ord.name||'Client')+'\n📍 '+(ord.city||'')+'\n🕐 '+dstate.signedAt+'\n\nLe client a signé la réception. Merci !';
+    const msg='✅ *LIVRAISON CONFIRMÉE*\n\nCommande '+ord.id+'\n👤 '+(ord.name||'Client')+'\n📍 '+(ord.city||'')+'\n🕐 '+dstate.signedAt+'\n\nLe client a signé la réception. Merci !';
     setTimeout(()=>openWhatsAppExternal(wa,msg),500);
   }
   document.getElementById('signBlock').classList.add('hide');
@@ -8296,10 +8301,10 @@ function notifyNewProductWA(p){
   const hint=document.getElementById('notifImgHint');
   if(hint){
     if(isImg(p.img)){
-      hint.innerHTML='🖼️ L\'image (lien) s\'affichera automatiquement dans WhatsApp ✅';
+      hint.innerHTML='L\'image (lien) s\'affichera automatiquement dans WhatsApp';
       hint.style.color='var(--gn)';
     }else if(p.img&&p.img.startsWith('data:')){
-      hint.innerHTML='📸 Image galerie : <button onclick="downloadProductImage(pendingNotifyProduct)" style="background:var(--or);color:#fff;border:none;padding:4px 10px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer;margin-top:4px">📥 Télécharger l\'image</button> puis ajoutez-la dans WhatsApp avec 📎';
+      hint.innerHTML='Image galerie : <button onclick="downloadProductImage(pendingNotifyProduct)" style="background:var(--or);color:#fff;border:none;padding:4px 10px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer;margin-top:4px">Télécharger l\'image</button> puis ajoutez-la dans WhatsApp avec';
       hint.style.color='var(--or)';
     }else{
       hint.innerHTML='';
@@ -8319,22 +8324,22 @@ function buildProductMsg(p,lang){
   if(lang==='en'){
     msg='🎉 *'+storeName.toUpperCase()+'* 🎉\n━━━━━━━━━━━━━━━\n\n';
     msg+='✨ *EXCLUSIVE NEW ARRIVAL!* ✨\n\n';
-    msg+='Dear customers, we are pleased to introduce our brand new product 💝\n\n';
+    msg+='Dear customers, we are pleased to introduce our brand new product\n\n';
     msg+='📦 *'+p.name+'*\n━━━━━━━━━━━━━━━\n';
-    msg+='💰 Price: *'+p.price.toLocaleString('en-US')+' FCFA*';
+    msg+='Price: *'+p.price.toLocaleString('en-US')+' FCFA*';
     if(p.oldPrice){msg+='\n🔥 *SALE -'+dc+'%* (was '+p.oldPrice.toLocaleString('en-US')+' FCFA)';}
-    msg+='\n📂 Category: '+p.cat+'\n\n';
+    msg+='\nCategory: '+p.cat+'\n\n';
     if(p.desc){msg+='📝 '+p.desc+'\n\n';}
     if(p.features&&p.features.length){msg+='✅ '+p.features.slice(0,4).join('\n✅ ')+'\n\n';}
-    if(p.sizes&&p.sizes.length){msg+='📏 Sizes: '+p.sizes.join(', ')+'\n';}
-    if(p.colors&&p.colors.length){msg+='🎨 Colors: '+p.colors.join(', ')+'\n';}
+    if(p.sizes&&p.sizes.length){msg+='Sizes: '+p.sizes.join(', ')+'\n';}
+    if(p.colors&&p.colors.length){msg+='Colors: '+p.colors.join(', ')+'\n';}
     msg+='\n━━━━━━━━━━━━━━━\n🛍️ *Order now in 2 clicks!*\n\n';
-    msg+='📲 Download our app:\n'+base+'\n\n';
-    msg+='🚚 Fast delivery 2-3 days\n';
-    msg+='💳 Payment MTN MoMo / Orange Money\n';
-    msg+='🎁 FREE delivery from 20,000 FCFA\n\n';
-    msg+='💬 Questions? Write to us: wa.me/'+wa+'\n\n';
-    msg+='Thank you for your trust! 🙏\n_The '+storeName+' team_ 🧡';
+    msg+='Download our app:\n'+base+'\n\n';
+    msg+='Fast delivery 2-3 days\n';
+    msg+='Payment MTN MoMo / Orange Money\n';
+    msg+='FREE delivery from 20,000 FCFA\n\n';
+    msg+='Questions? Write to us: wa.me/'+wa+'\n\n';
+    msg+='Thank you for your trust!\n_The '+storeName+' team_';
   }else if(lang==='both'){
     // Les 2 messages COMPLETS ensemble : Français PUIS Anglais
     msg=buildProductMsg(p,'fr');
@@ -8344,22 +8349,22 @@ function buildProductMsg(p,lang){
     // Français (défaut)
     msg='🎉 *'+storeName.toUpperCase()+'* 🎉\n━━━━━━━━━━━━━━━\n\n';
     msg+='✨ *NOUVEAUTÉ EXCLUSIVE !* ✨\n\n';
-    msg+='Chers clients, nous avons le plaisir de vous présenter notre tout nouveau produit 💝\n\n';
+    msg+='Chers clients, nous avons le plaisir de vous présenter notre tout nouveau produit\n\n';
     msg+='📦 *'+p.name+'*\n━━━━━━━━━━━━━━━\n';
-    msg+='💰 Prix : *'+p.price.toLocaleString('fr-FR')+' FCFA*';
+    msg+='Prix : *'+p.price.toLocaleString('fr-FR')+' FCFA*';
     if(p.oldPrice){msg+='\n🔥 *PROMO -'+dc+'%* (avant '+p.oldPrice.toLocaleString('fr-FR')+' FCFA)';}
-    msg+='\n📂 Catégorie : '+p.cat+'\n\n';
+    msg+='\nCatégorie : '+p.cat+'\n\n';
     if(p.desc){msg+='📝 '+p.desc+'\n\n';}
     if(p.features&&p.features.length){msg+='✅ '+p.features.slice(0,4).join('\n✅ ')+'\n\n';}
-    if(p.sizes&&p.sizes.length){msg+='📏 Tailles : '+p.sizes.join(', ')+'\n';}
-    if(p.colors&&p.colors.length){msg+='🎨 Couleurs : '+p.colors.join(', ')+'\n';}
+    if(p.sizes&&p.sizes.length){msg+='Tailles : '+p.sizes.join(', ')+'\n';}
+    if(p.colors&&p.colors.length){msg+='Couleurs : '+p.colors.join(', ')+'\n';}
     msg+='\n━━━━━━━━━━━━━━━\n🛍️ *Commandez maintenant en 2 clics !*\n\n';
-    msg+='📲 Téléchargez notre application :\n'+base+'\n\n';
-    msg+='🚚 Livraison rapide 2-3 jours\n';
-    msg+='💳 Paiement MTN MoMo / Orange Money\n';
-    msg+='🎁 Livraison GRATUITE dès 20 000 FCFA\n\n';
-    msg+='💬 Des questions ? Écrivez-nous : wa.me/'+wa+'\n\n';
-    msg+='Merci de votre confiance ! 🙏\n_L\'équipe '+storeName+'_ 🧡';
+    msg+='Téléchargez notre application :\n'+base+'\n\n';
+    msg+='Livraison rapide 2-3 jours\n';
+    msg+='Paiement MTN MoMo / Orange Money\n';
+    msg+='Livraison GRATUITE dès 20 000 FCFA\n\n';
+    msg+='Des questions ? Écrivez-nous : wa.me/'+wa+'\n\n';
+    msg+='Merci de votre confiance !\n_L\'équipe '+storeName+'_';
   }
   return msg;
 }
@@ -8377,7 +8382,7 @@ function sendNotifyLang(lang){
   // Si image galerie (base64), rappeler d'ajouter la photo APRÈS
   if(p.img&&p.img.startsWith('data:')){
     setTimeout(()=>{
-      toast('📸 N\'oubliez pas d\'ajouter la photo avec 📎 dans WhatsApp');
+      toast('N\'oubliez pas d\'ajouter la photo avec dans WhatsApp');
     },1500);
   }
 }
@@ -8393,17 +8398,17 @@ function sendNotifyLang(lang){
 function admSendNotif(){
   const title=document.getElementById('notifTitle').value.trim();
   const body=document.getElementById('notifBody').value.trim();
-  if(!title||!body){toast('⚠️ Titre et message requis');return;}
+  if(!title||!body){toast('Titre et message requis');return;}
   const notif={title,body,date:Date.now(),id:'n'+Date.now()};
   if(fbEnabled){
     fbDB.collection('notifications').doc(notif.id).set(notif)
-      .then(()=>toast('🔔 Notification envoyée à tous !'))
-      .catch(()=>toast('⚠️ Erreur'));
+      .then(()=>toast('Notification envoyée à tous !'))
+      .catch(()=>toast('Erreur'));
   }else{
     // Local seulement
     const notifs=JSON.parse(localStorage.getItem('kNotifs')||'[]');
     notifs.unshift(notif);lsSet('kNotifs',JSON.stringify(notifs));
-    toast('🔔 Notification créée (locale)');
+    toast('Notification créée (locale)');
   }
   document.getElementById('notifTitle').value='';
   document.getElementById('notifBody').value='';
@@ -8448,7 +8453,7 @@ function downloadProductImage(p){
     a.href=p.img;
     a.download=(p.name||'produit').replace(/[^a-z0-9]/gi,'_')+'.jpg';
     document.body.appendChild(a);a.click();document.body.removeChild(a);
-    toast('📥 Image téléchargée ! Ajoutez-la dans WhatsApp');
+    toast('Image téléchargée ! Ajoutez-la dans WhatsApp');
   }
 }
 
@@ -8468,9 +8473,9 @@ function selGiftAmount(amt,el){
 }
 function genGiftCode(){return 'KIM-GIFT-'+Math.random().toString(36).substr(2,6).toUpperCase();}
 function buyGiftCard(){
-  if(!selectedGiftAmount){toast('⚠️ Choisissez un montant');return;}
+  if(!selectedGiftAmount){toast('Choisissez un montant');return;}
   const recipient=document.getElementById('giftRecipient').value.trim();
-  if(!recipient){toast('⚠️ Nom du destinataire requis');return;}
+  if(!recipient){toast('Nom du destinataire requis');return;}
   const code=genGiftCode();
   const msg=document.getElementById('giftMsg').value.trim();
   // Enregistrer la carte
@@ -8480,19 +8485,19 @@ function buyGiftCard(){
   // Partager sur WhatsApp
   const cfg=CFG();const base=appUrl();
   let waMsg='🎁 *CARTE CADEAU KIMORA STORE*\n\n';
-  waMsg+='Bonjour '+recipient+' ! 💝\n\n';
+  waMsg+='Bonjour '+recipient+' !\n\n';
   if(msg)waMsg+='"'+msg+'"\n\n';
   waMsg+='Vous avez reçu une carte cadeau de *'+selectedGiftAmount.toLocaleString('fr-FR')+' FCFA* !\n\n';
-  waMsg+='🎟️ Code : *'+code+'*\n\n';
-  waMsg+='📲 Utilisez-le sur : '+base+'\n\n';
-  waMsg+='Bon shopping ! 🛍️🧡';
+  waMsg+='Code : *'+code+'*\n\n';
+  waMsg+='Utilisez-le sur : '+base+'\n\n';
+  waMsg+='Bon shopping !🧡';
   openWhatsAppExternal('',waMsg);
-  toast('🎁 Carte cadeau créée : '+code);
+  toast('Carte cadeau créée : '+code);
   closeOv('giftOv');
 }
 function useGiftCard(){
   const code=document.getElementById('giftCode').value.trim().toUpperCase();
-  if(!code){toast('⚠️ Entrez un code');return;}
+  if(!code){toast('Entrez un code');return;}
   const cards=JSON.parse(localStorage.getItem('kGiftCards')||'[]');
   const card=cards.find(c=>c.code===code);
   if(!card){
@@ -8500,14 +8505,14 @@ function useGiftCard(){
     return;
   }
   if(card.balance<=0){
-    document.getElementById('giftBalance').innerHTML='<div style="background:#FEE2E2;color:var(--rd);border-radius:var(--r-md);padding:12px;font-size:.8rem;text-align:center">⚠️ Carte déjà utilisée</div>';
+    document.getElementById('giftBalance').innerHTML='<div style="background:#FEE2E2;color:var(--rd);border-radius:var(--r-md);padding:12px;font-size:.8rem;text-align:center">Carte déjà utilisée</div>';
     return;
   }
   // Appliquer comme crédit (stocké pour le checkout)
   lsSet('kGiftBalance',card.balance);
   lsSet('kActiveGift',code);
-  document.getElementById('giftBalance').innerHTML='<div style="background:#DCFCE7;color:var(--gn);border-radius:var(--r-md);padding:14px;text-align:center"><div style="font-size:.75rem">Solde disponible</div><div style="font-size:1.4rem;font-weight:900">'+card.balance.toLocaleString('fr-FR')+' FCFA</div><div style="font-size:.7rem;margin-top:4px">✅ Sera appliqué à votre prochaine commande</div></div>';
-  toast('✅ Carte cadeau activée !');
+  document.getElementById('giftBalance').innerHTML='<div style="background:#DCFCE7;color:var(--gn);border-radius:var(--r-md);padding:14px;text-align:center"><div style="font-size:.75rem">Solde disponible</div><div style="font-size:1.4rem;font-weight:900">'+card.balance.toLocaleString('fr-FR')+' FCFA</div><div style="font-size:.7rem;margin-top:4px">Sera appliqué à votre prochaine commande</div></div>';
+  toast('Carte cadeau activée !');
 }
 
 // ====== COMPARATEUR DE PRODUITS ======
@@ -8516,11 +8521,11 @@ function addCompare(){
   if(!curP)return;
   let comp=getCompare();
   if(comp.includes(curP.id)){toast('Déjà dans le comparateur');return;}
-  if(comp.length>=3){toast('⚠️ Maximum 3 produits');return;}
+  if(comp.length>=3){toast('Maximum 3 produits');return;}
   comp.push(curP.id);
   lsSet('kCompare',JSON.stringify(comp));
   updateCompareBar();
-  toast('⚖️ Ajouté au comparateur');
+  toast('Ajouté au comparateur');
 }
 function clearCompare(){lsSet('kCompare','[]');updateCompareBar();}
 function updateCompareBar(){
@@ -8532,13 +8537,13 @@ function updateCompareBar(){
 }
 function showCompare(){
   const comp=getCompare().map(id=>getP().find(p=>p.id===id)).filter(Boolean);
-  if(comp.length<2){toast('⚠️ Ajoutez au moins 2 produits');return;}
+  if(comp.length<2){toast('Ajoutez au moins 2 produits');return;}
   const rows=[
     ['Prix',p=>p.price.toLocaleString('fr-FR')+' F'],
     ['Ancien prix',p=>p.oldPrice?p.oldPrice.toLocaleString('fr-FR')+' F':'-'],
     ['Catégorie',p=>p.cat],
     ['Note',p=>'★'.repeat(Math.floor(p.rating))+' ('+p.reviews+')'],
-    ['Type',p=>p.type==='digital'?'⚡ Digital':'🚚 Physique'],
+    ['Type',p=>p.type==='digital'?'Digital':'Physique'],
     ['Tailles',p=>(p.sizes||[]).join(', ')||'-'],
     ['Couleurs',p=>(p.colors||[]).join(', ')||'-']
   ];
@@ -8546,7 +8551,7 @@ function showCompare(){
   // En-tête avec images
   html+='<tr><td style="padding:8px;border-bottom:2px solid var(--bd)"></td>';
   comp.forEach(p=>{
-    const img=isImg(p.img)?`<img loading="lazy" src="${p.img}" style="width:100%;height:100%;object-fit:cover">`:`<span style="font-size:1.8rem">${p.icon||'📦'}</span>`;
+    const img=isImg(p.img)?`<img loading="lazy" src="${p.img}" style="width:100%;height:100%;object-fit:cover">`:`<span style="display:inline-flex;color:var(--gr)">${ico(catVisual(p.cat).ico,30)}</span>`;
     html+=`<td style="padding:8px;text-align:center;border-bottom:2px solid var(--bd)"><div style="width:60px;height:60px;background:#fff;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0 auto 5px">${img}</div><div style="font-size:.68rem;font-weight:700;line-height:1.2">${p.name}</div></td>`;
   });
   html+='</tr>';
@@ -8559,7 +8564,7 @@ function showCompare(){
   html+='<div style="display:flex;gap:8px;margin-top:14px">';
   comp.forEach(p=>{html+=`<button class="bor" style="flex:1;font-size:.72rem;padding:10px" onclick="closeOv('compareOv');openP('${p.id}')">Voir</button>`;});
   html+='</div>';
-  html+='<button class="bou" onclick="clearCompare();closeOv(\'compareOv\')" style="margin-top:8px">🗑️ Vider le comparateur</button>';
+  html+='<button class="bou" onclick="clearCompare();closeOv(\'compareOv\')" style="margin-top:8px">Vider le comparateur</button>';
   document.getElementById('compareContent').innerHTML=html;
   openOv('compareOv');
 }
@@ -8578,10 +8583,10 @@ function renderReco(p){
   }
   if(!similar.length){sec.innerHTML='';return;}
   const t=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;
-  const title={fr:'💡 Vous aimerez aussi',en:'💡 You may also like',ar:'💡 قد يعجبك أيضا',es:'💡 También te puede gustar'}[getLang()]||'💡 Vous aimerez aussi';
+  const title={fr:'Vous aimerez aussi',en:'You may also like',ar:'💡 قد يعجبك أيضا',es:'También te puede gustar'}[getLang()]||'Vous aimerez aussi';
   sec.innerHTML='<h4 style="font-size:.85rem;font-weight:800;margin-bottom:10px">'+title+'</h4><div style="display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px">'+
     similar.map(sp=>{
-      const img=(sp.img&&(sp.img.startsWith('http')||sp.img.startsWith('data:')))?`<img loading="lazy" src="${sp.img}" style="width:100%;height:100%;object-fit:cover">`:`<span style="font-size:1.8rem">${sp.icon||'📦'}</span>`;
+      const img=isImg(sp.img)?`<img loading="lazy" src="${sp.img}" style="width:100%;height:100%;object-fit:cover">`:`<span style="display:inline-flex;color:var(--gr)">${ico(catVisual(sp.cat).ico,30)}</span>`;
       return `<div onclick="openP('${sp.id}')" style="flex-shrink:0;width:100px;cursor:pointer">
         <div style="width:100px;height:100px;background:#fff;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:5px">${img}</div>
         <div style="font-size:.68rem;font-weight:700;line-height:1.2;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${sp.name}</div>
@@ -8602,12 +8607,12 @@ function renderReviews(p){
   ];
   const avg=(demoReviews.reduce((s,r)=>s+r.rating,0)/demoReviews.length).toFixed(1);
   const _t=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;
-  const _reviewTitle=(_t.customerReviews||'⭐ Avis clients');
+  const _reviewTitle=(_t.customerReviews||'Avis clients');
   let html='<div style="background:var(--lt);border-radius:var(--r-md);padding:12px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><h4 style="font-size:.8rem;font-weight:800">'+_reviewTitle+' ('+demoReviews.length+')</h4><div style="font-size:.9rem;font-weight:900;color:var(--gd)">'+avg+'/5</div></div>';
   demoReviews.slice(0,3).forEach(r=>{
     html+='<div style="border-top:1px solid var(--bd);padding:8px 0"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:.78rem;font-weight:700">'+r.name+'</span><span style="font-size:.72rem;color:var(--gd)">'+'★'.repeat(r.rating)+'☆'.repeat(5-r.rating)+'</span></div><div style="font-size:.76rem;color:var(--gr);margin-top:3px">'+r.text+'</div><div style="font-size:.66rem;color:var(--gr);margin-top:2px">'+r.date+'</div></div>';
   });
-  html+='<button onclick="openAddReview()" style="width:100%;background:#fff;border:1.5px solid var(--or);color:var(--or);padding:8px;border-radius:var(--r-md);font-size:.76rem;font-weight:700;cursor:pointer;margin-top:8px">'+(_t.leaveReview||'✍️ Laisser un avis')+'</button></div>';
+  html+='<button onclick="openAddReview()" style="width:100%;background:#fff;border:1.5px solid var(--or);color:var(--or);padding:8px;border-radius:var(--r-md);font-size:.76rem;font-weight:700;cursor:pointer;margin-top:8px">'+(_t.leaveReview||'Laisser un avis')+'</button></div>';
   sec.innerHTML=html;
 }
 function openAddReview(){
@@ -8618,7 +8623,7 @@ function openAddReview(){
   const reviews=getReviews(p.id);
   reviews.push({name,rating,text,date:new Date().toLocaleDateString('fr-FR')});
   lsSet('kRev_'+p.id,JSON.stringify(reviews));
-  renderReviews(p);toast('✅ Merci pour votre avis !');
+  renderReviews(p);toast('Merci pour votre avis !');
 }
 
 // ====== CODE PROMO ======
@@ -8682,7 +8687,7 @@ function openCKRefresh(){
   document.getElementById('cksum').innerHTML=html;
 }
 
-// ====== 🎥 RÉELS CLIENTS (vidéos colis, anonymes, modérées) ======
+// ====== RÉELS CLIENTS (vidéos colis, anonymes, modérées) ======
 function maybeShowReelBlock(){
   const rb=document.getElementById('reelBlock');if(!rb)return;
   const ords=getOrds();if(!ords.length)return;
@@ -8709,18 +8714,18 @@ function makeVideoThumb(file){
     }catch(e){res('');}
   });
 }
-// ====== 🌐 MESSAGES WHATSAPP MULTILINGUES ======
+// ====== MESSAGES WHATSAPP MULTILINGUES ======
 const WA_MSGS={
-  fr:{imgSearch:'📷 Bonjour Kimora Store !\n\nJe cherche un produit similaire à une image.\n\n⚠️ IMPORTANT : appuyez sur 📎 (trombone) ci-dessous et joignez-moi la photo que vous venez de prendre dans l\'application, avant d\'envoyer ce message.\n\nMerci !',hello:'Bonjour Kimora Store 👋',productIntro:'Je suis intéressé(e) par ce produit :',cartIntro:'Je voudrais discuter de ma commande avant de payer :',support:'J\'ai une question concernant vos produits et services.',price:'Prix',total:'Total',forgot:'🔑 *MOT DE PASSE OUBLIÉ*\n\nBonjour, j\'ai oublié le mot de passe de mon compte Kimora.\n📞 Mon numéro : ',reel:'🎥 *VIDÉO COLIS REÇU — Kimora Store*\n\n📦 Commande : {ref}\n\nJe vous envoie la vidéo de mon colis ci-joint 📎.\n\n✅ J\'accepte la publication ANONYME de cette vidéo (sans mon nom, ni mon numéro, ni mon visage).',reelToast:'📎 Dans WhatsApp, appuyez sur le trombone pour joindre votre vidéo',driver:'Bonjour, je suis votre client Kimora. Où en est ma livraison ?'},
-  en:{imgSearch:'📷 Hello Kimora Store!\n\nI am looking for a product similar to an image.\n\n⚠️ IMPORTANT: tap 📎 (paperclip) below and attach the photo you just took in the app, before sending this message.\n\nThank you!',hello:'Hello Kimora Store 👋',productIntro:'I am interested in this product:',cartIntro:'I would like to discuss my order before paying:',support:'I have a question about your products and services.',price:'Price',total:'Total',forgot:'🔑 *FORGOT PASSWORD*\n\nHello, I forgot the password of my Kimora account.\n📞 My number: ',reel:'🎥 *PACKAGE RECEIVED VIDEO — Kimora Store*\n\n📦 Order: {ref}\n\nI am sending you the video of my package attached 📎.\n\n✅ I accept the ANONYMOUS publication of this video (without my name, number or face).',reelToast:'📎 In WhatsApp, tap the paperclip to attach your video',driver:'Hello, I am your Kimora customer. Where is my delivery?'},
-  ar:{imgSearch:'📷 مرحباً Kimora Store!\n\nأبحث عن منتج مشابه لصورة.\n\n⚠️ مهم: اضغط على 📎 (مشبك الورق) أدناه وأرفق الصورة التي التقطتها للتو في التطبيق، قبل إرسال هذه الرسالة.\n\nشكراً!',hello:'مرحباً Kimora Store 👋',productIntro:'أنا مهتم بهذا المنتج:',cartIntro:'أود مناقشة طلبي قبل الدفع:',support:'لدي سؤال حول منتجاتكم وخدماتكم.',price:'السعر',total:'المجموع',forgot:'🔑 *نسيت كلمة المرور*\n\nمرحباً، نسيت كلمة مرور حسابي في Kimora.\n📞 رقمي: ',reel:'🎥 *فيديو استلام الطرد — Kimora Store*\n\n📦 الطلب: {ref}\n\nأرسل لكم فيديو الطرد مرفقاً 📎.\n\n✅ أوافق على النشر المجهول لهذا الفيديو (بدون اسمي أو رقمي أو وجهي).',reelToast:'📎 في واتساب، اضغط على المشبك لإرفاق الفيديو',driver:'مرحباً، أنا عميلكم في Kimora. أين وصل توصيل طلبي؟'},
-  es:{imgSearch:'📷 ¡Hola Kimora Store!\n\nBusco un producto similar a una imagen.\n\n⚠️ IMPORTANTE: toca 📎 (clip) abajo y adjunta la foto que acabas de tomar en la app, antes de enviar este mensaje.\n\n¡Gracias!',hello:'Hola Kimora Store 👋',productIntro:'Estoy interesado(a) en este producto:',cartIntro:'Me gustaría hablar de mi pedido antes de pagar:',support:'Tengo una pregunta sobre sus productos y servicios.',price:'Precio',total:'Total',forgot:'🔑 *OLVIDÉ MI CONTRASEÑA*\n\nHola, olvidé la contraseña de mi cuenta Kimora.\n📞 Mi número: ',reel:'🎥 *VIDEO PAQUETE RECIBIDO — Kimora Store*\n\n📦 Pedido: {ref}\n\nLes envío el video de mi paquete adjunto 📎.\n\n✅ Acepto la publicación ANÓNIMA de este video (sin mi nombre, número ni rostro).',reelToast:'📎 En WhatsApp, toca el clip para adjuntar tu video',driver:'Hola, soy su cliente de Kimora. ¿Dónde está mi entrega?'}
+  fr:{imgSearch:'Bonjour Kimora Store !\n\nJe cherche un produit similaire à une image.\n\nIMPORTANT : appuyez sur (trombone) ci-dessous et joignez-moi la photo que vous venez de prendre dans l\'application, avant d\'envoyer ce message.\n\nMerci !',hello:'Bonjour Kimora Store',productIntro:'Je suis intéressé(e) par ce produit :',cartIntro:'Je voudrais discuter de ma commande avant de payer :',support:'J\'ai une question concernant vos produits et services.',price:'Prix',total:'Total',forgot:'🔑 *MOT DE PASSE OUBLIÉ*\n\nBonjour, j\'ai oublié le mot de passe de mon compte Kimora.\nMon numéro : ',reel:'🎥 *VIDÉO COLIS REÇU — Kimora Store*\n\nCommande : {ref}\n\nJe vous envoie la vidéo de mon colis ci-joint.\n\nJ\'accepte la publication ANONYME de cette vidéo (sans mon nom, ni mon numéro, ni mon visage).',reelToast:'Dans WhatsApp, appuyez sur le trombone pour joindre votre vidéo',driver:'Bonjour, je suis votre client Kimora. Où en est ma livraison ?'},
+  en:{imgSearch:'Hello Kimora Store!\n\nI am looking for a product similar to an image.\n\nIMPORTANT: tap (paperclip) below and attach the photo you just took in the app, before sending this message.\n\nThank you!',hello:'Hello Kimora Store',productIntro:'I am interested in this product:',cartIntro:'I would like to discuss my order before paying:',support:'I have a question about your products and services.',price:'Price',total:'Total',forgot:'🔑 *FORGOT PASSWORD*\n\nHello, I forgot the password of my Kimora account.\nMy number: ',reel:'🎥 *PACKAGE RECEIVED VIDEO — Kimora Store*\n\nOrder: {ref}\n\nI am sending you the video of my package attached.\n\nI accept the ANONYMOUS publication of this video (without my name, number or face).',reelToast:'In WhatsApp, tap the paperclip to attach your video',driver:'Hello, I am your Kimora customer. Where is my delivery?'},
+  ar:{imgSearch:'📷 مرحباً Kimora Store!\n\nأبحث عن منتج مشابه لصورة.\n\n⚠️ مهم: اضغط على (مشبك الورق) أدناه وأرفق الصورة التي التقطتها للتو في التطبيق، قبل إرسال هذه الرسالة.\n\nشكراً!',hello:'مرحباً Kimora Store',productIntro:'أنا مهتم بهذا المنتج:',cartIntro:'أود مناقشة طلبي قبل الدفع:',support:'لدي سؤال حول منتجاتكم وخدماتكم.',price:'السعر',total:'المجموع',forgot:'🔑 *نسيت كلمة المرور*\n\nمرحباً، نسيت كلمة مرور حسابي في Kimora.\n📞 رقمي: ',reel:'🎥 *فيديو استلام الطرد — Kimora Store*\n\n📦 الطلب: {ref}\n\nأرسل لكم فيديو الطرد مرفقاً 📎.\n\n✅ أوافق على النشر المجهول لهذا الفيديو (بدون اسمي أو رقمي أو وجهي).',reelToast:'📎 في واتساب، اضغط على المشبك لإرفاق الفيديو',driver:'مرحباً، أنا عميلكم في Kimora. أين وصل توصيل طلبي؟'},
+  es:{imgSearch:'📷 ¡Hola Kimora Store!\n\nBusco un producto similar a una imagen.\n\nIMPORTANTE: toca (clip) abajo y adjunta la foto que acabas de tomar en la app, antes de enviar este mensaje.\n\n¡Gracias!',hello:'Hola Kimora Store',productIntro:'Estoy interesado(a) en este producto:',cartIntro:'Me gustaría hablar de mi pedido antes de pagar:',support:'Tengo una pregunta sobre sus productos y servicios.',price:'Precio',total:'Total',forgot:'🔑 *OLVIDÉ MI CONTRASEÑA*\n\nHola, olvidé la contraseña de mi cuenta Kimora.\nMi número: ',reel:'🎥 *VIDEO PAQUETE RECIBIDO — Kimora Store*\n\nPedido: {ref}\n\nLes envío el video de mi paquete adjunto.\n\nAcepto la publicación ANÓNIMA de este video (sin mi nombre, número ni rostro).',reelToast:'En WhatsApp, toca el clip para adjuntar tu video',driver:'Hola, soy su cliente de Kimora. ¿Dónde está mi entrega?'}
 };
 function waT(){return WA_MSGS[getLang()]||WA_MSGS.fr;}
 
 function quickBuy(pid){qAdd(pid);showPg('cart');}
 
-// ====== 🖼️ MEILLEURE PHOTO PRODUIT (lien http pour aperçu WhatsApp) ======
+// ====== MEILLEURE PHOTO PRODUIT (lien http pour aperçu WhatsApp) ======
 function bestImgUrl(p){
   if(!p)return '';
   if(isImg(p.img))return p.img;
@@ -8731,20 +8736,20 @@ function bestImgUrl(p){
   return '';
 }
 
-// ====== 🌐 HÉBERGEMENT PHOTOS AUTOMATIQUE (Cloudinary, gratuit) ======
+// ====== HÉBERGEMENT PHOTOS AUTOMATIQUE (Cloudinary, gratuit) ======
 function admShowUploadHint(){
   const el=document.getElementById('uploadHint');if(!el)return;
   const c=CFG();
   el.innerHTML=(c.cldCloud&&c.cldPreset)?
-    '🌐 Envoi automatique en ligne activé — les photos seront aussi visibles sur WhatsApp':
-    '📱 Galerie : affichée dans l\'app<br><i data-ico="globe" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Pour WhatsApp, collez un lien ou activez l\'hébergement (onglet Boutique)';
+    'Envoi automatique en ligne activé — les photos seront aussi visibles sur WhatsApp':
+    'Galerie : affichée dans l\'app<br><i data-ico="globe" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Pour WhatsApp, collez un lien ou activez l\'hébergement (onglet Boutique)';
 }
 function admSaveCloudinary(){
   const cloud=(document.getElementById('cldCloud').value||'').trim();
   const preset=(document.getElementById('cldPreset').value||'').trim();
-  if(!cloud||!preset){toast('⚠️ Renseignez les deux champs');return;}
+  if(!cloud||!preset){toast('Renseignez les deux champs');return;}
   saveCFG2({cldCloud:cloud,cldPreset:preset});
-  toast('✅ Hébergement automatique activé !');
+  toast('Hébergement automatique activé !');
   admRenderCldStatus();
 }
 function admRenderCldStatus(){
@@ -8754,11 +8759,11 @@ function admRenderCldStatus(){
   if(cc)cc.value=c.cldCloud||'';
   if(cp)cp.value=c.cldPreset||'';
   el.innerHTML=(c.cldCloud&&c.cldPreset)?
-    '<span style="color:#16A34A;font-weight:800">✅ Actif</span> — les nouvelles photos sont envoyées en ligne automatiquement.':
+    '<span style="color:#16A34A;font-weight:800">Actif</span> — les nouvelles photos sont envoyées en ligne automatiquement.':
     'Non configuré. Créez un compte gratuit sur <b>cloudinary.com</b>, puis un "Upload preset" en mode <b>Unsigned</b>. Collez les 2 infos ci-dessous.';
 }
 
-// ====== 🏷️ ÉTIQUETTES PRODUITS + CODE-BARRES (Code 39, pur JS) ======
+// ====== ÉTIQUETTES PRODUITS + CODE-BARRES (Code 39, pur JS) ======
 const C39={'0':'nnnwwnwnn','1':'wnnwnnnnw','2':'nnwwnnnnw','3':'wnwwnnnnn','4':'nnnwwnnnw','5':'wnnwwnnnn','6':'nnwwwnnnn','7':'nnnwnnwnw','8':'wnnwnnwnn','9':'nnwwnnwnn','A':'wnnnnwnnw','B':'nnwnnwnnw','C':'wnwnnwnnn','D':'nnnnwwnnw','E':'wnnnwwnnn','F':'nnwnwwnnn','G':'nnnnnwwnw','H':'wnnnnwwnn','I':'nnwnnwwnn','J':'nnnnwwwnn','K':'wnnnnnnww','L':'nnwnnnnww','M':'wnwnnnnwn','N':'nnnnwnnww','O':'wnnnwnnwn','P':'nnwnwnnwn','Q':'nnnnnnwww','R':'wnnnnnwwn','S':'nnwnnnwwn','T':'nnnnwnwwn','U':'wwnnnnnnw','V':'nwwnnnnnw','W':'wwwnnnnnn','X':'nwnnwnnnw','Y':'wwnnwnnnn','Z':'nwwnwnnnn','-':'nwnnnnwnw','.':'wwnnnnwnn',' ':'nwwnnnwnn','*':'nwnnwnwnn'};
 function barcodeSVG(text){
   text=('*'+String(text).toUpperCase().replace(/[^0-9A-Z\-. ]/g,'')+'*');
@@ -8801,7 +8806,7 @@ function admOpenLabels(){
 }
 function printLabels(){
   const chosen=[...document.querySelectorAll('.lblChk:checked')].map(c=>c.getAttribute('data-id'));
-  if(!chosen.length){toast('⚠️ Cochez au moins un produit');return;}
+  if(!chosen.length){toast('Cochez au moins un produit');return;}
   const cfg=CFG();const shop=cfg.name||'Kimora Store';
   const items=[];
   chosen.forEach(id=>{
@@ -8845,12 +8850,12 @@ function printLabels(){
       '</div>'+
       '<div class="lbl-bottom">'+
         '<div class="lbl-qr">'+(qrSvg||'?')+'</div>'+
-        '<div class="lbl-sku">'+esc(it.sku)+(it.qrImgUrl?'<br><span class="lbl-hint">📷 Scanner = voir photo</span>':'')+'</div>'+
+        '<div class="lbl-sku">'+esc(it.sku)+(it.qrImgUrl?'<br><span class="lbl-hint">Scanner = voir photo</span>':'')+'</div>'+
       '</div>'+
     '</div>';
   });
   const w=window.open('','_blank');
-  if(!w){toast('⚠️ Autorisez les fenêtres pop-up pour imprimer');return;}
+  if(!w){toast('Autorisez les fenêtres pop-up pour imprimer');return;}
   w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Étiquettes Kimora</title>'+
     '<style>'+
     '*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}'+
@@ -8873,7 +8878,7 @@ function printLabels(){
     '.lbl-hint{color:#2563EB;font-weight:700}'+
     '@media print{.lbl{border:1px dashed #ddd}.noprint{display:none}}'+
     '</style></head><body>'+
-    '<button class="noprint" onclick="window.print()" style="display:block;margin:0 auto 6px;padding:10px 20px;background:#2563EB;color:#fff;border:none;border-radius:var(--r-md);font-size:14px;font-weight:800;cursor:pointer">🖨️ Imprimer</button>'+
+    '<button class="noprint" onclick="window.print()" style="display:block;margin:0 auto 6px;padding:10px 20px;background:#2563EB;color:#fff;border:none;border-radius:var(--r-md);font-size:14px;font-weight:800;cursor:pointer">Imprimer</button>'+
     '<div class="info noprint">✅ '+items.length+' étiquette(s) prête(s) avec photo + QR code. Cliquez sur Imprimer.</div>'+
     '<div class="grid">'+cells+'</div>'+
     '</body></html>');
@@ -8881,7 +8886,7 @@ function printLabels(){
   toast('✅ '+items.length+' étiquette(s) avec QR code générées');
 }
 
-// ====== 📋 JOURNAL / PREUVE DE RÉCEPTION (admin) ======
+// ====== JOURNAL / PREUVE DE RÉCEPTION (admin) ======
 async function admViewProof(orderId,name,tracking){
   openOv('proofOv');
   const box=document.getElementById('proofContent');
@@ -8898,14 +8903,14 @@ async function admViewProof(orderId,name,tracking){
   let html=`<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:14px">
     <div style="font-size:.8rem;font-weight:800">🔖 ${tracking||orderId}</div>
     <div style="font-size:.76rem;margin-top:3px">👤 ${name||'Client'}</div>
-    <div style="font-size:.74rem;color:var(--gn);font-weight:800;margin-top:5px">✅ Réception confirmée${ds.signedAt?' le '+ds.signedAt:''}</div>
-    ${ds.driverName?`<div style="font-size:.7rem;color:var(--gr);margin-top:3px">🏍️ Livreur : ${ds.driverName}${ds.driverPhone?' ('+ds.driverPhone+')':''}</div>`:''}
+    <div style="font-size:.74rem;color:var(--gn);font-weight:800;margin-top:5px">Réception confirmée${ds.signedAt?' le '+ds.signedAt:''}</div>
+    ${ds.driverName?`<div style="font-size:.7rem;color:var(--gr);margin-top:3px">Livreur : ${ds.driverName}${ds.driverPhone?' ('+ds.driverPhone+')':''}</div>`:''}
   </div>`;
-  html+='<div style="font-size:.78rem;font-weight:900;margin-bottom:8px">✍️ Réception par le client</div>';
+  html+='<div style="font-size:.78rem;font-weight:900;margin-bottom:8px">Réception par le client</div>';
   html+=img('Signature du client',ds.clientSignature);
   html+=img('Photo du colis reçu',ds.receiptPhoto);
   if(ds.pickupSelfie||ds.pickupPhoto||ds.pickupSignature){
-    html+='<div style="font-size:.78rem;font-weight:900;margin:14px 0 8px;border-top:1px solid var(--bd);padding-top:12px">📦 Prise en charge (livreur)</div>';
+    html+='<div style="font-size:.78rem;font-weight:900;margin:14px 0 8px;border-top:1px solid var(--bd);padding-top:12px">Prise en charge (livreur)</div>';
     html+=img('Selfie du livreur',ds.pickupSelfie);
     html+=img('Photo du colis (départ)',ds.pickupPhoto);
     html+=img('Signature du livreur',ds.pickupSignature);
@@ -8916,27 +8921,27 @@ async function admViewProof(orderId,name,tracking){
   box.innerHTML=html;
 }
 
-// ====== 💬 MESSAGES ADMIN -> CLIENT (dans la langue du client) ======
+// ====== MESSAGES ADMIN -> CLIENT (dans la langue du client) ======
 const CLIENT_MSGS={
   fr:{
     contact:(n,t)=>'Bonjour '+(n||'')+' 👋\n\nKimora Store au sujet de votre commande '+(t||'')+'.',
-    pickup:(n,d,t,url)=>'📦 *Kimora Store - Colis pris en charge*\n\nBonjour '+(n||'')+' !\n\n✅ Votre livreur '+(d||'')+' a pris en charge votre colis '+(t||'')+'.\n\n🏍️ Il est maintenant en route vers vous.\n\n📲 Suivez la livraison en temps réel :\n'+url+'\n\n💵 Vous paierez à la réception après vérification du colis.',
-    ready:(n,t)=>'✅ Bonjour '+(n||'')+' !\n\nVotre commande '+(t||'')+' est prête. Nous vous contactons pour la livraison. Merci de votre confiance ! 🙏'
+    pickup:(n,d,t,url)=>'📦 *Kimora Store - Colis pris en charge*\n\nBonjour '+(n||'')+' !\n\nVotre livreur '+(d||'')+' a pris en charge votre colis '+(t||'')+'.\n\nIl est maintenant en route vers vous.\n\nSuivez la livraison en temps réel :\n'+url+'\n\nVous paierez à la réception après vérification du colis.',
+    ready:(n,t)=>'Bonjour '+(n||'')+' !\n\nVotre commande '+(t||'')+' est prête. Nous vous contactons pour la livraison. Merci de votre confiance !'
   },
   en:{
     contact:(n,t)=>'Hello '+(n||'')+' 👋\n\nKimora Store regarding your order '+(t||'')+'.',
-    pickup:(n,d,t,url)=>'📦 *Kimora Store - Parcel picked up*\n\nHello '+(n||'')+'!\n\n✅ Your driver '+(d||'')+' has picked up your parcel '+(t||'')+'.\n\n🏍️ He is now on his way to you.\n\n📲 Track the delivery in real time:\n'+url+'\n\n💵 You will pay on delivery after checking the parcel.',
-    ready:(n,t)=>'✅ Hello '+(n||'')+'!\n\nYour order '+(t||'')+' is ready. We will contact you for delivery. Thank you for your trust! 🙏'
+    pickup:(n,d,t,url)=>'📦 *Kimora Store - Parcel picked up*\n\nHello '+(n||'')+'!\n\nYour driver '+(d||'')+' has picked up your parcel '+(t||'')+'.\n\nHe is now on his way to you.\n\nTrack the delivery in real time:\n'+url+'\n\nYou will pay on delivery after checking the parcel.',
+    ready:(n,t)=>'Hello '+(n||'')+'!\n\nYour order '+(t||'')+' is ready. We will contact you for delivery. Thank you for your trust!'
   },
   ar:{
     contact:(n,t)=>'مرحباً '+(n||'')+' 👋\n\nمتجر كيمورا بخصوص طلبك '+(t||'')+'.',
     pickup:(n,d,t,url)=>'📦 *متجر كيمورا - تم استلام الطرد*\n\nمرحباً '+(n||'')+'!\n\n✅ استلم السائق '+(d||'')+' طردك '+(t||'')+'.\n\n🏍️ وهو الآن في طريقه إليك.\n\n📲 تابع التوصيل مباشرة:\n'+url+'\n\n💵 ستدفع عند الاستلام بعد فحص الطرد.',
-    ready:(n,t)=>'✅ مرحباً '+(n||'')+'!\n\nطلبك '+(t||'')+' جاهز. سنتواصل معك للتوصيل. شكراً لثقتك! 🙏'
+    ready:(n,t)=>'✅ مرحباً '+(n||'')+'!\n\nطلبك '+(t||'')+' جاهز. سنتواصل معك للتوصيل. شكراً لثقتك!'
   },
   es:{
     contact:(n,t)=>'Hola '+(n||'')+' 👋\n\nKimora Store sobre tu pedido '+(t||'')+'.',
-    pickup:(n,d,t,url)=>'📦 *Kimora Store - Paquete recogido*\n\n¡Hola '+(n||'')+'!\n\n✅ Tu repartidor '+(d||'')+' recogió tu paquete '+(t||'')+'.\n\n🏍️ Ya está en camino hacia ti.\n\n📲 Sigue la entrega en tiempo real:\n'+url+'\n\n💵 Pagarás al recibir tras verificar el paquete.',
-    ready:(n,t)=>'✅ ¡Hola '+(n||'')+'!\n\nTu pedido '+(t||'')+' está listo. Te contactaremos para la entrega. ¡Gracias por tu confianza! 🙏'
+    pickup:(n,d,t,url)=>'📦 *Kimora Store - Paquete recogido*\n\n¡Hola '+(n||'')+'!\n\nTu repartidor '+(d||'')+' recogió tu paquete '+(t||'')+'.\n\nYa está en camino hacia ti.\n\nSigue la entrega en tiempo real:\n'+url+'\n\nPagarás al recibir tras verificar el paquete.',
+    ready:(n,t)=>'✅ ¡Hola '+(n||'')+'!\n\nTu pedido '+(t||'')+' está listo. Te contactaremos para la entrega. ¡Gracias por tu confianza!'
   }
 };
 function clientMsgs(lang){return CLIENT_MSGS[lang]||CLIENT_MSGS.fr;}
@@ -8945,14 +8950,14 @@ function orderLangByTracking(tracking){
   return (o&&o.lang)||'fr';
 }
 
-// ====== 🔑 RÉINITIALISATION MOT DE PASSE CLIENT (admin, via fonction Netlify) ======
+// ====== RÉINITIALISATION MOT DE PASSE CLIENT (admin, via fonction Netlify) ======
 async function admResetClientPw(){
   const phone=normPhone(document.getElementById('rpPhone').value);
   const newPass=document.getElementById('rpPass').value;
   const st=document.getElementById('rpStatus');
-  if(!phone||phone.length<9){toast('⚠️ Numéro invalide');return;}
-  if(!newPass||newPass.length<6){toast('⚠️ Mot de passe trop court (min 6)');return;}
-  if(!estAdminConnecte()){toast('❌ Reconnectez-vous en admin');return;}
+  if(!phone||phone.length<9){toast('Numéro invalide');return;}
+  if(!newPass||newPass.length<6){toast('Mot de passe trop court (min 6)');return;}
+  if(!estAdminConnecte()){toast('Reconnectez-vous en admin');return;}
   if(st){st.style.color='var(--gr)';st.textContent='⏳ Réinitialisation en cours...';}
   try{
     const idToken=await fbAuth.currentUser.getIdToken();
@@ -8962,20 +8967,20 @@ async function admResetClientPw(){
     });
     const d=await r.json();
     if(d.ok){
-      if(st){st.style.color='var(--gn)';st.textContent='✅ Mot de passe réinitialisé pour '+phone;}
-      toast('✅ Fait ! Envoyez le nouveau mot de passe au client');
-      const w='🔑 *KIMORA STORE*%0A%0AVotre mot de passe a été réinitialisé.%0A🔑 Nouveau mot de passe : '+encodeURIComponent(newPass)+'%0A%0AConnectez-vous puis changez-le dans votre compte. 🙏';
+      if(st){st.style.color='var(--gn)';st.textContent='Mot de passe réinitialisé pour '+phone;}
+      toast('Fait ! Envoyez le nouveau mot de passe au client');
+      const w='🔑 *KIMORA STORE*%0A%0AVotre mot de passe a été réinitialisé.%0ANouveau mot de passe : '+encodeURIComponent(newPass)+'%0A%0AConnectez-vous puis changez-le dans votre compte.';
       setTimeout(()=>{if(confirm('Envoyer le nouveau mot de passe au client sur WhatsApp ?'))window.open('https://wa.me/'+phone+'?text='+w,'_blank');},400);
       document.getElementById('rpPass').value='';
     }else{
       if(st){st.style.color='var(--rd)';st.textContent='❌ '+(d.error||'Erreur inconnue');}
     }
   }catch(e){
-    if(st){st.style.color='var(--rd)';st.textContent='❌ Serveur injoignable — la fonction Netlify est-elle déployée ?';}
+    if(st){st.style.color='var(--rd)';st.textContent='Serveur injoignable — la fonction Netlify est-elle déployée ?';}
   }
 }
 
-// ====== 🎨 VARIANTES DE COULEURS (galerie par couleur, style Alibaba) ======
+// ====== VARIANTES DE COULEURS (galerie par couleur, style Alibaba) ======
 let admVariants=[],admVarEditIdx=-1;window.curVarIdx=0;
 function admVarUrls(){return (document.getElementById('avUrls').value||'').split('\n').map(u=>u.trim()).filter(u=>u.startsWith('http')).slice(0,10);}
 function admVarPreview(){
@@ -8983,7 +8988,7 @@ function admVarPreview(){
   const urls=admVarUrls();
   th.innerHTML=urls.map((u,i)=>'<div style="position:relative;flex-shrink:0">'+
     '<img loading="lazy" src="'+u+'" style="width:56px;height:56px;object-fit:cover;border-radius:var(--r-md);border:2px solid '+(i===0?'var(--or)':'var(--bd)')+'">'+
-    (i===0?'<div style="position:absolute;top:-6px;left:-4px;background:var(--or);color:#fff;font-size:.5rem;font-weight:900;padding:1px 5px;border-radius:var(--r-xs)">★ PRINCIPALE</div>':'')+
+    (i===0?'<div style="position:absolute;top:-6px;left:-4px;background:var(--or);color:#fff;font-size:.5rem;font-weight:900;padding:1px 5px;border-radius:var(--r-xs)">PRINCIPALE</div>':'')+
     '<div style="display:flex;gap:2px;justify-content:center;margin-top:2px">'+
       '<button onclick="admVarImgOp('+i+',\'star\')" style="border:none;background:var(--lt);border-radius:var(--r-xs);font-size:.6rem;cursor:pointer;padding:1px 4px" title="Image principale">★</button>'+
       '<button onclick="admVarImgOp('+i+',\'left\')" style="border:none;background:var(--lt);border-radius:var(--r-xs);font-size:.6rem;cursor:pointer;padding:1px 4px">◀</button>'+
@@ -9003,17 +9008,17 @@ function admVarImgOp(i,op){
 function admVarSave(){
   const name=(document.getElementById('avName').value||'').trim();
   const imgs=admVarUrls();
-  if(!name){toast('⚠️ Entrez le nom de la couleur');return;}
-  if(!imgs.length){toast('⚠️ Ajoutez au moins 1 lien de photo');return;}
+  if(!name){toast('Entrez le nom de la couleur');return;}
+  if(!imgs.length){toast('Ajoutez au moins 1 lien de photo');return;}
   const v={name:name.slice(0,25),imgs};
   if(admVarEditIdx>=0)admVariants[admVarEditIdx]=v;else{
-    if(admVariants.length>=12){toast('⚠️ Maximum 12 couleurs');return;}
+    if(admVariants.length>=12){toast('Maximum 12 couleurs');return;}
     admVariants.push(v);
   }
   admVarEditIdx=-1;
   document.getElementById('avName').value='';document.getElementById('avUrls').value='';
   admVarPreview();admVarRenderList();
-  toast('✅ Couleur "'+v.name+'" enregistrée ('+imgs.length+' photos)');
+  toast('Couleur "'+v.name+'" enregistrée ('+imgs.length+' photos)');
 }
 function admVarEdit(i){
   const v=admVariants[i];if(!v)return;
@@ -9089,7 +9094,7 @@ function setGalImg2(gi){
   if(cnt)cnt.textContent=(gi+1)+'/'+gal.length;
 }
 
-// ====== 🎥 VIDÉOS COLIS REÇUS (réels, anonymes) ======
+// ====== VIDÉOS COLIS REÇUS (réels, anonymes) ======
 function sendReelWA(){
   const cfg=CFG();const wa=cfg.wa||'237678689053';
   const ords=getOrds();
@@ -9131,7 +9136,7 @@ async function loadHomeReels(){
       '<div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch">'+
       rls.map(r=>'<div style="min-width:230px;max-width:230px;flex-shrink:0;background:var(--lt);border-radius:var(--r-lg);padding:8px">'+
         reelEmbed(r.url)+
-        '<div style="font-size:.72rem;font-weight:800;margin-top:6px">'+String(r.caption||'Colis reçu ✅').replace(/</g,'&lt;')+'</div>'+
+        '<div style="font-size:.72rem;font-weight:800;margin-top:6px">'+String(r.caption||'Colis reçu').replace(/</g,'&lt;')+'</div>'+
         '<div style="font-size:.64rem;color:var(--gr)">👤 '+T.verifClient+(r.city?' · '+String(r.city).replace(/</g,'&lt;'):'')+'</div>'+
       '</div>').join('')+'</div>'+publishBtn;
   }catch(e){el.innerHTML='';}
@@ -9153,21 +9158,21 @@ async function admAddReel(){
   const url=(document.getElementById('nrUrl').value||'').trim();
   const city=(document.getElementById('nrCity').value||'').trim();
   const cap=(document.getElementById('nrCap').value||'').trim();
-  if(!url.startsWith('http')){toast('⚠️ Collez un lien vidéo valide (https://...)');return;}
+  if(!url.startsWith('http')){toast('Collez un lien vidéo valide (https://...)');return;}
   try{
     await fbDB.collection('reels').add({url,city:city.slice(0,30),caption:cap.slice(0,80),createdAt:Date.now()});
     document.getElementById('nrUrl').value='';document.getElementById('nrCity').value='';document.getElementById('nrCap').value='';
-    toast('✅ Vidéo publiée sur l\'accueil');
+    toast('Vidéo publiée sur l\'accueil');
     admRenderReels();loadHomeReels();
-  }catch(e){toast('❌ Erreur, réessayez');}
+  }catch(e){toast('Erreur, réessayez');}
 }
 async function admDelReel(rid){
   if(!confirm('Retirer cette vidéo de l\'accueil ?'))return;
-  try{await fbDB.collection('reels').doc(rid).delete();toast('🗑️ Vidéo retirée');admRenderReels();loadHomeReels();}
-  catch(e){toast('❌ Erreur');}
+  try{await fbDB.collection('reels').doc(rid).delete();toast('Vidéo retirée');admRenderReels();loadHomeReels();}
+  catch(e){toast('Erreur');}
 }
 
-// ====== 🟢 LOGO WHATSAPP OFFICIEL ======
+// ====== LOGO WHATSAPP OFFICIEL ======
 function applyWAIcons(root){
   try{
     (root||document).querySelectorAll('[onclick*="WA"],[onclick*="WhatsApp"],[onclick*="waContact"]').forEach(el=>{
@@ -9177,7 +9182,7 @@ function applyWAIcons(root){
 }
 window.addEventListener('load',()=>{setTimeout(()=>applyWAIcons(),700);});
 
-// ====== 🏠 HOME PREMIUM (Lot 4) ======
+// ====== HOME PREMIUM (Lot 4) ======
 let heroIdx=0,heroTimer=null;
 function heroGo(i){
   heroIdx=i;
@@ -9358,12 +9363,12 @@ function renderHomeSections(){
     renderDealOfDay(all);
     renderBrands();
     setTimeout(applySections,60);
-    // 🔥 Promotions : plus grosses remises d'abord
+    // Promotions : plus grosses remises d'abord
     const promos=all.filter(p=>p.oldPrice&&p.oldPrice>p.price)
       .sort((a,b)=>(1-b.price/b.oldPrice)-(1-a.price/a.oldPrice)).slice(0,8);
     const tt=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;
     fillHomeRow('homePromoSec',tt.promosRow,promos);
-    // 🆕 Nouveautés : derniers produits ajoutés par l'admin
+    // Nouveautés : derniers produits ajoutés par l'admin
     const vp=getVP().slice().sort((a,b)=>{
       const ta=parseInt(String(a.id).replace(/\D/g,''))||0,tb=parseInt(String(b.id).replace(/\D/g,''))||0;return tb-ta;
     }).slice(0,8);
@@ -9437,7 +9442,7 @@ function restoreStay(){
   }
 }
 
-// ====== 🖼️ GALERIE + STOCK + SIMILAIRES (fiche produit) ======
+// ====== GALERIE + STOCK + SIMILAIRES (fiche produit) ======
 function setGalImg(pid,gi){
   const p=getP().find(x=>x.id===pid);if(!p)return;
   const gal=[p.img,...(p.imgs||[])].filter(u=>u&&(u.startsWith('http')||u.startsWith('data:')));
@@ -9467,14 +9472,14 @@ function renderProductExtras(p){
     ss.innerHTML=!sim.length?'':'<div style="margin-top:16px;border-top:1px solid var(--bd);padding-top:12px"><div style="font-size:.88rem;font-weight:900;margin-bottom:8px">'+(TRANSLATIONS[getLang()]||TRANSLATIONS.fr).simTitle+'</div>'+
       '<div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:6px">'+
       sim.map(x=>'<div onclick="openP(\''+x.id+'\')" style="min-width:120px;max-width:120px;background:var(--lt);border-radius:var(--r-md);padding:8px;cursor:pointer;flex-shrink:0">'+
-        '<div style="height:78px;border-radius:var(--r-md);background:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden">'+(x.img&&x.img.length>10?'<img loading="lazy" src="'+x.img+'" style="width:100%;height:100%;object-fit:cover">':(x.icon||'🛍️'))+'</div>'+
+        '<div style="height:78px;border-radius:var(--r-md);background:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden">'+(x.img&&x.img.length>10?'<img loading="lazy" src="'+x.img+'" style="width:100%;height:100%;object-fit:cover">':ico(catVisual(x.cat).ico,30))+'</div>'+
         '<div style="font-size:.7rem;font-weight:700;margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+x.name+'</div>'+
         '<div style="font-size:.72rem;font-weight:900;color:var(--or)">'+(Number(x.price)||0).toLocaleString('fr-FR')+' FCFA</div>'+
       '</div>').join('')+'</div></div>';
   }
 }
 
-// ====== 🎟️ GESTION CODES PROMO (admin) ======
+// ====== GESTION CODES PROMO (admin) ======
 function admRenderPromos(){
   const el=document.getElementById('promoList');if(!el)return;
   const promos=CFG().promos||{};
@@ -9495,9 +9500,9 @@ function admAddPromo(){
   const code=(document.getElementById('npCode').value||'').trim().toUpperCase();
   const type=document.getElementById('npType').value;
   const val=parseInt(document.getElementById('npVal').value)||0;
-  if(!code||code.length<3){toast('⚠️ Code trop court (min 3)');return;}
-  if(type!=='freeship'&&val<=0){toast('⚠️ Entrez une valeur');return;}
-  if(type==='percent'&&val>90){toast('⚠️ Maximum 90%');return;}
+  if(!code||code.length<3){toast('Code trop court (min 3)');return;}
+  if(type!=='freeship'&&val<=0){toast('Entrez une valeur');return;}
+  if(type==='percent'&&val>90){toast('Maximum 90%');return;}
   const label=type==='percent'?('-'+val+'%'):type==='fixed'?('-'+val.toLocaleString('fr-FR')+' FCFA'):'Livraison gratuite';
   const g=id=>{const e=document.getElementById(id);return e?e.value:'';};
   const promos={...(CFG().promos||{})};
@@ -9515,7 +9520,7 @@ function admAddPromo(){
 }
 
 
-// ====== ⭐ AVIS CLIENTS (Firestore: collection reviews) ======
+// ====== AVIS CLIENTS (Firestore: collection reviews) ======
 let rvRating=0, rvPhotoData=null;
 const ADMIN_UID='ERhBnFSuPpYnn31wS39nE8oeH4E2';
 function estAdminConnecte(){return !!(fbAuth&&fbAuth.currentUser&&!fbAuth.currentUser.isAnonymous&&fbAuth.currentUser.uid===ADMIN_UID);}
@@ -9547,10 +9552,10 @@ function captureReviewPhoto(e){
       canvas.width=w;canvas.height=h;
       canvas.getContext('2d').drawImage(im,0,0,w,h);
       rvPhotoData=canvas.toDataURL('image/jpeg',0.6);
-      if(rvPhotoData.length>150000){rvPhotoData=null;toast('⚠️ Photo trop lourde, réessayez');return;}
+      if(rvPhotoData.length>150000){rvPhotoData=null;toast('Photo trop lourde, réessayez');return;}
       const pv=document.getElementById('rvPhotoPrev');
       if(pv)pv.innerHTML='<img loading="lazy" src="'+rvPhotoData+'" style="width:100%;height:100%;object-fit:cover">';
-      toast('📷 Photo ajoutée');
+      toast('Photo ajoutée');
     };
     im.src=ev.target.result;
   };
@@ -9560,10 +9565,10 @@ async function submitReview(){
   const name=(document.getElementById('rvName').value||'').trim();
   const comment=(document.getElementById('rvComment').value||'').trim();
   if(!curP){return;}
-  if(!name){toast('⚠️ Entrez votre nom');return;}
-  if(!rvRating){toast('⚠️ Choisissez une note (étoiles)');return;}
-  if(!comment||comment.length<3){toast('⚠️ Écrivez un commentaire');return;}
-  if(!fbEnabled){toast('❌ Connexion indisponible');return;}
+  if(!name){toast('Entrez votre nom');return;}
+  if(!rvRating){toast('Choisissez une note (étoiles)');return;}
+  if(!comment||comment.length<3){toast('Écrivez un commentaire');return;}
+  if(!fbEnabled){toast('Connexion indisponible');return;}
   // 1 avis par produit et par appareil
   const doneKey='kRv_'+curP.id;
   if(localStorage.getItem(doneKey)){toast('ℹ️ Vous avez déjà donné votre avis sur ce produit');return;}
@@ -9577,9 +9582,9 @@ async function submitReview(){
     document.getElementById('rvComment').value='';rvRating=0;rvPhotoData=null;
     const st=document.getElementById('rvStars');if(st){st.innerHTML=starRow(0,26);}
     const pv=document.getElementById('rvPhotoPrev');if(pv)pv.innerHTML='';
-    toast('✅ Merci pour votre avis !');
+    toast('Merci pour votre avis !');
     loadReviews(curP.id);
-  }catch(e){console.error('Avis:',e.message);toast('❌ Impossible de publier, réessayez');}
+  }catch(e){console.error('Avis:',e.message);toast('Impossible de publier, réessayez');}
 }
 async function loadReviews(productId){
   const list=document.getElementById('rvList');
@@ -9616,8 +9621,8 @@ async function loadReviews(productId){
 }
 async function admDelReview(rid){
   if(!confirm('Supprimer cet avis ?'))return;
-  try{await fbDB.collection('reviews').doc(rid).delete();toast('🗑️ Avis supprimé');if(curP)loadReviews(curP.id);}
-  catch(e){toast('❌ Erreur suppression');}
+  try{await fbDB.collection('reviews').doc(rid).delete();toast('Avis supprimé');if(curP)loadReviews(curP.id);}
+  catch(e){toast('Erreur suppression');}
 }
 
 // ====== PARTAGE PRODUIT ======
@@ -9649,7 +9654,7 @@ function installPWA(){
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(()=>{deferredPrompt=null;const b=document.getElementById('installBtn');if(b)b.style.display='none';});
   }else{
-    toast('📲 Menu navigateur → "Ajouter à l\'écran d\'accueil"');
+    toast('Menu navigateur → "Ajouter à l\'écran d\'accueil"');
   }
 }
 
@@ -9811,11 +9816,11 @@ function openReferral(){
 function copyRef(){
   const code=document.getElementById('refCode').value;
   navigator.clipboard?.writeText(code);
-  toast('📋 Code copié : '+code);
+  toast('Code copié : '+code);
 }
 function shareReferral(){
   const code=document.getElementById('refCode').value;
-  const text=`🎁 Rejoins-moi sur Kimora Store !\n\nUtilise mon code *${code}* et profite de réductions exclusives !\n\n📲 ${location.origin}`;
+  const text=`Rejoins-moi sur Kimora Store !\n\nUtilise mon code *${code}* et profite de réductions exclusives !\n\n📲 ${location.origin}`;
   openWhatsAppExternal('',text);
 }
 
@@ -9853,7 +9858,7 @@ function openFAQ(){
   const faqs=FAQ_DATA[getLang()]||FAQ_DATA.fr;
   document.getElementById('faqContent').innerHTML=faqs.map((f,i)=>
     `<div style="border-bottom:1px solid var(--bd);padding:12px 0"><div onclick="toggleFAQ(${i})" style="display:flex;justify-content:space-between;align-items:center;cursor:pointer"><span style="font-size:.85rem;font-weight:700;flex:1">${f.q}</span><span id="faqArrow${i}" style="color:var(--or);font-size:1.1rem">+</span></div><div id="faqAns${i}" style="display:none;font-size:.8rem;color:var(--gr);line-height:1.6;margin-top:8px">${f.a}</div></div>`
-  ).join('')+'<button class="bor" style="background:#25D166;margin-top:14px" onclick="chatSupportWA()">💬 Autre question ? WhatsApp</button>';
+  ).join('')+'<button class="bor" style="background:#25D166;margin-top:14px" onclick="chatSupportWA()">Autre question ? WhatsApp</button>';
   openOv('faqOv');
 }
 function toggleFAQ(i){
@@ -9874,46 +9879,46 @@ function openPolicy(anchor){
       <div style="font-size:.72rem;color:var(--gr);margin-top:2px">${c.address||'Yaoundé, Cameroun'}</div>
     </div>
 
-    ${H('🏪 À propos de '+c.name,'about')}
+    ${H('À propos de '+c.name,'about')}
     ${P((c.about||('Boutique en ligne 100% camerounaise, '+c.name+' propose des produits de qualité (mode, beauté, électronique, digital) livrés partout au Cameroun. Paiement sécurisé, service client réactif sur WhatsApp, et satisfaction garantie.')))}
 
-    ${H('⚖️ Mentions Légales','legal')}
+    ${H('Mentions Légales','legal')}
     ${P('<strong>Éditeur du site :</strong> '+c.name+'<br><strong>Responsable de la publication :</strong> '+(c.responsable||c.name)+'<br><strong>Adresse :</strong> '+(c.address||'Yaoundé, Cameroun')+'<br><strong>Contact :</strong> '+email+' — WhatsApp +'+wa+(c.rccm?('<br><strong>RCCM :</strong> '+c.rccm):'')+(c.niu?('<br><strong>NIU :</strong> '+c.niu):''))}
     ${P('<strong>Hébergement :</strong> Le site est hébergé par Netlify, Inc. (San Francisco, États-Unis). La base de données est fournie par Google Firebase (Google LLC).')}
 
-    ${H('📋 Conditions Générales de Vente','cgv')}
+    ${H('Conditions Générales de Vente','cgv')}
     ${P('En utilisant l\'application '+c.name+', vous acceptez les présentes conditions. Nos produits sont vendus dans la limite des stocks disponibles. Les prix sont affichés en Francs CFA (FCFA), toutes taxes comprises.')}
     ${P('<strong>Formation de la commande :</strong> La commande est validée après confirmation par le client et prise en compte par nos services. Un récapitulatif est envoyé via WhatsApp.')}
     ${P('<strong>Loi applicable :</strong> Les présentes conditions sont régies par le droit camerounais. En cas de litige, une solution amiable sera recherchée en priorité ; à défaut, les tribunaux compétents du Cameroun seront saisis.')}
 
-    ${H('🔒 Politique de Confidentialité','privacy')}
+    ${H('Politique de Confidentialité','privacy')}
     ${P('<strong>Données collectées :</strong> Nous collectons uniquement les informations nécessaires au traitement de vos commandes : nom, numéro de téléphone, adresse de livraison.')}
     ${P('<strong>Utilisation :</strong> Vos données servent exclusivement à traiter et livrer vos commandes, et à vous contacter concernant celles-ci.')}
     ${P('<strong>Protection :</strong> Vos données sont stockées de manière sécurisée et ne sont JAMAIS vendues, louées ou partagées avec des tiers à des fins commerciales.')}
     ${P('<strong>Stockage local :</strong> L\'application enregistre vos préférences (panier, favoris, langue) directement sur votre appareil pour améliorer votre expérience.')}
 
-    ${H('🚚 Livraison','shipping')}
+    ${H('Livraison','shipping')}
     ${P('Nous livrons à '+(c.city||'Yaoundé, Douala et partout au Cameroun')+' sous '+(c.delai||'2-3 jours ouvrables')+'. La livraison est GRATUITE dès '+(c.freeDel||20000).toLocaleString('fr-FR')+' FCFA d\'achat, sinon des frais de '+(c.livraison||1500).toLocaleString('fr-FR')+' FCFA s\'appliquent.')}
 
     ${H('↩️ Retours & Remboursements','returns')}
     ${P('En cas de produit défectueux ou non conforme, contactez-nous sous 48h après réception via WhatsApp. Nous procéderons à un échange ou remboursement selon le cas.')}
 
-    ${H('💳 Paiement Sécurisé','payment')}
+    ${H('Paiement Sécurisé','payment')}
     ${P('Nous acceptons MTN Mobile Money, Orange Money et le paiement à la livraison. Toutes les transactions sont sécurisées. Nous ne stockons aucune information bancaire.')}
 
-    ${H('🍪 Cookies & Traceurs','cookies')}
+    ${H('Cookies & Traceurs','cookies')}
     ${P('Cette application n\'utilise pas de cookies publicitaires ni de traceurs tiers. Seul le stockage local de votre appareil est utilisé pour le fonctionnement de l\'app.')}
 
-    ${H('👶 Protection des Mineurs','minors')}
+    ${H('Protection des Mineurs','minors')}
     ${P('Nos services sont destinés aux personnes majeures. Les mineurs doivent utiliser l\'application sous la supervision d\'un parent ou tuteur.')}
 
-    ${H('📞 Nous Contacter','contact')}
-    ${P('Pour toute question concernant vos données ou nos conditions :<br>💬 WhatsApp : +'+wa+'<br>📧 Email : '+email)}
+    ${H('Nous Contacter','contact')}
+    ${P('Pour toute question concernant vos données ou nos conditions :<br>WhatsApp : +'+wa+'<br>Email : '+email)}
 
-    ${H('✏️ Modifications','changes')}
+    ${H('Modifications','changes')}
     ${P('Nous nous réservons le droit de modifier ces conditions à tout moment. Les changements prennent effet dès leur publication dans l\'application.')}
 
-    <button class="bor" style="background:#25D166;margin-top:14px" onclick="chatSupportWA()">💬 Une question ? Contactez-nous</button>
+    <button class="bor" style="background:#25D166;margin-top:14px" onclick="chatSupportWA()">Une question ? Contactez-nous</button>
     <div style="background:var(--lt);border-radius:var(--r-md);padding:12px;font-size:.74rem;color:var(--gr);text-align:center;margin-top:12px;line-height:1.5">© ${new Date().getFullYear()} ${c.name}<br>Tous droits réservés<br>Fait au Cameroun</div>`;
   applyWAIcons(document.getElementById('policyContent'));
   openOv('policyOv');
@@ -10705,7 +10710,7 @@ function botSayH(text,withWA){
 function chatToWA(){
   const wa=CFG().wa||'237678689053';
   const lang=getLang();
-  const greetings={fr:'Bonjour Kimora Store 👋',en:'Hello Kimora Store 👋',ar:'مرحبا متجر كيمورا 👋',es:'Hola Kimora Store 👋'};
+  const greetings={fr:'Bonjour Kimora Store',en:'Hello Kimora Store',ar:'مرحبا متجر كيمورا',es:'Hola Kimora Store'};
   const msg=greetings[lang]||greetings.fr;
   openWhatsAppExternal(wa,msg);
 }
@@ -10719,15 +10724,15 @@ function chatProductWA(id){
   const w=waT();
   let msg=w.hello+'\n\n'+w.productIntro+'\n\n';
   msg+='📦 *'+p.name+'*\n';
-  msg+='💰 Prix : '+p.price.toLocaleString('fr-FR')+' FCFA\n';
-  if(p.oldPrice)msg+='🏷️ Promo : -'+dc+'% (avant '+p.oldPrice.toLocaleString('fr-FR')+' FCFA)\n';
-  msg+='📂 Catégorie : '+p.cat+'\n';
-  if(p.sizes&&p.sizes.length)msg+='📏 Tailles dispo : '+p.sizes.join(', ')+'\n';
-  if(p.colors&&p.colors.length)msg+='🎨 Couleurs : '+p.colors.join(', ')+'\n';
+  msg+='Prix : '+p.price.toLocaleString('fr-FR')+' FCFA\n';
+  if(p.oldPrice)msg+='Promo : -'+dc+'% (avant '+p.oldPrice.toLocaleString('fr-FR')+' FCFA)\n';
+  msg+='Catégorie : '+p.cat+'\n';
+  if(p.sizes&&p.sizes.length)msg+='Tailles dispo : '+p.sizes.join(', ')+'\n';
+  if(p.colors&&p.colors.length)msg+='Couleurs : '+p.colors.join(', ')+'\n';
   msg+='\n';
   // Ajouter le lien de l'image si c'est une URL http (WhatsApp affichera l'aperçu)
   const _u=bestImgUrl(p);
-  if(_u)msg+='🖼️ Photo : '+_u+'\n\n';
+  if(_u)msg+='Photo : '+_u+'\n\n';
   msg+='Pouvez-vous me donner plus d\'infos et confirmer la disponibilité ?';
   openProspectForm(msg,p.name);
 }
@@ -10736,14 +10741,14 @@ function chatWhatsApp(){
   // Discuter à propos du produit affiché
   const p=curP;
   const wa=CFG().wa||'237678689053';
-  let msg='Bonjour Kimora Store 👋\n\nJe suis intéressé(e) par ce produit :\n\n';
+  let msg='Bonjour Kimora Store\n\nJe suis intéressé(e) par ce produit :\n\n';
   if(p){
     msg+='📦 *'+p.name+'*\n';
     msg+='💰 '+p.price.toLocaleString('fr-FR')+' FCFA\n';
     msg+='🏷️ '+p.cat+'\n';
-    const _pu=bestImgUrl(p);if(_pu)msg+='🖼️ Photo : '+_pu+'\n';
-    if(selSz)msg+='📏 Taille : '+selSz+'\n';
-    if(selCl)msg+='🎨 Couleur : '+selCl+'\n';
+    const _pu=bestImgUrl(p);if(_pu)msg+='Photo : '+_pu+'\n';
+    if(selSz)msg+='Taille : '+selSz+'\n';
+    if(selCl)msg+='Couleur : '+selCl+'\n';
     msg+='\nPouvez-vous me donner plus d\'informations avant de payer ?';
   }else{
     msg+='Je souhaite avoir des informations sur vos produits.';
@@ -10754,7 +10759,7 @@ function chatWhatsApp(){
 
 function chatCartWA(){
   const cart=getCart();
-  if(!cart.length){toast('⚠️ Panier vide');return;}
+  if(!cart.length){toast('Panier vide');return;}
   const wa=CFG().wa||'237678689053';
   const w=waT();
   let msg=w.hello+'\n\n'+w.cartIntro+'\n\n';
@@ -10867,7 +10872,7 @@ function closeWelcome(){
   setTimeout(()=>{ov.style.display='none';},300);
 }
 async function forceUpdate(){
-  toast('🔄 Mise à jour en cours...');
+  toast('Mise à jour en cours...');
   try{
     if('caches' in window){const ks=await caches.keys();await Promise.all(ks.map(k=>caches.delete(k)));}
   }catch(e){}
@@ -11012,7 +11017,7 @@ function admLogout(){
   admListenersStarted=false;
   closeOv('admPanelOv');
   showPg('home');
-  toast('🔒 Déconnecté de l\'espace vendeur');
+  toast('Déconnecté de l\'espace vendeur');
 }
 // Garde-fou : le panneau admin ne reste ouvert QUE si un vrai admin est connecté
 function admGuard(){
@@ -11020,7 +11025,7 @@ function admGuard(){
   if(ov&&ov.classList.contains('on')&&!estAdminConnecte()){
     closeOv('admPanelOv');
     try{lsSet('kStay','');}catch(e){}
-    toast('🔒 Session admin expirée');
+    toast('Session admin expirée');
   }
 }
 setInterval(admGuard,4000);
@@ -11033,7 +11038,7 @@ function openAdminEntry(){
     openOv('admLoginOv');
   }
 }
-function startAdminHold(){admHoldTimer=setTimeout(()=>{openAdminEntry();toast('🔐 Accès admin');},1500);}
+function startAdminHold(){admHoldTimer=setTimeout(()=>{openAdminEntry();toast('Accès admin');},1500);}
 function cancelAdminHold(){if(admHoldTimer)clearTimeout(admHoldTimer);}
 
 let admListenersStarted=false;
@@ -11046,15 +11051,15 @@ function admStartListeners(){
 function admDoLogin(){
   const u=document.getElementById('admU').value.trim();
   const p=document.getElementById('admP').value;
-  if(!fbEnabled||!fbAuth){toast('❌ Connexion au serveur indisponible');return;}
-  if(!u||!p){toast('⚠️ Entrez votre email et mot de passe');return;}
+  if(!fbEnabled||!fbAuth){toast('Connexion au serveur indisponible');return;}
+  if(!u||!p){toast('Entrez votre email et mot de passe');return;}
   toast('⏳ Connexion en cours...');
   window.authInProgress=true;
   let done=false;
   // Délai maximum : si Firebase ne répond pas en 18s, on débloque
   const timer=setTimeout(()=>{
     if(done)return;done=true;window.authInProgress=false;
-    toast('📶 Le serveur ne répond pas. Réessayez dans un instant.');
+    toast('Le serveur ne répond pas. Réessayez dans un instant.');
   },18000);
   fbAuth.signInWithEmailAndPassword(u,p).then(()=>{
     if(done)return;done=true;clearTimeout(timer);window.authInProgress=false;
@@ -11064,17 +11069,17 @@ function admDoLogin(){
     admRenderAll();
     cloudSaveConfig(CFG());
     document.getElementById('admU').value='';document.getElementById('admP').value='';
-    toast('✅ Connecté !');
+    toast('Connecté !');
   }).catch(err=>{
     if(done)return;done=true;clearTimeout(timer);window.authInProgress=false;
     const c=err&&err.code||'';
-    if(c==='auth/network-request-failed')toast('📶 Pas de connexion au serveur. Réessayez.');
+    if(c==='auth/network-request-failed')toast('Pas de connexion au serveur. Réessayez.');
     else if(c==='auth/too-many-requests')toast('⏳ Trop de tentatives. Attendez 1 minute.');
-    else if(c==='auth/user-not-found')toast('❌ Aucun compte admin avec cet email');
-    else if(c==='auth/wrong-password'||c==='auth/invalid-credential')toast('❌ Mot de passe incorrect');
-    else if(c==='auth/invalid-email')toast('❌ Format d\'email invalide');
-    else if(c==='auth/operation-not-allowed')toast('⚠️ Auth Email non activée dans Firebase');
-    else toast('❌ Échec ('+(c||'inconnu')+')');
+    else if(c==='auth/user-not-found')toast('Aucun compte admin avec cet email');
+    else if(c==='auth/wrong-password'||c==='auth/invalid-credential')toast('Mot de passe incorrect');
+    else if(c==='auth/invalid-email')toast('Format d\'email invalide');
+    else if(c==='auth/operation-not-allowed')toast('Auth Email non activée dans Firebase');
+    else toast('Échec ('+(c||'inconnu')+')');
     console.error('Login admin:',c,err&&err.message);
   });
 }
@@ -11682,9 +11687,9 @@ function admConfirmCreateOrder(){
   const city=document.getElementById('coCity').value.trim();
   const address=document.getElementById('coAddress').value.trim();
   const payment=document.getElementById('coPayment').value;
-  if(!name||!phone){toast('⚠️ Nom et téléphone requis');return;}
-  if(!product){toast('⚠️ Indiquez le produit');return;}
-  if(!amount){toast('⚠️ Indiquez le montant');return;}
+  if(!name||!phone){toast('Nom et téléphone requis');return;}
+  if(!product){toast('Indiquez le produit');return;}
+  if(!amount){toast('Indiquez le montant');return;}
   const tracking=genTrackingNumber();
   const ord={
     id:'CMD-'+Date.now(),tracking:tracking,
@@ -11699,14 +11704,14 @@ function admConfirmCreateOrder(){
   const ords=getOrds();ords.push(ord);lsSet('kOrders',JSON.stringify(ords));
   cloudSaveOrder(ord);
   closeOv('createOrderOv');
-  toast('✅ Commande créée : '+tracking);
+  toast('Commande créée : '+tracking);
   admRenderOrders();admRenderStats();admRenderDeliv();admRenderClients();
   // Proposer d'envoyer le lien de suivi
   setTimeout(()=>{
     const base=appUrl();
     let num=phone.replace(/\D/g,'');if(num.length===9)num='237'+num;
-    const msg='🛒 *Kimora Store - Commande confirmée*\n\nBonjour '+name+' ! 👋\n\n✅ Votre commande est enregistrée :\n📦 '+product+'\n💰 '+amount.toLocaleString('fr-FR')+' FCFA\n🔖 Suivi : '+tracking+'\n\n🗺️ Suivez votre livraison en temps réel :\n'+base+'?track='+tracking+'\n\n💵 '+(payment==='livraison'?'Paiement à la réception après vérification.':'Merci pour votre paiement.')+'\n\nMerci de votre confiance ! 🧡';
-    if(confirm('✅ Commande '+tracking+' créée !\n\nEnvoyer le lien de suivi au client par WhatsApp ?'))openWhatsAppExternal(num,msg);
+    const msg='🛒 *Kimora Store - Commande confirmée*\n\nBonjour '+name+' !\n\nVotre commande est enregistrée :\n📦 '+product+'\n💰 '+amount.toLocaleString('fr-FR')+' FCFA\nSuivi : '+tracking+'\n\nSuivez votre livraison en temps réel :\n'+base+'?track='+tracking+'\n\n💵 '+(payment==='livraison'?'Paiement à la réception après vérification.':'Merci pour votre paiement.')+'\n\nMerci de votre confiance !';
+    if(confirm('Commande '+tracking+' créée !\n\nEnvoyer le lien de suivi au client par WhatsApp ?'))openWhatsAppExternal(num,msg);
   },400);
 }
 
@@ -11715,7 +11720,7 @@ function admRenderProspects(){
   const cont=document.getElementById('admProspectList');
   if(!cont)return;
   const prospects=JSON.parse(localStorage.getItem('kProspects')||'[]');
-  if(!prospects.length){cont.innerHTML='<div class="empty"><div class="ei">🎯</div><h3>Aucun prospect</h3><p>Les personnes qui contactent via WhatsApp apparaîtront ici</p></div>';return;}
+  if(!prospects.length){cont.innerHTML='<div class="empty"><div class="ei"><i data-ico="target" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucun prospect</h3><p>Les personnes qui contactent via WhatsApp apparaîtront ici</p></div>';return;}
   // Filtrer les prospects avec au moins un numéro (les anonymes comptent mais pas relançables)
   const withPhone=prospects.filter(p=>p.phone&&p.phone.length>=8);
   const anonymous=prospects.length-withPhone.length;
@@ -11727,15 +11732,15 @@ function admRenderProspects(){
     <div style="display:flex;justify-content:space-between;align-items:start">
       <div style="flex:1;min-width:0">
         <div style="font-size:.82rem;font-weight:800">🎯 ${p.name||'Anonyme'}</div>
-        ${p.phone?`<div style="font-size:.73rem;color:var(--gr)">📞 ${p.phone}</div>`:'<div style="font-size:.7rem;color:var(--gr)">📞 Non renseigné</div>'}
+        ${p.phone?`<div style="font-size:.73rem;color:var(--gr)">📞 ${p.phone}</div>`:'<div style="font-size:.7rem;color:var(--gr)">Non renseigné</div>'}
         ${p.product?`<div style="font-size:.7rem;color:var(--or)">📦 ${p.product}</div>`:''}
         ${p.photo?`<img src="${p.photo}" onclick="window.open(this.src)" style="margin-top:6px;max-width:120px;border-radius:var(--r-md);border:1px solid var(--bd);cursor:pointer">`:''}
         <div style="font-size:.66rem;color:var(--gr)">🕐 ${p.date} ${p.time||''}</div>
       </div>
     </div>
     ${p.phone&&p.phone.length>=8?`<div style="display:flex;gap:6px;margin-top:8px">
-      <button onclick="admRelanceProspect('${p.phone}','${p.name||''}','${(p.product||'').replace(/'/g,'')}')" style="flex:1;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#25D166;padding:6px;border-radius:var(--r-sm);font-size:.68rem;font-weight:700;cursor:pointer">💬 Relancer</button>
-      <button onclick="admCreateOrderForProspect('${p.phone}','${(p.name||'').replace(/'/g,'')}','${(p.product||'').replace(/'/g,'')}')" style="flex:1;background:var(--or);border:none;color:#fff;padding:6px;border-radius:var(--r-sm);font-size:.68rem;font-weight:700;cursor:pointer">🛒 Créer commande</button>
+      <button onclick="admRelanceProspect('${p.phone}','${p.name||''}','${(p.product||'').replace(/'/g,'')}')" style="flex:1;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#25D166;padding:6px;border-radius:var(--r-sm);font-size:.68rem;font-weight:700;cursor:pointer">Relancer</button>
+      <button onclick="admCreateOrderForProspect('${p.phone}','${(p.name||'').replace(/'/g,'')}','${(p.product||'').replace(/'/g,'')}')" style="flex:1;background:var(--or);border:none;color:#fff;padding:6px;border-radius:var(--r-sm);font-size:.68rem;font-weight:700;cursor:pointer">Créer commande</button>
     </div>`:''}
   </div>`).join('');
 }
@@ -11744,7 +11749,7 @@ function admRelanceProspect(phone,name,product){
   if(num.length===9)num='237'+num;
   let msg='Bonjour '+(name||'')+' 👋\n\nMerci de votre intérêt pour Kimora Store';
   if(product)msg+=' concernant : '+product;
-  msg+=' !\n\nAvez-vous des questions ? Nous avons des offres spéciales pour vous. 🎁';
+  msg+=' !\n\nAvez-vous des questions ? Nous avons des offres spéciales pour vous.';
   openWhatsAppExternal(num,msg);
 }
 
@@ -12688,32 +12693,32 @@ function admViewDelivDetails(orderId){
   
   // === LIVREUR ===
   if(driver){
-    html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:8px">🏍️ Livreur</div>';
+    html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:8px">Livreur</div>';
     html+='<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:14px;display:flex;gap:10px;align-items:center">';
     if(driver.photo)html+='<img loading="lazy" src="'+driver.photo+'" style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--or)">';
-    html+='<div><div style="font-size:.8rem;font-weight:700">'+driver.name+'</div><div style="font-size:.72rem;color:var(--gr)">📞 '+driver.phone+'</div><div style="font-size:.68rem;color:var(--gr)">🪪 CNI: '+(driver.cni||'N/A')+'</div></div>';
+    html+='<div><div style="font-size:.8rem;font-weight:700">'+driver.name+'</div><div style="font-size:.72rem;color:var(--gr)">📞 '+driver.phone+'</div><div style="font-size:.68rem;color:var(--gr)">CNI: '+(driver.cni||'N/A')+'</div></div>';
     html+='</div>';
   }
   
   // === DÉPART (prise en charge) ===
-  html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:8px">📤 Prise en charge (départ)</div>';
+  html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:8px">Prise en charge (départ)</div>';
   if(ds.pickupSigned){
     html+='<div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;margin-bottom:14px">';
-    html+='<div style="font-size:.74rem;color:var(--gn);font-weight:700">✅ Signé le '+(ds.pickupAt||'')+'</div>';
-    if(ds.pickupSelfie)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">🤳 Selfie du livreur (prise en charge) :</div><img src="'+ds.pickupSelfie+'" style="width:100px;height:100px;object-fit:cover;border-radius:50%;border:2px solid var(--gn)"></div>';
-    if(ds.pickupPhoto)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">📦 Photo du colis au départ :</div><img src="'+ds.pickupPhoto+'" style="width:100%;border-radius:var(--r-md)"></div>';
-    if(ds.pickupSignature)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">✍️ Signature livreur :</div><img src="'+ds.pickupSignature+'" style="width:100%;background:#fff;border-radius:var(--r-md);border:1px solid var(--bd)"></div>';
+    html+='<div style="font-size:.74rem;color:var(--gn);font-weight:700">Signé le '+(ds.pickupAt||'')+'</div>';
+    if(ds.pickupSelfie)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">Selfie du livreur (prise en charge) :</div><img src="'+ds.pickupSelfie+'" style="width:100px;height:100px;object-fit:cover;border-radius:50%;border:2px solid var(--gn)"></div>';
+    if(ds.pickupPhoto)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">Photo du colis au départ :</div><img src="'+ds.pickupPhoto+'" style="width:100%;border-radius:var(--r-md)"></div>';
+    if(ds.pickupSignature)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">Signature livreur :</div><img src="'+ds.pickupSignature+'" style="width:100%;background:#fff;border-radius:var(--r-md);border:1px solid var(--bd)"></div>';
     html+='</div>';
   }else{
     html+='<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:14px;font-size:.74rem;color:var(--gr);text-align:center">⏳ Pas encore pris en charge</div>';
   }
   
   // === RÉCEPTION ===
-  html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:8px">📥 Réception (livraison)</div>';
+  html+='<div style="font-size:.85rem;font-weight:800;margin-bottom:8px">Réception (livraison)</div>';
   if(ds.signed){
     html+='<div style="background:#DCFCE7;border-radius:var(--r-md);padding:12px;margin-bottom:14px">';
-    html+='<div style="font-size:.74rem;color:var(--gn);font-weight:700">✅ Reçu et signé le '+(ds.signedAt||'')+'</div>';
-    if(ds.receiptPhoto)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">📦 Photo du colis reçu :</div><img src="'+ds.receiptPhoto+'" style="width:100%;border-radius:var(--r-md)"></div>';
+    html+='<div style="font-size:.74rem;color:var(--gn);font-weight:700">Reçu et signé le '+(ds.signedAt||'')+'</div>';
+    if(ds.receiptPhoto)html+='<div style="margin-top:8px"><div style="font-size:.68rem;color:var(--gr);margin-bottom:4px">Photo du colis reçu :</div><img src="'+ds.receiptPhoto+'" style="width:100%;border-radius:var(--r-md)"></div>';
     html+='</div>';
   }else{
     html+='<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:14px;font-size:.74rem;color:var(--gr);text-align:center">⏳ Pas encore livré</div>';
@@ -12727,7 +12732,7 @@ function AT(k){const t=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;return t[k]!==un
 function admRenderDeliv(){
   const ords=getOrds();
   const cont=document.getElementById('admDelivList');
-  if(!ords.length){cont.innerHTML='<div class="empty"><div class="ei">🚚</div><h3>Aucune commande</h3></div>';return;}
+  if(!ords.length){cont.innerHTML='<div class="empty"><div class="ei"><i data-ico="truck" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucune commande</h3></div>';return;}
   const _tt=TRANSLATIONS[getLang()]||TRANSLATIONS.fr;const stepNames=[_tt.stepConfirmed,_tt.stepPrep,_tt.stepRoute,_tt.stepDelivered];
   cont.innerHTML=ords.slice().reverse().map(o=>{
     const ds=getDelivState(o.id)||{step:0};
@@ -12764,16 +12769,16 @@ function admSetDelivStep(orderId,step){
   saveDelivState(orderId,ds);
   cloudSaveDelivery(orderId,ds); // SYNCHRO CLOUD → le client voit le changement !
   admRenderDeliv();
-  toast('✅ Statut mis à jour : '+['','Préparation','En route','Livré'][step]);
+  toast('Statut mis à jour : '+['','Préparation','En route','Livré'][step]);
 }
 
 function admNotifyDeliv(orderId){
   const ord=getOrds().find(o=>o.id===orderId);if(!ord)return;
   const ds=getDelivState(orderId)||{step:0};
   const base=appUrl();
-  const statusMsg=['✅ Votre commande est confirmée','📦 Votre colis est en préparation','🚚 Votre colis est en route ! Suivez-le en temps réel','🎉 Votre colis est arrivé !'][ds.step||0];
+  const statusMsg=['Votre commande est confirmée','Votre colis est en préparation','Votre colis est en route ! Suivez-le en temps réel','Votre colis est arrivé !'][ds.step||0];
   let num=(ord.phone||'').replace(/\D/g,'');if(num.length===9)num='237'+num;
-  const msg='📦 *Kimora Store - Suivi de livraison*\n\nBonjour '+(ord.name||'')+' 👋\n\n'+statusMsg+'\n\n🔖 N° de suivi : '+(ord.tracking||orderId)+'\n\n🗺️ Suivez votre livraison en temps réel (carte + infos livreur) :\n'+base+'?track='+(ord.tracking||orderId)+'\n\nMerci de votre confiance ! 🧡';
+  const msg='📦 *Kimora Store - Suivi de livraison*\n\nBonjour '+(ord.name||'')+' 👋\n\n'+statusMsg+'\n\nN° de suivi : '+(ord.tracking||orderId)+'\n\nSuivez votre livraison en temps réel (carte + infos livreur) :\n'+base+'?track='+(ord.tracking||orderId)+'\n\nMerci de votre confiance !';
   openWhatsAppExternal(num,msg);
 }
 
@@ -13673,24 +13678,24 @@ function admDupProd(id){
 
 
 function admContactClient(phone,name,tracking){
-  if(!phone){toast('⚠️ Pas de numéro pour ce client');return;}
+  if(!phone){toast('Pas de numéro pour ce client');return;}
   let num=phone.replace(/\D/g,'');
   if(num.length===9)num='237'+num;
   const lang=orderLangByTracking(tracking);
   const msg=clientMsgs(lang).contact(name,tracking);
-  if(lang!=='fr')toast('💬 Message envoyé en '+({en:'anglais',ar:'arabe',es:'espagnol'}[lang]||lang));
+  if(lang!=='fr')toast('Message envoyé en '+({en:'anglais',ar:'arabe',es:'espagnol'}[lang]||lang));
   openWhatsAppExternal(num,msg);
 }
 
 function admRenderOrders(){
   const ords=getOrds(),wa=CFG().wa||'237677000000';
   document.getElementById('admOrderList').innerHTML=!ords.length?
-    '<div class="empty"><div class="ei">🛒</div><h3>Aucune commande</h3></div>':
+    '<div class="empty"><div class="ei"><i data-ico="cart" data-ico-size="44" style="display:inline-flex"></i></div><h3>Aucune commande</h3></div>':
     ords.slice().reverse().map(o=>`<div style="background:var(--lt);border-radius:var(--r-md);padding:12px;margin-bottom:9px">
       <div style="display:flex;justify-content:space-between"><div style="font-size:.82rem;font-weight:800">${(o.items||[]).slice(0,2).join(', ')}</div><div style="font-size:.88rem;font-weight:900;color:var(--or)">${o.total.toLocaleString('fr-FR')}</div></div>${o.tracking?`<div style="font-size:.68rem;color:var(--or);font-weight:700;margin-top:2px">🔖 ${o.tracking}</div>`:''}${o.status==='cancelled'?`<div style="display:inline-block;background:#FEE2E2;color:var(--rd);font-size:.62rem;font-weight:800;padding:2px 7px;border-radius:var(--r-xs);margin-top:3px"><i data-ico="x" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> ANNULÉE</div>`:''}
       <div style="font-size:.7rem;color:var(--gr);line-height:1.6;margin-top:5px">👤 ${o.name||'N/A'}<br>📞 ${o.phone||'N/A'}<br>📍 ${[o.city,o.address].filter(Boolean).join(' - ')||'N/A'}<br>📅 ${o.date}${(o.time||o.createdAt)?' · 🕐 '+(o.time||new Date(o.createdAt).toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})):''}</div>
       <div class="pay-line">${payStatusBadge(o)}<select class="pay-sel" onchange="admSetPayStatus('${o.id}',this.value)">${Object.keys(PAY_STATUS).map(k=>`<option value="${k}"${payStatusOf(o)===k?' selected':''}>${getLang()==='en'?PAY_STATUS[k].en:PAY_STATUS[k].fr}</option>`).join('')}</select></div>
-      <button onclick="admContactClient('${(o.phone||'').replace(/\D/g,'')}','${o.name||''}','${o.tracking||o.id}')" style="margin-top:8px;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#25D166;padding:6px 12px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer">💬 Contacter client</button>
+      <button onclick="admContactClient('${(o.phone||'').replace(/\D/g,'')}','${o.name||''}','${o.tracking||o.id}')" style="margin-top:8px;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#25D166;padding:6px 12px;border-radius:var(--r-sm);font-size:.72rem;font-weight:700;cursor:pointer">Contacter client</button>
     </div>`).join('');
 }
 
@@ -13764,8 +13769,8 @@ async function handleClientReelUpload(e){
   e.target.value='';
   const L=getLang();
   const msgs={
-    fr:{big:'⚠️ Vidéo trop lourde (max 50 Mo). Filmez plus court (10-15s).',up:'⏳ Envoi de votre vidéo en cours...',ok:'✅ Merci ! Votre vidéo est publiée 🎉',err:'❌ Échec de l\'envoi, réessayez',ask:'Publier cette vidéo de votre colis reçu ?\n\n🔒 Anonyme : ni votre nom ni votre numéro ne seront affichés.',city:'Votre ville ? (facultatif, ex: Douala)'},
-    en:{big:'⚠️ Video too large (max 50 MB). Film shorter (10-15s).',up:'⏳ Uploading your video...',ok:'✅ Thank you! Your video is published 🎉',err:'❌ Upload failed, try again',ask:'Publish this video of your received package?\n\n🔒 Anonymous: neither your name nor number will be shown.',city:'Your city? (optional, e.g. Douala)'}
+    fr:{big:'Vidéo trop lourde (max 50 Mo). Filmez plus court (10-15s).',up:'⏳ Envoi de votre vidéo en cours...',ok:'Merci ! Votre vidéo est publiée',err:'Échec de l\'envoi, réessayez',ask:'Publier cette vidéo de votre colis reçu ?\n\nAnonyme : ni votre nom ni votre numéro ne seront affichés.',city:'Votre ville ? (facultatif, ex: Douala)'},
+    en:{big:'Video too large (max 50 MB). Film shorter (10-15s).',up:'⏳ Uploading your video...',ok:'Thank you! Your video is published',err:'Upload failed, try again',ask:'Publish this video of your received package?\n\nAnonymous: neither your name nor number will be shown.',city:'Your city? (optional, e.g. Douala)'}
   };
   const t=msgs[L]||msgs.fr;
   if(file.size>50*1024*1024){toast(t.big);return;}
@@ -13778,7 +13783,7 @@ async function handleClientReelUpload(e){
     await fbDB.collection('reels').add({
       url,
       city:sanitizeText(city),
-      caption:sanitizeText(L==='en'?'Package received ✅':'Colis reçu ✅'),
+      caption:sanitizeText(L==='en'?'Package received':'Colis reçu'),
       byClient:true,
       createdAt:Date.now()
     });
@@ -13837,7 +13842,7 @@ function admOpenAdd(){
   admVariants=[];admVarEditIdx=-1;
   setTimeout(()=>{try{admRenderGalPrev();}catch(e){}},60);
   setTimeout(()=>{try{admVarPreview();admVarRenderList();admShowUploadHint();}catch(e){}},50);
-  document.getElementById('admModalTitle').textContent='➕ Nouveau produit';
+  document.getElementById('admModalTitle').textContent='Nouveau produit';
   ['apIc','apNm','apPr','apOp','apDs','apFt','apFl','apLk','apSz','apCl','apImgUrl','apStock'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   document.getElementById('apCt').value='';document.getElementById('apTp').value='digital';
   document.getElementById('admImgPreview').innerHTML='📦';
@@ -13886,7 +13891,7 @@ function admEditProd(pid){
 function admUnhideBase(pid){
   const hidden=(CFG().hiddenBase||[]).filter(x=>x!==pid);
   saveCFG2({hiddenBase:hidden});
-  toast('♻️ Produit réaffiché dans la boutique');
+  toast('Produit réaffiché dans la boutique');
   admRenderProds();try{renderG(getP());renderHomeSections();}catch(e){}
 }
 async function admDelProd(pid){
@@ -13894,13 +13899,13 @@ async function admDelProd(pid){
   const i=vp.findIndex(x=>x.id===pid);
   const prod=vp[i];
   if(!prod){
-    // Produit démo : on le masque de la boutique (réversible avec ♻️)
+    // Produit démo : on le masque de la boutique (réversible avec)
     if(!BASE.find(x=>x.id===pid)){toast('Produit introuvable, actualisez');return;}
     if(!confirm('Masquer ce produit démo de la boutique ? (réversible)'))return;
     const hidden=[...(CFG().hiddenBase||[])];
     if(!hidden.includes(pid))hidden.push(pid);
     saveCFG2({hiddenBase:hidden});
-    toast('🙈 Produit démo masqué');
+    toast('Produit démo masqué');
     admRenderProds();try{renderG(getP());renderHomeSections();}catch(e){}
     return;
   }
@@ -13909,7 +13914,7 @@ async function admDelProd(pid){
   if(!fbEnabled){vp.splice(i,1);lsSet('kVP',JSON.stringify(vp));}
   admRenderProds();admRenderStats();
   renderG(getP());renderB(getP());
-  toast('🗑️ Supprimé');
+  toast('Supprimé');
 }
 
 async function admSaveProd(){
@@ -13922,7 +13927,7 @@ async function admSaveProd(){
   if(!nm)manque.push('le nom');
   if(!pr||pr<=0)manque.push('un prix valide');
   if(!ct)manque.push('la catégorie');
-  if(manque.length){toast('⚠️ Il manque : '+manque.join(', '));return;}
+  if(manque.length){toast('Il manque : '+manque.join(', '));return;}
   const vp=JSON.parse(localStorage.getItem('kVP')||'[]');
   const p={
     id:admEditIdx>=0?vp[admEditIdx].id:(admOverrideId||('vp'+Date.now())),
@@ -13950,7 +13955,7 @@ async function admSaveProd(){
   const taille=JSON.stringify(p).length;
   if(taille>950000){
     const nbImgUp=(p.imgs||[]).filter(u=>u&&u.startsWith('data:')).length;
-    toast('⚠️ Produit trop lourd ('+Math.round(taille/1024)+' Ko). Retirez '+(nbImgUp>0?'des images uploadées ou utilisez des LIENS d\'images':'des images')+'.');
+    toast('Produit trop lourd ('+Math.round(taille/1024)+' Ko). Retirez '+(nbImgUp>0?'des images uploadées ou utilisez des LIENS d\'images':'des images')+'.');
     return;
   }
   // 1) Toujours enregistrer en LOCAL d'abord (le produit n'est jamais perdu)
@@ -13963,17 +13968,17 @@ async function admSaveProd(){
   try{renderG(getP());renderB(getP());renderHomeSections();}catch(e){}
   closeOv('admProdModal');
   if(!cloudOk){
-    toast('⚠️ Enregistré sur cet appareil, mais synchro cloud échouée. Réessayez avec moins/plus petites images.');
+    toast('Enregistré sur cet appareil, mais synchro cloud échouée. Réessayez avec moins/plus petites images.');
     return;
   }
   if(admEditIdx<0){
     setTimeout(()=>{
-      if(confirm('✅ Produit publié !\n\nVoulez-vous annoncer ce nouveau produit sur WhatsApp ?')){
+      if(confirm('Produit publié !\n\nVoulez-vous annoncer ce nouveau produit sur WhatsApp ?')){
         notifyNewProductWA(p);
       }
     },300);
   }
-  toast(admEditIdx>=0?'✅ Produit modifié !':'✅ Produit publié dans la boutique !');
+  toast(admEditIdx>=0?'Produit modifié !':'Produit publié dans la boutique !');
 }
 
 function admTogFields(){
@@ -13992,11 +13997,11 @@ function saveCFG2(e){const merged={...CFG(),...e};lsSet('kCfg',JSON.stringify(me
 
 function admSaveBoutique(){
   saveCFG2({name:document.getElementById('cfNm').value,address:document.getElementById('cfAd').value,city:document.getElementById('cfCt').value,hours:document.getElementById('cfHr').value,bannerTitle:document.getElementById('cfBt').value});
-  applyBranding();toast('✅ Boutique mise à jour');
+  applyBranding();toast('Boutique mise à jour');
 }
 function admSaveContact(){
   saveCFG2({wa:document.getElementById('cfWa').value,email:document.getElementById('cfEm').value,tiktok:document.getElementById('cfTt').value,fb:document.getElementById('cfFb').value,ig:document.getElementById('cfIg').value,fapshiUser:document.getElementById('cfFu').value,fapshiKey:document.getElementById('cfFk').value});
-  toast('✅ Contacts sauvegardés');
+  toast('Contacts sauvegardés');
 }
 function admChangeUser(){
   toast('ℹ️ L\'email admin se change dans la console Firebase (Authentication › Utilisateurs)');
@@ -14004,19 +14009,19 @@ function admChangeUser(){
 function admChangePw(){
   const nw=document.getElementById('spNew').value;
   const cnf=document.getElementById('spCnf').value;
-  if(!nw||nw.length<6){toast('⚠️ Nouveau mot de passe trop court (min 6)');return;}
-  if(nw!==cnf){toast('⚠️ Les mots de passe ne correspondent pas');return;}
+  if(!nw||nw.length<6){toast('Nouveau mot de passe trop court (min 6)');return;}
+  if(nw!==cnf){toast('Les mots de passe ne correspondent pas');return;}
   const user=fbAuth&&fbAuth.currentUser;
-  if(!user){toast('❌ Reconnectez-vous d\'abord');return;}
+  if(!user){toast('Reconnectez-vous d\'abord');return;}
   user.updatePassword(nw).then(()=>{
     document.getElementById('spOld').value='';document.getElementById('spNew').value='';document.getElementById('spCnf').value='';
-    toast('✅ Mot de passe changé !');
+    toast('Mot de passe changé !');
   }).catch(err=>{
-    toast(err.code==='auth/requires-recent-login'?'⚠️ Déconnectez-vous, reconnectez-vous, puis réessayez':'❌ Erreur, réessayez');
+    toast(err.code==='auth/requires-recent-login'?'Déconnectez-vous, reconnectez-vous, puis réessayez':'Erreur, réessayez');
   });
 }
 async function admClearOrders(){
-  if(!confirm('⚠️ Effacer TOUTES les commandes et livraisons ?\n\nCette action est irréversible.'))return;
+  if(!confirm('Effacer TOUTES les commandes et livraisons ?\n\nCette action est irréversible.'))return;
   // Effacer local
   localStorage.removeItem('kOrders');
   // Effacer les états de livraison locaux
@@ -14033,11 +14038,11 @@ async function admClearOrders(){
     }catch(e){console.error('Erreur effacement cloud:',e.message);}
   }
   admRenderOrders();admRenderStats();admRenderDeliv();admRenderClients();
-  toast('🗑️ Commandes & livraisons effacées');
+  toast('Commandes & livraisons effacées');
 }
 
 async function admClearDrivers(){
-  if(!confirm('⚠️ Effacer TOUS les livreurs ?\n\nCette action est irréversible.'))return;
+  if(!confirm('Effacer TOUS les livreurs ?\n\nCette action est irréversible.'))return;
   localStorage.removeItem('kDrivers');
   if(fbEnabled){
     try{
@@ -14047,15 +14052,15 @@ async function admClearDrivers(){
     }catch(e){console.error(e.message);}
   }
   admRenderDrivers();
-  toast('🏍️ Tous les livreurs effacés');
+  toast('Tous les livreurs effacés');
 }
 
 async function admClearAll(){
-  if(!confirm('🔥 TOUT EFFACER ?\n\nCommandes + Livraisons + Livreurs seront supprimés définitivement.\n\nConfirmer ?'))return;
-  if(!confirm('⚠️ Dernière confirmation : êtes-vous VRAIMENT sûr ?'))return;
+  if(!confirm('TOUT EFFACER ?\n\nCommandes + Livraisons + Livreurs seront supprimés définitivement.\n\nConfirmer ?'))return;
+  if(!confirm('Dernière confirmation : êtes-vous VRAIMENT sûr ?'))return;
   await admClearOrders();
   await admClearDrivers();
-  toast('🔥 Toutes les données effacées');
+  toast('Toutes les données effacées');
 }
 
 let tt;
