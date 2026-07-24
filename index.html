@@ -2870,7 +2870,10 @@ body.dark .leaflet-container{filter:brightness(.85);}
   #srchSug{left:auto;right:auto;width:100%;max-width:780px;top:64px;margin:0 auto;}
   #langBtn{order:3;}
   .ib{order:4;}
-  .ib.dsk{display:flex;width:auto;height:auto;align-items:center;gap:8px;color:#374151;padding:8px 14px;border-radius:var(--r-md);transition:.18s ease;white-space:nowrap;}
+  /* Actions regroupées à droite : Accueil · Catégories · Favoris · Compte · Panier */
+  .ib.dsk{order:5;display:flex;width:auto;height:auto;align-items:center;gap:8px;color:#374151;padding:8px 14px;border-radius:var(--r-md);transition:.18s ease;white-space:nowrap;}
+  #acctWrap{order:6;}
+  #cartWrap{order:7;}
   .ib.dsk:hover{background:#F1F5F9;color:var(--or2);}
   .dskl{font-size:.84rem;font-weight:600;letter-spacing:-.01em;}
   /* Menu bas masqué : tout est dans le header */
@@ -3876,11 +3879,12 @@ body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
     <div class="logo" id="logoName" ontouchstart="startAdminHold()" ontouchend="cancelAdminHold()" onmousedown="startAdminHold()" onmouseup="cancelAdminHold()" onmouseleave="cancelAdminHold()" ondblclick="openAdminEntry()" style="user-select:none;-webkit-user-select:none;cursor:pointer">KIMORA <span>Store</span></div>
     <button class="ib" onclick="openLangMenu()" id="langBtn"><i data-ico="globe" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i></button>
     <button class="ib" onclick="renderCloudNotifs();openOv('notifOv')"><i data-ico="bell" data-ico-size="20" style="display:inline-flex;vertical-align:-.18em"></i><span class="bdg" id="nb">3</span></button>
-    <div class="hdrop"><button class="ib" onclick="toggleMiniCart(event)"><i data-ico="cart" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i><span class="bdg" id="cbt">0</span></button>
+    <div class="hdrop" id="cartWrap"><button class="ib" onclick="toggleMiniCart(event)"><i data-ico="cart" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i><span class="bdg" id="cbt">0</span></button>
       <div class="hpop" id="miniCart"></div></div>
+    <button class="ib dsk" onclick="showPg('home')" title="Accueil"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg><span class="dskl">Accueil</span></button>
     <button class="ib dsk" onclick="showPg('boutique')" title="Catégories"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><path d="M4 9 5.5 4h13L20 9"/><path d="M4 9h16v12H4z"/><path d="M9 13h6"/></svg><span class="dskl">Catégories</span></button>
     <button class="ib dsk" onclick="showPg('wishlist')" title="Favoris"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><path d="M12 20s-7-4.6-9.2-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.2 11c-2.2 4.4-9.2 9-9.2 9z"/></svg><span class="dskl">Favoris</span></button>
-    <div class="hdrop"><button class="ib dsk" onclick="toggleUserMenu(event)" title="Compte"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span class="dskl">Compte</span></button>
+    <div class="hdrop" id="acctWrap"><button class="ib dsk" onclick="toggleUserMenu(event)" title="Compte"><svg fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="21" height="21" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg><span class="dskl">Compte</span></button>
       <div class="hpop hpop-r" id="userMenu"></div></div>
   </div>
   <div class="sbar">
