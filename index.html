@@ -3747,6 +3747,85 @@ button:active{transform:scale(.97);}
 img{contain:paint;}
 /* Défilement horizontal plus fluide */
 [style*="overflow-x:auto"]{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;}
+
+/* ═══════════════ PIED DE PAGE — refonte marketplace ═══════════════ */
+/* Newsletter */
+.ftr-nl{margin:20px 10px;background:linear-gradient(120deg,#FFF3E6,#FFFBF7);border:1px solid #FFE0C2;border-radius:var(--r-xl);padding:20px 18px;display:flex;flex-direction:column;gap:16px;}
+.ftr-nl-ic{width:56px;height:56px;border-radius:50%;background:#fff;border:1.5px solid #FFD9B3;color:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--sh-sm);}
+.ftr-nl-main{flex:1;min-width:0;}
+.ftr-nl-title{font-size:1.15rem;font-weight:800;color:var(--bk);line-height:1.25;}
+.ftr-nl-sub{font-size:.8rem;color:var(--gr);margin-top:4px;line-height:1.5;}
+.ftr-nl-feats{display:flex;flex-wrap:wrap;gap:9px 16px;margin-top:12px;}
+.ftr-nl-feats>span{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;color:#374151;}
+.ftr-nl-feats i{color:var(--or);display:inline-flex;}
+.ftr-nl-act{width:100%;flex-shrink:0;}
+.ftr-nl-form{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #FFD1A6;border-radius:var(--r-lg);padding:5px 5px 5px 12px;}
+.ftr-nl-inic{color:var(--gr);display:inline-flex;flex-shrink:0;}
+.ftr-nl-form input{flex:1;min-width:0;border:none;outline:none;background:transparent;font-size:.86rem;font-family:inherit;color:var(--bk);padding:8px 0;}
+.ftr-nl-form button{background:var(--or);color:#fff;border:none;border-radius:var(--r-md);padding:11px 18px;font-size:.82rem;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background var(--tr-fast);}
+.ftr-nl-form button:hover{background:var(--or2);}
+.ftr-nl-note{display:flex;align-items:center;gap:6px;justify-content:flex-end;font-size:.68rem;color:var(--gr);margin-top:8px;}
+.ftr-nl-note i{display:inline-flex;}
+/* Corps du pied de page */
+.ftr{margin-top:22px;background:#fff;border-top:1px solid var(--bd);padding:26px 16px calc(90px + env(safe-area-inset-bottom,0px));}
+.ftr-top{display:flex;flex-direction:column;gap:20px;max-width:1180px;margin:0 auto 8px;}
+.ftr-logo{font-size:1.5rem;font-weight:900;color:var(--bk);}
+.ftr-logo span{color:var(--or);}
+.ftr-tag{font-size:.78rem;color:var(--gr);margin-top:8px;line-height:1.6;max-width:320px;}
+.ftr-badges{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;}
+.ftr-badges>span{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;color:#374151;line-height:1.2;}
+.ftr-bi{width:34px;height:34px;border-radius:50%;border:1px solid var(--bd);color:var(--bk);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ftr-serv{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ftr-sv{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--bd);border-radius:var(--r-lg);padding:12px;}
+.ftr-svi{width:38px;height:38px;border-radius:50%;background:#FFF3E6;color:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ftr-sv b{display:block;font-size:.76rem;font-weight:800;color:var(--bk);}
+.ftr-sv span{display:block;font-size:.66rem;color:var(--gr);margin-top:1px;}
+/* Suivez-nous + réseaux + installation (injecté dans #ftSocial) */
+.ftr .ft-social{text-align:center;margin:24px 0;}
+.ftr .ft-sh{font-size:.68rem;font-weight:800;color:var(--gr);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
+.ftr .ft-sl{display:flex;justify-content:center;gap:12px;margin-bottom:16px;}
+.ftr .ft-si{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--bd);color:var(--bk);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:.16s;}
+.ftr .ft-si:hover{background:var(--or);border-color:var(--or);color:#fff;transform:translateY(-2px);}
+.ftr .ft-app{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;border:none;border-radius:var(--r-lg);padding:12px 24px;font-size:.8rem;font-weight:800;cursor:pointer;font-family:inherit;transition:.16s;box-shadow:var(--sh-brand);}
+.ftr .ft-app:hover{background:var(--or2);transform:translateY(-2px);}
+/* Liens */
+.ftr-links{max-width:1180px;margin:0 auto 20px;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;}
+.ftr-link{display:flex;align-items:center;gap:10px;padding:10px 4px;cursor:pointer;border-bottom:1px solid var(--bd);}
+.ftr-li{width:30px;height:30px;border-radius:8px;background:#FFF3E6;color:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ftr-link b{display:block;font-size:.76rem;font-weight:700;color:var(--bk);}
+.ftr-link>div>span{display:block;font-size:.64rem;color:var(--gr);margin-top:1px;}
+.ftr-link:hover b{color:var(--or);}
+/* Paiement + réassurance + bas */
+.ftr-pay{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+.ftr-pay>span{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--bd);border-radius:var(--r-md);padding:7px 13px;font-size:.72rem;font-weight:800;color:#374151;}
+.ftr-pay i{display:inline-flex;color:var(--or);}
+.ftr-secure{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+.ftr-secure>span{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;color:var(--gn);font-weight:800;}
+.ftr-secure i{display:inline-flex;}
+.ftr-bottom{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-size:.7rem;color:var(--gr);border-top:1px solid var(--bd);padding-top:16px;}
+.ftr-flag{font-size:.95rem;vertical-align:-.12em;}
+body.dark .ftr,body.dark .ftr-sv,body.dark .ftr .ft-si,body.dark .ftr-li,body.dark .ftr-pay>span,body.dark .ftr-bi{background:#1F2937;border-color:#374151;}
+body.dark .ftr-nl{background:linear-gradient(120deg,#2A2015,#1F2937);border-color:#3A2A1A;}
+body.dark .ftr-nl-form{background:#111827;border-color:#374151;}
+body.dark .ftr-nl-title,body.dark .ftr-sv b,body.dark .ftr-link b,body.dark .ftr-logo,body.dark .ftr-bi{color:#F9FAFB;}
+/* Retour en haut + bulle chat IA */
+.ftr-fab-top{position:fixed;bottom:224px;right:16px;width:48px;height:48px;border-radius:50%;background:var(--or);color:#fff;border:none;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-brand);z-index:150;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s;}
+.ftr-fab-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.ftr-chat-tip{position:fixed;bottom:162px;right:82px;background:#fff;border:1px solid var(--bd);border-radius:14px 14px 2px 14px;box-shadow:var(--sh-lg);padding:10px 13px;font-size:.72rem;font-weight:600;color:var(--bk);line-height:1.35;max-width:172px;z-index:149;cursor:pointer;}
+.ftr-chat-tip b{color:var(--or);}
+.ftr-tip-x{position:absolute;top:-8px;right:-8px;width:20px;height:20px;border-radius:50%;background:var(--bk);color:#fff;border:none;font-size:.72rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+body.dark .ftr-chat-tip{background:#1F2937;border-color:#374151;color:#F9FAFB;}
+@media(min-width:768px){.ftr-links{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1024px){
+  .ftr-nl{flex-direction:row;align-items:center;padding:24px 28px;margin:24px 0;}
+  .ftr-nl-act{width:auto;min-width:430px;}
+  .ftr-top{flex-direction:row;align-items:flex-start;gap:32px;}
+  .ftr-brand{width:300px;flex-shrink:0;}
+  .ftr-serv{grid-template-columns:repeat(4,1fr);flex:1;}
+  .ftr-links{grid-template-columns:repeat(5,1fr);}
+  .ftr-bottom{justify-content:space-between;}
+  .ftr{padding-bottom:40px;}
+}
 </style>
 </head>
 <body>
@@ -3917,61 +3996,78 @@ img{contain:paint;}
   <div id="homeRevs"></div>
 
   <!-- NEWSLETTER -->
-  <div class="nlbox">
-    <div class="nlic" data-ico="mail" data-ico-size="26"></div>
-    <div class="nlt" data-i18n="nlTitle">Restez informé des bons plans</div>
-    <div class="nls" data-i18n="nlSub">Promotions, nouveautés et ventes flash — directement sur WhatsApp.</div>
-    <div class="nlform">
-      <input type="tel" id="nlPhone" inputmode="numeric" placeholder="6XX XXX XXX" data-i18n-ph="nlPh">
-      <button onclick="subscribeNewsletter()" data-i18n="nlBtn">Je m'abonne</button>
+  <div class="ftr-nl">
+    <div class="ftr-nl-ic"><i data-ico="mail" data-ico-size="26" style="display:inline-flex"></i></div>
+    <div class="ftr-nl-main">
+      <div class="ftr-nl-title" data-i18n="nlTitle">Restez informé des bons plans</div>
+      <div class="ftr-nl-sub" data-i18n="nlSub">Promotions, nouveautés et ventes flash — directement sur WhatsApp.</div>
+      <div class="ftr-nl-feats">
+        <span><i data-ico="checkCircle" data-ico-size="15"></i> Offres exclusives</span>
+        <span><i data-ico="checkCircle" data-ico-size="15"></i> Nouveautés en avant-première</span>
+        <span><i data-ico="checkCircle" data-ico-size="15"></i> Aucune publicité</span>
+      </div>
     </div>
-    <div class="nlnote" data-i18n="nlNote">Aucun spam. Désabonnement à tout moment.</div>
+    <div class="ftr-nl-act">
+      <div class="ftr-nl-form">
+        <span class="ftr-nl-inic"><i data-ico="mail" data-ico-size="17"></i></span>
+        <input type="tel" id="nlPhone" inputmode="numeric" placeholder="6XX XXX XXX" data-i18n-ph="nlPh">
+        <button onclick="subscribeNewsletter()" data-i18n="nlBtn">Je m'abonne</button>
+      </div>
+      <div class="ftr-nl-note"><i data-ico="lock" data-ico-size="13"></i> <span data-i18n="nlNote">Aucun spam. Désabonnement à tout moment.</span></div>
+    </div>
   </div>
 
-  <!-- <i data-ico="store" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> PIED DE PAGE (footer) -->
-  <div style="margin-top:22px;background:var(--lt);border-top:1px solid var(--bd);padding:20px 16px calc(90px + env(safe-area-inset-bottom,0px))">
-    <div style="text-align:center;margin-bottom:16px">
-      <div style="font-size:1.3rem;font-weight:900"><span style="color:var(--or)">KIMORA</span> <span style="color:var(--gr);font-weight:600">Store</span></div>
-      <div style="font-size:.68rem;color:var(--gr);margin-top:4px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.5" data-i18n="ftTagline">Boutique en ligne 100% camerounaise — mode, beauté, électronique &amp; digital, livrés partout au Cameroun.</div>
+  <!-- PIED DE PAGE -->
+  <div class="ftr">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <div class="ftr-logo"><span>KIMORA</span> Store</div>
+        <p class="ftr-tag" data-i18n="ftTagline">Boutique en ligne 100% camerounaise — mode, beauté, électronique &amp; digital, livrés partout au Cameroun.</p>
+        <div class="ftr-badges">
+          <span><span class="ftr-bi"><i data-ico="shield" data-ico-size="16"></i></span> Achat 100%<br>sécurisé</span>
+          <span><span class="ftr-bi"><i data-ico="checkCircle" data-ico-size="16"></i></span> Vendeur<br>vérifié</span>
+          <span><span class="ftr-bi"><i data-ico="chat" data-ico-size="16"></i></span> Support<br>7j/7</span>
+        </div>
+      </div>
+      <div class="ftr-serv">
+        <div class="ftr-sv"><span class="ftr-svi"><i data-ico="truck" data-ico-size="18"></i></span><div><b data-i18n="ftFast">Livraison rapide</b><span data-i18n="ftFastS">Partout au Cameroun</span></div></div>
+        <div class="ftr-sv"><span class="ftr-svi"><i data-ico="lock" data-ico-size="18"></i></span><div><b data-i18n="ftSecure2">Paiement sécurisé</b><span data-i18n="ftSecureS">MoMo, OM, à la livraison</span></div></div>
+        <div class="ftr-sv"><span class="ftr-svi"><i data-ico="refresh" data-ico-size="18"></i></span><div><b data-i18n="ftReturn">Retours 48h</b><span data-i18n="ftReturnS">Échange ou remboursement</span></div></div>
+        <div class="ftr-sv"><span class="ftr-svi"><i data-ico="chat" data-ico-size="18"></i></span><div><b data-i18n="ftSupport">Support 7j/7</b><span data-i18n="ftSupportS">WhatsApp à votre écoute</span></div></div>
+      </div>
     </div>
 
-    <!-- Bandeau services -->
-    <div class="ft-serv">
-      <div class="ft-sv"><span class="ft-svi"><i data-ico="truck" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftFast">Livraison rapide</b><span data-i18n="ftFastS">Partout au Cameroun</span></div></div>
-      <div class="ft-sv"><span class="ft-svi"><i data-ico="lock" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftSecure2">Paiement sécurisé</b><span data-i18n="ftSecureS">MoMo, OM, à la livraison</span></div></div>
-      <div class="ft-sv"><span class="ft-svi"><i data-ico="refresh" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftReturn">Retours 48h</b><span data-i18n="ftReturnS">Échange ou remboursement</span></div></div>
-      <div class="ft-sv"><span class="ft-svi"><i data-ico="whatsapp" data-ico-size="18" style="display:inline-flex"></i></span><div><b data-i18n="ftSupport">Support 7j/7</b><span data-i18n="ftSupportS">WhatsApp à votre écoute</span></div></div>
-    </div>
-
-    <!-- Réseaux sociaux + application -->
+    <!-- Suivez-nous + réseaux + installation (injecté dynamiquement) -->
     <div class="ft-social" id="ftSocial"></div>
 
-    <div class="ftlinks" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;font-size:.76rem;margin-bottom:16px">
-      <div onclick="openPolicy('about')" data-i18n="ftAbout" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">À propos</div>
-      <div onclick="openPolicy('contact')" data-i18n="ftContact" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Contact</div>
-      <div onclick="openPolicy('cgv')" data-i18n="ftCgv" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Conditions de vente</div>
-      <div onclick="openPolicy('privacy')" data-i18n="ftPrivacy" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Confidentialité</div>
-      <div onclick="openPolicy('shipping')" data-i18n="ftShipping" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Livraison</div>
-      <div onclick="openPolicy('returns')" data-i18n="ftReturns" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Retours</div>
-      <div onclick="openPolicy('payment')" data-i18n="ftPayment" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Paiement</div>
-      <div onclick="openPolicy('cookies')" data-i18n="ftCookies" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Cookies</div>
-      <div onclick="openPolicy('legal')" data-i18n="ftLegal" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Mentions légales</div>
-      <div onclick="showPg('account')" data-i18n="ftFaq" style="padding:9px 0;color:#374151;cursor:pointer;border-bottom:1px solid var(--bd)">Aide &amp; FAQ</div>
+    <!-- Liens utiles -->
+    <div class="ftr-links">
+      <div class="ftr-link" onclick="openPolicy('about')"><span class="ftr-li"><i data-ico="info" data-ico-size="15"></i></span><div><b data-i18n="ftAbout">À propos</b><span>Qui sommes-nous</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('contact')"><span class="ftr-li"><i data-ico="phone" data-ico-size="15"></i></span><div><b data-i18n="ftContact">Contact</b><span>Nous contacter</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('cgv')"><span class="ftr-li"><i data-ico="checkCircle" data-ico-size="15"></i></span><div><b data-i18n="ftCgv">Conditions de vente</b><span>CGV</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('privacy')"><span class="ftr-li"><i data-ico="lock" data-ico-size="15"></i></span><div><b data-i18n="ftPrivacy">Confidentialité</b><span>Politique de confidentialité</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('shipping')"><span class="ftr-li"><i data-ico="truck" data-ico-size="15"></i></span><div><b data-i18n="ftShipping">Livraison</b><span>Zones &amp; délais</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('returns')"><span class="ftr-li"><i data-ico="refresh" data-ico-size="15"></i></span><div><b data-i18n="ftReturns">Retours</b><span>Politique de retour</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('payment')"><span class="ftr-li"><i data-ico="card" data-ico-size="15"></i></span><div><b data-i18n="ftPayment">Paiement</b><span>Modes de paiement</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('cookies')"><span class="ftr-li"><i data-ico="eye" data-ico-size="15"></i></span><div><b data-i18n="ftCookies">Cookies</b><span>Politique des cookies</span></div></div>
+      <div class="ftr-link" onclick="openPolicy('legal')"><span class="ftr-li"><i data-ico="signature" data-ico-size="15"></i></span><div><b data-i18n="ftLegal">Mentions légales</b><span>Mentions légales</span></div></div>
+      <div class="ftr-link" onclick="showPg('account')"><span class="ftr-li"><i data-ico="chat" data-ico-size="15"></i></span><div><b data-i18n="ftFaq">Aide &amp; FAQ</b><span>Centre d'aide</span></div></div>
     </div>
 
-    <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:14px">
-      <span style="background:#fff;border:1px solid var(--bd);border-radius:var(--r-sm);padding:4px 9px;font-size:.66rem;font-weight:700;color:#374151" data-i18n="ftMtn">MTN MoMo</span>
-      <span style="background:#fff;border:1px solid var(--bd);border-radius:var(--r-sm);padding:4px 9px;font-size:.66rem;font-weight:700;color:#374151" data-i18n="ftOrange">Orange Money</span>
-      <span style="background:#fff;border:1px solid var(--bd);border-radius:var(--r-sm);padding:4px 9px;font-size:.66rem;font-weight:700;color:#374151" data-i18n="ftCod">Paiement à la livraison</span>
+    <!-- Moyens de paiement -->
+    <div class="ftr-pay">
+      <span><i data-ico="card" data-ico-size="15"></i> <span data-i18n="ftMtn">MTN MoMo</span></span>
+      <span><i data-ico="card" data-ico-size="15"></i> <span data-i18n="ftOrange">Orange Money</span></span>
+      <span><i data-ico="truck" data-ico-size="15"></i> <span data-i18n="ftCod">Paiement à la livraison</span></span>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px">
-      <span style="font-size:.65rem;color:var(--gn);font-weight:800" data-i18n="ftSecure"><i data-ico="shield" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Achat 100% sécurisé</span>
-      <span style="color:var(--bd)">·</span>
-      <span style="font-size:.65rem;color:var(--gn);font-weight:800" data-i18n="ftVerified"><i data-ico="checkCircle" data-ico-size="16" style="display:inline-flex;vertical-align:-.18em"></i> Vendeur vérifié</span>
+    <div class="ftr-secure">
+      <span><i data-ico="checkCircle" data-ico-size="15"></i> <span data-i18n="ftSecure">Achat 100% sécurisé</span></span>
+      <span><i data-ico="checkCircle" data-ico-size="15"></i> <span data-i18n="ftVerified">Vendeur vérifié</span></span>
     </div>
 
-    <div style="text-align:center;font-size:.66rem;color:var(--gr);line-height:1.6;border-top:1px solid var(--bd);padding-top:12px">
-      © <span id="ftYear"></span> Kimora Store — <span data-i18n="ftRights">Tous droits réservés</span><br><span data-i18n="ftMade">Fait au Cameroun</span>
+    <div class="ftr-bottom">
+      <span>© <span id="ftYear"></span> Kimora Store — <span data-i18n="ftRights">Tous droits réservés</span></span>
+      <span><span data-i18n="ftMade">Fait au Cameroun</span> <span class="ftr-flag">🇨🇲</span></span>
     </div>
   </div>
 </div>
@@ -5154,6 +5250,8 @@ img{contain:paint;}
 
 <!-- CHATBOT FLOTTANT -->
 <button class="chatbot-float" onclick="openChat()"><img alt="Kimora AI" class="kai-img" data-kai><span class="cb-badge"></span></button>
+<button class="ftr-fab-top" id="ftrTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="ftr-chat-tip" id="ftrChatTip" onclick="openChat()"><button class="ftr-tip-x" onclick="dismissChatTip(event)" aria-label="Fermer">×</button><b>Besoin d'aide ?</b><br>Chattez avec nous !</div>
 
 <!-- FENÊTRE CHAT -->
 <div class="chat-window" id="chatWindow">
@@ -14165,6 +14263,25 @@ renderDataIcons();
   });
   window.translateAdminDom=translateAdminDom;
   setTimeout(translateAdminDom,800);
+})();
+
+/* Retour en haut + bulle chat IA */
+(function(){
+  var top=document.getElementById('ftrTop');
+  if(top){
+    var onScroll=function(){if(window.scrollY>420)top.classList.add('show');else top.classList.remove('show');};
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  }
+  window.dismissChatTip=function(e){
+    if(e){e.stopPropagation();}
+    var t=document.getElementById('ftrChatTip');
+    if(t)t.style.display='none';
+    try{if(typeof lsSet==='function')lsSet('kChatTip','1');else localStorage.setItem('kChatTip','1');}catch(_){}
+  };
+  try{
+    var tip=document.getElementById('ftrChatTip');
+    if(tip&&localStorage.getItem('kChatTip')==='1')tip.style.display='none';
+  }catch(_){}
 })();
 </script>
 </body>
